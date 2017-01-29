@@ -39,8 +39,6 @@ use App\Keyval;
 
 
 class HomeController extends Controller {
-	echo "2";
-	die;
 
 	public function __construct() {
 		$this->request = Request::all();

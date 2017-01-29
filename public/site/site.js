@@ -169,8 +169,8 @@ if(sliderCurImage[0]) {
 
 
 
-fullUrl = 'http://kaleydoskop.ap.org.ua';
-// fullUrl = 'http://kaley.com';
+// fullUrl = 'http://kaleydoskop.ap.org.ua';
+fullUrl = 'http://kaley.com';
 
 
 //Наведение на верхние элементы 
@@ -953,6 +953,12 @@ search = document.getElementById('search-big-submit');
 if(search) {
   search.addEventListener('click', function(){
     query = document.getElementById('searchInput1').value;
+
+  if(query.length < 3) {
+    return;
+  }
+
+
     window.location.replace( fullUrl + "/search/" + query);
   });
 
@@ -980,6 +986,11 @@ document.getElementById('searchInput').addEventListener('keydown', function(e){
 
 document.getElementById('searchIcon').addEventListener('click', function(){
   query = document.getElementById('searchInput').value;
+
+  if(query.length < 3) {
+    return;
+  }
+
   window.location.replace(fullUrl + "/search/" + query);
 });
 
