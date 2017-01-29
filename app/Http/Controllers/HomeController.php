@@ -39,7 +39,7 @@ use App\Keyval;
 
 
 class HomeController extends Controller {
-	echo "1";
+	echo "2";
 	die;
 
 	public function __construct() {
