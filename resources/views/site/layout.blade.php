@@ -740,7 +740,7 @@
 					Copyright 2009-2015, Киев © Интернет-магазин Калейдоскоп Вышивки
 				</div>
 				<div class="copy-el">
-					Создание сайта <a href="http://ap-studio.com.ua" target="_blank"> AP Studio</a>
+					Создание сайта <a href="http://anastasiya-petko.com.ua" target="_blank"> AP Studio</a>
 				</div>
 			</div>
 

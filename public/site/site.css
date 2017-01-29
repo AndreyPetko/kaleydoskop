@@ -101,7 +101,7 @@ a{
     height: 64px;
     text-align: center;
     color: #555555;
-    font: 400 18px  'Franklin Gothic Medium';
+    font: 400 18px  franklingothic;
     line-height: 64px;
     margin-top: 70px;
 }
@@ -204,7 +204,7 @@ a{
 .header-line {
     height: 46px;
     line-height: 46px;
-    font-family: FranklinGothic;
+    font-family: franklingothic;
 }
 
 .header-line-element-icon {
@@ -390,7 +390,7 @@ a{
     float: left;
     margin-left: 30px;
     font-size: 14px;
-    font-family: FranklinGothic;
+     font-family: franklingothic;
     color: #000000;
 }
 
@@ -1085,7 +1085,7 @@ a{
 
 .slide-text-content {
     color: #555555;
-    font-family: CenturyGothic;
+     font-family: franklingothic;
     font-weight: 400;
     width: 750px;
     background: #c6d932;
@@ -1180,7 +1180,7 @@ a{
     float: left;
     width: 110px;
     font-size: 12px;
-    font-family: FranklinGothic;
+    font-family: franklingothic;
     text-indent: 2px;
     display: table;
     
@@ -1264,7 +1264,7 @@ a{
     font-size: 16px;
     color: #565656;
     font-weight: 700;
-    font-family: FranklinGothic;
+  font-family: franklingothic;
     height: 40;
     line-height: 40px;
     border-bottom: 3px solid white;
@@ -1528,7 +1528,7 @@ a{
     float: left;
     width: 40%;
     font-size: 14px;
-    font-family: FranklinGothic;
+     font-family: franklingothic;
     margin-left: 5%;
     line-height: 25px;
     text-decoration: none;
@@ -2106,7 +2106,7 @@ a{
 }
 
 .category-spisok-text {
-    font: 400 14px 'Franklin Gothic Medium';
+    font: 400 14px franklingothic;
     margin-top: 25px;
     color: #616161;
     line-height: 20px;
@@ -2200,7 +2200,7 @@ a{
 .product-title {
     text-align: center;
     min-height: 54px;
-    font: 400 16px 'Franklin Gothic Medium';
+    font: 400 16px franklingothic;
     font-family: franklingothic;
     line-height: 30px;
     padding: 5px;
@@ -2216,7 +2216,7 @@ a{
 .product-title-mobile {
     text-align: center;
     min-height: 54px;
-    font: 400 16px 'Franklin Gothic Medium';
+    font: 400 16px franklingothic;
     line-height: 30px;
     padding: 5px;
     color: #ffffff;
@@ -2268,7 +2268,7 @@ a{
 }
 .product-intake-text {
     margin-left: 10px;
-    font: 400 14px 'Franklin Gothic Medium';
+    font: 400 14px franklingothic;
     color: #616161;
     
     cursor: pointer;
@@ -2302,7 +2302,7 @@ a{
 }
 
 .price-value {
-    font: 400 20px 'Franklin Gothic Medium';
+    font: 400 20px franklingothic;
     color: #ec222c;
     line-height: 44px;
     margin-left: 20px;
@@ -2537,7 +2537,7 @@ a{
 }
 
 .products-sidebar-subcategory-name {
-    font: 400 14px / 18px 'Franklin Gothic Medium';
+    font: 400 14px / 18px franklingothic;
     color: #616161;
     line-height: 18px;
     margin-left: 10px;
@@ -2679,7 +2679,7 @@ a{
 }
 
 .products-attribute-item {
-    font: 400 14px / 24px 'Franklin Gothic Medium';
+    font: 400 14px / 24px franklingothic;
     margin-left: 40px;
     margin-right: 10px;
     color: #616161;
@@ -3100,7 +3100,7 @@ a{
     background-color: #3a3a3a;
     color: #ffffff;
     text-indent: 45px;
-    font: 400 20px / 60px 'Franklin Gothic Medium';
+    font: 400 20px / 60px franklingothic;
 }
 
 .fast-order-close img {
@@ -3144,7 +3144,7 @@ a{
 .fast-order-text {
     text-align: center;
     color: #000000;
-    font: 400 14px / 14px 'Franklin Gothic Medium';
+    font: 400 14px / 14px franklingothic;
     margin-top: 27px;
     padding: 0 20px;
 }
@@ -3221,7 +3221,7 @@ input.error, textarea.error {
 
 .fast-order-product {
     color: #acbd23;
-    font: 400 14px / 30px 'Franklin Gothic Medium';
+    font: 400 14px / 30px franklingothic;
     margin-left: 10px;
 }
 
@@ -4624,7 +4624,7 @@ input.error, textarea.error {
     text-indent: 30px;
     padding: 12px 0;
     color: #555555;
-    font-family: FranklinGothic;
+     font-family: franklingothic;
     font-size: 16px;
 
 
@@ -5064,7 +5064,7 @@ input.error, textarea.error {
 
     border-bottom: 4px solid #fdde09;
     color: #ffffff;
-    font: 400 18px 'Franklin Gothic Medium';
+    font: 400 18px franklingothic;
     text-align: center;
 }
 
@@ -5075,7 +5075,7 @@ input.error, textarea.error {
     padding-top: 24px;
     border: 3px solid #e8e8e8;
     color: #898989;
-    font: 400 18px  'Franklin Gothic Medium';
+    font: 400 18px  franklingothic;
     text-align: center;
 }
 .info, .feedback{
@@ -5098,7 +5098,7 @@ input.error, textarea.error {
     background-color: #c6d932;
     border-bottom: 1px solid gray;
     color: #555555;
-    font: 400 16px / 18px 'Franklin Gothic Medium';
+    font: 400 16px / 18px franklingothic;
     text-align: center;
 }
 .info  .info-text:nth-child(2n) {
@@ -5115,7 +5115,7 @@ input.error, textarea.error {
     background-color: #c6d932;
     border-bottom: 1px solid gray;
     color: #555555;
-    font: 400 16px / 18px 'Franklin Gothic Medium';
+    font: 400 16px / 18px franklingothic;
     text-align: center;
 }
 .info-mobile  .info-text:nth-child(2n) {
@@ -5141,7 +5141,7 @@ input.error, textarea.error {
     border: 3px solid #ebebeb;
     border-bottom: 3px solid #707070;
     color: #555555;
-    font: 400 18px 'Franklin Gothic Medium';
+    font: 400 18px franklingothic;
     text-align: center;
     padding-top: 17px;
 }
@@ -5151,7 +5151,7 @@ input.error, textarea.error {
  border: 3px solid #ebebeb;
  border-bottom: 3px solid #707070;
  color: #555555;
- font: 400 18px 'Franklin Gothic Medium';
+ font: 400 18px franklingothic;
  text-align: center;
  padding-top: 17px;
  margin-top: 10px;
@@ -5168,7 +5168,7 @@ input.error, textarea.error {
     padding-top: 18px;
     border: 3px solid #e8e8e8;
     color: #555555;
-    font: 400 18px 'Franklin Gothic Medium';
+    font: 400 18px franklingothic;
     text-align: center;
     
 }
@@ -5194,18 +5194,18 @@ input.error, textarea.error {
 
 .numbers {
     color: #555555!important;
-    font: 400 18px / 18px 'Franklin Gothic Medium';
+    font: 400 18px / 18px franklingothic;
     margin: 31px auto 23px auto;
 }
 
 .info .your-attachment {
     color: #eb7f2b;
-    font: 400 14px / 40px 'Franklin Gothic Medium';
+    font: 400 14px / 40px franklingothic;
 }
 
 .e-mail {
     color: #555555;
-    font: 400 18px / 40px 'Franklin Gothic Medium';
+    font: 400 18px / 40px franklingothic;
 }
 .row{
     display:table-row;
@@ -5216,17 +5216,17 @@ input.error, textarea.error {
 }
 .shop {
     color: #eb7f2b;
-    font: 400 14px / 18px 'Franklin Gothic Medium';
+    font: 400 14px / 18px franklingothic;
     text-align: center;
 }
 .friday, .saturday {
     color: #555555;
-    font: 400 16px / 18px 'Franklin Gothic Medium';
+    font: 400 16px / 18px franklingothic;
     text-align: left;
 }
 .feedback-text {
     color: #eb7f2b;
-    font: 400 12px / 18px 'Franklin Gothic Medium';
+    font: 400 12px / 18px franklingothic;
     text-align: center;
 }
 
@@ -5289,7 +5289,7 @@ input.error, textarea.error {
 }
 .cellFeedB label {
     color: #555555;
-    font: 400 14px / 27.968px 'Franklin Gothic Medium';
+    font: 400 14px / 27.968px franklingothic;
     text-align: right;
 }
 
@@ -5307,7 +5307,7 @@ input.error, textarea.error {
     border: 0px;
     border-bottom: 3px solid #d5640c;
     color: #ffffff;
-    font: 400 14px / 27.968px 'Franklin Gothic Medium';
+    font: 400 14px / 27.968px franklingothic;
     margin-left: 256px;
     margin-top: 10px;
     cursor: pointer;
@@ -5319,7 +5319,7 @@ input.error, textarea.error {
     border: 0px;
     border-bottom: 3px solid #d5640c;
     color: #ffffff;
-    font: 400 14px / 27.968px 'Franklin Gothic Medium';
+    font: 400 14px / 27.968px franklingothic;
     margin-left: 20px;
     margin-top: 10px;
     cursor: pointer;
@@ -5442,7 +5442,8 @@ input.error, textarea.error {
 }
 
 .article-content {
-    font-family: franklingothic;color: #616161;
+    font-family: franklingothic;
+    color: #616161;
     font-size: 14px;
 }
 
@@ -5576,14 +5577,14 @@ input.error, textarea.error {
     text-align: center;
     margin-bottom: 20px;
     color: #ffffff;
-    font: 400 20px / 55px 'Franklin Gothic Medium';
+    font: 400 20px / 55px franklingothic;
 }
 /*comparesion table*/
 .comparesion .table{
     margin: 27px auto 30px auto;
     /*width: 97%; /*1144px*/
     color: #555555;
-    font: 300 14px / 18px 'Franklin Gothic Medium';
+    font: 300 14px / 18px franklingothic;
 }
 .comparesion .table .table-header{
     border: 3px solid #a9bb1e;
@@ -5664,7 +5665,7 @@ input.error, textarea.error {
     border: 0px;
     border-bottom: 3px solid #a9bb1e;
     color: #ffffff;
-    font: 400 14px / 27.968px 'Franklin Gothic Medium';
+    font: 400 14px / 27.968px franklingothic;
     margin: 10px auto;
     cursor: pointer;
 }
@@ -5675,7 +5676,7 @@ input.error, textarea.error {
     border: 0px;
     border-bottom: 3px solid #d5640c;
     color: #ffffff;
-    font: 400 14px / 27.968px 'Franklin Gothic Medium';
+    font: 400 14px / 27.968px franklingothic;
     margin: 10px auto;
     cursor: pointer;
 }
@@ -5740,7 +5741,7 @@ input.error, textarea.error {
 }
 .comparesion .btn-panel .text{
     /*color: #ffffff;*/
-    font: 400 14px / 27.968px 'Franklin Gothic Medium';
+    font: 400 14px / 27.968px franklingothic;
     padding-top: 5px;
 }
 /*'Medium Franklin Gothic'*/
@@ -5973,7 +5974,7 @@ input.error, textarea.error {
 .sort-by-text-mobile {
     width: 45%;
     margin-left: 10px;
-    font-family: FranklinGothic;
+     font-family: franklingothic;
     
 }
 .sort-by-text-mobile select{
