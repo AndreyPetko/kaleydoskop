@@ -126,7 +126,7 @@
 	</div>
 	@endif
 
-	<div class="category-products-content @if(isset($theads)) category-products-content-full @endif fl">
+	<div class=" @if(!isset($theads)) category-products-content  fl @endif ">
 		<div class="category-title">
 			{{$category->name}}
 		</div>

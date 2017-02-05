@@ -8,8 +8,7 @@ if(topLineThread){
     var scrollTop = this.scrollY;
 
     if(scrollTop > "450"){
-     console.log(topLineThread);
-     topLineThread.style.cssText = "position:fixed; top:0px; width:1200px;";
+     topLineThread.style.cssText = "position:fixed; top:0px; width:100%;";
     }
     else{
       topLineThread.style.cssText = "position:inherit";

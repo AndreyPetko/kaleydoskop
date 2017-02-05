@@ -1,7 +1,6 @@
 $(document).ready(function(){
 
 
-
 	// $('#search-button').click(function(){
 	// 	name = $('#search').val();
 	// 	brendId = $('#brend').val();
@@ -310,6 +309,8 @@ $(document).ready(function(){
 			}
 			)();
 
+
+			
 
 
 		});
