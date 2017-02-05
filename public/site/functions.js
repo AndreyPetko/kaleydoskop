@@ -308,6 +308,10 @@ function showProducts(data, type) {
       link = link.replace(fullUrl +'/ajax/brend-clear', fullUrl + '/brend-products/' + brendUrl);
       link = link.replace(fullUrl + '/ajax/filter-brend-add', fullUrl + '/category/' + brendUrl);
       link = link.replace(fullUrl + '/ajax/filter-brend-delete', fullUrl + '/category/' + brendUrl);
+
+
+      link = link.replace(fullUrl + '/ajax/filter-subcat-add', fullUrl + '/brend-products/' + brendUrl);
+      link = link.replace(fullUrl + '/ajax/filter-subcat-delete', fullUrl + '/brend-products/' + brendUrl);
     }
 
 

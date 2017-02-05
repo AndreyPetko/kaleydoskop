@@ -1,18 +1,19 @@
 <?php
 
 namespace App\Http\Controllers;
-use DB;
-use App\Product;
-use Session;
-use Cookie;
-use App\MyCookie;
+use App\Brend;
 use App\Cart;
-use App\Wishlist;
 use App\Comparison;
-use App\Subcategory;
-use App\Order;
 use App\Feedback;
+use App\MyCookie;
+use App\Order;
+use App\Product;
+use App\Subcategory;
+use App\Wishlist;
 use Auth;
+use Cookie;
+use DB;
+use Session;
 
 class AjaxController extends Controller {
 
@@ -38,6 +39,7 @@ class AjaxController extends Controller {
 				Session::put($key, $value);
 			}
 		}
+
 
 		return Product::getBySessionBrendFilter($_GET['brendUrl']);
 	}

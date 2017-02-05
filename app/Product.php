@@ -15,6 +15,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
+	const CACHE_TIME = 1440;
 	protected $table = 'products';
 	protected $fillable = array('name', 'article', 'description', 'price', 'wholesale_price' , 'url', 'category_id', 'brend_id', 'quantity', 'active', 'active_wholesale', 'search', 'code', 'group');
 
@@ -335,14 +336,51 @@ class Product extends Model
 
 
 	public static function getBySessionBrendFilter($brendUrl, $returnType = 1) {
-		$query = self::where('brends.url', $brendUrl)
-		->leftjoin('product_subcat', 'products.id', '=', 'product_subcat.product_id')
-		->leftjoin('categories', 'products.category_id', '=', 'categories.id')
-		->leftjoin('brends', 'products.brend_id', '=', 'brends.id')
-		->leftjoin('product_attrs_value', 'product_attrs_value.product_id', '=', 'products.id')
-		->leftjoin('attributes', 'product_attrs_value.attribute_id', '=', 'attributes.id')
-		->select('products.name', 'products.price', 'products.id', 'products.wholesale_price', 'products.quantity','products.url')
-		->groupBy('products.id');
+		// Cache::flush();
+		// die;
+
+		if(!isset($_GET['page'])) {
+			$page = 1;
+		} else {
+			$page = $_GET['page'];
+		}
+
+		$put = false;
+
+
+		if(empty(Session::get('brendFilter'))
+			&& empty(Session::get('brendMinPrice'))
+			&& empty(Session::get('brendMaxPrice'))
+			&& empty(Session::get('subcat'))
+		)
+		{
+
+			$cacheKey = 'brend-' . $brendUrl . '-' . $returnType . '-' . $page;
+			$return = Cache::get($cacheKey);
+
+
+			if($return) {
+				return $return;
+			} else {
+				$put = true;
+			}
+		}
+
+		$brend = DB::table('brends')
+				->select('id')
+				->where('url', $brendUrl)
+				->first();
+
+		$brendId = $brend->id;
+
+		$query = self::where('brends.id', $brendId)
+			->selectRaw('products.id, products.name, products.price, products.wholesale_price, products.quantity, products.url')
+			->leftjoin('categories', 'products.category_id', '=', 'categories.id')
+			->leftjoin('brends', 'products.brend_id', '=', 'brends.id')
+			->leftjoin('product_attrs_value', 'product_attrs_value.product_id', '=', 'products.id')
+			->leftjoin('attributes', 'product_attrs_value.attribute_id', '=', 'attributes.id')
+			->groupBy('products.id')
+		;
 
 		if(!empty(Session::get('brendFilter'))) {
 			$filter = Session::get('brendFilter');
@@ -387,6 +425,7 @@ class Product extends Model
 		}
 
 		if(Session::get('subcat')) {
+			$query->leftjoin('product_subcat', 'products.id', '=', 'product_subcat.product_id');
 			$query->whereIn('product_subcat.subcat_id', Session::get('subcat'));
 		}
 
@@ -416,7 +455,7 @@ class Product extends Model
 				}
 				if($flag) {
 					$product->wish = 1;
-				} 
+				}
 
 			}
 		}
@@ -445,6 +484,11 @@ class Product extends Model
 		}
 
 
+		if($put) {
+			Cache::put($cacheKey, $return, self::CACHE_TIME);
+		}
+
+
 		return $return;
 	}
 
@@ -456,6 +500,18 @@ class Product extends Model
 				return $currentPage;
 			});
 		}
+
+		// $cacheKey = 'category-' . $categoryUrl . '-' . $returnType . '-' . $currentPage;
+
+		// $return = Cache::get($cacheKey);
+
+		// $filter = Session::get('filter');
+
+
+		// if($return && empty($filter)) {
+		// 	return $return;
+		// }
+
 
 		$query = self::where('categories.url', $categoryUrl)
 		// ->leftjoin('images', 'products.id', '=', 'images.product_id')
@@ -567,6 +623,9 @@ class Product extends Model
 		if($returnType == 2) {
 			$return = $products;
 		}
+
+		// Cache::put($cacheKey, $return, self::CACHE_TIME);
+
 		return $return;
 	}
 

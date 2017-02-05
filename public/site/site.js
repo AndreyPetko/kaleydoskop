@@ -856,11 +856,13 @@ if(subcatsFilter) {
       id = this.dataset.value;
       if(this.checked) {
         ajax('/ajax/filter-subcat-add?id=' + id  + '&brendUrl=' + brendUrl, function(data){
-          showProducts(data);
+          showProducts(data, 'brend');
         },1);
       } else {
         ajax('/ajax/filter-subcat-delete?id=' + id  + '&brendUrl=' + brendUrl, function(data) {
-          showProducts(data);
+          showProducts(data, 'brend');
+          data = JSON.parse(data);
+          console.log(data[1]);
         },1);
       }
     });
@@ -954,9 +956,9 @@ if(search) {
   search.addEventListener('click', function(){
     query = document.getElementById('searchInput1').value;
 
-  if(query.length < 3) {
-    return;
-  }
+    if(query.length < 3) {
+      return;
+    }
 
 
     window.location.replace( fullUrl + "/search/" + query);
