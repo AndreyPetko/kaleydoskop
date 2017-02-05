@@ -196,7 +196,7 @@ $('.category-button').click(function(){
   ajax('/ajax/subcategories-by-category-id?id=' + categoryId, function(data) {
     var data = JSON.parse(data);
     for (var i = data.length - 1; i >= 0; i--) {
-      var link = '<a href="/category/' + categoryUrl + '?subcategory=' + data[i].id + '"><div class="subcat-item subcat-hover fl">' + 
+      var link = '<a href="/subcategory/' + data[i].url + '"><div class="subcat-item subcat-hover fl">' + 
       '<div class="subcat-image fl">' +
       '<img src="site/images/icon-catecory-list.png" alt="">' +
       '</div>' +
