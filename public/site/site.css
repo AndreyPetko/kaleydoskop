@@ -1141,7 +1141,7 @@ border-color: #d5d3d3;
 .main-menu-dropdown {
     background-color: rgba(255, 255, 255, 0.9);
     position: absolute;
-    width: 1200px;
+    max-width: 1200px;
     display: none;
     z-index: 200;
 
@@ -4597,25 +4597,25 @@ input.error, textarea.error {
 
 
 
-#subcategory-katalog {
+#subcategory-katalog, #subcategory-katalog-mobile  {
     display: none;
-    transition: All 0.5s;
+    transition: All, 0.5s;
+    background-color: white;
+    z-index: 9999;
+    position: absolute;
+    width: 100%;
+    max-width: 1200px;
+
 }
-#subcategory-katalog-mobile {
-    display: none;
-    transition: All 0.5s;
-}
+
 .category-pre-info .to-katalog-active{
     background-color: #a9bb1e;
-    border-bottom: 8px #a9bb1e solid;
 }
-#close-subcategory {
+#close-subcategory , #close-subcategory-mobile {
 
     text-align: center;
     border: #e8e8e8 solid 3px;
     border-bottom:#555555 5px solid;
-    /*   width: 1194px;*/
-    /* width: 97%;*/
     padding: 10px 0 15px 0;
     cursor: pointer;
     text-indent: 30px;
@@ -4630,7 +4630,7 @@ input.error, textarea.error {
 
 .subcategories-list {
    padding: 10px 0;
-   display: none;
+/*   display: none;*/
 
 }
 

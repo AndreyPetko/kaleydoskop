@@ -50,6 +50,15 @@
 
 
 @if(!Auth::check() || Auth::user()->role == 'retail')
+<!--  <div class="owl-carousel">
+  @foreach($mainSlides as $slide)
+  <div class="slider-image">
+    <img src="{{ url('slides_images/' . $slide->image) }}" alt="">
+  </div>
+  @endforeach
+
+</div> -->
+
 
 <div class="slide-left" id="main-slide-left">
  <img src="{{ url('site/images/arrow-big2.png') }}" alt="">

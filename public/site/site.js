@@ -2,123 +2,39 @@ window.addEventListener("load", function(){
 
   // верхние кнопки на странице ниток
 
-var topLineThread = document.getElementById('quick-thread-submit');
-if(topLineThread){
-  window.addEventListener("scroll", function(event) {
-    var scrollTop = this.scrollY;
+  var topLineThread = document.getElementById('quick-thread-submit');
+  if(topLineThread){
+    window.addEventListener("scroll", function(event) {
+      var scrollTop = this.scrollY;
 
-    if(scrollTop > "450"){
-     topLineThread.style.cssText = "position:fixed; top:0px; width:100%;";
-    }
-    else{
+      if(scrollTop > "450"){
+       topLineThread.style.cssText = "position:fixed; top:0px; width:100%;";
+     }
+     else{
       topLineThread.style.cssText = "position:inherit";
     }
   });
-}
+  }
 
 // верхние кнопки на странице ниток
 
 
-  itemComp = document.getElementsByClassName('item-comp');
+itemComp = document.getElementsByClassName('item-comp');
 
 
-  if(itemComp[0]) {
-    for (var i = 0; i < itemComp.length; i++) {
-      itemComp[i].addEventListener('click', function(){
-        productid = this.dataset.productid;
-        item = this;
-        ajax('/ajax/change-comparison?productid=' + productid, function(data){
-          if(data == 1) {
-            item.getElementsByTagName('img')[0].setAttribute('src', '../site/images/icon-compare-grey.png');
-          }
-
-          if(data == 2) {
-            item.getElementsByTagName('img')[0].setAttribute('src', '../site/images/icon-compare.png');
-          }
-
-          if(data == 3) {
-            var fullCampareForm = document.getElementById('full-compare-form');
-            fullCampareForm.style.display = "block";
-
-            var sucessClose = document.getElementsByClassName('success-close');
-            for(i=0; i < sucessClose.length; i++){
-              sucessClose[i].addEventListener('click', function(){
-                fullCampareForm.style.display = "none";
-              });
-
-            }
-          }
-
-        });
-      });
-    };
-
-  }
-
-
-
-
-
-
-  threadBt = document.getElementsByClassName('thread-button');
-
-  if(threadBt[0]) {
-    for (var i = 0; i < threadBt.length; i++) {
-      threadBt[i].addEventListener('click', function(){
-        id = this.dataset.productid;
-        count = this.previousSibling.previousSibling.getElementsByTagName('input')[0].value;
-        if(!count) {
-          count = 1;
-        }
-        ajax('/ajax/add-to-cart?count=' + count + '&id=' + id, function(data) {
-          name = JSON.parse(data);
-          document.getElementById('order-text').innerHTML  = "Товар " + name + " успешно добавлен в корзину";
-          document.getElementById('sucess-cart-form').style.display = 'block';
-          setTimeout(function(){
-            document.getElementById('sucess-cart-form').style.display = 'none';
-          }, 1000);
-        });
-      });
-    };
-  }
-
-
-  aval = document.getElementById('availability');
-
-  if(aval) {
-    aval.addEventListener('click', function(){
-      categoryUrl = document.getElementById('catUrl').value;
-      subcategoryUrl = document.getElementById('subcatUrl').value;
-      if(this.checked) {
-        ajax('/ajax/change-aval?aval=' + 1 + '&categoryUrl=' + categoryUrl, function(data){
-          showProducts(data);
-        });
-      } else {
-        ajax('/ajax/change-aval?aval=' + 0 + '&categoryUrl=' + categoryUrl, function(data){
-          showProducts(data);
-        });
-      }
-    });
-  }
-
-
-  comp = document.getElementsByClassName('products-comparison')[0];
-
-
-  if(comp) {
-    comp.addEventListener('click', function(){
+if(itemComp[0]) {
+  for (var i = 0; i < itemComp.length; i++) {
+    itemComp[i].addEventListener('click', function(){
       productid = this.dataset.productid;
+      item = this;
       ajax('/ajax/change-comparison?productid=' + productid, function(data){
         if(data == 1) {
-          document.getElementsByClassName('products-comparison-text')[0].innerHTML = 'Добавить в сравнение';
-          document.getElementsByClassName('products-comparison-img')[0].getElementsByTagName('img')[0].setAttribute('src', '../site/images/icon-compare-grey.png');
+          item.getElementsByTagName('img')[0].setAttribute('src', '../site/images/icon-compare-grey.png');
         }
 
         if(data == 2) {
-          document.getElementsByClassName('products-comparison-text')[0].innerHTML = 'Удалить из сравнения';
-          document.getElementsByClassName('products-comparison-img')[0].getElementsByTagName('img')[0].setAttribute('src', '../site/images/icon-compare.png');
+          item.getElementsByTagName('img')[0].setAttribute('src', '../site/images/icon-compare.png');
         }
-
 
         if(data == 3) {
           var fullCampareForm = document.getElementById('full-compare-form');
@@ -129,14 +45,98 @@ if(topLineThread){
             sucessClose[i].addEventListener('click', function(){
               fullCampareForm.style.display = "none";
             });
-            
+
           }
         }
 
-
       });
     });
-  }
+  };
+
+}
+
+
+
+
+
+
+threadBt = document.getElementsByClassName('thread-button');
+
+if(threadBt[0]) {
+  for (var i = 0; i < threadBt.length; i++) {
+    threadBt[i].addEventListener('click', function(){
+      id = this.dataset.productid;
+      count = this.previousSibling.previousSibling.getElementsByTagName('input')[0].value;
+      if(!count) {
+        count = 1;
+      }
+      ajax('/ajax/add-to-cart?count=' + count + '&id=' + id, function(data) {
+        name = JSON.parse(data);
+        document.getElementById('order-text').innerHTML  = "Товар " + name + " успешно добавлен в корзину";
+        document.getElementById('sucess-cart-form').style.display = 'block';
+        setTimeout(function(){
+          document.getElementById('sucess-cart-form').style.display = 'none';
+        }, 1000);
+      });
+    });
+  };
+}
+
+
+aval = document.getElementById('availability');
+
+if(aval) {
+  aval.addEventListener('click', function(){
+    categoryUrl = document.getElementById('catUrl').value;
+    subcategoryUrl = document.getElementById('subcatUrl').value;
+    if(this.checked) {
+      ajax('/ajax/change-aval?aval=' + 1 + '&categoryUrl=' + categoryUrl, function(data){
+        showProducts(data);
+      });
+    } else {
+      ajax('/ajax/change-aval?aval=' + 0 + '&categoryUrl=' + categoryUrl, function(data){
+        showProducts(data);
+      });
+    }
+  });
+}
+
+
+comp = document.getElementsByClassName('products-comparison')[0];
+
+
+if(comp) {
+  comp.addEventListener('click', function(){
+    productid = this.dataset.productid;
+    ajax('/ajax/change-comparison?productid=' + productid, function(data){
+      if(data == 1) {
+        document.getElementsByClassName('products-comparison-text')[0].innerHTML = 'Добавить в сравнение';
+        document.getElementsByClassName('products-comparison-img')[0].getElementsByTagName('img')[0].setAttribute('src', '../site/images/icon-compare-grey.png');
+      }
+
+      if(data == 2) {
+        document.getElementsByClassName('products-comparison-text')[0].innerHTML = 'Удалить из сравнения';
+        document.getElementsByClassName('products-comparison-img')[0].getElementsByTagName('img')[0].setAttribute('src', '../site/images/icon-compare.png');
+      }
+
+
+      if(data == 3) {
+        var fullCampareForm = document.getElementById('full-compare-form');
+        fullCampareForm.style.display = "block";
+
+        var sucessClose = document.getElementsByClassName('success-close');
+        for(i=0; i < sucessClose.length; i++){
+          sucessClose[i].addEventListener('click', function(){
+            fullCampareForm.style.display = "none";
+          });
+
+        }
+      }
+
+
+    });
+  });
+}
 
 // картинка на странице продукта
 
@@ -165,8 +165,77 @@ if(sliderCurImage[0]) {
 
 // картинка на странице продукта
 
+// выпадающие подкатегории
+
+// window.addEventListener("load", function(){
+
+//   function insertAfter( node, referenceNode ) {
+//     if ( !node || !referenceNode ) return;
+//     var parent = referenceNode.parentNode, nextSibling = referenceNode.nextSibling;
+//     if ( nextSibling && parent ) {
+//       parent.insertBefore(node, referenceNode.nextSibling);
+//     } else if ( parent ) {
+//       parent.appendChild( node );
+//     }
+//   };
+// });
+
+$('.category-button').click(function(){
+  $('.to-katalog-active').removeClass('to-katalog-active');
+  var topp = $(this).offset();
+  $('#subcategory-katalog').css("top", topp.top + 40);
+  console.log( $('#subcategory-katalog').css("top"));
+  $('#subcategory-katalog').slideDown('slow');
+  $(this).addClass(' to-katalog-active');
+
+  // categoryid = this.dataset.categoryid;
+  // categoryUrl = document.getElementById('category-' + categoryid).value;
+  // ajax('/ajax/subcategories-by-category-id?id=' + categoryid, function(data) {
+  //   data = JSON.parse(data);
+  //   document.getElementsByClassName('subcategories-list')[0].innerHTML = '';
+  //   if(!data.length) {
+  //     document.getElementsByClassName('subcategories-list')[0].innerHTML = 'У этой категории нет подкатегорий';
+  //   } else {
+  //     for (var i = 0; i < data.length; i++) {
+  //       document.getElementsByClassName('subcategories-list')[0].innerHTML += '<a href="/category/' + categoryUrl + '?subcategory=' + data[i].id + '"><div class="subcat-item subcat-hover fl">' +
+  //       '<div class="subcat-image fl">' +
+  //       '<img src="site/images/icon-catecory-list.png" alt="">' +
+  //       '</div>' +
+  //       '<div class="subcat-text  fl">' +
+  //       data[i].name +
+  //       '</div>' +
+  //       '</div></a>';
+  //     }
+  //   }
+  // }
 
 
+});
+
+  $('#close-subcategory ').click(function(){
+    $('.to-katalog-active').removeClass('to-katalog-active');
+    $(this).parent().slideUp();
+  });
+
+
+  $('.category-button-mobile').click(function(){
+    $('.to-katalog-active').removeClass('to-katalog-active');
+    var topp = $(this).offset();
+    $('#subcategory-katalog-mobile').css("top", topp.top + 40);
+    console.log( $('#subcategory-katalog-mobile').css("top"));
+    $('#subcategory-katalog-mobile').slideDown('slow');
+    $(this).addClass(' to-katalog-active');
+
+
+  });
+  $('#close-subcategory-mobile ').click(function(){
+    $('.to-katalog-active').removeClass('to-katalog-active');
+    $(this).parent().slideUp();
+  });
+
+
+
+    // выпадающие подкатегории
 
 // fullUrl = 'http://kaleydoskop.ap.org.ua';
 fullUrl = 'http://kaley.com';
@@ -416,6 +485,10 @@ if(cart) {
 
 
 // Слайдер
+
+  $(".owl-carousel").owlCarousel();
+
+  
 mainSlider = document.getElementById('main-slider');
 if(mainSlider != null) {
   images = mainSlider.getElementsByClassName('slider-image');
@@ -1563,5 +1636,4 @@ if(sucessOrderForm){
       quickThreadBlock.style.display = "none";
     });
   }
-
 });

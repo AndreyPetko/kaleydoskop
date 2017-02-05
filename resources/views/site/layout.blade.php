@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -459,7 +460,9 @@
 		</div>
 
 		<div class="main-menu">
+		<a href="/catalog">
 			<div class="main-menu-item @if($_SERVER['REQUEST_URI'] == '/catalog' || stripos($_SERVER['REQUEST_URI'], 'category')) main-menu-active @endif" id="catalog">Каталог</div>
+			</a>
 			<a href="/about"></area><div class="main-menu-item @if($_SERVER['REQUEST_URI'] == '/about') main-menu-active @endif">О компании</div></a>
 			<a href="/wholesalers"><div class="main-menu-item @if($_SERVER['REQUEST_URI'] =='/wholesalers') main-menu-active @endif">Оптовикам</div></a>
 			<a href="/oplata-dostavka"><div class="main-menu-item @if($_SERVER['REQUEST_URI'] =='/oplata-dostavka') main-menu-active @endif">Оплата и доставка</div></a>
@@ -472,6 +475,25 @@
 		<div class="main-menu-dropdown">
 			<div class="main-dropdown-top-line"></div>
 			<div class="main-dropdown-list">
+				<a href="/new-products">
+					<div class="main-dropdown-item">
+						<div class="main-dropdown-content">
+							<div class="main-dropdown-item-image">
+								<img src="{{ url('site/images/icon12.png') }}" alt="">
+							</div>
+							<div class="main-dropdown-item-text">
+								<div>
+									Новинки
+								</div>
+							</div>
+							<div class="main-dropdown-side-border">
+								<!--            <img src="{{ url('site/images/vertical-line.png') }}" alt="">-->
+							</div>
+						</div>
+						<div class="main-dropdown-bottom-border">
+						</div>
+					</div>
+				</a>
 				<a href="/category/schetnyj-krest">
 					<div class="main-dropdown-item">
 						<div class="main-dropdown-content">
@@ -491,7 +513,7 @@
 						</div>
 					</div>
 				</a>
-				<a href="#">
+				<a href="/category/Drugie-tehniki">
 					<div class="main-dropdown-item">
 						<div class="main-dropdown-content">
 							<div class="main-dropdown-item-image">
@@ -510,15 +532,53 @@
 						</div>
 					</div>
 				</a>
-				<a href="#">
+				<a href="/category/Vyshivka-biserom">
 					<div class="main-dropdown-item">
 						<div class="main-dropdown-content">
 							<div class="main-dropdown-item-image">
-								<img src="{{ url('site/images/icon5.png') }}" alt="">
+								<img src="{{ url('site/images/icon8.png') }}" alt="">
 							</div>
 							<div class="main-dropdown-item-text">
 								<div>
-									Краски
+									Вышивка бисером
+								</div>
+							</div>
+							<div class="main-dropdown-side-border">
+								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
+							</div>
+						</div>
+						<div class="main-dropdown-bottom-border">
+						</div>
+					</div>
+				</a>
+				<a href="/category/Ikony">
+					<div class="main-dropdown-item">
+						<div class="main-dropdown-content">
+							<div class="main-dropdown-item-image">
+								<img src="{{ url('site/images/icon2.png') }}" alt="">
+							</div>
+							<div class="main-dropdown-item-text">
+								<div>
+									Иконы
+								</div>
+							</div>
+							<div class="main-dropdown-side-border">
+								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
+							</div>
+						</div>
+						<div class="main-dropdown-bottom-border">
+						</div>
+					</div>
+				</a>
+				<a href="/category/Nabory-dlya-rukodeliya">
+					<div class="main-dropdown-item">
+						<div class="main-dropdown-content">
+							<div class="main-dropdown-item-image">
+								<img src="{{ url('site/images/icon6.png') }}" alt="">
+							</div>
+							<div class="main-dropdown-item-text">
+								<div>
+									Наборы для рукоделия
 								</div>
 							</div>
 							<div class="main-dropdown-side-border">
@@ -548,64 +608,7 @@
 						</div>
 					</div>
 				</a>
-				<a href="#">
-					<div class="main-dropdown-item">
-						<div class="main-dropdown-content">
-							<div class="main-dropdown-item-image">
-								<img src="{{ url('site/images/icon9.png') }}" alt="">
-							</div>
-							<div class="main-dropdown-item-text">
-								<div>
-									Наборы для рукоделия из бисера
-								</div>
-							</div>
-							<div class="main-dropdown-side-border">
-								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
-							</div>
-						</div>
-						<div class="main-dropdown-bottom-border">
-						</div>
-					</div>
-				</a>
-				<a href="#">
-					<div class="main-dropdown-item">
-						<div class="main-dropdown-content">
-							<div class="main-dropdown-item-image">
-								<img src="{{ url('site/images/icon11.png') }}" alt="">
-							</div>
-							<div class="main-dropdown-item-text">
-								<div>
-									Наборы для рисования
-								</div>
-							</div>
-							<div class="main-dropdown-side-border">
-								<!--            <img src="{{ url('site/images/vertical-line.png') }}" alt="">-->
-							</div>
-						</div>
-						<div class="main-dropdown-bottom-border">
-						</div>
-					</div>
-				</a>
-				<a href="#">
-					<div class="main-dropdown-item">
-						<div class="main-dropdown-content">
-							<div class="main-dropdown-item-image">
-								<img src="{{ url('site/images/icon2.png') }}" alt="">
-							</div>
-							<div class="main-dropdown-item-text">
-								<div>
-									Иконы
-								</div>
-							</div>
-							<div class="main-dropdown-side-border">
-								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
-							</div>
-						</div>
-						<div class="main-dropdown-bottom-border">
-						</div>
-					</div>
-				</a>
-				<a href="#">
+					<a href="#">
 					<div class="main-dropdown-item">
 						<div class="main-dropdown-content">
 							<div class="main-dropdown-item-image">
@@ -624,45 +627,7 @@
 						</div>
 					</div>
 				</a>
-				<a href="#">
-					<div class="main-dropdown-item">
-						<div class="main-dropdown-content">
-							<div class="main-dropdown-item-image">
-								<img src="{{ url('site/images/icon6.png') }}" alt="">
-							</div>
-							<div class="main-dropdown-item-text">
-								<div>
-									Гравюры
-								</div>
-							</div>
-							<div class="main-dropdown-side-border">
-								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
-							</div>
-						</div>
-						<div class="main-dropdown-bottom-border">
-						</div>
-					</div>
-				</a>
-				<a href="#">
-					<div class="main-dropdown-item">
-						<div class="main-dropdown-content">
-							<div class="main-dropdown-item-image">
-								<img src="{{ url('site/images/icon8.png') }}" alt="">
-							</div>
-							<div class="main-dropdown-item-text">
-								<div>
-									Вышивка бисером
-								</div>
-							</div>
-							<div class="main-dropdown-side-border">
-								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
-							</div>
-						</div>
-						<div class="main-dropdown-bottom-border">
-						</div>
-					</div>
-				</a>
-				<a href="#">
+				<a href="/category/Prinadlezhnosti">
 					<div class="main-dropdown-item">
 						<div class="main-dropdown-content">
 							<div class="main-dropdown-item-image">
@@ -681,15 +646,15 @@
 						</div>
 					</div>
 				</a>
-				<a href="#">
+					<a href="/category/Nabory-dlya-tvorchestva">
 					<div class="main-dropdown-item">
 						<div class="main-dropdown-content">
 							<div class="main-dropdown-item-image">
-								<img src="{{ url('site/images/icon12.png') }}" alt="">
+								<img src="{{ url('site/images/icon11.png') }}" alt="">
 							</div>
 							<div class="main-dropdown-item-text">
 								<div>
-									Новинки
+									Наборы для творчества
 								</div>
 							</div>
 							<div class="main-dropdown-side-border">
@@ -700,6 +665,47 @@
 						</div>
 					</div>
 				</a>
+				<a href="/category/Pyalbczy-i-stanki">
+					<div class="main-dropdown-item">
+						<div class="main-dropdown-content">
+							<div class="main-dropdown-item-image">
+								<img src="{{ url('site/images/icon14.png') }}" alt="">
+							</div>
+							<div class="main-dropdown-item-text">
+								<div>
+									Пяльцы и станки
+								</div>
+							</div>
+							<div class="main-dropdown-side-border">
+								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
+							</div>
+						</div>
+						<div class="main-dropdown-bottom-border">
+						</div>
+					</div>
+				</a>
+				<a href="/category/Prazdniki-i-pozdravleniya">
+					<div class="main-dropdown-item">
+						<div class="main-dropdown-content">
+							<div class="main-dropdown-item-image">
+								<img src="{{ url('site/images/icon13.png') }}" alt="">
+							</div>
+							<div class="main-dropdown-item-text">
+								<div>
+									Праздники и поздравления
+								</div>
+							</div>
+							<div class="main-dropdown-side-border">
+								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
+							</div>
+						</div>
+						<div class="main-dropdown-bottom-border">
+						</div>
+					</div>
+				</a>
+				
+				
+				
 			</div>
 			<div class="main-dropdown-item button-to-all-categories">
 				<a href="/catalog">
@@ -887,13 +893,15 @@
 		</div>
 	</div>
 </div>
-	<script src="{{url('/site/jquery.js')}}"></script>
-	<script src="{{ url('dist/js/jquery.validate.min.js') }}"></script>
-	<script src="{{ url('/swal/sweetalert.min.js') }}"></script>
-	<script src="{{ url('site/functions.js') }}"></script>
-	<script src="{{ url('site/site.js') }}"></script>
-	<script src="{{ url('site/validate.js')}}"></script>
-	<script src="{{ url('site/jmask.js')}}"></script>
+<script src="{{url('/site/jquery.js')}}"></script>
+<script src="{{ url('dist/js/jquery.validate.min.js') }}"></script>
+<script src="{{ url('/swal/sweetalert.min.js') }}"></script>
+<script src="{{ url('site/functions.js') }}"></script>
+<script src="{{url('/site/owl.carousel.min.js')}}"></script>
+<script src="{{ url('site/site.js') }}"></script>
+<script src="{{ url('site/validate.js')}}"></script>
+<script src="{{ url('site/jmask.js')}}"></script>
+
 @yield('js')
 </body>
 
