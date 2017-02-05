@@ -1793,12 +1793,12 @@ border-color: #d5d3d3;
 }
 
 .subcat-text {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 20px;
     cursor: pointer;
     color: grey;
     margin-left: -20px;
-    text-indent: 30px;
+    text-indent: 26px;
 }
 
 
