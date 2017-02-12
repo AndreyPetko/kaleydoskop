@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
+
+	const THREAD_CATEGORY_ID = 39;
 	protected $table = 'categories';
 	protected $fillable = array('name','url','description', 'image');
 
@@ -99,5 +101,10 @@ class Category extends Model
 
 	public static function getUrlById($id) {
 		return DB::table('categories')->where('id', $id)->value('url');
+	}
+
+	public function isThread()
+	{
+		return $this->id === self::THREAD_CATEGORY_ID;
 	}
 }

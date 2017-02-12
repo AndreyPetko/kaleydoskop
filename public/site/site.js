@@ -3,16 +3,18 @@ window.addEventListener("load", function(){
   // верхние кнопки на странице ниток
 
   var topLineThread = document.getElementById('quick-thread-submit');
+
   if(topLineThread){
+    var lineWidth = topLineThread.offsetWidth;
+
     window.addEventListener("scroll", function(event) {
       var scrollTop = this.scrollY;
 
       if(scrollTop > "450"){
-       topLineThread.style.cssText = "position:fixed; top:0px; width:100%;";
-     }
-     else{
-      topLineThread.style.cssText = "position:inherit";
-    }
+        topLineThread.style.cssText = "position:fixed; top:0px; width:" + lineWidth + "px;";
+      } else {
+        topLineThread.style.cssText = "position:inherit";
+      }
   });
   }
 

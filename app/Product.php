@@ -473,23 +473,42 @@ class Product extends Model
 
 	public static function getBySessionFilter($categoryUrl, $returnType = 1, $currentPage = false) {
 
+
 		if($currentPage) {
 			Paginator::currentPageResolver(function() use ($currentPage) {
 				return $currentPage;
 			});
 		}
 
-		// $cacheKey = 'category-' . $categoryUrl . '-' . $returnType . '-' . $currentPage;
+		if(!isset($_GET['page'])) {
+			$page = 1;
+		} else {
+			$page = $_GET['page'];
+		}
 
-		// $return = Cache::get($cacheKey);
-
-		// $filter = Session::get('filter');
+		$put = false;
 
 
-		// if($return && empty($filter)) {
-		// 	return $return;
-		// }
+		if(empty(Session::get('filter'))
+			&& empty(Session::get('startPrice'))
+			&& empty(Session::get('stopPrice'))
+			&& empty(Session::get('sortType'))
+			&& empty(Session::get('aval'))
+			&& empty(Session::get('brends'))
+		)
+		{
+			$subcatId = Session::get('subcatId');
 
+			$cacheKey = 'subcategory-' . $subcatId . '-' . $returnType . '-' . $page;
+			$return = Cache::get($cacheKey);
+
+
+			if($return) {
+				return $return;
+			} else {
+				$put = true;
+			}
+		}
 
 		$query = self::where('categories.url', $categoryUrl)
 		// ->leftjoin('images', 'products.id', '=', 'images.product_id')
@@ -602,7 +621,10 @@ class Product extends Model
 			$return = $products;
 		}
 
-		// Cache::put($cacheKey, $return, self::CACHE_TIME);
+
+		if($put) {
+			Cache::put($cacheKey, $return, self::CACHE_TIME);
+		}
 
 		return $return;
 	}

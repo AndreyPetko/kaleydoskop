@@ -21,8 +21,8 @@
 @endif
 
 
-<input type="hidden" name="categoryUrl" id="catUrl" value="{{$category->url}}">
-<input type="hidden" name="subcategoryUrl" id="subcatUrl" value="{{$subcategoryUrl}}">
+<input type="hidden" name="categoryUrl" id="catUrl" value="{{ $category->url }}">
+<input type="hidden" name="subcategoryUrl" id="subcatUrl" value="{{ $subcategoryUrl }}">
 @include('elements.breadcrumbs')
 
 <div class="clear"></div>
@@ -237,7 +237,7 @@
 		</div>
 		@else
 		<form action="/add-threads-to-card" method="POST">
-        	{{ csrf_field() }}
+        {{ csrf_field() }}
 		<div id="quick-thread-submit">
 			<button type="reset" id="quick-reset">
 				<div class="item-buy-image">

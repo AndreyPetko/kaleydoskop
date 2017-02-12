@@ -256,11 +256,9 @@ class HomeController extends Controller {
 
 		Session::put('subcatId', $subcategory->id);
 
-
-		// $data['category']  = Subcategory::getByUrl($url);
 		$data['category'] = Category::find($subcategory->category_id);
 
-		if($data['category']->id == 39) {
+		if($data['category']->isThread()) {
 			Session::put('showCount', 9999999);
 		} else {
 			if(Session::get('showCount') == 9999999) {
@@ -269,9 +267,7 @@ class HomeController extends Controller {
 		}
 
 		$data['subcategories'] = Subcategory::getByCategoryId($data['category']->id);
-
 		$data['products'] = Product::getBySessionFilter($data['category']->url, 2);
-
 		$data['attributesValues'] = Attribute::getValues('category', $data['category']->id);
 
 
@@ -283,7 +279,7 @@ class HomeController extends Controller {
 		$data['brends'] = Brend::getByCategoryId($data['category']->id);
 
 
-		if($data['category']->id == 39) {
+		if($data['category']->isThread()) {
 			$data['theads'] = 1;
 			$data['allProducts'] = $product->getAllSubcategoryProducts($subcategory->id);
 		}
