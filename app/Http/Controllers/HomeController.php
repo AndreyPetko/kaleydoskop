@@ -35,9 +35,6 @@ use App\File;
 use App\Keyval;
 
 
-
-
-
 class HomeController extends Controller {
 
 	public function __construct() {
@@ -48,7 +45,8 @@ class HomeController extends Controller {
 	public function getIndex() {
 		$data['mainSlides'] = Slide::getOrderMainSlides();
 		$data['recProducts'] = Product::getRecommended(4);
-		$data['newProducts'] = Product::getNew(4);
+		$data['newProducts'] = Product::getNew($skip = 0, $take = 8);
+
 
 		foreach ($data['newProducts'] as $product) {
 			if($product->images) {
@@ -57,7 +55,6 @@ class HomeController extends Controller {
 					break;
 				}
 			}
-
 		}
 
 		$data['brends'] = Brend::getItemsWithLogo();

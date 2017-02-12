@@ -16,6 +16,8 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
 	const CACHE_TIME = 1440;
+	const NEW_PER_PAGE = 4;
+
 	protected $table = 'products';
 	protected $fillable = array('name', 'article', 'description', 'price', 'wholesale_price' , 'url', 'category_id', 'brend_id', 'quantity', 'active', 'active_wholesale', 'search', 'code', 'group');
 
@@ -271,35 +273,11 @@ class Product extends Model
 		DB::statement("UPDATE products SET recommended = :value WHERE id = :product_id", array($value, $product_id));
 	}
 
-	public static function getNew($limit = 0, $limit2 = 0) {
-		// if(self::isWholesaler()) {
-		// 	if($limit2 != 0) {
-		// 		$recProducts = DB::select('SELECT products.*, images.url as image FROM products LEFT JOIN images ON products.id =  images.product_id WHERE active_wholesale = 1  GROUP BY (products.id) ORDER BY products.id DESC LIMIT :limit, :limit2', array($limit, $limit2));
-		// 	} else {
-		// 		if($limit != 0) {
-		// 			$recProducts = DB::select('SELECT products.*, images.url as image FROM products LEFT JOIN images ON products.id = images.product_id WHERE active_wholesale = 1  GROUP BY (products.id) ORDER BY products.id DESC LIMIT :limit', array($limit));
-		// 		} else {
-		// 			$recProducts = DB::select('SELECT products.*, images.url as image FROM products LEFT JOIN images ON products.id =  images.product_id  WHERE active_wholesale = 1 GROUP BY (products.id)');
-		// 		}
-		// 	}
-		// } else {
-		// 	if($limit2 != 0) {
-		// 		$recProducts = DB::select('SELECT products.*, images.url as image FROM products LEFT JOIN images ON products.id =  images.product_id WHERE active = 1  GROUP BY (products.id) ORDER BY products.id DESC LIMIT :limit, :limit2', array($limit, $limit2));
-		// 	} else {
-		// 		if($limit != 0) {
-		// 			$recProducts = DB::select('SELECT products.*, images.url as image FROM products LEFT JOIN images ON products.id = images.product_id WHERE active = 1  GROUP BY (products.id) ORDER BY products.id DESC LIMIT :limit', array($limit));
-		// 		} else {
-		// 			$recProducts = DB::select('SELECT products.*, images.url as image FROM products LEFT JOIN images ON products.id =  images.product_id  WHERE active = 1 GROUP BY (products.id)');
-		// 		}
-		// 	}
-
-		// }
-
-
+	public static function getNew($skip = 0, $perPage = self::NEW_PER_PAGE) {
 		if(self::isWholesaler()) {
-			$recProducts = self::where('active_wholesale', 1)->skip($limit2)->take($limit)->get();
+			$recProducts = self::where('active_wholesale', 1)->skip($skip)->take($perPage)->get();
 		} else {
-			$recProducts = self::where('active', 1)->skip($limit2)->take($limit)->get();
+			$recProducts = self::where('active', 1)->skip($skip)->take($perPage)->get();
 		}
 
 

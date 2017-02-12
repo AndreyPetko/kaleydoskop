@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Brend;
 use App\Cart;
 use App\Comparison;
@@ -15,19 +16,26 @@ use Cookie;
 use DB;
 use Session;
 
+
 class AjaxController extends Controller {
 
 	public function getRecommended() {
 		$click = (int)$_GET['click'];
 		$recProducts = Product::getRecommended(4 + 8*$click,8);
 		$recProducts = Product::setWholesalePrice($recProducts, 1);
+
+
 		return json_encode($recProducts);
 	}
 
 	public function getNew() {
 		$click = (int)$_GET['click'];
-		$newProducts = Product::getNew(4 + 8*$click,8);
+
+		$skip = 8 + 4 * $click;
+		$newProducts = Product::getNew($skip);
 		$newProducts = Product::setWholesalePrice($newProducts, 1);
+
+
 		return json_encode($newProducts);
 	}
 

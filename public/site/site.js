@@ -741,7 +741,7 @@ document.getElementsByClassName('show-less-text')[0].addEventListener('click', f
   for (var i = listItems.length - 1; i >= 4; i--) {
     remove(listItems[i]);
   };
-  heightAfter = document.getElementsByClassName('main-items-list')[0].clientHeight;
+  var heightAfter = document.getElementsByClassName('main-items-list')[0].clientHeight;
   scroll(heightAfter - heightBefore);
   document.getElementsByClassName('show-less-text')[0].style.display = 'none';
   document.getElementById('show-rec').style.display = 'block';
@@ -749,16 +749,20 @@ document.getElementsByClassName('show-less-text')[0].addEventListener('click', f
 });
 
 
-newClick = 0
+var newClick = 0;
 // Показать больше новых товаров 
-document.getElementsByClassName('show-more-text')[1].addEventListener('click', function(){
+document.getElementsByClassName('show-more-text')[1].addEventListener('click', function() {
   heightBefore = document.getElementsByClassName('main-items-list')[1].clientHeight;
-  ajax('ajax/new?click=' + newClick, function(data){
+
+  ajax('ajax/new?click=' + newClick, function(data) {
     data = JSON.parse(data);
-    data.forEach(function(item, i, data){
-      addItem(item,1);
+
+    data.forEach(function(item, i, data) {
+      addItem(item, 1);
     });
-    heightAfter = document.getElementsByClassName('main-items-list')[1].clientHeight;
+
+    var heightAfter = document.getElementsByClassName('main-items-list')[1].clientHeight;
+
     document.getElementsByClassName('show-less-text')[1].style.display = 'block';
     scroll(heightAfter - heightBefore);
     // newClick++;
@@ -777,14 +781,20 @@ document.getElementsByClassName('show-more-text')[1].addEventListener('click', f
 
 //Свернуть новые элементы 
 document.getElementsByClassName('show-less-text')[1].addEventListener('click', function(){
-  listItems = document.getElementsByClassName('main-items-list')[1].getElementsByClassName('main-item');
-  heightBefore = document.getElementsByClassName('main-items-list')[1].clientHeight;
-  for (var i = listItems.length - 1; i >= 4; i--) {
+  var listItems = document.getElementsByClassName('main-items-list')[1].getElementsByClassName('main-item');
+  var heightBefore = document.getElementsByClassName('main-items-list')[1].clientHeight;
+
+  for (var i = listItems.length - 1; i >= 8; i--) {
     remove(listItems[i]);
   };
-  heightAfter = document.getElementsByClassName('main-items-list')[1].clientHeight;
-  scroll(heightAfter - heightBefore +170*(newClick + 1));
+
+  var heightAfter = document.getElementsByClassName('main-items-list')[1].clientHeight;
+
+
+  scroll(heightAfter - heightBefore + 170 * (newClick + 1) );
+
   newClick = 0;
+
   document.getElementsByClassName('show-less-text')[1].style.display = 'none';
   document.getElementsByClassName('show-more-text')[1].style.display = 'block';
 });

@@ -206,7 +206,7 @@
    <div class="item-image">
      @if($newProduct->image)
      <a href="/product/{{$newProduct->url}}">
-       @if($newProduct->category_id == 39) 
+       @if($newProduct->category_id == 39)
        <img src="{{ url('site/images/IMG_9745-450x300.png') }}">
        @else
        <img src="{{ url('product_images/' . $newProduct->image) }}">
