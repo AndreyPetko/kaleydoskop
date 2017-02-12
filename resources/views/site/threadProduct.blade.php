@@ -1,5 +1,9 @@
 @extends('site.layout')
 
+@section('header')
+    <title>{{ $product->name }}</title>
+@stop
+
 @section('content')
 
 <div class="announce-the-immediate">

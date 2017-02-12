@@ -2696,7 +2696,7 @@ border-color: #d5d3d3;
 }
 
 .products-attributes-list {
-    width: 950px;
+    /*width: 950px;*/
     padding-top: 20px;
     border-color: #e8e8e8;
     border-style: solid;

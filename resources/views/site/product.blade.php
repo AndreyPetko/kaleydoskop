@@ -1,5 +1,8 @@
 @extends('site.layout')
 
+@section('header')
+    <title>{{ $product->name }}</title>
+@stop
 
 @section('headContent')
 <div class="fast-order">
@@ -295,7 +298,7 @@
             <!-- @foreach($attributes as $attribute) -->
             <!-- @if(!empty($attribute->value)) -->
             <!-- <div class="products-attribute-item"> -->
-                <!-- <strong>{{$attribute->name}}:</strong> {{$attribute->value}} -->
+            <!-- <strong>{{$attribute->name}}:</strong> {{$attribute->value}} -->
             <!-- </div> -->
             <!-- @endif -->
             <!-- @endforeach -->
