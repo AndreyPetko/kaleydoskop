@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	if(categorySubCategoryButton) {
 		var categorySubCategoryDiv = document.getElementById('categorySubCategoryDiv');
 		var blockTria = document.getElementById('block-tria');
-		categorySubCategoryDiv.style.display = 'none';
+		// categorySubCategoryDiv.style.display = 'none';
 		categorySubCategoryButton.addEventListener("click", function(){
 
 			if(categorySubCategoryDiv.style.display == 'none'){

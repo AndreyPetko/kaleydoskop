@@ -143,7 +143,6 @@
 		</div>
 		<div class="subcategories-list" id="categorySubCategoryDiv">
 
-
 			<div class="subcat-item fl" id="0">
 				<div class="subcat-image-home fl">
 					<img src="{{ url('/site/images/imagesGG60IGZZ.png') }}" alt="">

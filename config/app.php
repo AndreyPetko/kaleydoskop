@@ -150,7 +150,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
 
-        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        // Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         ],
 
     /*
@@ -201,7 +201,7 @@ return [
     'View'      => Illuminate\Support\Facades\View::class,
     // 'Image' => Intervention\Image\Facades\Image::class
 
-        // 'Debugbar' => Barryvdh\Debugbar\Facade::class,
+    'Debugbar' => Barryvdh\Debugbar\Facade::class,
 
     ],
 
