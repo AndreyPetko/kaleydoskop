@@ -896,10 +896,15 @@
 <script src="{{ url('dist/js/jquery.validate.min.js') }}"></script>
 <script src="{{ url('/swal/sweetalert.min.js') }}"></script>
 <script src="{{ url('site/functions.js') }}"></script>
-<script src="{{url('/site/owl.carousel.min.js')}}"></script>
 <script src="{{ url('site/site.js') }}"></script>
 <script src="{{ url('site/validate.js')}}"></script>
 <script src="{{ url('site/jmask.js')}}"></script>
+<script src="{{url('/site/owl-carousel/owl.carousel.js')}}"></script>
+<link rel="stylesheet" href="{{ url('site/owl-carousel/owl.carousel.css') }}">
+<link rel="stylesheet" href="{{ url('site/owl-carousel/owl.theme.default.css') }}">
+<!-- <link rel="stylesheet" href="catalog/view/javascript/owl-carousel/owl.carousel.css">
+<link rel="stylesheet" href="catalog/view/javascript/owl-carousel/owl.theme.default.css"> -->
+<!-- <script src="catalog/view/javascript/owl-carousel/owl.carousel.js"></script> -->
 
 @yield('js')
 </body>

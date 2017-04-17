@@ -443,6 +443,10 @@ a{
     .slider  img {
      width: 100%;       
  }
+ .slider-block{
+    height: 320px;
+    overflow: hidden;
+ }
 
  .main-title {
 

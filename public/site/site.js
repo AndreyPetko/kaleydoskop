@@ -509,7 +509,13 @@ if(cart) {
 
 // Слайдер
 
-$(".owl-carousel").owlCarousel();
+$('.owl-carousel').owlCarousel({
+    loop:true,
+    dots:true,
+    autoplay:true,
+    items:1,
+    nav:true
+})
 
 
 mainSlider = document.getElementById('main-slider');
