@@ -52,7 +52,22 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none; }
-  .owl-carousel.owl-loaded {
+  .owl-prev{
+    float: left;
+    margin-top: -180px;
+    margin-left: 10px;
+    } 
+      .owl-next{
+    float: right;
+     margin-top: -180px;
+     margin-right: 10px;
+    } 
+    .owl-nav{
+      position: relative;
+
+
+    }
+     .owl-carousel.owl-loaded {
     display: block; }
   .owl-carousel.owl-loading {
     opacity: 0;

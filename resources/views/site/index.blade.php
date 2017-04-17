@@ -48,78 +48,18 @@
 
 @section('content')
 
-
 @if(!Auth::check() || Auth::user()->role == 'retail')
 <!-- <div class="slider-block"> -->
- <div class="owl-carousel">
-
+<div class="owl-carousel">
   @foreach($mainSlides as $slide)
   <div class="slider-image ">
-<!--   slider-image -->
-    <img src="{{ url('slides_images/' . $slide->image) }}" alt="">
-  </div>
-  @endforeach
-
-<!-- </div> -->
-<div class="slider-up">
-  <center>
-    <div class="slide-top-img">
-      <img src="{{ url('site/images/slide-bg-up.png') }}">
-    </div>
-    <div class="slide-text-content">
-      @foreach($mainSlides as $slide)
-      <div>
-        {!!$slide->text!!}
-      </div>
-      @endforeach
-
-    </div>
-  </center>
-</div>
-<div class="slider-bg">
-  
-</div>
-</div>
-
-
-<!-- <div class="slide-left" id="main-slide-left">
- <img src="{{ url('site/images/arrow-big2.png') }}" alt="">
-</div>
-<div class="slide-right" id="main-slide-right">
- <img src="{{ url('site/images/arrow-big.png') }}" alt="">
-</div>
-<div class="points">
-  <center>
-    <div id="points">
-    </div>
-  </center>
-</div> -->
-<!-- <div class="slider" id="main-slider">
- <div class="slider-images">
-  @foreach($mainSlides as $slide)
-  <div class="slider-image">
+    <!--   slider-image -->
     <img src="{{ url('slides_images/' . $slide->image) }}" alt="">
   </div>
   @endforeach
 
 </div>
-</div> -->
-<!-- <div class="slider-up">
-  <center>
-    <div class="slide-top-img">
-      <img src="{{ url('site/images/slide-bg-up.png') }}">
-    </div>
-    <div class="slide-text-content">
-      @foreach($mainSlides as $slide)
-      <div>
-        {!!$slide->text!!}
-      </div>
-      @endforeach
 
-    </div>
-  </center>
-</div>
-<div class="slider-bg"></div> -->
 
 @endif
 
@@ -140,14 +80,14 @@
   @foreach($recProducts as $recProduct)
   <div class="main-item">
 
-  @if($recProduct->new)
+    @if($recProduct->new)
     <div class="new-item">
-        <img src="{{ url('/site/images/new_item.png') }}">
+      <img src="{{ url('/site/images/new_item.png') }}">
     </div>
     @endif
 
 
-   <div class="magnifier" data-productid="{{$recProduct->id}}">
+    <div class="magnifier" data-productid="{{$recProduct->id}}">
      <img src="{{ url('site/images/icon-loop.png') }}" alt="">
    </div>
    <div class="item-image">
@@ -223,11 +163,11 @@
   <div class="main-item">
     @if($newProduct->new)
     <div class="new-item">
-        <img src="{{ url('/site/images/new_item.png') }}">
+      <img src="{{ url('/site/images/new_item.png') }}">
     </div>
     @endif
 
-   <div class="magnifier" data-productid="{{$newProduct->id}}">
+    <div class="magnifier" data-productid="{{$newProduct->id}}">
      <img src="{{ url('site/images/icon-loop.png') }}" alt="">
    </div>
    <div class="item-image">

@@ -514,114 +514,15 @@ $('.owl-carousel').owlCarousel({
     dots:true,
     autoplay:true,
     items:1,
-    nav:true
+    nav:true,
+    navText: ["<img src='site/images/arrow-big2.png'>","<img src='site/images/arrow-big.png'>"]
+    // navContainer:  url('site/images/arrow-big.png')
 })
 
 
-mainSlider = document.getElementById('main-slider');
-if(mainSlider != null) {
-  images = mainSlider.getElementsByClassName('slider-image');
-  length = images.length;
 
 
 
-//Отображаем поинты
-pointsBlock = document.getElementById('points');
-pointsBlock.innerHTML += '<img src="/site/images/slider-rond.png" alt="">';
-for (var i = length - 1; i >= 1; i--) {
-  pointsBlock.innerHTML += '<img src="/site/images/slider-rond-active.png" alt="">';
-};
-
-
-
-
-//Отображаем первый текст
-showText(0);
-
-current = 1;
-slideRight = document.getElementById('main-slide-right');
-
-points = document.getElementById('points');
-
-
-setInterval(function(){
-  sliderImages = mainSlider.getElementsByClassName('slider-images')[0];
-  if(current > images.length - 1) {
-    current = 0;
-  }
-
-  changePoint(current + 1);
-  changeMargin(current);
-  showText(current);
-  current++;
-}, 3000);
-
-
-// Клик по значку слайд вправо
-slideRight.addEventListener('click', function(){
-  sliderImages = mainSlider.getElementsByClassName('slider-images')[0];
-  if(current > images.length - 1) {
-    current = 0;
-  }
-
-  changePoint(current + 1);
-  changeMargin(current);
-  showText(current);
-  current++;
-});
-
-slideLeft = document.getElementById('main-slide-left');
-
-// клик по слайд влево
-slideLeft.addEventListener('click', function(){
-
-  if(current > 1) {
-    changeMargin(current - 2);
-    showText(current - 2);
-    current--;
-    changePoint(current);
-  }
-});
-
-pointsImg = points.getElementsByTagName('img');
-
-// Клики по поинтам
-for(var i=0; i < pointsImg.length; i++) {
- (function(index) {
-  pointsImg[index].addEventListener("click", function() {
-    current = index + 1;
-    changePoint(current);
-    changeMargin(index);
-    showText(index);
-  });
-
-})(i);
-
-}
-
-
-//Клик на слайдере по стрелке вверх
-imgTop = document.getElementsByClassName('slide-top-img')[0];
-imgTopClick = 0;
-imgTop.addEventListener('click', function(){
-  if(imgTopClick == 0) {
-    document.getElementsByClassName('slide-text-content')[0].style.display = 'table';
-    document.getElementsByClassName('slider-up')[0].style.marginLeft = '225px';
-    document.getElementsByClassName('slider-up')[0].style.marginTop = '-125px';
-    imgTop.getElementsByTagName('img')[0].setAttribute('src', '/site/images/slide-bg-down.png');
-    document.getElementsByClassName('slide-top-img')[0].getElementsByTagName('img')[0].style.marginTop = '10px';
-    imgTopClick = 1;
-  } else {
-    document.getElementsByClassName('slide-text-content')[0].style.display = 'none';
-    document.getElementsByClassName('slider-up')[0].style.marginTop = '-27px';
-    document.getElementsByClassName('slider-up')[0].style.marginLeft = '508px';
-    imgTop.getElementsByTagName('img')[0].setAttribute('src', '/site/images/slide-bg-up.png');
-    document.getElementsByClassName('slide-top-img')[0].getElementsByTagName('img')[0].style.marginTop = '0px';
-    imgTopClick = 0;
-  }
-  
-});
-}
 
 
 //Выпадающее меню 
