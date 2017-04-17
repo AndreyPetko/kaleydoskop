@@ -50,38 +50,17 @@
 
 
 @if(!Auth::check() || Auth::user()->role == 'retail')
-<!--  <div class="owl-carousel">
+<!-- <div class="slider-block"> -->
+ <div class="owl-carousel">
+
   @foreach($mainSlides as $slide)
-  <div class="slider-image">
+  <div class="slider-image ">
+<!--   slider-image -->
     <img src="{{ url('slides_images/' . $slide->image) }}" alt="">
   </div>
   @endforeach
 
-</div> -->
-
-
-<div class="slide-left" id="main-slide-left">
- <img src="{{ url('site/images/arrow-big2.png') }}" alt="">
-</div>
-<div class="slide-right" id="main-slide-right">
- <img src="{{ url('site/images/arrow-big.png') }}" alt="">
-</div>
-<div class="points">
-  <center>
-    <div id="points">
-    </div>
-  </center>
-</div>
-<div class="slider" id="main-slider">
- <div class="slider-images">
-  @foreach($mainSlides as $slide)
-  <div class="slider-image">
-    <img src="{{ url('slides_images/' . $slide->image) }}" alt="">
-  </div>
-  @endforeach
-
-</div>
-</div>
+<!-- </div> -->
 <div class="slider-up">
   <center>
     <div class="slide-top-img">
@@ -97,9 +76,57 @@
     </div>
   </center>
 </div>
-<div class="slider-bg"></div>
+<div class="slider-bg">
+  
+</div>
+</div>
+
+
+<!-- <div class="slide-left" id="main-slide-left">
+ <img src="{{ url('site/images/arrow-big2.png') }}" alt="">
+</div>
+<div class="slide-right" id="main-slide-right">
+ <img src="{{ url('site/images/arrow-big.png') }}" alt="">
+</div>
+<div class="points">
+  <center>
+    <div id="points">
+    </div>
+  </center>
+</div> -->
+<!-- <div class="slider" id="main-slider">
+ <div class="slider-images">
+  @foreach($mainSlides as $slide)
+  <div class="slider-image">
+    <img src="{{ url('slides_images/' . $slide->image) }}" alt="">
+  </div>
+  @endforeach
+
+</div>
+</div> -->
+<!-- <div class="slider-up">
+  <center>
+    <div class="slide-top-img">
+      <img src="{{ url('site/images/slide-bg-up.png') }}">
+    </div>
+    <div class="slide-text-content">
+      @foreach($mainSlides as $slide)
+      <div>
+        {!!$slide->text!!}
+      </div>
+      @endforeach
+
+    </div>
+  </center>
+</div>
+<div class="slider-bg"></div> -->
 
 @endif
+
+
+
+
+
 
 <div class="main-title">
   Рекомендуем
