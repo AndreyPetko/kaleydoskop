@@ -1,5 +1,10 @@
 @extends('site.layout')
 
+@section('header')
+    <title>Статьи</title>
+    <meta name="description" content="Cтраница списка статей">
+@stop
+
 
 @section('content')
 @include('elements.breadcrumbs')
