@@ -2,6 +2,9 @@
 
 @section('header')
     <title>{{ $product->name }}</title>
+    @if($product->description)
+        <meta name="description" content="{{ strip_tags($product->description) }}">
+    @endif
 @stop
 
 @section('content')

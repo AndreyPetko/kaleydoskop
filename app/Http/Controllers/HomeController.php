@@ -37,11 +37,19 @@ use App\Keyval;
 
 class HomeController extends Controller {
 
+	/**
+	 * { function_description }
+	 */
 	public function __construct() {
 		$this->request = Request::all();
 		unset($this->request['_token']);
 	}
 
+	/**
+	 * Gets the index.
+	 *
+	 * @return     <type>  The index.
+	 */
 	public function getIndex() {
 		$data['mainSlides'] = Slide::getOrderMainSlides();
 		$data['recProducts'] = Product::getRecommended(4);
@@ -65,6 +73,11 @@ class HomeController extends Controller {
 		return view('site.index', $data);
 	}
 
+	/**
+	 * Gets the new products.
+	 *
+	 * @return     <type>  The new products.
+	 */
 	public function getNewProducts() {
 		$products = Product::getNew(52);
 
@@ -82,6 +95,11 @@ class HomeController extends Controller {
 		return view('site.newList', compact('products', 'breadcrumbs'));
 	}
 
+	/**
+	 * Gets the about.
+	 *
+	 * @return     <type>  The about.
+	 */
 	public function getAbout() {
 		$textVar = Text::getItem('about');
 
@@ -91,6 +109,11 @@ class HomeController extends Controller {
 		return view('site.simpleTextPage')->with('textVar', $textVar)->with('title', $title)->with('breadcrumbs', $breadcrumbs);
 	}
 
+	/**
+	 * Gets the wholesalers.
+	 *
+	 * @return     <type>  The wholesalers.
+	 */
 	public function getWholesalers() {
 		if(!Auth::check() || Auth::user()->role == 'retail' || Auth::user()->role == 'admin') {
 			$textVar = Text::getItem('wholesalersAll');
@@ -106,6 +129,13 @@ class HomeController extends Controller {
 	}
 
 
+	/**
+	 * Gets the product.
+	 *
+	 * @param      string  $url    The url
+	 *
+	 * @return     <type>  The product.
+	 */
 	public function getProduct($url = '') {
 		if($url == '') {
 			return view('site.noproduct');
@@ -225,6 +255,13 @@ class HomeController extends Controller {
 	// }
 
 
+	/**
+	 * Gets the category.
+	 *
+	 * @param      <type>  $url    The url
+	 *
+	 * @return     <type>  The category.
+	 */
 	public function getCategory($url)
 	{
 		$category = Category::getByUrl($url);
@@ -234,6 +271,14 @@ class HomeController extends Controller {
 	}
 
 
+	/**
+	 * Gets the subcategory.
+	 *
+	 * @param      <type>        $url      The url
+	 * @param      \App\Product  $product  The product
+	 *
+	 * @return     <type>        The subcategory.
+	 */
 	public function getSubcategory($url, Product $product) {
 
 		if($url != Session::get('categoryUrl')) {
@@ -288,6 +333,13 @@ class HomeController extends Controller {
 		return view('site.category', $data);
 	}
 
+	/**
+	 * Posts an add threads to card.
+	 *
+	 * @param      \App\Product  $productEntity  The product entity
+	 *
+	 * @return     <type>        ( description_of_the_return_value )
+	 */
 	public function postAddThreadsToCard(Product $productEntity)
 	{
 		$products = $this->request['products'];
@@ -302,6 +354,11 @@ class HomeController extends Controller {
 	}
 
 
+	/**
+	 * Posts an add review.
+	 *
+	 * @return     <type>  ( description_of_the_return_value )
+	 */
 	public function postAddReview() {
 		if($this->request['name'] == 'Admin') {
 			if(!Auth::check() || Auth::user()->role != 'admin') {
@@ -313,6 +370,13 @@ class HomeController extends Controller {
 		return Redirect::back();
 	}
 
+	/**
+	 * Gets the search.
+	 *
+	 * @param      string  $query  The query
+	 *
+	 * @return     <type>  The search.
+	 */
 	public function getSearch($query = '') {
 		$products = Product::search($query);
 
@@ -322,6 +386,11 @@ class HomeController extends Controller {
 		return view('site.search')->with('products', $products)->with('query', $query)->with('breadcrumbs', $breadcrumbs);
 	}
 
+	/**
+	 * Posts an add intake message.
+	 *
+	 * @return     <type>  ( description_of_the_return_value )
+	 */
 	public function postAddIntakeMessage() {
 		Intake::addItem($this->request);
 		return Redirect::back();
@@ -329,6 +398,9 @@ class HomeController extends Controller {
 
 
 
+	/**
+	 * Gets the ftp file.
+	 */
 	public function getFtpFile() {
 		$result = Ftp::getFile();
 
@@ -337,6 +409,11 @@ class HomeController extends Controller {
 		}
 	}
 
+	/**
+	 * Gets the cartesian.
+	 *
+	 * @return     <type>  The cartesian.
+	 */
 	public function getCart() {
 		$cart = Cart::getInstance();
 		$cartInfo = $cart->getProductsAndTotal();
@@ -348,6 +425,13 @@ class HomeController extends Controller {
 		return view('site.cart', compact('products', 'total', 'breadcrumbs', 'deliveryPricesStr'));
 	}
 
+	/**
+	 * Posts a send feedback.
+	 *
+	 * @param      \App\Feedback  $feedback  The feedback
+	 *
+	 * @return     <type>         ( description_of_the_return_value )
+	 */
 	public function postSendFeedback(Feedback $feedback) {
 		if(Auth::check() && Auth::user()->role == 'wholesaler') {
 			$this->request['user_type'] = 'wholesaler';
@@ -361,6 +445,11 @@ class HomeController extends Controller {
 		return Redirect::back()->with('feedback', 1);
 	}
 
+	/**
+	 * Posts an add callback.
+	 *
+	 * @return     <type>  ( description_of_the_return_value )
+	 */
 	public function postAddCallback() {
 
 		$email = 'andreypetko3@gmail.com';
@@ -374,6 +463,11 @@ class HomeController extends Controller {
 		return Redirect::back()->with('callback', 1);
 	}
 
+	/**
+	 * Posts an add sendmail.
+	 *
+	 * @return     <type>  ( description_of_the_return_value )
+	 */
 	public function postAddSendmail() {
 		if(Auth::check()) {
 			$user_id = Auth::user()->id;
