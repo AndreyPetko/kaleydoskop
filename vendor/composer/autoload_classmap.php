@@ -563,5 +563,6 @@ return array(
     'UpdateSendmailTable' => $baseDir . '/database/migrations/2016_03_16_155307_update_sendmail_table.php',
     'UpdateSubcategoriesTable' => $baseDir . '/database/migrations/2015_12_24_103722_update_subcategories_table.php',
     'UpdateTextTable' => $baseDir . '/database/migrations/2017_04_17_151305_update_text_table.php',
+    'UpdateTextTable2' => $baseDir . '/database/migrations/2017_04_17_152417_update_text_table_2.php',
     'UpdateUsersTable' => $baseDir . '/database/migrations/2016_01_18_161032_update_users_table.php',
 );
