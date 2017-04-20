@@ -5,13 +5,12 @@ window.addEventListener("load", function(){
   var topLineThread = document.getElementById('quick-thread-submit');
 
   if(topLineThread){
-    var lineWidth = topLineThread.offsetWidth;
 
     window.addEventListener("scroll", function(event) {
       var scrollTop = this.scrollY;
 
       if(scrollTop > "450"){
-        topLineThread.style.cssText = "position:fixed; top:0px; width:" + lineWidth + "px;";
+        topLineThread.style.cssText = "position:fixed; top:0px; width:90%";
       } else {
         topLineThread.style.cssText = "position:inherit";
       }

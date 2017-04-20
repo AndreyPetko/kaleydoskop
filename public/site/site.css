@@ -1895,7 +1895,7 @@ border-color: #d5d3d3;
 }
 
 #quick-thread-submit{
-    width: 1200px;
+    width: 100%;
     overflow: hidden;
     z-index: 100;
     background-color: white;
