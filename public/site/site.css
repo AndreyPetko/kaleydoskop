@@ -157,9 +157,17 @@ a{
     margin-top: 10px;
     padding: 20px;
     text-align: justify;
+    max-width: 1000px;
+    margin: 0 auto;
 }
+.oplata-dostavka-content p {
 
-
+color: #6b6b6b;
+line-height: 24px;
+}
+.oplata-dostavka-content ul{
+padding-left: 40px;
+}
 .error {
     clear: both;
     /*position: absolute;*/
@@ -1895,7 +1903,7 @@ border-color: #d5d3d3;
 }
 
 #quick-thread-submit{
-    width: 1200px;
+    width: 100%;
     overflow: hidden;
     z-index: 100;
     background-color: white;

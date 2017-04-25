@@ -24,3 +24,12 @@
  .block2-line2-text {
     margin-left: 10px;
 }
+.products-right-sidebar{
+	display: none;
+}
+.product-info {
+	width: 90%;
+}
+.product-title{
+	width: 100%;
+}
