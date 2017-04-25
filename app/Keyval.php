@@ -37,8 +37,8 @@ class Keyval extends Model {
 	}
 
 	public static function updateContacts($request, $type) {
-		DB::table('keyval')->where('key', $type . '_phone1')->update(['value' => $request['phone1']]);
-		DB::table('keyval')->where('key', $type . '_phone2')->update(['value' => $request['phone2']]);
+		DB::table('keyval')->where('key', $type . '_phone_1')->update(['value' => $request['phone1']]);
+		DB::table('keyval')->where('key', $type . '_phone_2')->update(['value' => $request['phone2']]);
 		DB::table('keyval')->where('key', $type . '_email')->update(['value' => $request['email']]);
 	}
 
