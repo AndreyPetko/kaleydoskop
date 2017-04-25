@@ -10,7 +10,7 @@
             <div class="info-text">
                 <div class="numbers">{{$contacts['phone1']}} &nbsp;&nbsp;&nbsp;&nbsp; {{$contacts['phone2']}}</div>
             </div>
-            <div class="info-text">Email</div>
+            <div class="info-text">E-mail</div>
             <div class="info-text">
                 <p class="your-attachment">Ваши предложения, вопросы, пожелания:</p>
                 <p class="e-mail">{{$contacts['email']}}</p>
