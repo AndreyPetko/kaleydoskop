@@ -23,7 +23,7 @@
 <div class="category-content">
     <div class="category-katalog-content">
         <div class="category-title">
-            Категории
+            <h1>Категории</h1>
         </div>
         <div class="category-title-line">
         </div>
@@ -79,7 +79,7 @@
 </div>
 
 <div class="category-title">
-    Категории
+    <h1>Категории</h1>
 </div>
 <div class="category-title-line">
 </div>

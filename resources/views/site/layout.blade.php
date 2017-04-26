@@ -74,14 +74,14 @@
 			<div class="intake-close fr" id="sendmail-close"><img src="{{ url('site/images/close-photo.png') }}" alt=""></div>
 		</div>
 		<div class="fast-order-text">
-			Пожалуйста, введите свой Email:
+			Пожалуйста, введите свой E-mail:
 		</div>
 
 		<form method="POST" action="/add-sendmail">
 			<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 			<div class="fast-order-form-row">
-				<div class="fast-order-label fl">Email:</div>
+				<div class="fast-order-label fl">E-mail:</div>
 				<div class="fast-order-input fl"><input type="text" name="email" @if(Auth::check()) value="{{Auth::user()->email}}" @endif></div>
 			</div>
 
@@ -333,6 +333,7 @@
 				<a href="/">
 					<img src="{{ url('site/images/main-logo.png') }}" alt="">
 				</a>
+
 			</div>
 			<div class="header-content-items">
 				<div class="header-content-block-1">
@@ -414,7 +415,8 @@
 				</div>
 				<div class="header-content-block-2">
 					<div class="header-block2-line-1">
-						Режим работы: Пн-Пт 10.00 - 18.00
+					<h1> Наборы для вышивания и рукоделия</h1>
+						<p>Режим работы: Пн-Пт 10.00 - 18.00</p>
 					</div>
 					<div class="header-block2-line-2" id="open-cart">
 						<div class="block2-line2-img"><img src="{{ url('site/images/icon-cart2.png') }}" alt=""></div>
