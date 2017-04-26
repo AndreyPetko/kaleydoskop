@@ -415,7 +415,7 @@
 				</div>
 				<div class="header-content-block-2">
 					<div class="header-block2-line-1">
-					<h1> Наборы для вышивания и рукоделия</h1>
+						<h1> Наборы для вышивания и рукоделия</h1>
 						<p>Режим работы: Пн-Пт 10.00 - 18.00</p>
 					</div>
 					<div class="header-block2-line-2" id="open-cart">
@@ -461,8 +461,8 @@
 		</div>
 
 		<div class="main-menu">
-		<a href="/catalog">
-			<div class="main-menu-item @if($_SERVER['REQUEST_URI'] == '/catalog' || stripos($_SERVER['REQUEST_URI'], 'category')) main-menu-active @endif" id="catalog">Каталог</div>
+			<a href="/catalog">
+				<div class="main-menu-item @if($_SERVER['REQUEST_URI'] == '/catalog' || stripos($_SERVER['REQUEST_URI'], 'category')) main-menu-active @endif" id="catalog">Каталог</div>
 			</a>
 			<a href="/about"></area><div class="main-menu-item @if($_SERVER['REQUEST_URI'] == '/about') main-menu-active @endif">О компании</div></a>
 			<a href="/wholesalers"><div class="main-menu-item @if($_SERVER['REQUEST_URI'] =='/wholesalers') main-menu-active @endif">Оптовикам</div></a>
@@ -609,7 +609,7 @@
 						</div>
 					</div>
 				</a>
-					<a href="#">
+				<a href="#">
 					<div class="main-dropdown-item">
 						<div class="main-dropdown-content">
 							<div class="main-dropdown-item-image">
@@ -647,7 +647,7 @@
 						</div>
 					</div>
 				</a>
-					<a href="/category/Nabory-dlya-tvorchestva">
+				<a href="/category/Nabory-dlya-tvorchestva">
 					<div class="main-dropdown-item">
 						<div class="main-dropdown-content">
 							<div class="main-dropdown-item-image">
@@ -720,28 +720,29 @@
 		<div id="index-content">
 			@yield('content')
 		</div>
-
-		<div class="footer">
+	</div>
+	<div class="footer">
+		<div class="footer-wrapper">
 			<div class="footer-line-1">
 				<div class="footer-logo">
 					<img src="{{ url('site/images/logo-footer.png') }}" alt="">
 				</div>
 				<div class="footer-links">
-					<div class="footer-links-item"><a href="#">Инструкция для наборов Dimensions</a></div>
-					<div class="footer-links-item"><a href="#">Скидки</a></div>
 					<div class="footer-links-item"><a href="/catalog">Каталог</a></div>
-					<div class="footer-links-item"><a href="#">О компании</a></div>
-					<div class="footer-links-item"><a href="#">Описание красок FolkArt</a></div>
+					<div class="footer-links-item"><a href="/new-products">Новинки</a></div>
+					<div class="footer-links-item"><a href="#">Скидки</a></div>
+					<div class="footer-links-item"><a href="/about">О компании</a></div>
 					<div class="footer-links-item"><a href="/articles">Статьи</a></div>
-					<div class="footer-links-item"><a href="#">Оптовикам</a></div>
-					<div class="footer-links-item"><a href="#">Оплата и доставка</a></div>
-					<div class="footer-links-item"><a href="#">Выставка-продажа</a></div>
+					<div class="footer-links-item"><a href="/wholesalers">Оптовикам</a></div>
+					<div class="footer-links-item"><a href="/oplata-dostavka">Оплата и доставка</a></div>
 					<div class="footer-links-item" id="header-list-feedback-2"><a href="#">Обратная связь</a></div>
 					<div class="footer-links-item"><a href="/contacts">Контакты</a></div>
-					<div class="footer-links-item"><a href="#">Учимся рисовать</a></div>
 					<div class="footer-links-item"><a href="/brends">Наши Бренды</a></div>
 				</div>
 			</div>
+		</div>
+		<div class="footer-yellow-line"></div> 
+		<div class="footer-wrapper">
 			<div class="copyright">
 				<div class="copy-el">
 					Copyright 2009-2015, Киев © Интернет-магазин Калейдоскоп Вышивки
@@ -772,13 +773,8 @@
 				</div>
 			</div>
 		</div>
+		<div class="footer-fence"></div>
 	</div>
-	<div class="footer-fence"></div>
-	<div class="footer-backbround"></div>
-	<div class="footer-yellow-line"></div>
-
-
-
 	<div class="mobile-wrapper">
 		<div class="mobile-menu">
 			<div class="mobile-menu-list">
@@ -878,19 +874,16 @@
 		@yield('mobile')
 
 		<div class="mobile-footer">
-			<div class="mobile-footer-item"><a href="#">Скидки</a></div>
+
 			<div class="mobile-footer-item"><a href="/catalog">Каталог</a></div>
+			<div class="mobile-footer-item"><a href="/new-products">Новинки</a></div>
+			<div class="mobile-footer-item"><a href="#">Скидки</a></div>
+			<div class="mobile-footer-item"><a href="/about">О компании</a></div>
 			<div class="mobile-footer-item"><a href="/articles">Статьи</a></div>
-			<div class="mobile-footer-item"><a href="#">Оптовикам</a></div>
-			<div class="mobile-footer-item"><a href="#">Обратная связь</a></div>
-			<div class="mobile-footer-item"><a href="/brends">Наши бренды</a></div>
-			<div class="mobile-footer-item"><a href="#">Инструкция для наборов Dimensions</a></div>
-			<div class="mobile-footer-item"><a href="#">О компании</a></div>
-			<div class="mobile-footer-item"><a href="#">Описание красок FolkArt</a></div>
-			<div class="mobile-footer-item"><a href="#">Оплата и доставка</a></div>
-			<div class="mobile-footer-item"><a href="#">Выставка-продажа</a></div>
+			<div class="mobile-footer-item"><a href="/wholesalers">Оптовикам</a></div>
+			<div class="mobile-footer-item"><a href="/oplata-dostavka">Оплата и доставка</a></div>
 			<div class="mobile-footer-item"><a href="/contacts">Контакты</a></div>
-			<div class="mobile-footer-item"><a href="#">Учимся рисовать</a></div>
+			
 		</div>
 	</div>
 </div>
@@ -904,9 +897,7 @@
 <script src="{{url('/site/owl-carousel/owl.carousel.js')}}"></script>
 <link rel="stylesheet" href="{{ url('site/owl-carousel/owl.carousel.css') }}">
 <link rel="stylesheet" href="{{ url('site/owl-carousel/owl.theme.default.css') }}">
-<!-- <link rel="stylesheet" href="catalog/view/javascript/owl-carousel/owl.carousel.css">
-<link rel="stylesheet" href="catalog/view/javascript/owl-carousel/owl.theme.default.css"> -->
-<!-- <script src="catalog/view/javascript/owl-carousel/owl.carousel.js"></script> -->
+
 
 @yield('js')
 </body>

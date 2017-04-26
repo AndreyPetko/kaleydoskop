@@ -52,6 +52,9 @@
 .footer-logo {
  display: none;
 }
+.footer-fence{
+  margin-top: -194px;
+}
 .footer-links-item a{
  width: 25%;
 }
