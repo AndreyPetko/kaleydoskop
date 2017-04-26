@@ -3516,7 +3516,6 @@ input.error, textarea.error {
 
 .success-register {
     margin-top: 200px;
-    /*display: none;*/
     position: fixed;
     left:50%;
     margin-left: -277px;
