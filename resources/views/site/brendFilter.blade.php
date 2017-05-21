@@ -2,6 +2,8 @@
 
 
 @section('header')
+<title>{{ $brend->name }} купить в интернет-магазине Калейдоскоп Вышивки</title>
+<meta description="купить {{ $brend->name }} в интернет-магазине Калейдоскоп Вышивки c доставкой по Киеву и Украине. Низкие цены, большой ассортимент {{ $brend->name }}." >
 <script src="{{ url('site/brends.js') }}"></script>
 @stop
 

@@ -1,5 +1,9 @@
 @extends('site.layout')
 
+@section('header')
+	<title>{{ $brend->name }}в интернет-магазине Калейдоскоп Вышивки</title>
+    <meta description="{{ $brend->name }} в Киеве - самый широкий ассортимент. Купить товары {{ $brend->name }} с доставкой.">
+@stop
 
 @section('content')
 @include('elements.breadcrumbs')

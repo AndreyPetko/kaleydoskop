@@ -2,8 +2,10 @@
 
 
 @section('header')
-    <title>{{ $category->name }}</title>
-    <meta name="description" content="{{ strip_tags($category->description) }}">
+    <title>{{ $category->name }} купить в интернет-магазине Калейдоскоп Вышивки</title>
+    <meta name="description" content="Купить {{ $category->name }} в интернет-магазине Калейдоскоп Вышивки c доставкой
+     по Киеву и Украине. Низкие цены, большой ассортимент. Риолис, Золотое Руно, DIMENSIONS, Anchor,
+     Русский Фаворит, Чудесная Игла.">
 @stop
 
 @section('content')
