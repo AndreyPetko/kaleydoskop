@@ -33,3 +33,11 @@
 .product-title{
 	width: 100%;
 }
+.main-menu-item-sm{
+font-size: 12px;
+ width: 120px;
+}
+
+.menu-line{
+    margin-right: 0px;
+}

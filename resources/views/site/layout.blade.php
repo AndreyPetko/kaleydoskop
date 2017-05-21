@@ -469,15 +469,19 @@
 			<a href="/catalog">
 				<div class="main-menu-item @if($_SERVER['REQUEST_URI'] == '/catalog' || stripos($_SERVER['REQUEST_URI'], 'category')) main-menu-active @endif" id="catalog">Каталог</div>
 			</a>
-			<a href="/about"></area><div class="main-menu-item @if($_SERVER['REQUEST_URI'] == '/about') main-menu-active @endif">О компании</div></a>
-			<a href="/wholesalers"><div class="main-menu-item @if($_SERVER['REQUEST_URI'] =='/wholesalers') main-menu-active @endif">Оптовикам</div></a>
-			<a href="/oplata-dostavka"><div class="main-menu-item @if($_SERVER['REQUEST_URI'] =='/oplata-dostavka') main-menu-active @endif">Оплата и доставка</div></a>
+			<a href="/brends">
+				<div class="main-menu-item @if($_SERVER['REQUEST_URI'] == '/catalog' || stripos($_SERVER['REQUEST_URI'], 'category')) main-menu-active @endif" id="catalog2">Бренды</div>
+			</a>
+			<a href="/new-products"><div class="main-menu-item  @if($_SERVER['REQUEST_URI'] =='/new-products') main-menu-active @endif">Новинки</div></a>
 			<a href="/contacts"><div class="main-menu-item @if($_SERVER['REQUEST_URI'] =='/contacts') main-menu-active @endif">Контакты</div></a>
 			<a href="/articles"><div class="main-menu-item @if($_SERVER['REQUEST_URI'] =='/articles') main-menu-active @endif">Статьи</div></a>
-			<a href="/new-products"><div class="main-menu-item @if($_SERVER['REQUEST_URI'] =='/new-products') main-menu-active @endif">Новинки</div></a>
+			<div class="menu-line"></div>
+			<a href="/oplata-dostavka"><div class="main-menu-item main-menu-item-sm @if($_SERVER['REQUEST_URI'] =='/oplata-dostavka') main-menu-active @endif">Оплата и доставка</div></a>
+			<a href="/about"></area><div class="main-menu-item main-menu-item-sm @if($_SERVER['REQUEST_URI'] == '/about') main-menu-active @endif">О компании</div></a>
+			<a href="/wholesalers"><div class="main-menu-item main-menu-item-sm @if($_SERVER['REQUEST_URI'] =='/wholesalers') main-menu-active @endif">Оптовикам</div></a>
+			
 		</div>
 		<div class="main-menu-line"></div>
-
 		<div class="main-menu-dropdown">
 			<div class="main-dropdown-top-line"></div>
 			<div class="main-dropdown-list">
@@ -493,7 +497,7 @@
 								</div>
 							</div>
 							<div class="main-dropdown-side-border">
-								<!--            <img src="{{ url('site/images/vertical-line.png') }}" alt="">-->
+								            <img src="{{ url('site/images/vertical-line.png') }}" alt="">
 							</div>
 						</div>
 						<div class="main-dropdown-bottom-border">
@@ -664,7 +668,7 @@
 								</div>
 							</div>
 							<div class="main-dropdown-side-border">
-								<!--            <img src="{{ url('site/images/vertical-line.png') }}" alt="">-->
+								            <img src="{{ url('site/images/vertical-line.png') }}" alt="">
 							</div>
 						</div>
 						<div class="main-dropdown-bottom-border">
@@ -722,6 +726,243 @@
 			<div class="main-dopdown-bottom-line"></div>
 		</div>
 
+		<div class="main-menu-dropdown main-menu-dropdown-brend">
+			<div class="main-dropdown-top-line"></div>
+			<div class="main-dropdown-list">
+				<a href="/brend-products/DIMENSIONS">
+					<div class="main-dropdown-item">
+						<div class="main-dropdown-content">
+							<div class="main-dropdown-item-text">
+								<div>
+									DIMENSIONS
+								</div>
+							</div>
+							<div class="main-dropdown-side-border">
+								            <img src="{{ url('site/images/vertical-line.png') }}" alt="">
+							</div>
+						</div>
+						<div class="main-dropdown-bottom-border">
+						</div>
+					</div>
+				</a>
+				<a href="/brend-products/zolotoe-runo">
+					<div class="main-dropdown-item">
+						<div class="main-dropdown-content">
+							<div class="main-dropdown-item-text">
+								<div>
+									Золотое руно
+								</div>
+							</div>
+							<div class="main-dropdown-side-border">
+								            <img src="{{ url('site/images/vertical-line.png') }}" alt="">
+							</div>
+						</div>
+						<div class="main-dropdown-bottom-border">
+						</div>
+					</div>
+				</a>
+				<a href="/brend-products/riolis">
+					<div class="main-dropdown-item">
+						<div class="main-dropdown-content">
+							<div class="main-dropdown-item-text">
+								<div>
+									Riolis Premium
+								</div>
+							</div>
+							<div class="main-dropdown-side-border">
+								            <img src="{{ url('site/images/vertical-line.png') }}" alt="">
+							</div>
+						</div>
+						<div class="main-dropdown-bottom-border">
+						</div>
+					</div>
+				</a>
+					<a href="/brend-products/sdelano-s-lyubovbyu">
+					<div class="main-dropdown-item">
+						<div class="main-dropdown-content">
+							<div class="main-dropdown-item-text">
+								<div>
+									Сделано с любовью
+								</div>
+							</div>
+							<div class="main-dropdown-side-border">
+								            <img src="{{ url('site/images/vertical-line.png') }}" alt="">
+							</div>
+						</div>
+						<div class="main-dropdown-bottom-border">
+						</div>
+					</div>
+				</a>
+					<a href="/brend-products/krasa-і-tvorchіstb">
+					<div class="main-dropdown-item">
+						<div class="main-dropdown-content">
+							<div class="main-dropdown-item-text">
+								<div>
+									Краса і творчість
+								</div>
+							</div>
+							<div class="main-dropdown-side-border">
+								            <img src="{{ url('site/images/vertical-line.png') }}" alt="">
+							</div>
+						</div>
+						<div class="main-dropdown-bottom-border">
+						</div>
+					</div>
+				</a>
+					<a href="/brend-products/russkaya-iskusnicza">
+					<div class="main-dropdown-item">
+						<div class="main-dropdown-content">
+							<div class="main-dropdown-item-text">
+								<div>
+									Русская искусница
+								</div>
+							</div>
+							<div class="main-dropdown-side-border">
+								            <img src="{{ url('site/images/vertical-line.png') }}" alt="">
+							</div>
+						</div>
+						<div class="main-dropdown-bottom-border">
+						</div>
+					</div>
+				</a>
+					<a href="/brend-products/plaid">
+					<div class="main-dropdown-item">
+						<div class="main-dropdown-content">
+							<div class="main-dropdown-item-text">
+								<div>
+									PLAID
+								</div>
+							</div>
+							<div class="main-dropdown-side-border">
+								            <img src="{{ url('site/images/vertical-line.png') }}" alt="">
+							</div>
+						</div>
+						<div class="main-dropdown-bottom-border">
+						</div>
+					</div>
+				</a>
+					<a href="/brend-products/anchor">
+					<div class="main-dropdown-item">
+						<div class="main-dropdown-content">
+							<div class="main-dropdown-item-text">
+								<div>
+									Anchor
+								</div>
+							</div>
+							<div class="main-dropdown-side-border">
+								            <img src="{{ url('site/images/vertical-line.png') }}" alt="">
+							</div>
+						</div>
+						<div class="main-dropdown-bottom-border">
+						</div>
+					</div>
+				</a>
+					<a href="/brend-products/BESTEX">
+					<div class="main-dropdown-item">
+						<div class="main-dropdown-content">
+							<div class="main-dropdown-item-text">
+								<div>
+									Bestex
+								</div>
+							</div>
+							<div class="main-dropdown-side-border">
+								            <img src="{{ url('site/images/vertical-line.png') }}" alt="">
+							</div>
+						</div>
+						<div class="main-dropdown-bottom-border">
+						</div>
+					</div>
+				</a>
+					<a href="/brend-products/chudesnaya-igla">
+					<div class="main-dropdown-item">
+						<div class="main-dropdown-content">
+							<div class="main-dropdown-item-text">
+								<div>
+									Чудесная игла
+								</div>
+							</div>
+							<div class="main-dropdown-side-border">
+								            <img src="{{ url('site/images/vertical-line.png') }}" alt="">
+							</div>
+						</div>
+						<div class="main-dropdown-bottom-border">
+						</div>
+					</div>
+				</a>
+					<a href="/brend-products/russkij-favorit">
+					<div class="main-dropdown-item">
+						<div class="main-dropdown-content">
+							<div class="main-dropdown-item-text">
+								<div>
+									Русский фаворит
+								</div>
+							</div>
+							<div class="main-dropdown-side-border">
+								            <img src="{{ url('site/images/vertical-line.png') }}" alt="">
+							</div>
+						</div>
+						<div class="main-dropdown-bottom-border">
+						</div>
+					</div>
+				</a>
+					<a href="/brend-products/kroshe">
+					<div class="main-dropdown-item">
+						<div class="main-dropdown-content">
+							<div class="main-dropdown-item-text">
+								<div>
+									Кроше
+								</div>
+							</div>
+							<div class="main-dropdown-side-border">
+								            <img src="{{ url('site/images/vertical-line.png') }}" alt="">
+							</div>
+						</div>
+						<div class="main-dropdown-bottom-border">
+						</div>
+					</div>
+				</a>
+					<a href="/brend-products/charіvna-mitb">
+					<div class="main-dropdown-item">
+						<div class="main-dropdown-content">
+							<div class="main-dropdown-item-text">
+								<div>
+									Чарівна мить
+								</div>
+							</div>
+							<div class="main-dropdown-side-border">
+								            <img src="{{ url('site/images/vertical-line.png') }}" alt="">
+							</div>
+						</div>
+						<div class="main-dropdown-bottom-border">
+						</div>
+					</div>
+				</a>
+					<a href="/brend-products/new-products">
+					<div class="main-dropdown-item">
+						<div class="main-dropdown-content">
+							<div class="main-dropdown-item-text">
+								<div>
+									Майстерна Вишиванка =))
+								</div>
+							</div>
+							<div class="main-dropdown-side-border">
+								            <img src="{{ url('site/images/vertical-line.png') }}" alt="">
+							</div>
+						</div>
+						<div class="main-dropdown-bottom-border">
+						</div>
+					</div>
+				</a>
+
+			</div>
+			<div class="main-dropdown-item button-to-all-categories">
+				<a href="/brends">
+					<img src="{{ url('site/images/all-categories.png') }}">
+					Все бренды
+				</a>
+			</div>
+			<div class="main-dopdown-bottom-line"></div>
+		</div>
 		<div id="index-content">
 			@yield('content')
 		</div>

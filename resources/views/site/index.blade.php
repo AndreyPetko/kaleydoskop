@@ -305,11 +305,134 @@
         <h2>{{ $mainTitle }}</h2>
         <p>{!! $mainText !!}</p>
     </div>
+<<<<<<< HEAD
+    @endforeach
+  </div>
+</div>
+<div class="index-txt">
+  <h2>Заголовок текста</h2>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae ratione repudiandae, explicabo ipsa totam sequi numquam velit, veritatis dignissimos illum nisi. Recusandae dolore consequuntur debitis nesciunt nihil ex reiciendis adipisci.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae ratione repudiandae, explicabo ipsa totam sequi numquam velit, veritatis dignissimos illum nisi. Recusandae dolore consequuntur debitis nesciunt nihil ex reiciendis adipisci.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae ratione repudiandae, explicabo ipsa totam sequi numquam velit, veritatis dignissimos illum nisi. Recusandae dolore consequuntur debitis nesciunt nihil ex reiciendis adipisci.</p>
+</div>
+=======
+>>>>>>> origin/master
 
 @stop
 
 @section('mobile')
 
+<<<<<<< HEAD
+<div class="mobile-yellow-line"></div>
+<div class="mobile-slider">
+ <div class="mobile-slider-image">
+  <img src="{{ url('site/images/4d5bbf6752863b73c9dc5077dam3--materialy-dlya-tvorchestva-muline-fabriki-im.png') }}" alt="">
+</div>
+<div class="mobile-slider-text">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus fuga assumenda vero in necessitatibus vel, nesciunt ex autem deleniti eligendi.
+</div>
+</div>
+
+<div class="mobile-title">
+  Рекомендуем
+</div>
+<div class="mobile-title-line"></div>
+
+@if(isset($recProducts))
+<div class="mobile-products-list">
+  @foreach($recProducts as $recProduct)
+  <div class="mobile-product">
+    <div class="mobile-product-image">
+      @if($recProduct->image)
+      <a href="/product/{{$recProduct->url}}">
+        <img src="{{ url('product_images/' . $recProduct->image) }}">
+      </a>
+      @else
+      <a href="/product/{{$recProduct->url}}">
+        <img src="{{ url('site/images/zaglushka.png') }}" alt="">
+      </a>
+      @endif
+    </div>
+    <a href="/product/{{$newProduct->url}}">
+      <div class="mobile-product-name">
+       {{$recProduct->name}}
+     </div>
+   </a>
+   <div class="mobile-product-bottom-line">
+    <div class="mobile-product-price">
+      {{$recProduct->price}} грн
+    </div>
+    <div class="mobile-product-add-to-cart" data-productid="{{$recProduct->id}}">
+     <div class="mobile-add-button">
+      <div class="mobile-add-image">
+        <img src="{{ url('site/images/icon-cart-main.png') }}" alt="">
+      </div>
+      <div class="mobile-add-text">
+        В корзину
+      </div>
+    </div>
+    <div class="mobile-add-bottom-line">
+
+    </div>
+  </div>
+</div>
+</div>
+@endforeach
+</div>
+@endif
+
+  <div class="mobile-title">
+    Новинки
+  </div>
+  <div class="mobile-title-line"></div>
+
+  <div class="mobile-products-list">
+    @foreach($newProducts as $newProduct)
+    <div class="mobile-product">
+      <div class="mobile-product-image">
+       @if($newProduct->image)
+       <a href="/product/{{$newProduct->url}}">
+         @if($newProduct->category_id == 39) 
+         <img src="{{ url('site/images/IMG_9745-450x300.png') }}">
+         @else
+         <img src="{{ url('product_images/' . $newProduct->image) }}">
+         @endif
+       </a>
+       @else
+       <a href="/product/{{$newProduct->url}}">
+         <img src="{{ url('site/images/zaglushka.png') }}" alt="">
+       </a>
+       @endif
+     </div>
+     <a href="/product/{{$newProduct->url}}">
+      <div class="mobile-product-name">
+       {{$newProduct->name}}
+     </div>
+   </a>
+   <div class="mobile-product-bottom-line">
+    <div class="mobile-product-price">
+     {{$newProduct->price}} грн
+   </div>
+   <div class="mobile-product-add-to-cart" data-productid="{{$newProduct->id}}">
+     <div class="mobile-add-button">
+      <div class="mobile-add-image">
+        <img src="{{ url('site/images/icon-cart-main.png') }}" alt="">
+      </div>
+      <div class="mobile-add-text">
+        В корзину
+      </div>
+    </div>
+    <div class="mobile-add-bottom-line">
+
+    </div>
+  </div>
+</div>
+</div>
+@endforeach
+</div>
+
+
+
+  @stop
+=======
     <div class="mobile-yellow-line"></div>
     @foreach($catalog as $catalogItem)
         <input type="hidden" id="category-{{$catalogItem->id}}" value="{{$catalogItem->url}}">
@@ -343,3 +466,4 @@
         </div>
     @endforeach
 @stop
+>>>>>>> origin/master

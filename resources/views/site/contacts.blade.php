@@ -8,7 +8,10 @@
 
 @section('content')
 @include('elements.breadcrumbs')
-<div class="contacts-title"><h1>Контакты</h1></div>
+<div class="category-title"><h1>Контакты</h1></div>
+ <div class="category-title-line">
+        </div>
+
         <div class="txt-block">Вы можете связаться с нами любым удобным для вас способом</div>
         <div class="info">
             <div class="info-text">Телефоны</div>
@@ -79,7 +82,7 @@
         <div class="map">
             <div class="map-title">Карта проезда</div>
             <div class="map-img" id="map_canvas">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d634.6484357834133!2d30.4961228!3d50.4859064!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0x989c34f6756d25a4!2z0KHQn9CUINCa0YPQu9C40Lo!5e0!3m2!1sru!2sua!4v1453466131738" width=100% height=100%s frameborder="0" style="border:0" allowfullscreen></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d634.6484357834133!2d30.4961228!3d50.4859064!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0x989c34f6756d25a4!2z0KHQn9CUINCa0YPQu9C40Lo!5e0!3m2!1sru!2sua!4v1453466131738" width=100% height=100%s frameborder="0" scrollwheel=false style="border:0" allowfullscreen></iframe>
             </div>
         </div>
 
