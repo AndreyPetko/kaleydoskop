@@ -1,3 +1,9 @@
+.main-menu-item-sm {
+ display: none;
+}
+.menu-line{
+ display: none;
+}
 .site-logo {
     width: 40%;
 }

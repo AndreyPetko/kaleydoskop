@@ -4,8 +4,14 @@
 	max-width: 1200px;
 	width: 100%;
 }
+
 .main-menu-item {
-    width: 14.2%;
+    width: 130px;
+}
+
+.main-menu-item-sm{
+font-size: 12px;
+ width: 120px;
 }
 .main-item{
 	width: 25%;

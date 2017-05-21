@@ -534,6 +534,24 @@ catalog.addEventListener('mouseover', function(){
 catalog.addEventListener('mouseout', function(){
   document.getElementsByClassName('main-menu-dropdown')[0].style.display = 'none';
 });
+document.getElementsByClassName('main-menu-dropdown')[0].addEventListener('mouseover',function(event){
+ document.getElementsByClassName('main-menu-dropdown')[0].style.display = 'block';
+});
+document.getElementsByClassName('main-menu-dropdown')[0].addEventListener('mouseout',function(event){
+ document.getElementsByClassName('main-menu-dropdown')[0].style.display = 'none';
+});
+
+
+//Выпадающее меню 
+catalog2 = document.getElementsByClassName('main-menu-item')[1];
+
+catalog2.addEventListener('mouseover', function(){
+ document.getElementsByClassName('main-menu-dropdown')[1].style.display = 'block';
+});
+
+catalog2.addEventListener('mouseout', function(){
+  document.getElementsByClassName('main-menu-dropdown')[1].style.display = 'none';
+});
 
 document.getElementsByClassName('main-menu-line')[0].addEventListener('mouseover', function(event) {
  relTarget = event.relatedTarget;
@@ -541,14 +559,15 @@ document.getElementsByClassName('main-menu-line')[0].addEventListener('mouseover
  if(id == 'catalog') {
   document.getElementsByClassName('main-menu-dropdown')[0].style.display = 'block';
 }
+if(id == 'catalog2') {
+  document.getElementsByClassName('main-menu-dropdown')[1].style.display = 'block';
+}
 });
-
-document.getElementsByClassName('main-menu-dropdown')[0].addEventListener('mouseover',function(event){
- document.getElementsByClassName('main-menu-dropdown')[0].style.display = 'block';
+document.getElementsByClassName('main-menu-dropdown')[1].addEventListener('mouseover',function(event){
+ document.getElementsByClassName('main-menu-dropdown')[1].style.display = 'block';
 });
-
-document.getElementsByClassName('main-menu-dropdown')[0].addEventListener('mouseout',function(event){
- document.getElementsByClassName('main-menu-dropdown')[0].style.display = 'none';
+document.getElementsByClassName('main-menu-dropdown')[1].addEventListener('mouseout',function(event){
+ document.getElementsByClassName('main-menu-dropdown')[1].style.display = 'none';
 });
 
 
