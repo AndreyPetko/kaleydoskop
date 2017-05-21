@@ -315,7 +315,7 @@ a{
 .header-content {
     overflow: hidden;
 }
-.header-content h1{
+.header-content h1, .header-content h2{
     font-size: 16px;
     margin-bottom: 10px;
     font-weight: normal;
@@ -6042,8 +6042,9 @@ input.error, textarea.error {
     display: table-cell;
     vertical-align: middle;
     cursor: pointer;
-
+    color: #000;
 }
+
 .mobile-subat-item-mobile img{
     vertical-align: middle;
     margin-right: 7px;

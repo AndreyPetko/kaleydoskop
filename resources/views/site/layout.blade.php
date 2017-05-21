@@ -415,7 +415,12 @@
 				</div>
 				<div class="header-content-block-2">
 					<div class="header-block2-line-1">
-						<h1> Наборы для вышивания и рукоделия</h1>
+                        @if(Request::url() === url('/'))
+                            <h1>Наборы для вышивания и рукоделия</h1>
+                        @else
+                            <h2>Наборы для вышивания и рукоделия</h2>
+                        @endif
+
 						<p>Режим работы: Пн-Пт 10.00 - 18.00</p>
 					</div>
 					<div class="header-block2-line-2" id="open-cart">
