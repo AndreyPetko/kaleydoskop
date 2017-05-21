@@ -357,10 +357,10 @@
   <div class="clear"></div>
 </div>
 
-<div class="index-txt">
-  <h2>{{ $mainTitle }}</h2>
-  <p>{!! $mainText !!}</p>
-</div>
 @endforeach
+<div class="index-txt">
+    <h2>{{ $mainTitle }}</h2>
+    <p>{!! $mainText !!}</p>
+</div>
 @stop
 
