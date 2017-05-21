@@ -17,7 +17,7 @@
 		<div class="category-title-line">
 		</div>
 		@foreach($brends as $brend)
-		<a href="/brend/{{$brend->url}}">
+		<a href="/brend-products/{{$brend->url}}">
 			<div class="brend-item fl">
 				<div class="brend-image">
 					<img src="{{ url('brends_images/' . $brend->logo)}}">

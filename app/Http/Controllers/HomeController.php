@@ -70,6 +70,12 @@ class HomeController extends Controller {
 		$data['recProducts'] = Product::setWholesalePrice($data['recProducts'], 1);
 		$data['newProducts'] = Product::setWholesalePrice($data['newProducts'], 1);
 
+        $data['catalog'] = Category::getCatalog();
+
+        $data['mainTitle'] = strip_tags(Text::getItem('main-title'));
+        $data['mainText'] = Text::getItem('main-text');
+
+
 		return view('site.index', $data);
 	}
 
