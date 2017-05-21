@@ -1,6 +1,8 @@
 @extends('site.layout')
 
-
+@section('header')
+    <title>{{ $mainTitle }}</title>
+@stop
 
 @section('headContent')
 @if(Session::get('orderSuccess'))
@@ -63,8 +65,40 @@
 
 @endif
 
+<div class="main-title">
+    Каталог
+</div>
+<div class="main-title-line"></div>
 
+@foreach($catalog as $catalogItem)
+    <input type="hidden" id="category-{{$catalogItem->id}}" value="{{$catalogItem->url}}">
+    <div class="category-pre">
+        <a href="/category/{{$catalogItem->url}}">
+            @if($catalogItem->image)
+                <img src="{{ url('/category_images/' . $catalogItem->image) }}">
+            @else
+                <img src="{{ url('site/images/IMG_9745-450x300.png') }}" alt="">
+            @endif
+            <a href="/category/{{$catalogItem->url}}"><div class="category-pre-title">{{$catalogItem->name}}</div></a>
+            <div class="category-pre-info">
+                <p>Товаров:{{$catalogItem->countProducts}}<br> От 0 до
+                    @if($catalogItem->maxPrice)
+                        {{$catalogItem->maxPrice}}
+                    @else
+                        0
+                    @endif
+                    грн
+                </p>
+                <div class="category-button" data-categoryid="{{$catalogItem->id}}">
+                    Подкатегории
+                </div>
+            </div>
 
+        </a>
+    </div>
+@endforeach
+
+<div class="clear"></div>
 
 
 
