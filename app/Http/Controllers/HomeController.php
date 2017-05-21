@@ -72,9 +72,9 @@ class HomeController extends Controller {
 
         $data['catalog'] = Category::getCatalog();
 
-        $data['mainTitle'] = Text::getItem('main-title');
+        $data['mainTitle'] = strip_tags(Text::getItem('title-main'));
 
-
+        
 		return view('site.index', $data);
 	}
 
