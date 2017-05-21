@@ -1,9 +1,11 @@
 @extends('site.layout')
 
 @section('header')
-    <title>{{ $product->name }}</title>
+    <title>{{ $product->name }} купить в Киеве.</title>
     @if($product->description)
-        <meta name="description" content="{{ strip_tags($product->description) }}">
+        <meta name="description" content="купить {{ $product->name }} в интернет-магазине Калейдоскоп Вышивки c доставкой по Киеву и Украине.
+{{ $product->brendName }} @if($category) {{ $category->name }} @endif
+Низкие цены, быстрая доставка. Наборы для вышивания и рукоделия.">
     @endif
 @stop
 

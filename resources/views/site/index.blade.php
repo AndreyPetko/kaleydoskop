@@ -1,7 +1,8 @@
 @extends('site.layout')
 
 @section('header')
-    <title>{{ $mainTitle }}</title>
+    <title>Наборы для вышивания в Киеве — Калейдоскоп Вышивки.</title>
+    <meta description="Наборы для вышивания и рукоделия, вышивки, бисер, мулине, пяльца в интернет-магазине. Купить Риолис, Золотое Руно, DIMENSIONS, Anchor, Русский Фаворит, Чудесная Игла. Киев.">
 @stop
 
 @section('headContent')
@@ -334,6 +335,11 @@
 
             </a>
             <div class="clear"></div>
+        </div>
+
+        <div class="index-txt">
+            <h2>{{ $mainTitle }}</h2>
+            <p>{!! $mainText !!}</p>
         </div>
     @endforeach
 @stop
