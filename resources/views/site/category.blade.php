@@ -544,6 +544,7 @@
         </div>
 
 
+        @if(!isset($theads))
         <div class="filter-mobile-item">Бренды
             <div class="filter-mobile-item-items">
                 @foreach($brends as $brend)
@@ -562,7 +563,6 @@
                 </div>
             </div>
         </div>
-
 
         @foreach($attributesValues as $attrKey => $attr)
             <div class="filter-mobile-item">{{ $attrKey }}
@@ -584,6 +584,7 @@
                 </div>
             </div>
         @endforeach
+        @endif
 
 
         <div class="reset-filter">
