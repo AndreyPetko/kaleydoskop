@@ -252,6 +252,10 @@
     @endforeach
   </div>
 </div>
+<div class="index-txt">
+<h2>Заголовок текста</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae ratione repudiandae, explicabo ipsa totam sequi numquam velit, veritatis dignissimos illum nisi. Recusandae dolore consequuntur debitis nesciunt nihil ex reiciendis adipisci.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae ratione repudiandae, explicabo ipsa totam sequi numquam velit, veritatis dignissimos illum nisi. Recusandae dolore consequuntur debitis nesciunt nihil ex reiciendis adipisci.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae ratione repudiandae, explicabo ipsa totam sequi numquam velit, veritatis dignissimos illum nisi. Recusandae dolore consequuntur debitis nesciunt nihil ex reiciendis adipisci.</p>
+</div>
 
 @stop
 

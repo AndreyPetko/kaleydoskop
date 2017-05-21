@@ -116,7 +116,7 @@
 
       <div class="category-products-content fl">
         <div class="category-title">
-          Корзина
+         <h1> Корзина покупок</h1>
         </div>
         <div class="category-title-line">
         </div>
@@ -254,7 +254,7 @@
 
     <div class="">
       <div class="category-title">
-        Корзина
+        <h1> Корзина покупок</h1>
       </div>
       <div class="category-title-line">
       </div>

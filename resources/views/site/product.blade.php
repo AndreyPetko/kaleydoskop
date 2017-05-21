@@ -135,16 +135,16 @@
 
             <div class="product-info fl">
                 <div class="product-title @if(!$category) product-title-full @endif">
-                    {{$product->name}}
+                    <h1>{{$product->name}}</h1>
                 </div>
                 <div class="product-title-line"></div>
 
                 <div class="product-main-attrs-list">
                     <div class="product-main-attr">
-                        Производитель: @if($product->brendName) {{$product->brendName}} @else Производитель не указан @endif
+                       <p> Производитель: @if($product->brendName) {{$product->brendName}} @else Производитель не указан @endif</p>
                     </div>
                     <div class="product-main-attr">
-                        Артикул: {{$product->article}}
+                        <p>Артикул: {{$product->article}}</p>
                     </div>
                 </div>
 

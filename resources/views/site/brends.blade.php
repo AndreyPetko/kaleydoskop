@@ -12,7 +12,7 @@
 
 	<div class="category-katalog-content">
 		<div class="category-title">
-			Бренды
+			<h1>Бренды</h1>
 		</div>
 		<div class="category-title-line">
 		</div>
@@ -47,7 +47,7 @@
 <div class="category-content">
 <div class="category-katalog-content">
 		<div class="category-title">
-			Бренды
+			<h1>Бренды</h1>
 		</div>
 		<div class="category-title-line">
 		</div>
