@@ -310,8 +310,7 @@
 @stop
 
 @section('mobile')
-
-    <<<<<<< HEAD
+    
     <div class="mobile-yellow-line"></div>
     <div class="mobile-slider">
         <div class="mobile-slider-image">
