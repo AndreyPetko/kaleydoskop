@@ -3,7 +3,7 @@
 
 @section('content')
 @include('elements.breadcrumbs')
-<div class="contacts-title">Контакты</div>
+<div class="contacts-title"><h1>Контакты</h1></div>
         <div class="txt-block">Вы можете связаться с нами любым удобным для вас способом</div>
         <div class="info">
             <div class="info-text">Телефоны</div>
@@ -84,7 +84,7 @@
 @section('mobile')
 @include('elements.breadcrumbs')
 <div class="category-title">
-            Контакты
+            <h1>Контакты</h1>
         </div>
         <div class="category-title-line">
         </div>
@@ -93,7 +93,7 @@
             <div class="info-text">
                 <div class="numbers">(044) 332-88-82 &nbsp;&nbsp;&nbsp;&nbsp; (096) 778-74-88</div>
             </div>
-            <div class="info-text">Email</div>
+            <div class="info-text">E-mail</div>
             <div class="info-text">
                 <p class="your-attachment">Ваши предложения, вопросы, пожелания:</p>
                 <p class="e-mail">info@kaleydoskop-vishivki.com.ua</p>

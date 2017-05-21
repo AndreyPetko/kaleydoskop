@@ -128,7 +128,7 @@
 
 	<div class=" @if(!isset($theads)) category-products-content  fl @endif ">
 		<div class="category-title">
-			{{$category->name}}
+			<h1>{{$category->name}}</h1>
 		</div>
 		<div class="category-title-line">
 		</div>
@@ -457,7 +457,7 @@
 <input type="hidden" name="categoryUrl" id="catUrl" value="{{$category->url}}">
 @include('elements.breadcrumbs')
 <div class="category-title">
-	{{$category->name}}
+	<h1>{{$category->name}}</h1>
 </div>
 <div class="category-title-line">
 </div>

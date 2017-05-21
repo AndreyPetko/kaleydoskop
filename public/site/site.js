@@ -210,28 +210,6 @@ $('.category-button').click(function(){
     }
   });
 
-  // categoryid = this.dataset.categoryid;
-  // categoryUrl = document.getElementById('category-' + categoryid).value;
-  // ajax('/ajax/subcategories-by-category-id?id=' + categoryid, function(data) {
-  //   data = JSON.parse(data);
-  //   document.getElementsByClassName('subcategories-list')[0].innerHTML = '';
-  //   if(!data.length) {
-  //     document.getElementsByClassName('subcategories-list')[0].innerHTML = 'У этой категории нет подкатегорий';
-  //   } else {
-  //     for (var i = 0; i < data.length; i++) {
-  //       document.getElementsByClassName('subcategories-list')[0].innerHTML += '<a href="/category/' + categoryUrl + '?subcategory=' + data[i].id + '"><div class="subcat-item subcat-hover fl">' +
-        // '<div class="subcat-image fl">' +
-        // '<img src="site/images/icon-catecory-list.png" alt="">' +
-        // '</div>' +
-        // '<div class="subcat-text  fl">' +
-        // data[i].name +
-        // '</div>' +
-        // '</div></a>';
-  //     }
-  //   }
-  // }
-
-
 });
 
 $('#close-subcategory ').click(function(){
@@ -241,6 +219,8 @@ $('#close-subcategory ').click(function(){
 
 
 $('.category-button-mobile').click(function(){
+  $('.subcategories-list-mobile').html('');
+
   $('.to-katalog-active').removeClass('to-katalog-active');
   var topp = $(this).offset();
   $('#subcategory-katalog-mobile').css("top", topp.top + 40);
@@ -248,6 +228,26 @@ $('.category-button-mobile').click(function(){
   $('#subcategory-katalog-mobile').slideDown('slow');
   $(this).addClass(' to-katalog-active');
 
+ var categoryId = $(this).data('categoryid');
+var categoryUrl = $('#category-' + categoryId).val();
+
+
+  ajax('/ajax/subcategories-by-category-id?id=' + categoryId, function(data) {
+    var data = JSON.parse(data);
+    for (var i = data.length - 1; i >= 0; i--) {
+      var link = '<a href="/subcategory/' + data[i].url + '"><div class="subcat-item subcat-hover fl">' + 
+      '<div class="subcat-image fl">' +
+      '<img src="site/images/icon-catecory-list.png" alt="">' +
+      '</div>' +
+      '<div class="subcat-text  fl">' +
+      data[i].name +
+      '</div>' +
+      '</div></a>';
+
+      $('.subcategories-list-mobile').append(link);
+    }
+
+  });
 
 });
 $('#close-subcategory-mobile ').click(function(){
