@@ -1199,6 +1199,7 @@ font-size: 12px;
 }
 .main-menu-dropdown-brend .main-dropdown-item-text {
     width: 100%;
+    overflow: hidden;
 }
 .main-dropdown-item {
     width: 200px;
@@ -4670,6 +4671,7 @@ input.error, textarea.error {
     position: absolute;
     width: 100%;
     max-width: 1200px;
+    border-top:2px solid #a9bb1e;
 
 }
 
@@ -5596,7 +5598,7 @@ input.error, textarea.error {
 }
 
 .other-brends-list {
-    line-height: 15px;
+    line-height: 10px;
 }
 
 .category-single-art-content a {
