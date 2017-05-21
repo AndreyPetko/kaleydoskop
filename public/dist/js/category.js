@@ -24,14 +24,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	var resetButton = document.getElementById('quick-reset');
 
-	resetButton.addEventListener('click', function() {
-		var quickBlock = document.getElementById('close-quick-thread');
-		var inputs = quickBlock.querySelectorAll('input');
+	if(resetButton) {
+        resetButton.addEventListener('click', function() {
+            var quickBlock = document.getElementById('close-quick-thread');
+            var inputs = quickBlock.querySelectorAll('input');
 
-		for (var i = inputs.length - 1; i >= 0; i--) {
-			inputs[i].value = '';
-		}
-	});
+            for (var i = inputs.length - 1; i >= 0; i--) {
+                inputs[i].value = '';
+            }
+        });
+	}
 
 });
 
