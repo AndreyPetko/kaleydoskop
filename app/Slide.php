@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Slide extends Model
 {
 	protected $table = 'slides';
-	protected $fillable = ['image', 'text', 'position', 'sliderName', 'url'];
+	protected $fillable = ['image', 'text', 'position', 'sliderName', 'slideUrl'];
 	public $timestamps = false;
 
 	public static function getMainSlides() {

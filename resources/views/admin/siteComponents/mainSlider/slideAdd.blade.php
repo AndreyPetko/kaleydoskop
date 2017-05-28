@@ -38,7 +38,7 @@
 
 						<div class="form-group">
 							<label>Url</label>
-							<input type="number" class="form-control" placeholder="" name="url">
+							<input type="text" class="form-control" placeholder="" name="slideUrl">
 						</div>
 
 						<div class="form-group">

@@ -52,13 +52,13 @@
 
 @section('content')
 
-    @if(!Auth::check() || Auth::user()->role == 'retail')
+    {{--@if(!Auth::check() || Auth::user()->role == 'retail')--}}
         <!-- <div class="slider-block"> -->
         <div class="owl-carousel">
             @foreach($mainSlides as $slide)
                 <div class="slider-image ">
                     <!--   slider-image -->
-                    <a href="{{ $slide->url }}">
+                    <a href="{{ $slide->slideUrl }}">
                         <img src="{{ url('slides_images/' . $slide->image) }}" alt="">
                     </a>
                 </div>
@@ -66,7 +66,7 @@
         </div>
 
 
-    @endif
+    {{--@endif--}}
 
     <div class="main-title">
         Каталог
