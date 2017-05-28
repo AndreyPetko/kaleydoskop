@@ -37,6 +37,11 @@
 						</div>
 
 						<div class="form-group">
+							<label>Url</label>
+							<input type="number" class="form-control" placeholder="" name="url">
+						</div>
+
+						<div class="form-group">
 							<label>Текст слайда</label>
 							<textarea class="form-control" rows="3" placeholder="" name="text"></textarea>
 						</div>

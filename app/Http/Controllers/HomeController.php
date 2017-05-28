@@ -61,6 +61,8 @@ class HomeController extends Controller
     public function getIndex()
     {
         $data['mainSlides'] = Slide::getOrderMainSlides();
+//        dump($data['mainSlides']);
+//        die;
         $data['recProducts'] = Product::getRecommended(4);
         $data['newProducts'] = Product::getNew($skip = 0, $take = 8);
 

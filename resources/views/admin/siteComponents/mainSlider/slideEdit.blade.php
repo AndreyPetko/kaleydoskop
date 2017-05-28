@@ -33,7 +33,12 @@
 
 						<div class="form-group">
 							<label>Позиция слайда</label>
-							<input type="number" class="form-control" placeholder="Введите цену товара ..." value="@if(isset($slide->position)){{$slide->position}}@endif" name="position">
+							<input type="number" class="form-control" value="@if(isset($slide->position)){{$slide->position}}@endif" name="position">
+						</div>
+
+						<div class="form-group">
+							<label>Url</label>
+							<input type="text" class="form-control"  value="{{$slide->url}}" name="url">
 						</div>
 
 

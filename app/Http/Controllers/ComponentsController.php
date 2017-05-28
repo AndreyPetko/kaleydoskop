@@ -45,6 +45,7 @@ class ComponentsController extends Controller {
 
 	public function getSlideEdit($slide_id) {
 		$slide = Slide::find($slide_id);
+
 		return view('admin.siteComponents.mainSlider.slideEdit')->with('slide', $slide);
 	}
 
