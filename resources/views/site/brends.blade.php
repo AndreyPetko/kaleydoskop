@@ -30,7 +30,7 @@
 				<p>{!!$brend->preview!!}</p>
 			</div>
 	<div class="brend-href">
-		<a href="/brend-products/{{$brend->url}}">
+		<a href="/brend/{{$brend->url}}">
 	О бренде
 		</a>
 		</div>
