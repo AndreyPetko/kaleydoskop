@@ -7,7 +7,7 @@ use DB;
 
 class Text extends Model {
 	protected $table = 'texts';
-	protected $fillable = ['text', 'alias'];
+	protected $fillable = ['text', 'alias', 'url'];
 	public $timestamps = false;
 
 

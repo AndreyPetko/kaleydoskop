@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use Illuminate\View\View;
 use Request;
 use Redirect;
 use Auth;
@@ -108,6 +109,22 @@ class HomeController extends Controller
 
 
         return view('site.newList', compact('products', 'breadcrumbs'));
+    }
+
+
+    /**
+     * @param string $url
+     * @return View
+     */
+    public function getPage(string $url)
+    {
+        $page = Text::where('url', $url)->first();
+
+
+        $title = $page->alias;
+        $breadcrumbs = ['/' . $url => $title];
+
+        return view('site.simpleTextPage')->with('textVar', $page->text)->with('title', $title)->with('breadcrumbs', $breadcrumbs);
     }
 
     /**

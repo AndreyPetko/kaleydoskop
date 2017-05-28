@@ -34,6 +34,11 @@
 							<input type="text" class="form-control" placeholder="Введите alias текста..." name="alias">
 						</div>
 
+						<div class="form-group">
+							<label>Url</label>
+							<input type="text" class="form-control" placeholder="Введите url текста..." name="url">
+						</div>
+
 
 						<div class="form-group" name="description">
 							<label>Текст</label>
