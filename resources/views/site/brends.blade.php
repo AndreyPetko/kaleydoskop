@@ -29,16 +29,16 @@
 			<div class="brend-descr">
 				<p>{!!$brend->preview!!}</p>
 			</div>
-	<div class="brend-href">
-		<a href="/brend/{{$brend->url}}">
-	О бренде
-		</a>
-		</div>
+			<a href="/brend/{{$brend->url}}">
+				<div class="brend-href">
+					О бренде
+				</div>
+			</a>
 			<div class="item-buy" >
-		<a href="/brend-products/{{$brend->url}}">
-			<div class="item-buy-text2"> Выбрать товар</div>
-		</a>
-		</div>
+				<a href="/brend-products/{{$brend->url}}">
+					<div class="item-buy-text2"> Выбрать товар</div>
+				</a>
+			</div>
 		</div>
 
 		@endforeach
