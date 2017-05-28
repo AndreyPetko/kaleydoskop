@@ -38,7 +38,7 @@
 
 						<div class="form-group">
 							<label>Url</label>
-							<input type="text" class="form-control"  value="{{$slide->url}}" name="url">
+							<input type="text" class="form-control"  value="{{$slide->slideUrl}}" name="slideUrl">
 						</div>
 
 

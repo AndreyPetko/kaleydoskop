@@ -868,6 +868,7 @@ class ComposerStaticInita4260dd6d7c25e631780a9a247704d6d
         'UpdateReviewsTable2' => __DIR__ . '/../..' . '/database/migrations/2016_01_09_193935_update_reviews_table_2.php',
         'UpdateSendmailTable' => __DIR__ . '/../..' . '/database/migrations/2016_03_16_155307_update_sendmail_table.php',
         'UpdateSlidesTable' => __DIR__ . '/../..' . '/database/migrations/2017_05_28_145715_update_slides_table.php',
+        'UpdateSlidesTable1' => __DIR__ . '/../..' . '/database/migrations/2017_05_28_151320_update_slides_table_1.php',
         'UpdateSubcategoriesTable' => __DIR__ . '/../..' . '/database/migrations/2015_12_24_103722_update_subcategories_table.php',
         'UpdateTextTable' => __DIR__ . '/../..' . '/database/migrations/2017_04_17_151305_update_text_table.php',
         'UpdateTextTable2' => __DIR__ . '/../..' . '/database/migrations/2017_04_17_152417_update_text_table_2.php',
