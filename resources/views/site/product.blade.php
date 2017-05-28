@@ -95,16 +95,11 @@
 @stop
 
 
-
 @section('content')
 @include('elements.breadcrumbs')
 
 
-
 @if($product->final_active)
-
-
-
 
 <div class="product-content">
 
@@ -395,7 +390,7 @@
                 <img src="{{ url('site/images/list-type.png') }}" alt="">
             </div>
             <div class="products-sidebar-subcategory-name fl">
-                <a href="/category/{{$category->url}}?subcategory={{$subcategory->id}}">{{$subcategory->name}}</a>
+                <a href="/subcategory/{{$subcategory->url}}">{{$subcategory->name}}</a>
             </div>
         </div>
         @endforeach
