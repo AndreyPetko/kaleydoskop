@@ -1416,101 +1416,6 @@ window.addEventListener("load", function () {
                 });
             });
         }
-<<<<<<< HEAD
-      });
-    });
-  };
-
-}
-
-var elemImage = document.getElementsByClassName("main-dropdown-item");
-var slideArrowRight = document.getElementById('main-slide-left');
-var slideArrowLeft = document.getElementById('main-slide-right');
-var slideArrowRightSm = document.getElementById('slide-arow-sm-l');
-var slideArrowLeftSm = document.getElementById('slide-arow-sm-r');
-
-
-for (i=0; i < elemImage.length; i++){
-  elemImage[i].addEventListener("mouseover", function(){
-    var imageTag = this.getElementsByTagName('img')[0].getAttribute('src'); 
-if(imageTag != "http://kaleydoskop-vishivki.com.ua/site/images/vertical-line.png"){
-    var newImageTag = imageTag.replace(".png", "-hover.png");
-    this.getElementsByTagName('img')[0].src = newImageTag;
-  }
-  });
-  elemImage[i].addEventListener("mouseout", function(){
-    var imageTag = this.getElementsByTagName('img')[0].getAttribute('src'); 
-    if(imageTag != "http://kaleydoskop-vishivki.com.ua/site/images/vertical-line.png"){
-    var newImageTag = imageTag.replace("-hover.png", ".png");
-    this.getElementsByTagName('img')[0].src = newImageTag;
-  }
-  });
-}
-
-
-var slideArrowRight = document.getElementById('main-slide-left');
-if(slideArrowRight) {
-  var slideArrowLeft = document.getElementById('main-slide-right');
-  var slideArrowRightSm = document.getElementById('slide-arow-sm-l');
-  var slideArrowLeftSm = document.getElementById('slide-arow-sm-r');
-
-  slideArrowRight.addEventListener('mouseover', function(){
-    var imageTag = slideArrowRight.getElementsByTagName('img')[0].getAttribute('src');  
-    var newImageTag = imageTag.replace(".png", "-hover.png");
-    slideArrowRight.getElementsByTagName('img')[0].src = newImageTag;
-  })
-  slideArrowRight.addEventListener('mouseout', function(){
-    var imageTag = slideArrowRight.getElementsByTagName('img')[0].getAttribute('src');  
-    var newImageTag = imageTag.replace("-hover.png", ".png");
-    slideArrowRight.getElementsByTagName('img')[0].src = newImageTag;
-  })
-  slideArrowLeft.addEventListener('mouseover', function(){
-    var imageTag = slideArrowLeft.getElementsByTagName('img')[0].getAttribute('src'); 
-    var newImageTag = imageTag.replace(".png", "-hover.png");
-    slideArrowLeft.getElementsByTagName('img')[0].src = newImageTag;
-  })
-  slideArrowLeft.addEventListener('mouseout', function(){
-    var imageTag = slideArrowLeft.getElementsByTagName('img')[0].getAttribute('src'); 
-    var newImageTag = imageTag.replace("-hover.png", ".png");
-    slideArrowLeft.getElementsByTagName('img')[0].src = newImageTag;
-  })
-  slideArrowLeftSm.addEventListener('mouseover', function(){
-    var imageTag = slideArrowLeftSm.getElementsByTagName('img')[0].getAttribute('src'); 
-    var newImageTag = imageTag.replace(".png", "-hover.png");
-    slideArrowLeftSm.getElementsByTagName('img')[0].src = newImageTag;
-  })
-  slideArrowLeftSm.addEventListener('mouseout', function(){
-    var imageTag = slideArrowLeftSm.getElementsByTagName('img')[0].getAttribute('src'); 
-    var newImageTag = imageTag.replace("-hover.png", ".png");
-    slideArrowLeftSm.getElementsByTagName('img')[0].src = newImageTag;
-  })
-  slideArrowRightSm.addEventListener('mouseover', function(){
-    var imageTag = slideArrowRightSm.getElementsByTagName('img')[0].getAttribute('src');  
-    var newImageTag = imageTag.replace(".png", "-hover.png");
-    slideArrowRightSm.getElementsByTagName('img')[0].src = newImageTag;
-  })
-  slideArrowRightSm.addEventListener('mouseout', function(){
-    var imageTag = slideArrowRightSm.getElementsByTagName('img')[0].getAttribute('src');  
-    var newImageTag = imageTag.replace("-hover.png", ".png");
-    slideArrowRightSm.getElementsByTagName('img')[0].src = newImageTag;
-  })
-}
-
-var sucessOrderForm = document.getElementById('sucess-order-form');
-if(sucessOrderForm){
-  var sucessClose = document.getElementsByClassName('success-close');
-  for(i=0; i < sucessClose.length; i++){
-    sucessClose[i].addEventListener('click', function(){
-      sucessOrderForm.style.display = "none";
-    });
-  };}
-  var sucessCartForm = document.getElementById('sucess-cart-form');
-  if(sucessCartForm){
-    setTimeout(function(){
-      document.getElementById('sucess-cart-form').style.display = 'none';
-    }, 1000);
-  }
-=======
         ;
 
     }
@@ -1525,16 +1430,19 @@ if(sucessOrderForm){
     for (i = 0; i < elemImage.length; i++) {
         elemImage[i].addEventListener("mouseover", function () {
             var imageTag = this.getElementsByTagName('img')[0].getAttribute('src');
-            var newImageTag = imageTag.replace(".png", "-hover.png");
-            this.getElementsByTagName('img')[0].src = newImageTag;
+            if (imageTag !== "http://kaleydoskop-vishivki.com.ua/site/images/vertical-line.png") {
+                var newImageTag = imageTag.replace(".png", "-hover.png");
+                this.getElementsByTagName('img')[0].src = newImageTag;
+            }
         });
         elemImage[i].addEventListener("mouseout", function () {
             var imageTag = this.getElementsByTagName('img')[0].getAttribute('src');
-            var newImageTag = imageTag.replace("-hover.png", ".png");
-            this.getElementsByTagName('img')[0].src = newImageTag;
+            if (imageTag !== "http://kaleydoskop-vishivki.com.ua/site/images/vertical-line.png") {
+                var newImageTag = imageTag.replace("-hover.png", ".png");
+                this.getElementsByTagName('img')[0].src = newImageTag;
+            }
         });
     }
->>>>>>> origin/master
 
 
     var slideArrowRight = document.getElementById('main-slide-left');
