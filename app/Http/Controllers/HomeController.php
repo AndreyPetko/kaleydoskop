@@ -301,6 +301,7 @@ class HomeController extends Controller
         }
 
         $subcategory = Subcategory::where('url', $url)->first();
+        $data['subcategory'] = $subcategory;
         $data['subcategoryUrl'] = $subcategory->url;
 
         Session::put('subcatId', $subcategory->id);
