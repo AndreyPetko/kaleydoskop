@@ -415,11 +415,11 @@
 				</div>
 				<div class="header-content-block-2">
 					<div class="header-block2-line-1">
-                        @if(Request::url() === url('/'))
-                            <h1>Наборы для вышивания и рукоделия</h1>
-                        @else
-                            <h2>Наборы для вышивания и рукоделия</h2>
-                        @endif
+						@if(Request::url() === url('/'))
+						<h1>Наборы для вышивания и рукоделия</h1>
+						@else
+						<h2>Наборы для вышивания и рукоделия</h2>
+						@endif
 
 						<p>Режим работы: Пн-Пт 10.00 - 18.00</p>
 					</div>
@@ -496,7 +496,7 @@
 								</div>
 							</div>
 							<div class="main-dropdown-side-border">
-								            <img src="{{ url('site/images/vertical-line.png') }}" alt="">
+								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
 							</div>
 						</div>
 						<div class="main-dropdown-bottom-border">
@@ -667,7 +667,7 @@
 								</div>
 							</div>
 							<div class="main-dropdown-side-border">
-								            <img src="{{ url('site/images/vertical-line.png') }}" alt="">
+								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
 							</div>
 						</div>
 						<div class="main-dropdown-bottom-border">
@@ -737,7 +737,7 @@
 								</div>
 							</div>
 							<div class="main-dropdown-side-border">
-								            <img src="{{ url('site/images/vertical-line.png') }}" alt="">
+								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
 							</div>
 						</div>
 						<div class="main-dropdown-bottom-border">
@@ -753,7 +753,7 @@
 								</div>
 							</div>
 							<div class="main-dropdown-side-border">
-								            <img src="{{ url('site/images/vertical-line.png') }}" alt="">
+								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
 							</div>
 						</div>
 						<div class="main-dropdown-bottom-border">
@@ -769,14 +769,14 @@
 								</div>
 							</div>
 							<div class="main-dropdown-side-border">
-								            <img src="{{ url('site/images/vertical-line.png') }}" alt="">
+								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
 							</div>
 						</div>
 						<div class="main-dropdown-bottom-border">
 						</div>
 					</div>
 				</a>
-					<a href="/brend-products/sdelano-s-lyubovbyu">
+				<a href="/brend-products/sdelano-s-lyubovbyu">
 					<div class="main-dropdown-item">
 						<div class="main-dropdown-content">
 							<div class="main-dropdown-item-text">
@@ -785,14 +785,14 @@
 								</div>
 							</div>
 							<div class="main-dropdown-side-border">
-								            <img src="{{ url('site/images/vertical-line.png') }}" alt="">
+								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
 							</div>
 						</div>
 						<div class="main-dropdown-bottom-border">
 						</div>
 					</div>
 				</a>
-					<a href="/brend-products/krasa-і-tvorchіstb">
+				<a href="/brend-products/krasa-і-tvorchіstb">
 					<div class="main-dropdown-item">
 						<div class="main-dropdown-content">
 							<div class="main-dropdown-item-text">
@@ -801,14 +801,14 @@
 								</div>
 							</div>
 							<div class="main-dropdown-side-border">
-								            <img src="{{ url('site/images/vertical-line.png') }}" alt="">
+								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
 							</div>
 						</div>
 						<div class="main-dropdown-bottom-border">
 						</div>
 					</div>
 				</a>
-					<a href="/brend-products/russkaya-iskusnicza">
+				<a href="/brend-products/russkaya-iskusnicza">
 					<div class="main-dropdown-item">
 						<div class="main-dropdown-content">
 							<div class="main-dropdown-item-text">
@@ -817,14 +817,14 @@
 								</div>
 							</div>
 							<div class="main-dropdown-side-border">
-								            <img src="{{ url('site/images/vertical-line.png') }}" alt="">
+								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
 							</div>
 						</div>
 						<div class="main-dropdown-bottom-border">
 						</div>
 					</div>
 				</a>
-					<a href="/brend-products/plaid">
+				<a href="/brend-products/plaid">
 					<div class="main-dropdown-item">
 						<div class="main-dropdown-content">
 							<div class="main-dropdown-item-text">
@@ -833,14 +833,14 @@
 								</div>
 							</div>
 							<div class="main-dropdown-side-border">
-								            <img src="{{ url('site/images/vertical-line.png') }}" alt="">
+								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
 							</div>
 						</div>
 						<div class="main-dropdown-bottom-border">
 						</div>
 					</div>
 				</a>
-					<a href="/brend-products/anchor">
+				<a href="/brend-products/anchor">
 					<div class="main-dropdown-item">
 						<div class="main-dropdown-content">
 							<div class="main-dropdown-item-text">
@@ -849,14 +849,14 @@
 								</div>
 							</div>
 							<div class="main-dropdown-side-border">
-								            <img src="{{ url('site/images/vertical-line.png') }}" alt="">
+								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
 							</div>
 						</div>
 						<div class="main-dropdown-bottom-border">
 						</div>
 					</div>
 				</a>
-					<a href="/brend-products/BESTEX">
+				<a href="/brend-products/BESTEX">
 					<div class="main-dropdown-item">
 						<div class="main-dropdown-content">
 							<div class="main-dropdown-item-text">
@@ -865,14 +865,14 @@
 								</div>
 							</div>
 							<div class="main-dropdown-side-border">
-								            <img src="{{ url('site/images/vertical-line.png') }}" alt="">
+								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
 							</div>
 						</div>
 						<div class="main-dropdown-bottom-border">
 						</div>
 					</div>
 				</a>
-					<a href="/brend-products/chudesnaya-igla">
+				<a href="/brend-products/chudesnaya-igla">
 					<div class="main-dropdown-item">
 						<div class="main-dropdown-content">
 							<div class="main-dropdown-item-text">
@@ -881,14 +881,14 @@
 								</div>
 							</div>
 							<div class="main-dropdown-side-border">
-								            <img src="{{ url('site/images/vertical-line.png') }}" alt="">
+								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
 							</div>
 						</div>
 						<div class="main-dropdown-bottom-border">
 						</div>
 					</div>
 				</a>
-					<a href="/brend-products/russkij-favorit">
+				<a href="/brend-products/russkij-favorit">
 					<div class="main-dropdown-item">
 						<div class="main-dropdown-content">
 							<div class="main-dropdown-item-text">
@@ -897,14 +897,14 @@
 								</div>
 							</div>
 							<div class="main-dropdown-side-border">
-								            <img src="{{ url('site/images/vertical-line.png') }}" alt="">
+								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
 							</div>
 						</div>
 						<div class="main-dropdown-bottom-border">
 						</div>
 					</div>
 				</a>
-					<a href="/brend-products/kroshe">
+				<a href="/brend-products/kroshe">
 					<div class="main-dropdown-item">
 						<div class="main-dropdown-content">
 							<div class="main-dropdown-item-text">
@@ -913,14 +913,14 @@
 								</div>
 							</div>
 							<div class="main-dropdown-side-border">
-								            <img src="{{ url('site/images/vertical-line.png') }}" alt="">
+								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
 							</div>
 						</div>
 						<div class="main-dropdown-bottom-border">
 						</div>
 					</div>
 				</a>
-					<a href="/brend-products/charіvna-mitb">
+				<a href="/brend-products/charіvna-mitb">
 					<div class="main-dropdown-item">
 						<div class="main-dropdown-content">
 							<div class="main-dropdown-item-text">
@@ -929,14 +929,14 @@
 								</div>
 							</div>
 							<div class="main-dropdown-side-border">
-								            <img src="{{ url('site/images/vertical-line.png') }}" alt="">
+								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
 							</div>
 						</div>
 						<div class="main-dropdown-bottom-border">
 						</div>
 					</div>
 				</a>
-					<a href="/brend-products/Majsterna-Vishivanka">
+				<a href="/brend-products/Majsterna-Vishivanka">
 					<div class="main-dropdown-item">
 						<div class="main-dropdown-content">
 							<div class="main-dropdown-item-text">
@@ -945,7 +945,7 @@
 								</div>
 							</div>
 							<div class="main-dropdown-side-border">
-								            <img src="{{ url('site/images/vertical-line.png') }}" alt="">
+								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
 							</div>
 						</div>
 						<div class="main-dropdown-bottom-border">
@@ -998,139 +998,197 @@
 			</div>
 
 			<div class="footer-banners">
-				<div class="footer-banner">
-					<img src="{{ url('site/images/img1.png') }}" alt="">
-				</div>
-				<div class="footer-banner">
-					<img src="{{ url('site/images/img1.png') }}" alt="">
-				</div>
-				<div class="footer-banner">
-					<img src="{{ url('site/images/img1.png') }}" alt="">
-				</div>
-				<div class="footer-banner">
-					<img src="{{ url('site/images/img1.png') }}" alt="">
-				</div>
-				<div class="footer-banner">
-					<img src="{{ url('site/images/img1.png') }}" alt="">
-				</div>
-				<div class="footer-banner">
-					<img src="{{ url('site/images/img1.png') }}" alt="">
-				</div>
-			</div>
+<!-- 
+				<script type="text/javascript" language="javascript"><!--
+					function BM_Draw(oBM_STAT){
+						document.write('<table cellpadding="0" cellspacing="0" border="0" style="display:inline;margin-right:4px;"><tr><td><div style="margin:0px;padding:0px;font-size:1px;width:88px;"><div style="background:url(\'http://i.bigmir.net/cnt/samples/diagonal/b60_top.gif\') no-repeat bottom;"> </div><div style="font:10px Tahoma;background:url(\'http://i.bigmir.net/cnt/samples/diagonal/b60_center.gif\');"><div style="text-align:center;"><a href="http://www.bigmir.net/" target="_blank" style="color:#0000ab;text-decoration:none;font:10px Tahoma;">bigmir<span style="color:#ff0000;">)</span>net</a></div><div style="margin-top:3px;padding: 0px 6px 0px 6px;color:#426ed2;"><div style="float:left;font:10px Tahoma;">'+oBM_STAT.hosts+'</div><div style="float:right;font:10px Tahoma;">'+oBM_STAT.hits+'</div></div><br clear="all"/></div><div style="background:url(\'http://i.bigmir.net/cnt/samples/diagonal/b60_bottom.gif\') no-repeat top;"> </div></div></td></tr></table>');
+					}
+
+				</script>
+				<script type="text/javascript" language="javascript"><!--
+					bmN=navigator,bmD=document,bmD.cookie='b=b',i=0,bs=[],bm={o:1,v:16900002,s:16900002,t:0,c:bmD.cookie?1:0,n:Math.round((Math.random()* 1000000)),w:0};
+					for(var f=self;f!=f.parent;f=f.parent)bm.w++;
+						try{if(bmN.plugins&&bmN.mimeTypes.length&&(x=bmN.plugins['Shockwave Flash']))bm.m=parseInt(x.description.replace(/([a-zA-Z]|\s)+/,''));
+					else for(var f=3;f<20;f++)if(eval('new ActiveXObject("ShockwaveFlash.ShockwaveFlash.'+f+'")'))bm.m=f}catch(e){;}
+					try{bm.y=bmN.javaEnabled()?1:0}catch(e){;}
+					try{bmS=screen;bm.v^=bm.d=bmS.colorDepth||bmS.pixelDepth;bm.v^=bm.r=bmS.width}catch(e){;}
+					r=bmD.referrer.slice(7);if(r&&r.split('/')[0]!=window.location.host){bm.f=escape(r);bm.v^=r.length}
+					bm.v^=window.location.href.length;for(var x in bm) if(/^[ovstcnwmydrf]$/.test(x)) bs[i++]=x+bm[x];
+					bmD.write('<sc'+'ript type="text/javascript" language="javascript" src="http://c.bigmir.net/?'+bs.join('&')+'"></sc'+'ript>');
+
+				</script>
+				<noscript>
+					<a href="http://www.bigmir.net/" target="_blank"><img src="http://c.bigmir.net/?v16900002&s16900002&t2" width="88" height="31" alt="bigmir)net TOP 100" title="bigmir)net TOP 100" border="0" /></a>
+				</noscript>
+				<a href="http://www.i.ua/" target="_blank" onclick="this.href='http://i.ua/r.php?144160';" title="Rated by I.UA">
+					<script type="text/javascript" language="javascript"><!--
+						iS='<img src="http://r.i.ua/s?u144160&p65&n'+Math.random();
+						iD=document;if(!iD.cookie)iD.cookie="b=b; path=/";if(iD.cookie)iS+='&c1';
+						iS+='&d'+(screen.colorDepth?screen.colorDepth:screen.pixelDepth)
+						+"&w"+screen.width+'&h'+screen.height;
+						iT=iD.referrer.slice(7);iH=window.location.href.slice(7);
+						((iI=iT.indexOf('/'))!=-1)?(iT=iT.substring(0,iI)):(iI=iT.length);
+						if(iT!=iH.substring(0,iI))iS+='&f'+escape(iD.referrer.slice(7));
+						iS+='&r'+escape(iH);
+						iD.write(iS+'" border="0" width="88" height="31" />');
+					</script></a>
+					<script type="text/javascript">
+						my_id = 120864;
+						my_width = 88;
+						my_height = 31;
+						my_alt = "MyCounter - счётчик и статистика (посетителей и хитов сегодня)";
+					</script>
+					<script type="text/javascript"
+					src="http://scripts.mycounter.ua/counter2.0.js">
+				</script>
+
+				<script id="top100Counter" type="text/javascript" src="http://counter.rambler.ru/top100.jcn?2756718"></script>
+				<noscript>
+					<a href="http://top100.rambler.ru/navi/2756718/">
+						<img src="http://counter.rambler.ru/top100.cnt?2756718" alt="Rambler's Top100" border="0" />
+					</a>
+
+				</noscript>
+				<script type="text/javascript">
+					document.write("<a href='http://www.liveinternet.ru/click' "+
+						"target=_blank><img src='//counter.yadro.ru/hit?t14.6;r"+
+						escape(document.referrer)+((typeof(screen)=="undefined")?"":
+							";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+								screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+						";"+Math.random()+
+						"' alt='' title='LiveInternet: показано число просмотров за 24"+
+						" часа, посетителей за 24 часа и за сегодня' "+
+						"border='0' width='88' height='31'><\/a>")
+				</script><script type="text/javascript">
+
+				var _gaq = _gaq || [];
+				_gaq.push(['_setAccount', 'UA-33865176-1']);
+				_gaq.push(['_trackPageview']);
+
+				(function() {
+					var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+					ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+					var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+				})();
+
+			</script><a href="http://www.online.ua/" target="_blank"> <img src="http://i.online.ua/catalog/logo/
+			32.png" alt="Украина онлайн" border="0" width="88" height="31"> </a> -->
+
 		</div>
-		<div class="footer-fence"></div>
 	</div>
-	<div class="mobile-wrapper">
-		<div class="mobile-menu">
-			<div class="mobile-menu-list">
-				<div class="mobile-top-border"></div>
-				<a href="/"><div class="mobile-menu-list-item">Главная</div></a>
-				<a href="/catalog"><div class="mobile-menu-list-item">Каталог</div></a>
-				<a href="/about"><div class="mobile-menu-list-item">О компании</div></a>
-				<a href="/wholesalers"><div class="mobile-menu-list-item">Оптовикам</div></a>
-				<a href="/oplata-dostavka"><div class="mobile-menu-list-item">Оплата и доставка</div></a>
-				<a href="/contacts"><div class="mobile-menu-list-item">Контакты</div></a>
-				<div class="mobile-menu-list-item" id="mobile-white-menu-button">Пользователю</div>
-			</div>
-			<div class="mobile-white-menu-list">
-				<div class="mobile-white-menu-item" id="send-mail-mobile">Подписаться на рассылку</div>
-				<div class="mobile-white-menu-item" id="feedback-mobile">Обратная связь</div>
-				<div class="mobile-white-menu-item" id="callback-mobile">Заказать обратный звонок</div>
-				<a href="/wishlist"><div class="mobile-white-menu-item">Желания</div></a>
-				
-			</div>
+	<div class="footer-fence"></div>
+</div>
+<div class="mobile-wrapper">
+	<div class="mobile-menu">
+		<div class="mobile-menu-list">
+			<div class="mobile-top-border"></div>
+			<a href="/"><div class="mobile-menu-list-item">Главная</div></a>
+			<a href="/catalog"><div class="mobile-menu-list-item">Каталог</div></a>
+			<a href="/about"><div class="mobile-menu-list-item">О компании</div></a>
+			<a href="/wholesalers"><div class="mobile-menu-list-item">Оптовикам</div></a>
+			<a href="/oplata-dostavka"><div class="mobile-menu-list-item">Оплата и доставка</div></a>
+			<a href="/contacts"><div class="mobile-menu-list-item">Контакты</div></a>
+			<div class="mobile-menu-list-item" id="mobile-white-menu-button">Пользователю</div>
 		</div>
-		<div class="mobile-header">
-			<div class="mobile-menu-button">
-				<img src="{{ url('site/images/icon-menu.png') }}" alt="">
-			</div>
-			<div class="mobile-header-numbers">
-				8 096 778 74 88 <br>
-				8 044 332 88 82
-			</div>
-		</div>
-		<div class="mobile-logo">
-			<a href="/"><img src="{{ url('site/images/logo.png') }}" alt=""></a>
-		</div>
-		<div class="mobile-search">
-			<div class="mobile-search-input">
-				<input id="mobile-search-input"></input>
-			</div>
-			<div class="mobile-search-icon" id="mobile-search">
-				<img src="{{ url('/site/images/icon-sarch.png') }}">
-			</div>
-		</div>
-		<div class="mobile-top-line">
-			@if(!Auth::check())
-			<a href="/login">
-				<div class="mobile-top-element">
-					<div class="mobile-top-image">
-						<img src="{{ url('site/images/icon-login.png') }}" alt="">
-					</div>
-					<div class="mobile-top-text">
-						Вход
-					</div>
-				</div>
-			</a>
-			<a href="/auth/register">
-				<div class="mobile-top-element mobile-top-register">
-					<div class="mobile-top-image">
-						<img src="{{ url('site/images/icon-registr.png') }}" alt="">
-					</div>
-					<div class="mobile-top-text">
-						Регистрация
-					</div>
-				</div>
-			</a>
-			@else
-			<a href="/auth/logout">
-				<div class="mobile-top-element">
-					<div class="mobile-top-image">
-						<img src="{{ url('site/images/icon-login.png') }}" alt="">
-					</div>
-					<div class="mobile-top-text">
-						Выход
-					</div>
-				</div>
-			</a>
-			<a href="/dashboard">
-				<div class="mobile-top-element mobile-top-register">
-					<div class="mobile-top-image">
-						<img src="{{ url('site/images/icon-registr.png') }}" alt="">
-					</div>
-					<div class="mobile-top-text">
-						Кабинет
-					</div>
-				</div>
-			</a>
-			@endif
-			<a href="/cart">
-				<div class="mobile-top-element mobile-top-right">
-					<div class="mobile-top-image">
-						<img src="{{ url('site/images/icon-cart.png') }}" alt="">
-					</div>
-					<div class="mobile-top-text">
-						Корзина
-					</div>
-				</div>
-			</a>
-		</div>
-
-		@yield('mobile')
-
-		<div class="mobile-footer">
-
-			<div class="mobile-footer-item"><a href="/catalog">Каталог</a></div>
-			<div class="mobile-footer-item"><a href="/new-products">Новинки</a></div>
-			<div class="mobile-footer-item"><a href="#">Скидки</a></div>
-			<div class="mobile-footer-item"><a href="/about">О компании</a></div>
-			<div class="mobile-footer-item"><a href="/articles">Статьи</a></div>
-			<div class="mobile-footer-item"><a href="/wholesalers">Оптовикам</a></div>
-			<div class="mobile-footer-item"><a href="/oplata-dostavka">Оплата и доставка</a></div>
-			<div class="mobile-footer-item"><a href="/contacts">Контакты</a></div>
+		<div class="mobile-white-menu-list">
+			<div class="mobile-white-menu-item" id="send-mail-mobile">Подписаться на рассылку</div>
+			<div class="mobile-white-menu-item" id="feedback-mobile">Обратная связь</div>
+			<div class="mobile-white-menu-item" id="callback-mobile">Заказать обратный звонок</div>
+			<a href="/wishlist"><div class="mobile-white-menu-item">Желания</div></a>
 			
 		</div>
 	</div>
+	<div class="mobile-header">
+		<div class="mobile-menu-button">
+			<img src="{{ url('site/images/icon-menu.png') }}" alt="">
+		</div>
+		<div class="mobile-header-numbers">
+			8 096 778 74 88 <br>
+			8 044 332 88 82
+		</div>
+	</div>
+	<div class="mobile-logo">
+		<a href="/"><img src="{{ url('site/images/logo.png') }}" alt=""></a>
+	</div>
+	<div class="mobile-search">
+		<div class="mobile-search-input">
+			<input id="mobile-search-input"></input>
+		</div>
+		<div class="mobile-search-icon" id="mobile-search">
+			<img src="{{ url('/site/images/icon-sarch.png') }}">
+		</div>
+	</div>
+	<div class="mobile-top-line">
+		@if(!Auth::check())
+		<a href="/login">
+			<div class="mobile-top-element">
+				<div class="mobile-top-image">
+					<img src="{{ url('site/images/icon-login.png') }}" alt="">
+				</div>
+				<div class="mobile-top-text">
+					Вход
+				</div>
+			</div>
+		</a>
+		<a href="/auth/register">
+			<div class="mobile-top-element mobile-top-register">
+				<div class="mobile-top-image">
+					<img src="{{ url('site/images/icon-registr.png') }}" alt="">
+				</div>
+				<div class="mobile-top-text">
+					Регистрация
+				</div>
+			</div>
+		</a>
+		@else
+		<a href="/auth/logout">
+			<div class="mobile-top-element">
+				<div class="mobile-top-image">
+					<img src="{{ url('site/images/icon-login.png') }}" alt="">
+				</div>
+				<div class="mobile-top-text">
+					Выход
+				</div>
+			</div>
+		</a>
+		<a href="/dashboard">
+			<div class="mobile-top-element mobile-top-register">
+				<div class="mobile-top-image">
+					<img src="{{ url('site/images/icon-registr.png') }}" alt="">
+				</div>
+				<div class="mobile-top-text">
+					Кабинет
+				</div>
+			</div>
+		</a>
+		@endif
+		<a href="/cart">
+			<div class="mobile-top-element mobile-top-right">
+				<div class="mobile-top-image">
+					<img src="{{ url('site/images/icon-cart.png') }}" alt="">
+				</div>
+				<div class="mobile-top-text">
+					Корзина
+				</div>
+			</div>
+		</a>
+	</div>
+
+	@yield('mobile')
+
+	<div class="mobile-footer">
+
+		<div class="mobile-footer-item"><a href="/catalog">Каталог</a></div>
+		<div class="mobile-footer-item"><a href="/new-products">Новинки</a></div>
+		<div class="mobile-footer-item"><a href="#">Скидки</a></div>
+		<div class="mobile-footer-item"><a href="/about">О компании</a></div>
+		<div class="mobile-footer-item"><a href="/articles">Статьи</a></div>
+		<div class="mobile-footer-item"><a href="/wholesalers">Оптовикам</a></div>
+		<div class="mobile-footer-item"><a href="/oplata-dostavka">Оплата и доставка</a></div>
+		<div class="mobile-footer-item"><a href="/contacts">Контакты</a></div>
+		
+	</div>
+</div>
 </div>
 
 
