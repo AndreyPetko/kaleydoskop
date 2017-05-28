@@ -550,7 +550,7 @@
                 @foreach($brends as $brend)
                     <div class="filter-value">
                         <div class="filter-checkbox fl">
-                            <input type="checkbox" class="attr-checkbox" data-attr='{{$key}}' data-value="">
+                            <input type="checkbox" class="attr-checkbox" data-attr='' data-value="">
                         </div>
                         <div class="filter-value-text fl">
                             {{ $brend->name }}
@@ -570,7 +570,7 @@
                     @foreach($attr as $valueKey => $value)
                         <div class="filter-value">
                             <div class="filter-checkbox fl">
-                                <input type="checkbox" class="attr-checkbox" data-attr='{{$key}}' data-value="">
+                                <input type="checkbox" class="attr-checkbox" data-attr='' data-value="">
                             </div>
                             <div class="filter-value-text fl">
                                 {{ $value }}

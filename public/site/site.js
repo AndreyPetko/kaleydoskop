@@ -772,7 +772,6 @@ window.addEventListener("load", function () {
 
             });
         }
-        ;
 
 
         var brends = document.getElementsByClassName('brends-checkbox');
