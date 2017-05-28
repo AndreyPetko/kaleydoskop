@@ -35,40 +35,48 @@ use App\File;
 use App\Keyval;
 
 
-class HomeController extends Controller {
-
-	/**
-	 * { function_description }
-	 */
-	public function __construct() {
-		$this->request = Request::all();
-		unset($this->request['_token']);
-	}
-
-	/**
-	 * Gets the index.
-	 *
-	 * @return     <type>  The index.
-	 */
-	public function getIndex() {
-		$data['mainSlides'] = Slide::getOrderMainSlides();
-		$data['recProducts'] = Product::getRecommended(4);
-		$data['newProducts'] = Product::getNew($skip = 0, $take = 8);
+/**
+ * Class HomeController
+ * @package App\Http\Controllers
+ */
+class HomeController extends Controller
+{
 
 
-		foreach ($data['newProducts'] as $product) {
-			if($product->images) {
-				foreach ($product->images as $image) {
-					$product->image = $image->url;
-					break;
-				}
-			}
-		}
+    /**
+     * HomeController constructor.
+     */
+    public function __construct()
+    {
+        $this->request = Request::all();
+        unset($this->request['_token']);
+    }
 
-		$data['brends'] = Brend::getItemsWithLogo();
+    /**
+     * Gets the index.
+     *
+     * @return     <type>  The index.
+     */
+    public function getIndex()
+    {
+        $data['mainSlides'] = Slide::getOrderMainSlides();
+        $data['recProducts'] = Product::getRecommended(4);
+        $data['newProducts'] = Product::getNew($skip = 0, $take = 8);
 
-		$data['recProducts'] = Product::setWholesalePrice($data['recProducts'], 1);
-		$data['newProducts'] = Product::setWholesalePrice($data['newProducts'], 1);
+
+        foreach ($data['newProducts'] as $product) {
+            if ($product->images) {
+                foreach ($product->images as $image) {
+                    $product->image = $image->url;
+                    break;
+                }
+            }
+        }
+
+        $data['brends'] = Brend::getItemsWithLogo();
+
+        $data['recProducts'] = Product::setWholesalePrice($data['recProducts'], 1);
+        $data['newProducts'] = Product::setWholesalePrice($data['newProducts'], 1);
 
         $data['catalog'] = Category::getCatalog();
 
@@ -76,593 +84,639 @@ class HomeController extends Controller {
         $data['mainText'] = Text::getItem('main-text');
 
 
-		return view('site.index', $data);
-	}
+        return view('site.index', $data);
+    }
 
-	/**
-	 * Gets the new products.
-	 *
-	 * @return     <type>  The new products.
-	 */
-	public function getNewProducts() {
-		$products = Product::getNew(52);
+    /**
+     * Gets the new products.
+     *
+     * @return     <type>  The new products.
+     */
+    public function getNewProducts()
+    {
+        $products = Product::getNew(52);
 
-		foreach ($products as $product) {
-			$product = Product::setWholesalePrice($product);
-			foreach ($product->images as $image) {
-				$product->image = $image->url;
-				break;
-			}
-		}
+        foreach ($products as $product) {
+            $product = Product::setWholesalePrice($product);
+            foreach ($product->images as $image) {
+                $product->image = $image->url;
+                break;
+            }
+        }
 
-		$breadcrumbs = ['/new-products' => 'Новинки'];
+        $breadcrumbs = ['/new-products' => 'Новинки'];
 
 
-		return view('site.newList', compact('products', 'breadcrumbs'));
-	}
+        return view('site.newList', compact('products', 'breadcrumbs'));
+    }
 
-	/**
-	 * Gets the about.
-	 *
-	 * @return     <type>  The about.
-	 */
-	public function getAbout() {
-		$textVar = Text::getItem('about');
+    /**
+     * Gets the about.
+     *
+     * @return     <type>  The about.
+     */
+    public function getAbout()
+    {
+        $textVar = Text::getItem('about');
 
-		$title = 'О компании';
-		$breadcrumbs = ['/about' => 'О компании'];
+        $title = 'О компании';
+        $breadcrumbs = ['/about' => 'О компании'];
 
-		return view('site.simpleTextPage')->with('textVar', $textVar)->with('title', $title)->with('breadcrumbs', $breadcrumbs);
-	}
+        return view('site.simpleTextPage')->with('textVar', $textVar)->with('title', $title)->with('breadcrumbs', $breadcrumbs);
+    }
 
-	/**
-	 * Gets the wholesalers.
-	 *
-	 * @return     <type>  The wholesalers.
-	 */
-	public function getWholesalers() {
-		if(!Auth::check() || Auth::user()->role == 'retail' || Auth::user()->role == 'admin') {
-			$textVar = Text::getItem('wholesalersAll');
-		} else {
-			$textVar = Text::getItem('wholesalersOnly');
-		}
+    /**
+     * Gets the wholesalers.
+     *
+     * @return     <type>  The wholesalers.
+     */
+    public function getWholesalers()
+    {
+        if (!Auth::check() || Auth::user()->role == 'retail' || Auth::user()->role == 'admin') {
+            $textVar = Text::getItem('wholesalersAll');
+        } else {
+            $textVar = Text::getItem('wholesalersOnly');
+        }
 
-		$files = File::all();
+        $files = File::all();
 
-		$breadcrumbs = ['/wholesalers' => 'Оптовикам'];
+        $breadcrumbs = ['/wholesalers' => 'Оптовикам'];
 
-		return view('site.wholesalers', compact('textVar', 'breadcrumbs', 'files'));
-	}
+        return view('site.wholesalers', compact('textVar', 'breadcrumbs', 'files'));
+    }
 
 
-	/**
-	 * Gets the product.
-	 *
-	 * @param      string  $url    The url
-	 *
-	 * @return     <type>  The product.
-	 */
-	public function getProduct($url = '') {
-		if($url == '') {
-			return view('site.noproduct');
-		}
+    /**
+     * @param string $url
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function getProduct($url = '')
+    {
+        if ($url == '') {
+            return view('site.noproduct');
+        }
 
 
+        $data['product'] = Product::getByUrl($url);
 
-		$data['product'] = Product::getByUrl($url);
 
+        $data['category'] = Category::getByProductId($data['product']->id);
 
-		$data['category'] = Category::getByProductId($data['product']->id);
+        if ($data['category']) {
+            $data['subcategories'] = Subcategory::getByCategoryId($data['category']->id);
+        }
 
-		if($data['category']) {
-			$data['subcategories'] = Subcategory::getByCategoryId($data['category']->id);
-		}
+        $data['images'] = Product::getImagesById($data['product']->id);
+        $data['reviews'] = Review::getProductReview($data['product']->id);
+        $data['reviews'] = MyDate::changeFormat($data['reviews']);
+        $data['withProducts'] = Product::getWith($data['product']->id);
 
-		$data['images'] = Product::getImagesById($data['product']->id);
+        $data['next'] = $data['reviews']->nextPageUrl();
+        $data['prev'] = $data['reviews']->previousPageUrl();
 
-		$data['reviews'] = Review::getProductReview($data['product']->id);
+        $data['watched'] = Product::getWatched($data['product']->id);
 
-		$data['reviews'] = MyDate::changeFormat($data['reviews']);
 
-		$data['withProducts'] = Product::getWith($data['product']->id);
+        $data['countReviews'] = Review::getCountByProductId($data['product']->id);
 
+        $wishObj = Wishlist::getInstance();
+        $data['product']->wish = $wishObj->check($data['product']->id);
 
-		$data['next'] = $data['reviews']->nextPageUrl();
-		$data['prev'] = $data['reviews']->previousPageUrl();
+        $compObj = Comparison::getInstance();
+        $data['product']->comp = $compObj->check($data['product']->id);
 
-		$data['watched'] = Product::getWatched($data['product']->id);
+        $data['attributes'] = Product::getProductAttributes($data['product']->id);
 
+        $cookie = MyCookie::addItem($data['product']->id);
 
-		$data['countReviews'] = Review::getCountByProductId($data['product']->id);
+        $cookie = Cookie::make('watched', $cookie, '99999');
 
-		$wishObj = Wishlist::getInstance();
-		$data['product']->wish = $wishObj->check($data['product']->id);
+        Cookie::queue($cookie);
 
-		$compObj = Comparison::getInstance();
-		$data['product']->comp = $compObj->check($data['product']->id);
+        $bread = Breadcrumbs::getInstance('product');
+        $data['breadcrumbs'] = $bread->generate($data['product']);
 
-		$data['attributes'] = Product::getProductAttributes($data['product']->id);
+        $data['product'] = Product::setWholesalePrice($data['product']);
 
-		$cookie = MyCookie::addItem($data['product']->id);
 
-		$cookie = Cookie::make('watched', $cookie , '99999');
+        if ($data['withProducts']) {
+            $data['withProducts'] = Product::setWholesalePrice($data['withProducts'], 1);
+        }
 
-		Cookie::queue($cookie);
+        if ($data['watched']) {
+            $data['watched'] = Product::setWholesalePrice($data['watched'], 1);
+        }
 
-		$bread = Breadcrumbs::getInstance('product');
-		$data['breadcrumbs'] = $bread->generate($data['product']);
 
-		$data['product'] = Product::setWholesalePrice($data['product']);
+        if ($data['category'] && $data['category']->id == 39) {
+            return view('site.threadProduct', $data);
+        } else {
+            return view('site.product', $data);
+        }
+    }
 
 
-		if($data['withProducts']) {
-			$data['withProducts'] = Product::setWholesalePrice($data['withProducts'], 1);
-		}
+    // public function getCategory($url) {
 
-		if($data['watched']) {
-			$data['watched'] = Product::setWholesalePrice($data['watched'], 1);
-		}
+    // 	if($url != Session::get('categoryUrl')) {
+    // 		Session::forget('filter');
+    // 		Session::forget('brends');
+    // 		Session::forget('subcatId');
+    // 		Session::forget('startPrice');
+    // 		Session::forget('stopPrice');
+    // 	}
 
 
+    // 	if(isset($_GET['subcategory'])) {
+    // 		Session::put('subcatId', $_GET['subcategory']);
+    // 	}
 
-		if($data['category'] && $data['category']->id == 39) {
-			return view('site.threadProduct', $data);
-		} else {
-			return view('site.product', $data);
-		}
-	}
+    // 	Session::put('categoryUrl', $url);
 
 
-	// public function getCategory($url) {
+    // 	if(Session::get('sortType')) {
+    // 		$sortType = Session::get('sortType');
+    // 	} else {
+    // 		$sortType = 'name';
+    // 	}
 
-	// 	if($url != Session::get('categoryUrl')) {
-	// 		Session::forget('filter');
-	// 		Session::forget('brends');
-	// 		Session::forget('subcatId');
-	// 		Session::forget('startPrice');
-	// 		Session::forget('stopPrice');
-	// 	}
+    // 	$data['category']  = Category::getByUrl($url);
+    // 	$data['subcategories'] = Subcategory::getByCategoryId($data['category']->id);
 
+    // 	$data['products'] = Product::getBySessionFilter($url, 2);
 
-	// 	if(isset($_GET['subcategory'])) {
-	// 		Session::put('subcatId', $_GET['subcategory']);
-	// 	}
+    // 	$data['attributesValues'] = Attribute::getValues('category', $data['category']->id);
 
-	// 	Session::put('categoryUrl', $url);
 
+    // 	$data['maxPrice'] = Product::getMaxCategoryPrice($data['category']->id);
 
-	// 	if(Session::get('sortType')) {
-	// 		$sortType = Session::get('sortType');
-	// 	} else {
-	// 		$sortType = 'name';
-	// 	}
+    // 	$bread = Breadcrumbs::getInstance('category');
+    // 	$data['breadcrumbs'] = $bread->generate($data['category']);
 
-	// 	$data['category']  = Category::getByUrl($url);
-	// 	$data['subcategories'] = Subcategory::getByCategoryId($data['category']->id);
+    // 	$data['brends'] = Brend::getByCategoryId($data['category']->id);
 
-	// 	$data['products'] = Product::getBySessionFilter($url, 2);
 
-	// 	$data['attributesValues'] = Attribute::getValues('category', $data['category']->id);
+    // 	if($data['category']->id == 39) {
+    // 		$data['theads'] = 1;
+    // 	}
 
+    // 	return view('site.category', $data);
+    // }
 
-	// 	$data['maxPrice'] = Product::getMaxCategoryPrice($data['category']->id);
 
-	// 	$bread = Breadcrumbs::getInstance('category');
-	// 	$data['breadcrumbs'] = $bread->generate($data['category']);
+    /**
+     * @param $url
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function getCategory($url)
+    {
+        $category = Category::getByUrl($url);
+        $subcategories = Subcategory::getByCategoryId($category->id);
 
-	// 	$data['brends'] = Brend::getByCategoryId($data['category']->id);
+        return view('site.subcategories', compact('subcategories', 'category'));
+    }
 
 
-	// 	if($data['category']->id == 39) {
-	// 		$data['theads'] = 1;
-	// 	}
+    /**
+     * @param $url
+     * @param Product $product
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function getSubcategory($url, Product $product)
+    {
 
-	// 	return view('site.category', $data);
-	// }
+        if ($url != Session::get('categoryUrl')) {
+            Session::forget('filter');
+            Session::forget('brends');
+            Session::forget('subcatId');
+            Session::forget('startPrice');
+            Session::forget('stopPrice');
+        }
 
 
-	/**
-	 * Gets the category.
-	 *
-	 * @param      <type>  $url    The url
-	 *
-	 * @return     <type>  The category.
-	 */
-	public function getCategory($url)
-	{
-		$category = Category::getByUrl($url);
-		$subcategories = Subcategory::getByCategoryId($category->id);
+        if (Session::get('sortType')) {
+            $sortType = Session::get('sortType');
+        } else {
+            $sortType = 'name';
+        }
 
-		return view('site.subcategories', compact('subcategories', 'category'));
-	}
+        $subcategory = Subcategory::where('url', $url)->first();
+        $data['subcategory'] = $subcategory;
+        $data['subcategoryUrl'] = $subcategory->url;
 
+        Session::put('subcatId', $subcategory->id);
 
-	/**
-	 * Gets the subcategory.
-	 *
-	 * @param      <type>        $url      The url
-	 * @param      \App\Product  $product  The product
-	 *
-	 * @return     <type>        The subcategory.
-	 */
-	public function getSubcategory($url, Product $product) {
+        $data['category'] = Category::find($subcategory->category_id);
 
-		if($url != Session::get('categoryUrl')) {
-			Session::forget('filter');
-			Session::forget('brends');
-			Session::forget('subcatId');
-			Session::forget('startPrice');
-			Session::forget('stopPrice');
-		}
+        if ($data['category']->isThread()) {
+            Session::put('showCount', 9999999);
+        } else {
+            if (Session::get('showCount') == 9999999) {
+                Session::put('showCount', 9);
+            }
+        }
 
+        $data['subcategories'] = Subcategory::getByCategoryId($data['category']->id);
+        $data['products'] = Product::getBySessionFilter($data['category']->url, 2);
+        $data['attributesValues'] = Attribute::getValues('category', $data['category']->id);
 
-		if(Session::get('sortType')) {
-			$sortType = Session::get('sortType');
-		} else {
-			$sortType = 'name';
-		}
 
-		$subcategory = Subcategory::where('url', $url)->first();
-		$data['subcategoryUrl'] = $subcategory->url;
+        $data['maxPrice'] = Product::getMaxCategoryPrice($data['category']->id);
 
-		Session::put('subcatId', $subcategory->id);
+        $bread = Breadcrumbs::getInstance('category');
+        $data['breadcrumbs'] = $bread->generate($data['category']);
 
-		$data['category'] = Category::find($subcategory->category_id);
+        $data['brends'] = Brend::getByCategoryId($data['category']->id);
 
-		if($data['category']->isThread()) {
-			Session::put('showCount', 9999999);
-		} else {
-			if(Session::get('showCount') == 9999999) {
-				Session::put('showCount', 9);
-			}
-		}
 
-		$data['subcategories'] = Subcategory::getByCategoryId($data['category']->id);
-		$data['products'] = Product::getBySessionFilter($data['category']->url, 2);
-		$data['attributesValues'] = Attribute::getValues('category', $data['category']->id);
+        if ($data['category']->isThread()) {
+            $data['theads'] = 1;
+            $data['allProducts'] = $product->getAllSubcategoryProducts($subcategory->id);
+        }
 
 
-		$data['maxPrice'] = Product::getMaxCategoryPrice($data['category']->id);
+        return view('site.category', $data);
+    }
 
-		$bread = Breadcrumbs::getInstance('category');
-		$data['breadcrumbs'] = $bread->generate($data['category']);
 
-		$data['brends'] = Brend::getByCategoryId($data['category']->id);
+    /**
+     * @param Product $productEntity
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function postAddThreadsToCard(Product $productEntity)
+    {
+        $products = $this->request['products'];
 
+        $products = $productEntity->filterZeroCount($products);
 
-		if($data['category']->isThread()) {
-			$data['theads'] = 1;
-			$data['allProducts'] = $product->getAllSubcategoryProducts($subcategory->id);
-		}
+        $cart = Cart::getInstance(1);
 
+        $cart->addList($products);
 
-		return view('site.category', $data);
-	}
+        return Redirect::back()->with('addToCard', 1);
+    }
 
-	/**
-	 * Posts an add threads to card.
-	 *
-	 * @param      \App\Product  $productEntity  The product entity
-	 *
-	 * @return     <type>        ( description_of_the_return_value )
-	 */
-	public function postAddThreadsToCard(Product $productEntity)
-	{
-		$products = $this->request['products'];
 
-		$products = $productEntity->filterZeroCount($products);
+    /**
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function postAddReview()
+    {
+        if ($this->request['name'] == 'Admin') {
+            if (!Auth::check() || Auth::user()->role != 'admin') {
+                return Redirect::back();
+            }
+        }
 
-		$cart = Cart::getInstance(1);
+        Review::create($this->request);
+        return Redirect::back();
+    }
 
-		$cart->addList($products);
 
-		return Redirect::back()->with('addToCard', 1);;
-	}
+    public function getSearch($query = '')
+    {
+        $products = Product::search($query);
 
+        // $products = Wishlist::setWishToProducts($products);
+        $breadcrumbs = ['/search' => 'Поиск'];
 
-	/**
-	 * Posts an add review.
-	 *
-	 * @return     <type>  ( description_of_the_return_value )
-	 */
-	public function postAddReview() {
-		if($this->request['name'] == 'Admin') {
-			if(!Auth::check() || Auth::user()->role != 'admin') {
-				return Redirect::back();
-			}
-		}
+        return view('site.search')->with('products', $products)->with('query', $query)->with('breadcrumbs', $breadcrumbs);
+    }
 
-		Review::create($this->request);
-		return Redirect::back();
-	}
 
-	/**
-	 * Gets the search.
-	 *
-	 * @param      string  $query  The query
-	 *
-	 * @return     <type>  The search.
-	 */
-	public function getSearch($query = '') {
-		$products = Product::search($query);
+    /**
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function postAddIntakeMessage()
+    {
+        Intake::addItem($this->request);
+        return Redirect::back();
+    }
 
-		// $products = Wishlist::setWishToProducts($products);
-		$breadcrumbs = ['/search' => 'Поиск'];
 
-		return view('site.search')->with('products', $products)->with('query', $query)->with('breadcrumbs', $breadcrumbs);
-	}
+    /**
+     * Gets the ftp file.
+     */
+    public function getFtpFile()
+    {
+        $result = Ftp::getFile();
 
-	/**
-	 * Posts an add intake message.
-	 *
-	 * @return     <type>  ( description_of_the_return_value )
-	 */
-	public function postAddIntakeMessage() {
-		Intake::addItem($this->request);
-		return Redirect::back();
-	}
+        if ($result) {
+            Ftp::addItems();
+        }
+    }
 
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function getCart()
+    {
+        $cart = Cart::getInstance();
+        $cartInfo = $cart->getProductsAndTotal();
+        $products = $cartInfo[0];
+        $total = $cartInfo[1];
+        $breadcrumbs = ['/cart' => 'Корзина'];
+        $deliveryPrices = Keyval::getDeliveryPrices();
+        $deliveryPricesStr = json_encode($deliveryPrices->toArray());
+        return view('site.cart', compact('products', 'total', 'breadcrumbs', 'deliveryPricesStr'));
+    }
 
-	/**
-	 * Gets the ftp file.
-	 */
-	public function getFtpFile() {
-		$result = Ftp::getFile();
 
-		if($result) {
-			Ftp::addItems();
-		}
-	}
+    /**
+     * @param Feedback $feedback
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function postSendFeedback(Feedback $feedback)
+    {
+        if (Auth::check() && Auth::user()->role == 'wholesaler') {
+            $this->request['user_type'] = 'wholesaler';
+        } else {
+            $this->request['user_type'] = 'retail';
+        }
 
-	/**
-	 * Gets the cartesian.
-	 *
-	 * @return     <type>  The cartesian.
-	 */
-	public function getCart() {
-		$cart = Cart::getInstance();
-		$cartInfo = $cart->getProductsAndTotal();
-		$products = $cartInfo[0];
-		$total = $cartInfo[1];
-		$breadcrumbs = ['/cart' => 'Корзина'];
-		$deliveryPrices = Keyval::getDeliveryPrices();
-		$deliveryPricesStr = json_encode($deliveryPrices->toArray());
-		return view('site.cart', compact('products', 'total', 'breadcrumbs', 'deliveryPricesStr'));
-	}
 
-	/**
-	 * Posts a send feedback.
-	 *
-	 * @param      \App\Feedback  $feedback  The feedback
-	 *
-	 * @return     <type>         ( description_of_the_return_value )
-	 */
-	public function postSendFeedback(Feedback $feedback) {
-		if(Auth::check() && Auth::user()->role == 'wholesaler') {
-			$this->request['user_type'] = 'wholesaler';
-		} else {
-			$this->request['user_type'] = 'retail';
-		}
+        $this->request['type'] = 'feedback';
+        $feedback->create($this->request);
+        return Redirect::back()->with('feedback', 1);
+    }
 
 
-		$this->request['type'] = 'feedback';
-		$feedback->create($this->request);
-		return Redirect::back()->with('feedback', 1);
-	}
+    /**
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function postAddCallback()
+    {
 
-	/**
-	 * Posts an add callback.
-	 *
-	 * @return     <type>  ( description_of_the_return_value )
-	 */
-	public function postAddCallback() {
+        $email = 'andreypetko3@gmail.com';
 
-		$email = 'andreypetko3@gmail.com';
+        Mail::send('emails.callback', ['name' => $this->request['name'], 'phone' => $this->request['phone']], function ($message) use ($email) {
+            $message->to($email, 'Kaleydoskop')->subject('Новый обратный звонок!');
+        });
 
-		Mail::send('emails.callback', ['name' => $this->request['name'], 'phone' => $this->request['phone']], function($message) use ($email)
-		{
-			$message->to($email, 'Kaleydoskop')->subject('Новый обратный звонок!');
-		});
+        Feedback::create(['name' => $this->request['name'], 'phone' => $this->request['phone'], 'type' => 'callback']);
+        return Redirect::back()->with('callback', 1);
+    }
 
-		Feedback::create(['name' => $this->request['name'], 'phone' => $this->request['phone'], 'type' => 'callback']);
-		return Redirect::back()->with('callback', 1);
-	}
 
-	/**
-	 * Posts an add sendmail.
-	 *
-	 * @return     <type>  ( description_of_the_return_value )
-	 */
-	public function postAddSendmail() {
-		if(Auth::check()) {
-			$user_id = Auth::user()->id;
-		} else {
-			$user_id = 0;
-		}
+    /**
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function postAddSendmail()
+    {
+        if (Auth::check()) {
+            $user_id = Auth::user()->id;
+        } else {
+            $user_id = 0;
+        }
 
-		Sendmail::subEmail($this->request['email'], $user_id);
+        Sendmail::subEmail($this->request['email'], $user_id);
 
-		return Redirect::back()->with('sub',1);
-	}
+        return Redirect::back()->with('sub', 1);
+    }
 
 
-	public function getWishlist() {
-		$wishlistObj = Wishlist::getInstance();
-		$wishlist = $wishlistObj->get();
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function getWishlist()
+    {
+        $wishlistObj = Wishlist::getInstance();
+        $wishlist = $wishlistObj->get();
 
-		$compObj = Comparison::getInstance();
-		$complist = $compObj->getIds();
+        $compObj = Comparison::getInstance();
+        $complist = $compObj->getIds();
 
 
-		$wishlist = Product::setComp($wishlist,$complist);
+        $wishlist = Product::setComp($wishlist, $complist);
 
-		$breadcrumbs = ['/dashboard' => 'Личный кабинет','/wishlist' => 'Список желаний'];
-		return view('site.wishlist')->with('wishlist', $wishlist)->with('breadcrumbs', $breadcrumbs);
-	}
+        $breadcrumbs = ['/dashboard' => 'Личный кабинет', '/wishlist' => 'Список желаний'];
+        return view('site.wishlist')->with('wishlist', $wishlist)->with('breadcrumbs', $breadcrumbs);
+    }
 
-	public function getContacts() {
-		$breadcrumbs = ['/contacts' => 'Контакты'];
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function getContacts()
+    {
+        $breadcrumbs = ['/contacts' => 'Контакты'];
 
-		if(Auth::check() &&  (Auth::user()->role == 'wholesaler' || Auth::user()->role == 'ander' ))  {
-			$contacts = Keyval::getWholesaleContacts();
-		} else {
-			$contacts = Keyval::getRetailContacts();
-		}
+        if (Auth::check() && (Auth::user()->role == 'wholesaler' || Auth::user()->role == 'ander')) {
+            $contacts = Keyval::getWholesaleContacts();
+        } else {
+            $contacts = Keyval::getRetailContacts();
+        }
 
 
+        return view('site.contacts')->with('breadcrumbs', $breadcrumbs)->with('contacts', $contacts);
+    }
 
-		return view('site.contacts')->with('breadcrumbs', $breadcrumbs)->with('contacts', $contacts);
-	}
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function getBrends()
+    {
+        $brends = Brend::all();
+        $breadcrumbs = ['/brends' => 'Бренды'];
+        return view('site.brends')->with('brends', $brends)->with('breadcrumbs', $breadcrumbs);
+    }
 
-	public function getBrends() {
-		$brends = Brend::all();
-		$breadcrumbs = ['/brends' =>  'Бренды'];
-		return view('site.brends')->with('brends', $brends)->with('breadcrumbs', $breadcrumbs);
-	}
+    /**
+     * @param $url
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function getBrend($url)
+    {
+        $brends = Brend::all();
+        $brend = Brend::getByUrl($url);
+        $breadcrumbs = ['/brends' => 'Бренды', '/ds' => $brend->name];
+        return view('site.singleBrend')->with('brend', $brend)->with('brends', $brends)->with('breadcrumbs', $breadcrumbs);
+    }
 
-	public function getBrend($url) {
-		$brends = Brend::all();
-		$brend = Brend::getByUrl($url);
-		$breadcrumbs = ['/brends' => 'Бренды', '/ds' => $brend->name];
-		return view('site.singleBrend')->with('brend', $brend)->with('brends', $brends)->with('breadcrumbs', $breadcrumbs);
-	}
+    /**
+     * @param $url
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function getBrendProducts($url)
+    {
+        if ($url != Session::get('brendUrl')) {
+            Session::forget('brendFilter');
+            Session::forget('subcat');
+            Session::forget('brendsShowCount');
+            Session::forget('brendsShowType');
+            Session::forget('brendMinPrice');
+            Session::forget('brendMaxPrice');
+        }
 
-	public function getBrendProducts($url) {
-		if($url != Session::get('brendUrl')) {
-			Session::forget('brendFilter');
-			Session::forget('subcat');
-			Session::forget('brendsShowCount');
-			Session::forget('brendsShowType');
-			Session::forget('brendMinPrice');
-			Session::forget('brendMaxPrice');
-		}
+        Session::put('brendUrl', $url);
 
-		Session::put('brendUrl', $url);
+        $brend = Brend::getByUrl($url);
+        $maxPrice = Product::getMaxBrendPrice($brend->id);
+        $brendAttributes = Attribute::getValues('brend', $brend->id);
+        $products = Product::getBySessionBrendFilter($url, 2);
 
-		$brend = Brend::getByUrl($url);
-		$maxPrice = Product::getMaxBrendPrice($brend->id);
-		$brendAttributes = Attribute::getValues('brend',$brend->id);
-		$products = Product::getBySessionBrendFilter($url, 2);
 
+        $subcategories = Subcategory::getBrendItems($brend->id);
 
-		$subcategories = Subcategory::getBrendItems($brend->id);
+        $brends = Brend::getNotThreads();
 
-		$brends = Brend::getNotThreads();
+        $breadcrumbs = ['/brends' => 'Бренды', '/brend/' . $url => $brend->name, '/pr' => 'Товары'];
 
-		$breadcrumbs = ['/brends' => 'Бренды', '/brend/' . $url => $brend->name, '/pr' => 'Товары'];
+        return view('site.brendFilter')->with('brend', $brend)
+            ->with('maxPrice', $maxPrice)
+            ->with('brendAttributes', $brendAttributes)
+            ->with('products', $products)
+            ->with('brends', $brends)
+            ->with('breadcrumbs', $breadcrumbs)
+            ->with('subcategories', $subcategories);
+    }
 
-		return view('site.brendFilter')->with('brend', $brend)
-		->with('maxPrice', $maxPrice)
-		->with('brendAttributes', $brendAttributes)
-		->with('products', $products)
-		->with('brends', $brends)
-		->with('breadcrumbs', $breadcrumbs)
-		->with('subcategories', $subcategories);
-	}
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function getComparison()
+    {
+        $compObj = Comparison::getInstance();
+        $compIds = $compObj->getIds();
 
-	public function getComparison(){
-		$compObj = Comparison::getInstance();
-		$compIds = $compObj->getIds();
+        $arrid = Attribute::getByProductsIds($compIds);
+        $attributes = Attribute::getByNamesByProductsIds($arrid);
 
-		$arrid = Attribute::getByProductsIds($compIds);
-		$attributes = Attribute::getByNamesByProductsIds($arrid);
+        $products = Product::getAttributesComp($compIds);
 
-		$products = Product::getAttributesComp($compIds);
 
+        return view('site.comparision')
+            ->with('attributes', $attributes)
+            ->with('products', $products);
+    }
 
-		// var_dump($products);
+    /**
+     * @param $productId
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function getComparisonDelete($productId)
+    {
+        $compObj = Comparison::getInstance();
+        $compObj->delete($productId);
+        return Redirect::to('/comparison');
+    }
 
+    /**
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function getClearComparison()
+    {
+        $comparison = Comparison::getInstance();
+        $comparison->clearList();
+        return Redirect::back();
+    }
 
-		return view('site.comparision')->with('attributes', $attributes)->with('products', $products);
-	}
 
-	public function getComparisonDelete($productId) {
-		$compObj = Comparison::getInstance();
-		$compObj->delete($productId);
-		return Redirect::to('/comparison');
-	}
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function getCatalog()
+    {
+        $catalog = Category::getCatalog();
+        $breadcrumbs = ['/catalog' => 'Каталог'];
 
-	public function getClearComparison() {
-		$comparison = Comparison::getInstance();
-		$comparison->clearList();
-		return Redirect::back();
-	}
+        return view('site.catalog')
+            ->with('catalog', $catalog)
+            ->with('breadcrumbs', $breadcrumbs);
+    }
 
 
-	public function getCatalog() {
-		$catalog = Category::getCatalog();
-		$breadcrumbs = ['/catalog' => 'Каталог'];
-		return view('site.catalog')->with('catalog', $catalog)->with('breadcrumbs', $breadcrumbs);
-	}
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function getThreads()
+    {
 
+        return view('site.threads');
+    }
 
-	public function getThreads() {
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function getResetPassword()
+    {
+        return view('auth.password');
+    }
 
-		return view('site.threads');
-	}
+    /**
+     * @return $this
+     */
+    public function getOplataDostavka()
+    {
+        if (Auth::check() && Auth::user()->role == 'wholesaler') {
+            $textVar = Text::getItem('oplata-dostavka-opt');
+        } else {
+            $textVar = Text::getItem('oplata-dostavka');
+        }
 
-	public function getResetPassword() {
-		return view('auth.password');
-	}
+        $title = 'Оплата и доставка';
 
-	public function getOplataDostavka() {
-		if(Auth::check() && Auth::user()->role == 'wholesaler') {
-			$textVar = Text::getItem('oplata-dostavka-opt');
-		} else {
-			$textVar = Text::getItem('oplata-dostavka');
-		}
+        $breadcrumbs = ['/oplata-dostavka' => 'Оплата и доставка'];
 
-		$title = 'Оплата и доставка';
+        return view('site.simpleTextPage')->with('textVar', $textVar)->with('breadcrumbs', $breadcrumbs)->with('title', $title);
+    }
 
-		$breadcrumbs = ['/oplata-dostavka' => 'Оплата и доставка'];
+    /**
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function getUnsubscribe($id)
+    {
+        Sendmail::deleteItem('id', $id);
 
-		return view('site.simpleTextPage')->with('textVar', $textVar)->with('breadcrumbs', $breadcrumbs)->with('title', $title);
-	}
+        return view('site.unsub-success');
+    }
 
-	public function getUnsubscribe($id) {
-		Sendmail::deleteItem('id', $id);
+    /**
+     *
+     */
+    public function getXml()
+    {
+        $products = Ftp::generateArrayFromXml('Ostatki.xml');
 
-		return view('site.unsub-success');
-	}
+        array_walk($products, function (&$product) {
+            // переводим в транслит
+            $str = Helper::rus2translit($product['name']);
 
-	public function getXml() {
-		$products = Ftp::generateArrayFromXml('Ostatki.xml');
+            // в нижний регистр
+            $str = strtolower($str);
+            // заменям все ненужное нам на "-"
+            $str = preg_replace('~[^-a-z0-9_]+~u', '-', $str);
+            // удаляем начальные и конечные '-'
+            $str = trim($str, "-");
 
-		array_walk($products, function(&$product){
-    // переводим в транслит
-			$str = Helper::rus2translit($product['name']);
+            $product['url'] = $str;
 
-    // в нижний регистр
-			$str = strtolower($str);
-    // заменям все ненужное нам на "-"
-			$str = preg_replace('~[^-a-z0-9_]+~u', '-', $str);
-    // удаляем начальные и конечные '-'
-			$str = trim($str, "-");
+        });
 
-			$product['url'] = $str;
 
-		});
+        $result = Product::updateByArray($products);
 
+        if ($result) {
+            echo 'Обновление прошло успешно';
+        }
+    }
 
 
-		$result = Product::updateByArray($products);
-
-		if($result) {
-			echo 'Обновление прошло успешно';
-		}
-	}
-
-
-	public function getDownload($fileId) {
-		$item = File::find($fileId);
-		$file= public_path(). "/download/" . $item->name;
-		$headers = array(
-			'Content-Type: application/octet-stream',
-			);
-		return Response::download($file, $item->name, $headers);
-	}
+    /**
+     * @param $fileId
+     * @return \Symfony\Component\HttpFoundation\BinaryFileResponse
+     */
+    public function getDownload($fileId)
+    {
+        $item = File::find($fileId);
+        $file = public_path() . "/download/" . $item->name;
+        $headers = array(
+            'Content-Type: application/octet-stream',
+        );
+        return Response::download($file, $item->name, $headers);
+    }
 
 
 }

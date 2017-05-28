@@ -1132,6 +1132,9 @@
 		</div>
 	</div>
 </div>
+
+
+<script src="{{ url('/site/url.js') }}"></script>
 <script src="{{url('/site/jquery.js')}}"></script>
 <script src="{{ url('dist/js/jquery.validate.min.js') }}"></script>
 <script src="{{ url('/swal/sweetalert.min.js') }}"></script>

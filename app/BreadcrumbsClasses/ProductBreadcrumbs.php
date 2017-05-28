@@ -1,11 +1,21 @@
 <?php
 
 namespace App\BreadcrumbsClasses;
+use App\Breadcrumbs;
+use App\Subcategory;
 use DB;
 
-class ProductBreadcrumbs extends \App\Breadcrumbs {
+/**
+ * Class ProductBreadcrumbs
+ * @package App\BreadcrumbsClasses
+ */
+class ProductBreadcrumbs extends Breadcrumbs {
 
-	function generate($product) {
+    /**
+     * @param $product
+     * @return mixed
+     */
+    function generate($product) {
 		if($product->category_id) {
 			$category = DB::table('categories')->where('id', $product->category_id)->first();
 			$this->addParam('/category/' . $category->url, $category->name);
@@ -14,8 +24,8 @@ class ProductBreadcrumbs extends \App\Breadcrumbs {
 		$subcatId = DB::table('product_subcat')->where('product_id', $product->id)->value('subcat_id');
 
 		if($subcatId) {
-			$subcatName = DB::table('subcategories')->where('id', $subcatId)->value('name');
-			$this->addParam('/category/Schetnyj-krest?subcategory=' . $subcatId, $subcatName);
+			$subcategory = Subcategory::find($subcatId);
+			$this->addParam('/subcategory/' . $subcategory->url, $subcategory->name);
 		}
 
 		$this->addParam('/product/' . $product->url, $product->name);

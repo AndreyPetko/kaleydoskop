@@ -1,5 +1,14 @@
 @extends('site.layout')
 
+
+@section('header')
+    <title>{{ $category->name }} {{ $subcategory->name }} купить в интернет-магазине Калейдоскоп Вышивки
+    </title>
+    <meta name="description" content="купить {{ $category->name }} {{ $subcategory->name }}
+    в интернет-магазине Калейдоскоп Вышивки c доставкой по Киеву и Украине. Низкие цены, большой ассортимент.
+    Риолис, Золотое Руно, DIMENSIONS, Anchor, Русский Фаворит, Чудесная Игла.">
+@stop
+
 @section('js')
 
     @if(Session::get('addToCard'))
@@ -158,7 +167,7 @@
                         <div class="subcat-image-home fl">
                             <img src="{{ url('/site/images/imagesGG60IGZZ.png') }}" alt="">
                         </div>
-                        <div class="subcat-text @if(empty(Session::get('subcatId')) || Session::get('subcatId') == 0 ) subcat-text-active @endif fl">
+                        <div style="cursor:auto" class="subcat-text @if(empty(Session::get('subcatId')) || Session::get('subcatId') == 0 ) subcat-text-active @endif fl">
                             {{$category->name}}
                         </div>
                     </div>
@@ -166,16 +175,14 @@
                     @foreach($subcategories as $subcategory)
                         @if(Session::get('subcatId') != $subcategory->id)
                             <div class="subcat-item fl" id="{{$subcategory->id}}">
-                            <!-- <a href="/subcategory/{{$subcategory->url}}"> -->
                                 <div class="subcat-image fl">
                                     <img src="{{ url('site/images/icon-catecory-list.png') }}" alt="">
                                 </div>
-                                <div class="subcat-text fl">
+                                <div class="subcat-text  fl"  >
                                     <a href="/subcategory/{{$subcategory->url}}">
                                         {{$subcategory->name}}
                                     </a>
                                 </div>
-                                <!-- </a> -->
                             </div>
                         @else
                             <div class="subcat-item fl" id="{{$subcategory->id}}">
@@ -545,35 +552,15 @@
 
 
         @if(!isset($theads))
-        <div class="filter-mobile-item">Бренды
-            <div class="filter-mobile-item-items">
-                @foreach($brends as $brend)
-                    <div class="filter-value">
-                        <div class="filter-checkbox fl">
-                            <input type="checkbox" class="attr-checkbox" data-attr='{{$key}}' data-value="">
-                        </div>
-                        <div class="filter-value-text fl">
-                            {{ $brend->name }}
-                        </div>
-                    </div>
-                @endforeach
-                <div class="filter-items=mobile-bottom-line">
-                    <div id="filter">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        @foreach($attributesValues as $attrKey => $attr)
-            <div class="filter-mobile-item">{{ $attrKey }}
+            <div class="filter-mobile-item">Бренды
                 <div class="filter-mobile-item-items">
-                    @foreach($attr as $valueKey => $value)
+                    @foreach($brends as $brend)
                         <div class="filter-value">
                             <div class="filter-checkbox fl">
-                                <input type="checkbox" class="attr-checkbox" data-attr='{{$key}}' data-value="">
+                                <input type="checkbox" class="attr-checkbox" data-attr='' data-value="">
                             </div>
                             <div class="filter-value-text fl">
-                                {{ $value }}
+                                {{ $brend->name }}
                             </div>
                         </div>
                     @endforeach
@@ -583,7 +570,27 @@
                     </div>
                 </div>
             </div>
-        @endforeach
+
+            @foreach($attributesValues as $attrKey => $attr)
+                <div class="filter-mobile-item">{{ $attrKey }}
+                    <div class="filter-mobile-item-items">
+                        @foreach($attr as $valueKey => $value)
+                            <div class="filter-value">
+                                <div class="filter-checkbox fl">
+                                    <input type="checkbox" class="attr-checkbox" data-attr='' data-value="">
+                                </div>
+                                <div class="filter-value-text fl">
+                                    {{ $value }}
+                                </div>
+                            </div>
+                        @endforeach
+                        <div class="filter-items=mobile-bottom-line">
+                            <div id="filter">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
         @endif
 
 
