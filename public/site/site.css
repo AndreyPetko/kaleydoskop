@@ -663,7 +663,25 @@ a{
     color: #5f6153;
     font-size: 14px;
 }
+.item-buy-text2{
+    color: #5f6153;
+     text-align: center;
+      line-height: 37px;
+      font-size: 14px;
+}
+.brend-href{
+    background: #ebebeb;
+    width: 140px;
+    height: 37px;
+    float: left;
+    text-align: center;
+}
+.brend-href a{
+    font-size: 14px;
+    line-height: 37px;
+    color: #5f6153;
 
+}
 .cart-text {
     width: 110px;
     font-size: 13px;
