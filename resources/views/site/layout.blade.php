@@ -333,8 +333,16 @@
 				<a href="/">
 					<img src="{{ url('site/images/main-logo.png') }}" alt="">
 				</a>
+					<a href="/">
+				<div style="margin-bottom: -20px;" class="back-to-old">
+				<img style="float: left;" src="site/images/arrow-right-c.png">
+					Вернуться на старый дизайн
+				
+				</div>
+				</a>
 
 			</div>
+
 			<div class="header-content-items">
 				<div class="header-content-block-1">
 					<div class="header-items-line-1">

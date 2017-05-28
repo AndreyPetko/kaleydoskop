@@ -15,7 +15,16 @@ a{
     font-family: franklingothic;
 }
 
-
+.back-to-old{
+    background-color: #f98c99;
+width: 400px;
+height: 40px;
+text-align: center;
+}
+a .back-to-old{
+  color: white;
+  line-height: 40px;
+    }
 .subcat-total-list{
     list-style: none;
     overflow: auto;
