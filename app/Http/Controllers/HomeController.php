@@ -375,12 +375,22 @@ class HomeController extends Controller
 
     public function getSearch($query = '')
     {
-        $products = Product::search($query);
+        $products = [];
+        $error = '';
 
-        // $products = Wishlist::setWishToProducts($products);
+        if(mb_strlen($query) >= 3) {
+            $products = Product::search($query);
+        } else {
+            $error = 'Длина поискового запроса должна быть 3 или более символов';
+        }
+
         $breadcrumbs = ['/search' => 'Поиск'];
 
-        return view('site.search')->with('products', $products)->with('query', $query)->with('breadcrumbs', $breadcrumbs);
+        return view('site.search')
+            ->with('products', $products)
+            ->with('query', $query)
+            ->with('breadcrumbs', $breadcrumbs)
+            ->with('error', $error);
     }
 
 

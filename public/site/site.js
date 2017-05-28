@@ -296,33 +296,34 @@ window.addEventListener("load", function () {
     }
 
 //Выбор input для текстового поля
-    searchInput = document.getElementById('searchInput');
+    var searchInput = document.getElementById('searchInput');
+    var searchIcon = document.getElementById('searchIcon');
+
     if (searchInput) {
         searchInput.addEventListener('focus', function () {
-            searchIcon = document.getElementById('searchIcon');
             searchIcon.setAttribute('src', '/site/images/icon-sarch-hover.png');
             searchInput.placeholder = '';
         });
 
         searchInput.addEventListener('blur', function () {
-            searchIcon = document.getElementById('searchIcon');
             searchIcon.setAttribute('src', '/site/images/icon-sarch.png');
-            if (searchInput.value == '') {
+
+            if (searchInput.value === '') {
                 searchInput.placeholder = 'Поиск';
             }
         });
     }
 
 
-    addToCart = document.getElementsByClassName('product-add-to-cart')[0];
-    addToCartMob = document.getElementsByClassName('product-add-to-cart')[1];
+    var addToCart = document.getElementsByClassName('product-add-to-cart')[0];
+    var addToCartMob = document.getElementsByClassName('product-add-to-cart')[1];
 
 
     if (addToCart) {
 
         addToCart.addEventListener('click', function () {
-            id = this.dataset.productid;
-            count = document.getElementById('product_count').value;
+            var id = this.dataset.productid;
+            var count = document.getElementById('product_count').value;
 
             if (!count) {
                 count = 1;
@@ -961,14 +962,14 @@ window.addEventListener("load", function () {
     });
 
 
-    search = document.getElementById('search-big-submit');
+    var search = document.getElementById('search-big-submit');
     if (search) {
         search.addEventListener('click', function () {
             query = document.getElementById('searchInput1').value;
 
-            if (query.length < 3) {
-                return;
-            }
+            // if (query.length < 3) {
+            //     return;
+            // }
 
 
             window.location.replace(fullUrl + "/search/" + query);
@@ -995,11 +996,11 @@ window.addEventListener("load", function () {
     });
 
     document.getElementById('searchIcon').addEventListener('click', function () {
-        query = document.getElementById('searchInput').value;
+        var query = document.getElementById('searchInput').value;
 
-        if (query.length < 3) {
-            return;
-        }
+        // if (query.length < 3) {
+        //     return;
+        // }
 
         window.location.replace(fullUrl + "/search/" + query);
     });
