@@ -147,11 +147,8 @@ class HomeController extends Controller
 
 
     /**
-     * Gets the product.
-     *
-     * @param      string $url The url
-     *
-     * @return     <type>  The product.
+     * @param string $url
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function getProduct($url = '')
     {
@@ -170,13 +167,9 @@ class HomeController extends Controller
         }
 
         $data['images'] = Product::getImagesById($data['product']->id);
-
         $data['reviews'] = Review::getProductReview($data['product']->id);
-
         $data['reviews'] = MyDate::changeFormat($data['reviews']);
-
         $data['withProducts'] = Product::getWith($data['product']->id);
-
 
         $data['next'] = $data['reviews']->nextPageUrl();
         $data['prev'] = $data['reviews']->previousPageUrl();
