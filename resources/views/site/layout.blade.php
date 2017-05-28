@@ -314,7 +314,7 @@
 			
 			<div class="header-line-element line-ml-3">
 				<div class="header-line-element-text">
-					8 096 778 74 88
+					8 044 332 88 82
 				</div>
 			</div>
 
@@ -474,11 +474,10 @@
 			</a>
 			<a href="/new-products"><div class="main-menu-item  @if($_SERVER['REQUEST_URI'] =='/new-products') main-menu-active @endif">Новинки</div></a>
 			<a href="/contacts"><div class="main-menu-item @if($_SERVER['REQUEST_URI'] =='/contacts') main-menu-active @endif">Контакты</div></a>
-			<a href="/articles"><div class="main-menu-item @if($_SERVER['REQUEST_URI'] =='/articles') main-menu-active @endif">Статьи</div></a>
-			<div class="menu-line"></div>
 			<a href="/oplata-dostavka"><div class="main-menu-item main-menu-item-sm @if($_SERVER['REQUEST_URI'] =='/oplata-dostavka') main-menu-active @endif">Оплата и доставка</div></a>
 			<a href="/about"></area><div class="main-menu-item main-menu-item-sm @if($_SERVER['REQUEST_URI'] == '/about') main-menu-active @endif">О компании</div></a>
 			<a href="/wholesalers"><div class="main-menu-item main-menu-item-sm @if($_SERVER['REQUEST_URI'] =='/wholesalers') main-menu-active @endif">Оптовикам</div></a>
+			<a href="/articles"><div class="main-menu-item @if($_SERVER['REQUEST_URI'] =='/articles') main-menu-active @endif">Статьи</div></a>
 			
 		</div>
 		<div class="main-menu-line"></div>
@@ -937,12 +936,12 @@
 						</div>
 					</div>
 				</a>
-					<a href="/brend-products/new-products">
+					<a href="/brend-products/Majsterna-Vishivanka">
 					<div class="main-dropdown-item">
 						<div class="main-dropdown-content">
 							<div class="main-dropdown-item-text">
 								<div>
-									Майстерна Вишиванка =))
+									Майстерна Вишиванка
 								</div>
 							</div>
 							<div class="main-dropdown-side-border">

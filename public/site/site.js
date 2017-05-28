@@ -1447,13 +1447,17 @@ var slideArrowLeftSm = document.getElementById('slide-arow-sm-r');
 for (i=0; i < elemImage.length; i++){
   elemImage[i].addEventListener("mouseover", function(){
     var imageTag = this.getElementsByTagName('img')[0].getAttribute('src'); 
+if(imageTag != "http://kaleydoskop-vishivki.com.ua/site/images/vertical-line.png"){
     var newImageTag = imageTag.replace(".png", "-hover.png");
     this.getElementsByTagName('img')[0].src = newImageTag;
+  }
   });
   elemImage[i].addEventListener("mouseout", function(){
     var imageTag = this.getElementsByTagName('img')[0].getAttribute('src'); 
+    if(imageTag != "http://kaleydoskop-vishivki.com.ua/site/images/vertical-line.png"){
     var newImageTag = imageTag.replace("-hover.png", ".png");
     this.getElementsByTagName('img')[0].src = newImageTag;
+  }
   });
 }
 

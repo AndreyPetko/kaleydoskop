@@ -6,13 +6,9 @@
 }
 
 .main-menu-item {
-    width: 130px;
+   padding: 0 20px;
 }
 
-.main-menu-item-sm{
-font-size: 12px;
- width: 120px;
-}
 .main-item{
 	width: 25%;
 }

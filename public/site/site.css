@@ -414,7 +414,7 @@ a{
 .main-menu-item {
     font-family: franklingothic;
     float: left;
-    width: 150px;
+    padding: 0 30px;
     text-align: center;
     background-color: #c6d932;
     height: 49px;
@@ -423,17 +423,6 @@ a{
     font-weight: 600;
 }
 
-.main-menu-item-sm{
-font-size: 12px;
- width: 140px;
-}
-.menu-line{
-    width: 1px;
-    height: 49px;
-    background-color: white;
-    float: left;
-    margin-right: 20px;
-}
 .main-menu-active {
     font-weight: bolder;
     background-color: #fdde09;
@@ -2761,7 +2750,7 @@ font-size: 12px;
 }
 
 .products-attributes-list {
-    /*width: 950px;*/
+    max-width: 950px;
     padding-top: 20px;
     border-color: #e8e8e8;
     border-style: solid;

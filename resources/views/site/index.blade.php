@@ -291,7 +291,7 @@
   </div>
 </div>
 <div class="clear"></div>
-<div class="our-brands">
+<!-- <div class="our-brands">
   Наши бренды
 </div>
 <div class="left-brands-slider" id="slide-arow-sm-l">
@@ -310,7 +310,7 @@
     </div>
     @endforeach
   </div>
-</div>
+</div> -->
 <div class="index-txt">
   <h2>{{ $mainTitle }}</h2>
   <p>{!! $mainText !!}</p>

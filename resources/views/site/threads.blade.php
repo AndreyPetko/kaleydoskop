@@ -2,10 +2,6 @@
 
 @section('content')
 <div class="clear"></div>
-
-
-
-
 <div class="category-content">
     <div class="category-filter fl">
         <div class="filter-header">
