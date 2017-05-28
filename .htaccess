@@ -2,3 +2,110 @@
 RewriteEngine On
 RewriteRule ^(.*)$ public/$1 [L]
 </IfModule>
+
+
+
+Redirect 301 /osnov.php?idraz=101 http://kaleydoskop-vishivki.com.ua/oplata-dostavka
+Redirect 301 /osnov.php?idraz=122 http://kaleydoskop-vishivki.com.ua/about
+Redirect 301 /osnov.php?idraz=106 http://kaleydoskop-vishivki.com.ua/contacts
+Redirect 301 /osnov.php?idraz=126 http://kaleydoskop-vishivki.com.ua/brends
+Redirect 301 /show_cat2.php?grid=50000 http://kaleydoskop-vishivki.com.ua/new-products
+
+Redirect 301 /show_proz.php?idproz=2 http://kaleydoskop-vishivki.com.ua/brend-products/zolotoe-runo
+Redirect 301 /show_proz.php?idproz=1 http://kaleydoskop-vishivki.com.ua/brend-products/Riolis
+Redirect 301 /show_proz.php?idproz=3 http://kaleydoskop-vishivki.com.ua/brend-products/DIMENSIONS
+Redirect 301 /show_proz.php?idproz=4 http://kaleydoskop-vishivki.com.ua/brend-products/chudesnaya-igla
+Redirect 301 /show_proz.php?idproz=5 http://kaleydoskop-vishivki.com.ua/brend-products/BUCILLA
+Redirect 301 /show_proz.php?idproz=6 http://kaleydoskop-vishivki.com.ua/brend-products/Krasa-і-tvorchіstb
+Redirect 301 /show_proz.php?idproz=7 http://kaleydoskop-vishivki.com.ua/brend-products/russkij-favorit
+Redirect 301 /show_proz.php?idproz=8 http://kaleydoskop-vishivki.com.ua/brend-products/anchor
+Redirect 301 /show_proz.php?idproz=10 http://kaleydoskop-vishivki.com.ua/brend-products/char%D1%96vna-mitb
+Redirect 301 /show_proz.php?idproz=11 http://kaleydoskop-vishivki.com.ua/brend-products/kroshe
+Redirect 301 /show_proz.php?idproz=12 http://kaleydoskop-vishivki.com.ua/brend-products/russkaya-iskusnicza
+Redirect 301 /show_proz.php?idproz=15 http://kaleydoskop-vishivki.com.ua/brend-products/plaid
+Redirect 301 /show_proz.php?idproz=21 http://kaleydoskop-vishivki.com.ua/brend-products/BESTEX
+Redirect 301 /show_proz.php?idproz=28 http://kaleydoskop-vishivki.com.ua/brend-products/Milward
+Redirect 301 /show_proz.php?idproz=19 http://kaleydoskop-vishivki.com.ua/brend-products/Preciosa
+Redirect 301 /show_proz.php?idproz=26 http://kaleydoskop-vishivki.com.ua/brend-products/Arabeska
+Redirect 301 /show_proz.php?idproz=25 http://kaleydoskop-vishivki.com.ua/brend-products/Krestomaniya
+
+Redirect 301 /show_cat2.php?grid=1001 http://kaleydoskop-vishivki.com.ua/category/schetnyj-krest
+Redirect 301 /show_cat.php?catid=1002&grid=1001 http://kaleydoskop-vishivki.com.ua/subcategory/Riolis-Premium
+Redirect 301 /show_cat.php?catid=1018&grid=1001 http://kaleydoskop-vishivki.com.ua/subcategory/Abstraktnoe
+Redirect 301 /show_cat.php?catid=1039&grid=1001 http://kaleydoskop-vishivki.com.ua/subcategory/Angely
+Redirect 301 /show_cat.php?catid=1052&grid=1001 http://kaleydoskop-vishivki.com.ua/subcategory/Babochki
+Redirect 301 /show_cat.php?catid=1100&grid=1001 http://kaleydoskop-vishivki.com.ua/subcategory/Vostok
+Redirect 301 /show_cat.php?catid=1186&grid=1001 http://kaleydoskop-vishivki.com.ua/subcategory/Grafika
+Redirect 301 /show_cat.php?catid=1214&grid=1001 http://kaleydoskop-vishivki.com.ua/subcategory/Detskoe
+Redirect 301 /show_cat.php?catid=1509&grid=1001 http://kaleydoskop-vishivki.com.ua/subcategory/Dlya-doma
+Redirect 301 /show_cat.php?catid=1542&grid=1001 http://kaleydoskop-vishivki.com.ua/subcategory/Domiki
+Redirect 301 /show_cat.php?catid=1568&grid=1001 http://kaleydoskop-vishivki.com.ua/subcategory/Zveri
+Redirect 301 /show_cat.php?catid=1730&grid=1001 http://kaleydoskop-vishivki.com.ua/subcategory/Koty
+Redirect 301 /show_cat.php?catid=1800&grid=1001 http://kaleydoskop-vishivki.com.ua/subcategory/Dlya-doma
+Redirect 301 /show_cat.php?catid=1828&grid=1001 http://kaleydoskop-vishivki.com.ua/subcategory/Loshadi
+Redirect 301 /show_cat.php?catid=1854&grid=1001 http://kaleydoskop-vishivki.com.ua/subcategory/Lyudi-i-portrety
+Redirect 301 /show_cat.php?catid=1933&grid=1001 http://kaleydoskop-vishivki.com.ua/subcategory/Mishki
+Redirect 301 /show_cat.php?catid=1960&grid=1001 http://kaleydoskop-vishivki.com.ua/subcategory/Morskaya-tematika
+Redirect 301 /show_cat.php?catid=2016&grid=1001 http://kaleydoskop-vishivki.com.ua/subcategory/Natyurmorty
+Redirect 301 /show_cat.php?catid=2061&grid=1001 http://kaleydoskop-vishivki.com.ua/subcategory/Novyj-God
+Redirect 301 /show_cat.php?catid=2084&grid=1001 http://kaleydoskop-vishivki.com.ua/subcategory/Otkrytki
+Redirect 301 /show_cat.php?catid=2106&grid=1001 http://kaleydoskop-vishivki.com.ua/subcategory/Pejzazhi
+Redirect 301 /show_cat.php?catid=2317&grid=1001 http://kaleydoskop-vishivki.com.ua/subcategory/Po-motivam-kartin
+Redirect 301 /show_cat.php?catid=2328&grid=1001 http://kaleydoskop-vishivki.com.ua/subcategory/Podushki
+Redirect 301 /show_cat.php?catid=2362&grid=1001 http://kaleydoskop-vishivki.com.ua/subcategory/Prochie-syuzhety
+Redirect 301 /show_cat.php?catid=2620&grid=1001 http://kaleydoskop-vishivki.com.ua/subcategory/Smeshnye-kartinki
+Redirect 301 /show_cat.php?catid=2661&grid=1001 http://kaleydoskop-vishivki.com.ua/subcategory/Sobaki
+Redirect 301 /show_cat.php?catid=2700&grid=1001 http://kaleydoskop-vishivki.com.ua/subcategory/Fentezi
+Redirect 301 /show_cat.php?catid=2716&grid=1001 http://kaleydoskop-vishivki.com.ua/subcategory/Folbkler
+Redirect 301 /show_cat.php?catid=2727&grid=1001 http://kaleydoskop-vishivki.com.ua/subcategory/CZyety
+Redirect 301 /show_cat.php?catid=3002&grid=1001 http://kaleydoskop-vishivki.com.ua/subcategory/Etnos
+
+Redirect 301 /show_cat.php?catid=10001&grid=6000 http://kaleydoskop-vishivki.com.ua/subcategory/Gladb
+Redirect 301 /show_cat.php?catid=9001&grid=6000 http://kaleydoskop-vishivki.com.ua/subcategory/Gobelen
+Redirect 301 /show_cat.php?catid=8001&grid=6000 http://kaleydoskop-vishivki.com.ua/subcategory/Neschetnyj-krest
+Redirect 301 /show_cat.php?catid=7002&grid=6000 http://kaleydoskop-vishivki.com.ua/subcategory/Pechatnyj-krest
+Redirect 301 /show_cat.php?catid=6001&grid=6000 http://kaleydoskop-vishivki.com.ua/subcategory/Prodergivanie
+Redirect 301 /show_cat.php?catid=11000&grid=6000 http://kaleydoskop-vishivki.com.ua/subcategory/CHastichnaya-vyshivka
+Redirect 301 /show_cat.php?catid=11074&grid=6000 http://kaleydoskop-vishivki.com.ua/subcategory/Nabory-iz-molnij,-fetra-i-sutazha
+Redirect 301 /show_cat.php?catid=13290&grid=6000 http://kaleydoskop-vishivki.com.ua/subcategory/-Nabory-s-ispolbzovaniem-straz
+Redirect 301 /show_cat2.php?grid=12000 http://kaleydoskop-vishivki.com.ua/category/Vyshivka-biserom
+Redirect 301 /show_cat.php?catid=12001&grid=12000 http://kaleydoskop-vishivki.com.ua/subcategory/Na-kanve
+Redirect 301 /show_cat.php?catid=12160&grid=12000 http://kaleydoskop-vishivki.com.ua/subcategory/Na-kanve-s-risunkom
+Redirect 301 /show_cat2.php?grid=13000 http://kaleydoskop-vishivki.com.ua/category/Nabory-dlya-rukodeliya
+Redirect 301 /show_cat.php?catid=13028&grid=13000 http://kaleydoskop-vishivki.com.ua/subcategory/Braslety
+Redirect 301 /show_cat.php?catid=13105&grid=13000 http://kaleydoskop-vishivki.com.ua/subcategory/Breloki
+Redirect 301 /show_cat.php?catid=13115&grid=13000 http://kaleydoskop-vishivki.com.ua/subcategory/Kolbe
+Redirect 301 /show_cat.php?catid=13120&grid=13000 http://kaleydoskop-vishivki.com.ua/subcategory/Kulony
+Redirect 301 /show_cat.php?catid=13122&grid=13000 http://kaleydoskop-vishivki.com.ua/subcategory/Biseropletenie
+Redirect 301 /show_cat.php?catid=13275&grid=13000 http://kaleydoskop-vishivki.com.ua/subcategory/Zakladki
+Redirect 301 /show_cat2.php?grid=25000 http://kaleydoskop-vishivki.com.ua/subcategory/Gravyury
+Redirect 301 /show_cat2.php?grid=24000 http://kaleydoskop-vishivki.com.ua/subcategory/Skrapbuking
+Redirect 301 /show_cat2.php?grid=18000 http://kaleydoskop-vishivki.com.ua/subcategory/Nabory-dlya-risovaniya
+Redirect 301 /show_cat2.php?grid=12159 http://kaleydoskop-vishivki.com.ua/category/Ikony
+Redirect 301 /show_cat2.php?grid=35000 http://kaleydoskop-vishivki.com.ua/category/Biser
+Redirect 301 /show_cat2.php?grid=30000 http://kaleydoskop-vishivki.com.ua/category/Kraski
+Redirect 301 /show_cat.php?catid=30003&grid=30000 http://kaleydoskop-vishivki.com.ua/subcategory/Vitrazhnye
+Redirect 301 /show_cat.php?catid=30005&grid=30000 http://kaleydoskop-vishivki.com.ua/subcategory/Naruzhnogo-primeneniya
+Redirect 301 /show_cat.php?catid=30004&grid=30000 http://kaleydoskop-vishivki.com.ua/subcategory/Po-tkani
+Redirect 301 Redirect 301 /show_cat.php?catid=30359&grid=30000 http://kaleydoskop-vishivki.com.ua/subcategory/Soputstvuyushhie-tovary
+Redirect 301 /show_cat.php?catid=30001&grid=30000 http://kaleydoskop-vishivki.com.ua/subcategory/Universalbnye
+
+Redirect 301 /show_cat2.php?grid=14000 http://kaleydoskop-vishivki.com.ua/category/Nitki-dlya-vyshivaniya
+Redirect 301 /show_cat.php?catid=14001&grid=14000 http://kaleydoskop-vishivki.com.ua/subcategory/Muline-Anchor
+
+Redirect 301 /show_cat2.php?grid=21000 http://kaleydoskop-vishivki.com.ua/category/Prinadlezhnosti
+
+Redirect 301 /show_cat.php?catid=21001&grid=21000 http://kaleydoskop-vishivki.com.ua/category/Pyalbczy-i-stanki
+Redirect 301 /show_cat.php?catid=21013&grid=21000 http://kaleydoskop-vishivki.com.ua/subcategory/Markery
+Redirect 301 /show_cat.php?catid=21022&grid=21000 http://kaleydoskop-vishivki.com.ua/subcategory/Igolki
+Redirect 301 /show_cat.php?catid=21192&grid=21000 http://kaleydoskop-vishivki.com.ua/subcategory/SHkatulki
+Redirect 301 /show_cat.php?catid=21208&grid=21000 http://kaleydoskop-vishivki.com.ua/subcategory/Spiczy-i-kryuchki
+Redirect 301 /show_cat.php?catid=21240&grid=21000 http://kaleydoskop-vishivki.com.ua/subcategory/Spiczy-i-kryuchki
+Redirect 301 /show_cat.php?catid=21262&grid=21000 http://kaleydoskop-vishivki.com.ua/subcategory/Naperstki-i-nitkovdevateli
+Redirect 301 /show_cat.php?catid=21267&grid=21000 http://kaleydoskop-vishivki.com.ua/subcategory/Naperstki-i-nitkovdevateli
+Redirect 301 /show_cat.php?catid=21271&grid=21000 http://kaleydoskop-vishivki.com.ua/subcategory/Nozhniczy
+Redirect 301 /show_cat.php?catid=21276&grid=21000 http://kaleydoskop-vishivki.com.ua/subcategory/Knopki-i-shpilbki
+Redirect 301 /show_cat.php?catid=21290&grid=21000 http://kaleydoskop-vishivki.com.ua/subcategory/Knopki-i-shpilbki
+Redirect 301 /show_cat.php?catid=21294&grid=21000 http://kaleydoskop-vishivki.com.ua/subcategory/Prochee
+Redirect 301 /show_cat.php?catid=21104&grid=21000 http://kaleydoskop-vishivki.com.ua/subcategory/Lampy
+
