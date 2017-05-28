@@ -258,9 +258,6 @@ window.addEventListener("load", function () {
 
     // выпадающие подкатегории
 
-// fullUrl = 'http://kaleydoskop.ap.org.ua';
-    fullUrl = 'http://kaley.com';
-
 
 //Наведение на верхние элементы 
     headerImages = [];
@@ -432,18 +429,18 @@ window.addEventListener("load", function () {
 
 
 //Отображение корзины
-    cart = document.getElementById('open-cart');
+    var cart = document.getElementById('open-cart');
 
-    cartClick = 0;
+    var cartClick = 0;
 
     if (cart) {
         cart.addEventListener('click', function () {
-            if (cartClick == 0) {
+            if (cartClick === 0) {
                 cart.style.background = "#c6d932";
-                cartImage = cart.getElementsByTagName('img')[0];
-                cartImage.setAttribute('src', '/site/images/icon-cart-active.png')
+                var cartImage = cart.getElementsByTagName('img')[0];
+                cartImage.setAttribute('src', '/site/images/icon-cart-active.png');
 
-                cartBlock = document.getElementById('cart-block');
+                var cartBlock = document.getElementById('cart-block');
                 ajax('/ajax/cart-products-and-total', function (data) {
                     data = JSON.parse(data);
                     if (data[0]) {
