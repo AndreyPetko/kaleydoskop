@@ -1,3 +1,4 @@
 config/database.php
 public/product_images/
 public/site/images/
+public/site/url.js
