@@ -80,7 +80,7 @@
 
 						<div class="form-group">
 							<label>Введите цену товара</label>
-							<input type="text" class="form-control" placeholder="Введите цену товара ..." 
+							<input type="text" class="form-control" placeholder="Введите цену товара ..."
 							@if(Auth::user()->role == 'admin')
 							name="price"
 							value="{{$product->price}}"
@@ -94,7 +94,7 @@
 
 						<span class="form-group">
 							<label>Введите количество товара</label>
-							<input name="quantity" value="{{$product->quantity}}" class="form-control"></input>
+							<input name="quantity" value="{{$product->quantity}}" class="form-control">
 						</span>
 
 						<div class="form-group">
@@ -107,11 +107,12 @@
 							<label>Описание товара</label>
 							<textarea class="form-control" rows="3" placeholder="Введите описание товара ..." name="description">
 								@if(empty($product->description))
+                                    <p><strong>Производитель:</strong> Coats (Венгрия)</p>
 
+                                    <p><strong>Состав:</strong> 100% полиэстр</p>
 
-
-
-								@else
+                                    <p>В катушке 100м.</p>
+                                @else
 								{{$product->description}}
 								@endif
 							</textarea>
