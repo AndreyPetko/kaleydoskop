@@ -5,6 +5,7 @@ use DB;
 use App\Attribute;
 
 use Illuminate\Database\Eloquent\Model;
+use Intervention\Image\Exception\NotFoundException;
 
 class Category extends Model
 {
@@ -29,6 +30,11 @@ class Category extends Model
 
 	public static function getByUrl($url) {
 		$category =  DB::select("SELECT * FROM categories WHERE url = :url", array($url));
+
+		if(!$category) {
+		    throw new NotFoundException('Категория не найдена');
+        }
+
 		return $category[0];
 	}
 

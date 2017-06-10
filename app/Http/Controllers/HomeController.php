@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\View\View;
+use Intervention\Image\Exception\NotFoundException;
+use Mockery\Exception;
 use Request;
 use Redirect;
 use Auth;
@@ -53,16 +55,13 @@ class HomeController extends Controller
         unset($this->request['_token']);
     }
 
+
     /**
-     * Gets the index.
-     *
-     * @return     <type>  The index.
+     * @return \Illuminate\Contracts\View\Factory|View
      */
     public function getIndex()
     {
         $data['mainSlides'] = Slide::getOrderMainSlides();
-//        dump($data['mainSlides']);
-//        die;
         $data['recProducts'] = Product::getRecommended(4);
         $data['newProducts'] = Product::getNew($skip = 0, $take = 8);
 
@@ -285,12 +284,16 @@ class HomeController extends Controller
 
     /**
      * @param $url
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|View
      */
     public function getCategory($url)
     {
-        $category = Category::getByUrl($url);
-        $subcategories = Subcategory::getByCategoryId($category->id);
+        try {
+            $category = Category::getByUrl($url);
+            $subcategories = Subcategory::getByCategoryId($category->id);
+        } catch (NotFoundException $e) {
+            return Redirect::to('404');
+        }
 
         return view('site.subcategories', compact('subcategories', 'category'));
     }
@@ -392,12 +395,16 @@ class HomeController extends Controller
     }
 
 
+    /**
+     * @param string $query
+     * @return $this
+     */
     public function getSearch($query = '')
     {
         $products = [];
         $error = '';
 
-        if(mb_strlen($query) >= 3) {
+        if (mb_strlen($query) >= 3) {
             $products = Product::search($query);
         } else {
             $error = 'Длина поискового запроса должна быть 3 или более символов';
@@ -745,6 +752,14 @@ class HomeController extends Controller
             'Content-Type: application/octet-stream',
         );
         return Response::download($file, $item->name, $headers);
+    }
+
+    /**
+     *
+     */
+    public function getInfo()
+    {
+        phpinfo();
     }
 
 
