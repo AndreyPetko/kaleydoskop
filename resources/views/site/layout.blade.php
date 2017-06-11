@@ -606,7 +606,7 @@
 						</div>
 					</div>
 				</a>
-				<a href="/category/{{$categoriesUrls['threads']}}">
+				<a href="/category/Nitki">
 					<div class="main-dropdown-item">
 						<div class="main-dropdown-content">
 							<div class="main-dropdown-item-image">
@@ -614,7 +614,7 @@
 							</div>
 							<div class="main-dropdown-item-text">
 								<div>
-									Нитки для вышивания
+									Нитки
 								</div>
 							</div>
 							<div class="main-dropdown-side-border">
@@ -625,7 +625,7 @@
 						</div>
 					</div>
 				</a>
-				<a href="#">
+				<a href="/category/Biser">
 					<div class="main-dropdown-item">
 						<div class="main-dropdown-content">
 							<div class="main-dropdown-item-image">
