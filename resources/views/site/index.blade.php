@@ -14,7 +14,8 @@
                 </div>
             </div>
 
-            <div class="sunny"><img src="site/images/smile-kv-sm.jpg"></div>
+            <!-- <div class="sunny"><img src="site/images/smile-kv-sm.jpg"></div> -->
+            <div class="sad">:)</div>
             <div class="fast-order-text">
                 Спасибо за заказ. Мы свяжемся с Вами в ближайшее время.
             </div>
