@@ -85,7 +85,7 @@
 
     @foreach($catalog as $catalogItem)
         <input type="hidden" id="category-{{$catalogItem->id}}" value="{{$catalogItem->url}}">
-        <div class="category-pre">
+        <div class="category-pre category-pre-index">
             <a href="/category/{{$catalogItem->url}}">
                 @if($catalogItem->image)
                     <img src="{{ url('/category_images/' . $catalogItem->image) }}">

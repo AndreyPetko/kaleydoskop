@@ -41,11 +41,11 @@
         <div id="cart-to-login">Войти</div></div>
         <div id="login-in-cart">
           <div class="cart-info-input">
-            <p>Email*</p>
+            <p>Email</p>
             <input type="text" name="name">
           </div>
           <div class="cart-info-input">
-            <p>Пароль*</p>
+            <p>Пароль</p>
             <input type="text" name="name">
           </div>
           <input type="submit" value="Войти" class="to-login-button">

@@ -333,7 +333,7 @@
 				<a href="/">
 					<img src="{{ url('site/images/main-logo.png') }}" alt="">
 				</a>
-					<a href="/">
+					<a href="http://www.kaleydoskop-vishivki.com.ua">
 				<div style="margin-top: 5px;" class="back-to-old">
 				<img style="float: left;" src="site/images/arrow-right-c.png">
 					Вернуться на старый дизайн

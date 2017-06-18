@@ -5906,8 +5906,13 @@ input.error, textarea.error {
 .category-pre img {
     max-width: 100%;
 }
+.category-pre-index{
+    width: 180px;
+}
+.category-pre-index img{
+    height: 130px;
 
-
+}
 
 .thread-item {
     width: 162px;
@@ -5932,6 +5937,7 @@ input.error, textarea.error {
 
 .thread-item-name {
     font-size: 13px;
+    padding: 0 5px 0 30px;
     font-family: franklingothic;
     color: #555555;
     text-align: center;
