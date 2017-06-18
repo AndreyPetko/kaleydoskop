@@ -49,7 +49,7 @@ class AuthController extends Controller
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
@@ -60,41 +60,48 @@ class AuthController extends Controller
             'password' => 'required|confirmed|min:6',
             'address' => 'required',
             'phone' => 'required'
-            ]);
+        ]);
     }
 
 
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function getAdminLogin() {
+    public function getAdminLogin()
+    {
         return view('admin.login');
     }
 
     /**
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function authenticate() {
-      if (Auth::attempt(['email' => $_POST['email'], 'password' => $_POST['password']])) {
-        Cart::cookieToCart();
-        Wishlist::cookieToWishlist();
-        Comparison::cookieToComparison();
+    public function authenticate()
+    {
+        if (Auth::attempt(['email' => $_POST['email'], 'password' => $_POST['password']])) {
+            Cart::cookieToCart();
+            Wishlist::cookieToWishlist();
+            Comparison::cookieToComparison();
 
+            $user = Auth::getUser();
 
-          return redirect()->to($_SERVER['HTTP_REFERER']);
+            if($user->role === User::ADMIN_ROLE_SLUG) {
+                return redirect()->to('/admin');
+            }
+
+            return redirect()->to($_SERVER['HTTP_REFERER']);
 //        return redirect()->intended('/');
-    } else {
+        } else {
             return redirect('login')->with('error', 1);
         }
 
         // return Redirect::to('login')->with('error', 1);
-}
+    }
 
 
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return User
      */
     protected function create(array $data)
@@ -107,6 +114,6 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
             'role' => 'retail'
 
-            ]);
+        ]);
     }
 }
