@@ -449,7 +449,9 @@ class HomeController extends Controller
         $total = $cartInfo[1];
         $breadcrumbs = ['/cart' => 'Корзина'];
         $deliveryPrices = Keyval::getDeliveryPrices();
+
         $deliveryPricesStr = json_encode($deliveryPrices->toArray());
+
         return view('site.cart', compact('products', 'total', 'breadcrumbs', 'deliveryPricesStr'));
     }
 

@@ -5,47 +5,40 @@ function $_GET(key) {
 }
 
 function magnifersEvent() {
-    mags = document.getElementsByClassName('magnifier');
+    var mags = document.getElementsByClassName('magnifier');
     for (var i = 0; i < mags.length; i++) {
         mags[i].addEventListener('click', function () {
             showImages(this);
         });
-    }
-    ;
+    };
 
 
-    smags = document.getElementsByClassName('search-magnifier');
+    var smags = document.getElementsByClassName('search-magnifier');
     for (var i = 0; i < smags.length; i++) {
         smags[i].addEventListener('click', function () {
             showImages(this);
         });
-    }
-    ;
-
+    };
 }
-
 
 function setAvailCheckbox(name) {
     document.querySelector('input[value="' + name + '"]').disabled = false;
-    document.querySelector('input[value="' + name + '"]').nextSibling.style.cssText = 'color: #464646 !important';
+    document.querySelector('input[value="' + name + '"]').nextSibling.nextSibling.style.cssText = 'color: #464646 !important';
 }
 
 function setDisabledCheckboxes() {
-    checkboxes = document.querySelectorAll('input[name="payment[]"]');
+    var checkboxes = document.querySelectorAll('input[name="payment[]"]');
+
     for (var i = checkboxes.length - 1; i >= 0; i--) {
         checkboxes[i].disabled = true;
         checkboxes[i].checked = false;
-        checkboxes[i].nextSibling.style.cssText = 'color: #C5C5C5 !important';
+        checkboxes[i].nextSibling.nextSibling.style.cssText = 'color: #C5C5C5 !important';
     }
 
 }
 
-
 function changeAvailableChexboxes(value) {
-
     delStr = document.getElementById('delStr');
-
-    console.log(delStr);
 
     if (delStr) {
         delStr = delStr.value;
@@ -53,7 +46,7 @@ function changeAvailableChexboxes(value) {
     }
 
 
-    setDisabledCheckboxes()
+    setDisabledCheckboxes();
 
     setAvailCheckbox('privat');
     setAvailCheckbox('visa');
