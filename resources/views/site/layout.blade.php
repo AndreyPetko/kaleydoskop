@@ -983,7 +983,7 @@
 				<div class="footer-links">
 					<div class="footer-links-item"><a href="/catalog">Каталог</a></div>
 					<div class="footer-links-item"><a href="/new-products">Новинки</a></div>
-					<div class="footer-links-item"><a href="#">Скидки</a></div>
+					<div class="footer-links-item"><a href="/page/skidki">Скидки</a></div>
 					<div class="footer-links-item"><a href="/about">О компании</a></div>
 					<div class="footer-links-item"><a href="/articles">Статьи</a></div>
 					<div class="footer-links-item"><a href="/wholesalers">Оптовикам</a></div>
@@ -1188,7 +1188,7 @@
 
 		<div class="mobile-footer-item"><a href="/catalog">Каталог</a></div>
 		<div class="mobile-footer-item"><a href="/new-products">Новинки</a></div>
-		<div class="mobile-footer-item"><a href="#">Скидки</a></div>
+		<div class="mobile-footer-item"><a href="/page/skidki">Скидки</a></div>
 		<div class="mobile-footer-item"><a href="/about">О компании</a></div>
 		<div class="mobile-footer-item"><a href="/articles">Статьи</a></div>
 		<div class="mobile-footer-item"><a href="/wholesalers">Оптовикам</a></div>

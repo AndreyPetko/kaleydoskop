@@ -13,8 +13,7 @@
                 <div class="intake-close fr success-close"><img src="{{ url('site/images/close-photo.png') }}" alt="">
                 </div>
             </div>
-
-            <div class="sunny"><img src="site/images/smile-kv-sm.jpg"></div>
+            <div class="sad" style="padding-left: 100px;">:)</div>
             <div class="fast-order-text">
                 Спасибо за заказ. Мы свяжемся с Вами в ближайшее время.
             </div>
