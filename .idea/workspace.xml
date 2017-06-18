@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb268df6-5342-41b1-8d40-9c7fcbe3a716" name="Default" comment="Merge branch 'master' of https://github.com/AndreyPetko/kaleydoskop&#10;&#10;# Conflicts:&#10;#&#9;resources/views/site/index.blade.php">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/orders/allList.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/orders/allList.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/orders/single.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/orders/single.blade.php" />
     </list>
     <ignored path="kaleydoskop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,24 +23,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="allList.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/orders/allList.blade.php">
+      <file leaf-file-name="single.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/orders/single.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="523">
-              <caret line="90" column="101" lean-forward="false" selection-start-line="90" selection-start-column="101" selection-end-line="90" selection-end-column="101" />
+            <state relative-caret-position="444">
+              <caret line="128" column="87" lean-forward="false" selection-start-line="128" selection-start-column="87" selection-end-line="128" selection-end-column="87" />
               <folding>
-                <marker date="1497802797000" expanded="true" signature="9:30" ph="..." />
-                <marker date="1497802797000" expanded="true" signature="43:52" ph="..." />
-                <marker date="1497802797000" expanded="true" signature="470:498" ph="..." />
-                <marker date="1497802797000" expanded="true" signature="3660:3670" ph="..." />
-                <marker date="1497802797000" expanded="true" signature="3720:3739" ph="..." />
-                <marker date="1497802797000" expanded="true" signature="3923:3982" ph="..." />
-                <marker date="1497802797000" expanded="true" signature="4116:4127" ph="..." />
-                <marker date="1497802797000" expanded="true" signature="4177:4190" ph="..." />
-                <marker date="1497802797000" expanded="true" signature="4240:4258" ph="..." />
-                <marker date="1497802797000" expanded="true" signature="5946:5956" ph="..." />
-                <marker date="1497802797000" expanded="true" signature="6513:6527" ph="..." />
-                <marker date="1497802797000" expanded="true" signature="6606:6616" ph="..." />
+                <marker date="1497802967000" expanded="true" signature="9:30" ph="..." />
+                <marker date="1497802967000" expanded="true" signature="42:46" ph="..." />
+                <marker date="1497802967000" expanded="true" signature="503:512" ph="..." />
+                <marker date="1497802967000" expanded="true" signature="747:759" ph="..." />
+                <marker date="1497802967000" expanded="true" signature="810:820" ph="..." />
+                <marker date="1497802967000" expanded="true" signature="1027:1052" ph="..." />
+                <marker date="1497802967000" expanded="true" signature="1370:1382" ph="..." />
+                <marker date="1497802967000" expanded="true" signature="1433:1443" ph="..." />
+                <marker date="1497802967000" expanded="true" signature="1645:1660" ph="..." />
+                <marker date="1497802967000" expanded="true" signature="1666:1683" ph="..." />
+                <marker date="1497802967000" expanded="true" signature="2235:2245" ph="..." />
+                <marker date="1497802967000" expanded="true" signature="2262:2276" ph="..." />
+                <marker date="1497802967000" expanded="true" signature="2503:2513" ph="..." />
+                <marker date="1497802967000" expanded="true" signature="3328:3347" ph="..." />
+                <marker date="1497802967000" expanded="true" signature="3355:3371" ph="..." />
+                <marker date="1497802967000" expanded="true" signature="3470:3529" ph="..." />
+                <marker date="1497802967000" expanded="true" signature="3629:3647" ph="..." />
+                <marker date="1497802967000" expanded="true" signature="3741:3757" ph="..." />
+                <marker date="1497802967000" expanded="true" signature="5256:5274" ph="..." />
+                <marker date="1497802967000" expanded="true" signature="5421:5437" ph="..." />
+                <marker date="1497802967000" expanded="true" signature="5593:5608" ph="..." />
+                <marker date="1497802967000" expanded="true" signature="5839:5854" ph="..." />
+                <marker date="1497802967000" expanded="true" signature="6237:6248" ph="..." />
+                <marker date="1497802967000" expanded="true" signature="6365:6378" ph="..." />
+                <marker date="1497802967000" expanded="true" signature="6497:6510" ph="..." />
+                <marker date="1497802967000" expanded="true" signature="7146:7161" ph="..." />
+                <marker date="1497802967000" expanded="true" signature="7199:7234" ph="..." />
+                <marker date="1497802967000" expanded="true" signature="7277:7299" ph="..." />
+                <marker date="1497802967000" expanded="true" signature="7349:7366" ph="..." />
+                <marker date="1497802967000" expanded="true" signature="7426:7449" ph="..." />
+                <marker date="1497802967000" expanded="true" signature="7467:7487" ph="..." />
+                <marker date="1497802967000" expanded="true" signature="7518:7541" ph="..." />
+                <marker date="1497802967000" expanded="true" signature="7668:7679" ph="..." />
+                <marker date="1497802967000" expanded="true" signature="7978:7988" ph="..." />
               </folding>
             </state>
           </provider>
@@ -99,7 +120,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/../../../../etc/apache2/2.2/httpd.conf" />
         <option value="$PROJECT_DIR$/../index.php" />
         <option value="$PROJECT_DIR$/public/index.php" />
         <option value="$PROJECT_DIR$/.htaccess" />
@@ -150,6 +170,7 @@
         <option value="$PROJECT_DIR$/database/migrations/2017_06_18_160519_update_orders_table.php" />
         <option value="$PROJECT_DIR$/app/Order.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/orders/allList.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/orders/single.blade.php" />
       </list>
     </option>
   </component>
@@ -297,7 +318,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="SearchEverywhereHistoryKey" value="ADminOr&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/AdminOrdersController.php&#10;Order.php&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Order.php&#10;create_products&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/database/migrations/2015_11_09_110046_create_products_table.php&#10;Product&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Product.php&#10;UpdateOrders&#9;null&#9;null&#10;2017_06_18_160519_update_orders_table&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/database/migrations/2017_06_18_160519_update_orders_table.php&#10;Order&#9;null&#9;null&#10;AdminOrdersController&#9;null&#9;null&#10;App.php&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/vendor/laravel/framework/src/Illuminate/Support/Facades/App.php&#10;OrderCo&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/OrdersController.php&#10;ADminCo&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/AdminController.php&#10;Router.php&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/vendor/symfony/routing/Router.php&#10;Adm&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/AdminController.php&#10;Or&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/OrdersController.php&#10;AdminCo&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/AdminController.php&#10;ca&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/resources/views/site/cart.blade.php&#10;User.php&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/User.php&#10;a&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/Auth/AuthController.php&#10;сфке&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/resources/views/site/cart.blade.php&#10;Au&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/Auth/AuthController.php&#10;fu&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/public/site/functions.js&#10;AuthCo&#9;null&#9;null&#10;getCart&#9;null&#9;null&#10;Cate&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Category.php&#10;brends.js&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/public/site/brends.js&#10;HomeCO&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/HomeController.php&#10;site1.&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/public/site/site1.js&#10;site&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/public/site/site.js&#10;HomeCo&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/HomeController.php&#10;Slide.php&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Slide.php&#10;2017_05_28_151320_update_slides_table_1&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/database/migrations/2017_05_28_151320_update_slides_table_1.php&#10;ComCo&#9;null&#9;null&#10;2017_05_28_145715_update_slides_table&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/database/migrations/2017_05_28_145715_update_slides_table.php&#10;index.&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/resources/views/site/index.blade.php&#10;lay&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/resources/views/site/layout.blade.php&#10;TextCon&#9;null&#9;null&#10;update_text&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/database/migrations/2017_05_28_140404_update_text_table.php&#10;update_te&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/database/migrations/2017_04_17_151305_update_text_table.php&#10;Text&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Text.php&#10;Home&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/HomeController.php&#10;ышеу&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/public/site/site.js&#10;HomeO&#9;null&#9;null&#10;gitig&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/.gitignore&#10;url&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/public/site/url.js&#10;site.js&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/public/site/site.js&#10;index.bla&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/resources/views/site/index.blade.php&#10;index&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/public/index.php&#10;produc&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/resources/views/site/product.blade.php&#10;Ho&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/HomeController.php&#10;getIndex&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/AdminOrdersController.php&#10;ADminOr&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/AdminOrdersController.php&#10;Order.php&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Order.php&#10;create_products&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/database/migrations/2015_11_09_110046_create_products_table.php&#10;Product&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Product.php&#10;UpdateOrders&#9;null&#9;null&#10;2017_06_18_160519_update_orders_table&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/database/migrations/2017_06_18_160519_update_orders_table.php&#10;Order&#9;null&#9;null&#10;AdminOrdersController&#9;null&#9;null&#10;App.php&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/vendor/laravel/framework/src/Illuminate/Support/Facades/App.php&#10;OrderCo&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/OrdersController.php&#10;ADminCo&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/AdminController.php&#10;Router.php&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/vendor/symfony/routing/Router.php&#10;Adm&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/AdminController.php&#10;Or&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/OrdersController.php&#10;AdminCo&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/AdminController.php&#10;ca&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/resources/views/site/cart.blade.php&#10;User.php&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/User.php&#10;a&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/Auth/AuthController.php&#10;сфке&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/resources/views/site/cart.blade.php&#10;Au&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/Auth/AuthController.php&#10;fu&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/public/site/functions.js&#10;AuthCo&#9;null&#9;null&#10;getCart&#9;null&#9;null&#10;Cate&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Category.php&#10;brends.js&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/public/site/brends.js&#10;HomeCO&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/HomeController.php&#10;site1.&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/public/site/site1.js&#10;site&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/public/site/site.js&#10;HomeCo&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/HomeController.php&#10;Slide.php&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Slide.php&#10;2017_05_28_151320_update_slides_table_1&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/database/migrations/2017_05_28_151320_update_slides_table_1.php&#10;ComCo&#9;null&#9;null&#10;2017_05_28_145715_update_slides_table&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/database/migrations/2017_05_28_145715_update_slides_table.php&#10;index.&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/resources/views/site/index.blade.php&#10;lay&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/resources/views/site/layout.blade.php&#10;TextCon&#9;null&#9;null&#10;update_text&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/database/migrations/2017_05_28_140404_update_text_table.php&#10;update_te&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/database/migrations/2017_04_17_151305_update_text_table.php&#10;Text&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Text.php&#10;Home&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/HomeController.php&#10;ышеу&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/public/site/site.js&#10;HomeO&#9;null&#9;null&#10;gitig&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/.gitignore&#10;url&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/public/site/url.js&#10;site.js&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/public/site/site.js&#10;index.bla&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/resources/views/site/index.blade.php&#10;index&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/public/index.php&#10;produc&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/resources/views/site/product.blade.php&#10;Ho&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/HomeController.php" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/public/site/url.js" />
   </component>
@@ -388,12 +409,12 @@
       <workItem from="1496044876682" duration="11000" />
       <workItem from="1497033614719" duration="554000" />
       <workItem from="1497095600721" duration="1619000" />
-      <workItem from="1497793739735" duration="7122000" />
+      <workItem from="1497793739735" duration="7244000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36765000" />
+    <option name="totallyTimeSpent" value="36887000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="970" extended-state="6" />
@@ -431,13 +452,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/site/category.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="88" lean-forward="false" selection-start-line="6" selection-start-column="88" selection-end-line="6" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/site/search.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="567">
@@ -5518,8 +5532,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminOrdersController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="26" column="36" lean-forward="false" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
+        <state relative-caret-position="327">
+          <caret line="50" column="34" lean-forward="true" selection-start-line="50" selection-start-column="34" selection-end-line="50" selection-end-column="34" />
           <folding>
             <marker date="1497801829000" expanded="false" signature="44:138" ph="..." />
             <marker date="1497801829000" expanded="true" signature="188:3986" ph="..." />
@@ -5554,20 +5568,101 @@
     <entry file="file://$PROJECT_DIR$/resources/views/admin/orders/allList.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="523">
-          <caret line="90" column="101" lean-forward="false" selection-start-line="90" selection-start-column="101" selection-end-line="90" selection-end-column="101" />
+          <caret line="90" column="44" lean-forward="false" selection-start-line="90" selection-start-column="44" selection-end-line="90" selection-end-column="107" />
           <folding>
             <marker date="1497802797000" expanded="true" signature="9:30" ph="..." />
             <marker date="1497802797000" expanded="true" signature="43:52" ph="..." />
+            <marker date="1497802797000" expanded="true" signature="53:7273" ph="..." />
+            <marker date="1497802797000" expanded="true" signature="91:418" ph="..." />
+            <marker date="1497802797000" expanded="true" signature="104:196" ph="..." />
+            <marker date="1497802797000" expanded="true" signature="228:403" ph="..." />
+            <marker date="1497802797000" expanded="true" signature="451:7269" ph="..." />
             <marker date="1497802797000" expanded="true" signature="470:498" ph="..." />
+            <marker date="1497802797000" expanded="true" signature="525:2492" ph="..." />
+            <marker date="1497802797000" expanded="true" signature="567:2477" ph="..." />
+            <marker date="1497802797000" expanded="true" signature="606:1605" ph="..." />
+            <marker date="1497802797000" expanded="true" signature="670:1582" ph="..." />
+            <marker date="1497802797000" expanded="true" signature="776:856" ph="..." />
+            <marker date="1497802797000" expanded="true" signature="957:1004" ph="..." />
+            <marker date="1497802797000" expanded="true" signature="1117:1205" ph="..." />
+            <marker date="1497802797000" expanded="true" signature="1325:1420" ph="..." />
+            <marker date="1497802797000" expanded="true" signature="1644:2246" ph="..." />
+            <marker date="1497802797000" expanded="true" signature="1706:2223" ph="..." />
+            <marker date="1497802797000" expanded="true" signature="1815:1893" ph="..." />
+            <marker date="1497802797000" expanded="true" signature="2002:2043" ph="..." />
+            <marker date="1497802797000" expanded="true" signature="2152:2193" ph="..." />
+            <marker date="1497802797000" expanded="true" signature="2285:2457" ph="..." />
+            <marker date="1497802797000" expanded="true" signature="2389:2434" ph="..." />
+            <marker date="1497802797000" expanded="true" signature="2545:7254" ph="..." />
+            <marker date="1497802797000" expanded="true" signature="2581:7239" ph="..." />
+            <marker date="1497802797000" expanded="true" signature="2615:7189" ph="..." />
+            <marker date="1497802797000" expanded="true" signature="2660:2755" ph="..." />
+            <marker date="1497802797000" expanded="true" signature="2868:7126" ph="..." />
+            <marker date="1497802797000" expanded="true" signature="2926:7042" ph="..." />
+            <marker date="1497802797000" expanded="true" signature="2962:7009" ph="..." />
+            <marker date="1497802797000" expanded="true" signature="2995:3523" ph="..." />
+            <marker date="1497802797000" expanded="true" signature="3616:6932" ph="..." />
             <marker date="1497802797000" expanded="true" signature="3660:3670" ph="..." />
             <marker date="1497802797000" expanded="true" signature="3720:3739" ph="..." />
+            <marker date="1497802797000" expanded="true" signature="3786:4072" ph="..." />
             <marker date="1497802797000" expanded="true" signature="3923:3982" ph="..." />
             <marker date="1497802797000" expanded="true" signature="4116:4127" ph="..." />
             <marker date="1497802797000" expanded="true" signature="4177:4190" ph="..." />
             <marker date="1497802797000" expanded="true" signature="4240:4258" ph="..." />
+            <marker date="1497802797000" expanded="true" signature="4308:5473" ph="..." />
+            <marker date="1497802797000" expanded="true" signature="5514:5811" ph="..." />
+            <marker date="1497802797000" expanded="true" signature="5872:6163" ph="..." />
             <marker date="1497802797000" expanded="true" signature="5946:5956" ph="..." />
+            <marker date="1497802797000" expanded="true" signature="5959:6121" ph="..." />
+            <marker date="1497802797000" expanded="true" signature="6225:6894" ph="..." />
+            <marker date="1497802797000" expanded="true" signature="6316:6852" ph="..." />
             <marker date="1497802797000" expanded="true" signature="6513:6527" ph="..." />
             <marker date="1497802797000" expanded="true" signature="6606:6616" ph="..." />
+            <marker date="1497802797000" expanded="true" signature="6743:6804" ph="..." />
+            <marker date="1497802797000" expanded="true" signature="7073:7098" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/orders/single.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="128" column="87" lean-forward="false" selection-start-line="128" selection-start-column="87" selection-end-line="128" selection-end-column="87" />
+          <folding>
+            <marker date="1497802967000" expanded="true" signature="9:30" ph="..." />
+            <marker date="1497802967000" expanded="true" signature="42:46" ph="..." />
+            <marker date="1497802967000" expanded="true" signature="503:512" ph="..." />
+            <marker date="1497802967000" expanded="true" signature="747:759" ph="..." />
+            <marker date="1497802967000" expanded="true" signature="810:820" ph="..." />
+            <marker date="1497802967000" expanded="true" signature="1027:1052" ph="..." />
+            <marker date="1497802967000" expanded="true" signature="1370:1382" ph="..." />
+            <marker date="1497802967000" expanded="true" signature="1433:1443" ph="..." />
+            <marker date="1497802967000" expanded="true" signature="1645:1660" ph="..." />
+            <marker date="1497802967000" expanded="true" signature="1666:1683" ph="..." />
+            <marker date="1497802967000" expanded="true" signature="2235:2245" ph="..." />
+            <marker date="1497802967000" expanded="true" signature="2262:2276" ph="..." />
+            <marker date="1497802967000" expanded="true" signature="2503:2513" ph="..." />
+            <marker date="1497802967000" expanded="true" signature="3328:3347" ph="..." />
+            <marker date="1497802967000" expanded="true" signature="3355:3371" ph="..." />
+            <marker date="1497802967000" expanded="true" signature="3470:3529" ph="..." />
+            <marker date="1497802967000" expanded="true" signature="3629:3647" ph="..." />
+            <marker date="1497802967000" expanded="true" signature="3741:3757" ph="..." />
+            <marker date="1497802967000" expanded="true" signature="5256:5274" ph="..." />
+            <marker date="1497802967000" expanded="true" signature="5421:5437" ph="..." />
+            <marker date="1497802967000" expanded="true" signature="5593:5608" ph="..." />
+            <marker date="1497802967000" expanded="true" signature="5839:5854" ph="..." />
+            <marker date="1497802967000" expanded="true" signature="6237:6248" ph="..." />
+            <marker date="1497802967000" expanded="true" signature="6365:6378" ph="..." />
+            <marker date="1497802967000" expanded="true" signature="6497:6510" ph="..." />
+            <marker date="1497802967000" expanded="true" signature="7146:7161" ph="..." />
+            <marker date="1497802967000" expanded="true" signature="7199:7234" ph="..." />
+            <marker date="1497802967000" expanded="true" signature="7277:7299" ph="..." />
+            <marker date="1497802967000" expanded="true" signature="7349:7366" ph="..." />
+            <marker date="1497802967000" expanded="true" signature="7426:7449" ph="..." />
+            <marker date="1497802967000" expanded="true" signature="7467:7487" ph="..." />
+            <marker date="1497802967000" expanded="true" signature="7518:7541" ph="..." />
+            <marker date="1497802967000" expanded="true" signature="7668:7679" ph="..." />
+            <marker date="1497802967000" expanded="true" signature="7978:7988" ph="..." />
           </folding>
         </state>
       </provider>

@@ -119,18 +119,25 @@
 				<tr>
 					<td>Дата доставки</td>
 					<td>
-						<input name="delivery_dt" type="date" value="{{$order->delivery_dt}}"></input> ({{$order->human_dt}})
+						<input name="delivery_dt" type="date" value="{{$order->delivery_dt}}"> ({{$order->human_dt}})
+					</td>
+				</tr>
+
+				<tr>
+					<td>Дата создания</td>
+					<td>
+                        {{ Carbon\Carbon::parse($order->created_at)->format('d.m.Y') }}
 					</td>
 				</tr>
 
 				<tr>
 					<td>Время от</td>
-					<td><input name="time_start" value="{{$order->time_start}}"></input></td>
+					<td><input name="time_start" value="{{$order->time_start}}"></td>
 				</tr>
 
 				<tr>
 					<td>Время до</td>
-					<td><input name="time_end" value="{{$order->time_end}}"></input></td>
+					<td><input name="time_end" value="{{$order->time_end}}"></td>
 				</tr>
 
 
