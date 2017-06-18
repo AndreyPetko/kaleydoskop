@@ -509,7 +509,7 @@ window.addEventListener("load", function () {
         nav: true,
         navText: ["<img src='site/images/arrow-big2.png'>", "<img src='site/images/arrow-big.png'>"]
         // navContainer:  url('site/images/arrow-big.png')
-    })
+    });
 
 
 //Выпадающее меню
@@ -531,7 +531,7 @@ window.addEventListener("load", function () {
 
 
 //Выпадающее меню 
-    catalog2 = document.getElementsByClassName('main-menu-item')[1];
+    var catalog2 = document.getElementsByClassName('main-menu-item')[1];
 
     catalog2.addEventListener('mouseover', function () {
         document.getElementsByClassName('main-menu-dropdown')[1].style.display = 'block';

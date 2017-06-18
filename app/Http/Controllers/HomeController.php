@@ -174,10 +174,7 @@ class HomeController extends Controller
             return view('site.noproduct');
         }
 
-
         $data['product'] = Product::getByUrl($url);
-
-
         $data['category'] = Category::getByProductId($data['product']->id);
 
         if ($data['category']) {
@@ -194,7 +191,6 @@ class HomeController extends Controller
 
         $data['watched'] = Product::getWatched($data['product']->id);
 
-
         $data['countReviews'] = Review::getCountByProductId($data['product']->id);
 
         $wishObj = Wishlist::getInstance();
@@ -206,7 +202,6 @@ class HomeController extends Controller
         $data['attributes'] = Product::getProductAttributes($data['product']->id);
 
         $cookie = MyCookie::addItem($data['product']->id);
-
         $cookie = Cookie::make('watched', $cookie, '99999');
 
         Cookie::queue($cookie);
@@ -315,12 +310,12 @@ class HomeController extends Controller
             Session::forget('stopPrice');
         }
 
-
-        if (Session::get('sortType')) {
-            $sortType = Session::get('sortType');
-        } else {
-            $sortType = 'name';
-        }
+//
+//        if (Session::get('sortType')) {
+//            $sortType = Session::get('sortType');
+//        } else {
+//            $sortType = 'name';
+//        }
 
         $subcategory = Subcategory::where('url', $url)->first();
         $data['subcategory'] = $subcategory;
@@ -454,7 +449,9 @@ class HomeController extends Controller
         $total = $cartInfo[1];
         $breadcrumbs = ['/cart' => 'Корзина'];
         $deliveryPrices = Keyval::getDeliveryPrices();
+
         $deliveryPricesStr = json_encode($deliveryPrices->toArray());
+
         return view('site.cart', compact('products', 'total', 'breadcrumbs', 'deliveryPricesStr'));
     }
 

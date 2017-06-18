@@ -627,7 +627,15 @@
 
     <div class="product-avail fr">
         <div class="product-avail-text fl">
-            Нет в наличии
+            @if($product->quantity > 2)
+                Есть в наличии
+            @else
+                @if($product->quantity == 0)
+                    Нет в наличии
+                @else
+                    Заканчивается
+                @endif
+            @endif
         </div>
     </div>
     <br>

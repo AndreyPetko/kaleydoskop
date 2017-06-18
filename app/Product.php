@@ -499,8 +499,6 @@ class Product extends Model
     public static function getBySessionFilter($categoryUrl, $returnType = 1, $currentPage = false)
     {
         $category = Category::where('url', $categoryUrl)->first();
-
-
         $return = [];
 
         if ($currentPage) {
@@ -515,7 +513,7 @@ class Product extends Model
             $page = $_GET['page'];
         }
 
-        $put = false;
+//        $put = false;
 
 //
 //		if(empty(Session::get('filter'))
@@ -573,18 +571,15 @@ class Product extends Model
             $query->where('product_subcat.subcat_id', Session::get('subcatId'));
         }
 
-
         if (Session::get('aval')) {
             if (Session::get('aval') == 1) {
                 $query->where('products.quantity', '>', 0);
             }
         }
 
-
         if (Session::get('brends')) {
             $query->whereIn('products.brend_id', Session::get('brends'));
         }
-
 
         if (self::isWholesaler()) {
             $query->where('active_wholesale', 1);
@@ -618,13 +613,11 @@ class Product extends Model
 //		echo self::getSql($query);
 //		die;
 
-
         if (Session::get('showCount')) {
             $products = $query->paginate((int)Session::get('showCount'));
         } else {
             $products = $query->paginate(9);
         }
-
 
         // $products = $query->take(9)->get();
 
@@ -638,14 +631,12 @@ class Product extends Model
 
         $products = self::setWholesalePrice($products, 1);
 
-
         foreach ($products as $product) {
             foreach ($product->images as $image) {
                 $product->image = $image->url;
                 break;
             }
         }
-
 
         if ($returnType == 1) {
             $pagination = $products->render();
@@ -660,10 +651,9 @@ class Product extends Model
             $return = $products;
         }
 
-
-        if ($put) {
-            Cache::put($cacheKey, $return, self::CACHE_TIME);
-        }
+//        if ($put) {
+//            Cache::put($cacheKey, $return, self::CACHE_TIME);
+//        }
 
         return $return;
     }

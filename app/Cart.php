@@ -9,12 +9,25 @@ use Cookie;
 use DB;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Cart
+ * @package App
+ */
 class Cart extends Model {
-	protected $table = 'carts';
-	protected $fillable = ['user_id', 'product_id', 'count'];
+    /**
+     * @var string
+     */
+    protected $table = 'carts';
+    /**
+     * @var array
+     */
+    protected $fillable = ['user_id', 'product_id', 'count'];
 
 
-	public static function getInstance() {
+    /**
+     * @return AuthCart|GuestCart
+     */
+    public static function getInstance() {
 		if(Auth::check()) {
 			return new AuthCart;
 		} else {
@@ -22,11 +35,17 @@ class Cart extends Model {
 		}
 	}
 
-	public static function clearUserList($user_id) {
+    /**
+     * @param $user_id
+     */
+    public static function clearUserList($user_id) {
 		DB::table('carts')->where('user_id', $user_id)->delete();
 	}
 
-	public static function cookieToCart() {
+    /**
+     *
+     */
+    public static function cookieToCart() {
 		$cart = Cookie::get('cart');
 		if($cart) {
 			foreach ($cart as $product_id => $count) {

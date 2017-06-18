@@ -1120,7 +1120,7 @@
 	</div>
 	<div class="mobile-search">
 		<div class="mobile-search-input">
-			<input id="mobile-search-input"></input>
+			<input id="mobile-search-input">
 		</div>
 		<div class="mobile-search-icon" id="mobile-search">
 			<img src="{{ url('/site/images/icon-sarch.png') }}">

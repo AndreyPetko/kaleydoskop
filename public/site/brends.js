@@ -9,10 +9,6 @@ window.addEventListener('load', function(){
 		});
 	});
 
-
-
-
-
 	document.getElementById('brend-reset').addEventListener('click', function(){
 		attrs = document.getElementsByClassName('attr-checkbox');
 		for (var i = attrs.length - 1; i >= 0; i--) {

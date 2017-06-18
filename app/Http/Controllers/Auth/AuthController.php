@@ -13,6 +13,10 @@ use App\Wishlist;
 use App\Comparison;
 use Redirect;
 
+/**
+ * Class AuthController
+ * @package App\Http\Controllers\Auth
+ */
 class AuthController extends Controller
 {
     /*
@@ -28,12 +32,14 @@ class AuthController extends Controller
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
+    /**
+     * @var string
+     */
     protected $redirectTo = '/';
 
     /**
      * Create a new authentication controller instance.
      *
-     * @return void
      */
     public function __construct()
     {
@@ -58,16 +64,25 @@ class AuthController extends Controller
     }
 
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function getAdminLogin() {
         return view('admin.login');
     }
 
+    /**
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function authenticate() {
       if (Auth::attempt(['email' => $_POST['email'], 'password' => $_POST['password']])) {
         Cart::cookieToCart();
         Wishlist::cookieToWishlist();
         Comparison::cookieToComparison();
-        return redirect()->intended('/');
+
+
+          return redirect()->to($_SERVER['HTTP_REFERER']);
+//        return redirect()->intended('/');
     } else {
             return redirect('login')->with('error', 1);
         }
