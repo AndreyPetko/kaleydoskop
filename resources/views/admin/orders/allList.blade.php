@@ -88,7 +88,7 @@
                                     <td>{{$order->delivery_dt}}</td>
                                     <td>
                                         @if($order->created_at != '0000-00-00 00:00:00')
-                                            {{ Carbon\Carbon::parse($order->created_at)->format('d-m-Y') }}
+                                            {{ Carbon\Carbon::parse($order->created_at)->format('d.m.Y') }}
                                         @endif
                                     </td>
                                     <td>{{$order->fio}}</td>
