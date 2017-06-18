@@ -78,7 +78,7 @@
                     </div>
                     <div class="cart-info-input">
                         <p>Дата доставки</p>
-                        <input type="date" id="datetimepicker" name="delivery_dt">
+                        <input type="text" id="datetimepicker" name="delivery_dt">
                     </div>
                     <div class="cart-info-input">
                         <p>Время от</p>

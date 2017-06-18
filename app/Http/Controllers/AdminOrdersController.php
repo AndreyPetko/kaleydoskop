@@ -23,6 +23,7 @@ class AdminOrdersController extends Controller {
 		$type = Auth::getRole();
 		Order::setReaded($type);
 		$orders = Order::getByFilter($_GET);
+
 		return view('admin.orders.allList')->with('orders', $orders);
 	}
 

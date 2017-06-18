@@ -10,17 +10,18 @@ use Mail;
 use Auth;
 
 
-
+/**
+ * Class OrdersController
+ * @package App\Http\Controllers
+ */
 class OrdersController extends Controller {
 
-	public function __construct() {
-	}
-
-
-	public function postAdd() {
+    /**
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function postAdd() {
 		$request = Request::all();
 		unset($request['_token']);
-
 
 		$order = Order::getInstance($request['type']);
 		$result = $order->add($request);
@@ -29,10 +30,8 @@ class OrdersController extends Controller {
 			return Redirect::back()->with('emptyCartError', 1);
 		}
 
-
 		if(!Auth::check() || Auth::user()->role == 'retail') {
 			$email = 'andreypetko3@gmail.com';
-
 
 			if($request['type']) { // быстрый
 				Mail::send('emails.orderFast', ['name' => $request['name'], 'phone' => $request['phone']], function($message) use ($email)
@@ -45,8 +44,6 @@ class OrdersController extends Controller {
 					$message->to($email, 'Kaleydoskop')->subject('На сайте новый заказ');
 				});
 			}
-
-
 		}
 
 		if($request['email']) {

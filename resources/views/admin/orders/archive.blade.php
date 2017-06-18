@@ -24,9 +24,8 @@
 			<div class="box">
 				<div class="box-header">
 					<h3 class="box-title">Список заказов</h3>
-
-
 				</div>
+
 				<!-- /.box-header -->
 				<div class="box-body table-responsive no-padding">
 					<table class="table table-hover">

@@ -435,7 +435,6 @@ class AdminController extends Controller {
 
 	public function postCategoryEdit($category_id) {
 
-
 		if(isset($this->request['image'])) {
 			$category = Category::find($category_id);
 			Image::deleteCategoryImage($category);
@@ -463,7 +462,6 @@ class AdminController extends Controller {
 
 	public function getCategoryTop($categoryId)
 	{
-
 		if(Auth::user()->role == 'admin') {
 			$products = Product::where('active', 1)->get();
 		} else {
@@ -471,11 +469,6 @@ class AdminController extends Controller {
 		}
 
 		$topList = Product::getCategoryTop($categoryId);
-
-
-		// echo '<pre>';
-		// print_r($topList);
-		// die();
 
 		return view('admin.categories.top', compact('products', 'categoryId', 'topList'));
 	}
@@ -519,7 +512,7 @@ class AdminController extends Controller {
 
 		$count = Product::withCount($product_id);
 
-		if($count == 4) {
+		if($count === 4) {
 			return redirect()->back()->with('status', 'error');
 		}
 
@@ -588,8 +581,6 @@ class AdminController extends Controller {
 
 	public function postDistribution() {
 		$emailMessage = Request::input('message');
-
-
 		$subscribers = Sendmail::getAllItems();
 
 		foreach ($subscribers as $subscriber) {
@@ -602,15 +593,12 @@ class AdminController extends Controller {
 			});
 		}
 
-
 		return Redirect::to('/admin/message/sendEmail');
-
 	}
 
 
 	public function postWholesalerDistribution() {
 		$emailMessage = Request::input('message');
-
 		$wholesalers = User::getWholesalers();
 
 		foreach ($wholesalers as $wholesaler) {

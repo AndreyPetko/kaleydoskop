@@ -8,7 +8,7 @@ use Auth;
 
 class Order extends Model {
 
-	public static function getInstance($type) {
+	public static function getInstance($type) : Order {
 		// 0 = обычный заказ
 		// 1 = быстрый заказ
 		if($type == 0) {
@@ -20,9 +20,6 @@ class Order extends Model {
 		}
 	}
 
-
-
-
 	public static function getItem($id) {
 		$order =  DB::table('orders')->where('orders.id', $id)->first();
 
@@ -32,7 +29,6 @@ class Order extends Model {
 
 		return $order;
 	}
-
 
 	public static function getByFilter($get) {
 		$query = DB::table('orders')->select('orders.*')->orderBy('orders.id', 'desc')->where('status', '!=', 'Выполнен');
@@ -46,7 +42,6 @@ class Order extends Model {
 		}
 
 		$query->leftjoin('users', 'users.id', '=', 'orders.user_id');
-
 
 		if(Auth::user()->role == 'ander') {
 			$query->where('users.role', '=', 'wholesaler');
