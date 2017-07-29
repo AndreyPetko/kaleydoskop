@@ -1288,8 +1288,12 @@ a .brend-href {
 .main-dropdown-content {
     overflow: auto;
     height: 57px;
+    border-bottom: 3px solid #e8e8e8;
+    margin: 0 2px;
 }
-
+.main-dropdown-content:hover{
+    border-bottom: 3px solid #9a9898;
+}
 .main-dropdown-bottom-border {
     text-align: center;
     height: 3px;
@@ -1300,7 +1304,7 @@ a .brend-href {
 .main-dropdown-item:hover .main-dropdown-bottom-border {
     background: url('/site/images/botom-line-hover.png');
 }
-
+.main-dropdown-content{}
 .main-dropdown-top-line {
     background-color: #555555;
     height: 12px;

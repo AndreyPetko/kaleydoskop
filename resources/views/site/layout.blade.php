@@ -492,7 +492,7 @@
 		<div class="main-menu-dropdown">
 			<div class="main-dropdown-top-line"></div>
 			<div class="main-dropdown-list">
-				<a href="/new-products">
+				<!-- <a href="/new-products">
 					<div class="main-dropdown-item">
 						<div class="main-dropdown-content">
 							<div class="main-dropdown-item-image">
@@ -510,7 +510,7 @@
 						<div class="main-dropdown-bottom-border">
 						</div>
 					</div>
-				</a>
+				</a> -->
 				<a href="/category/schetnyj-krest">
 					<div class="main-dropdown-item">
 						<div class="main-dropdown-content">
@@ -522,11 +522,6 @@
 									Счетный крест
 								</div>
 							</div>
-							<div class="main-dropdown-side-border">
-								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
-							</div>
-						</div>
-						<div class="main-dropdown-bottom-border">
 						</div>
 					</div>
 				</a>
@@ -776,11 +771,6 @@
 									Riolis Premium
 								</div>
 							</div>
-							<div class="main-dropdown-side-border">
-								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
-							</div>
-						</div>
-						<div class="main-dropdown-bottom-border">
 						</div>
 					</div>
 				</a>
