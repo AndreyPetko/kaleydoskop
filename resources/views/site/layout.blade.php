@@ -967,6 +967,7 @@
 			<div class="mobile-top-border"></div>
 			<a href="/"><div class="mobile-menu-list-item">Главная</div></a>
 			<a href="/catalog"><div class="mobile-menu-list-item">Каталог</div></a>
+			<a href="/brends"><div class="mobile-menu-list-item">Бренды</div></a>
 			<a href="/about"><div class="mobile-menu-list-item">О компании</div></a>
 			<a href="/wholesalers"><div class="mobile-menu-list-item">Оптовикам</div></a>
 			<a href="/oplata-dostavka"><div class="mobile-menu-list-item">Оплата и доставка</div></a>
