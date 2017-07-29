@@ -745,7 +745,8 @@ module.exports = Cancel;
 /* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(8);
+__webpack_require__(8);
+module.exports = __webpack_require__(31);
 
 
 /***/ }),
@@ -761,15 +762,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-__WEBPACK_IMPORTED_MODULE_0_vue___default.a.config.delimiters = ['<%', '%>'];
-
 new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
     el: '#root',
     data: {
         products: [],
-        activeProducts: []
+        activeProducts: [],
+        perPage: 21,
+        page: 1
     },
-    computed: {},
+    computed: {
+        pages: function pages() {
+            return parseInt(this.products.length / this.perPage) + 1;
+        }
+    },
     methods: {
         getProducts: function getProducts() {
             var categoryUrl = this.getCategoryUrl();
@@ -785,10 +790,15 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
             return 'Schetnyj-krest';
         },
         setActiveProducts: function setActiveProducts() {
-            this.activeProducts = this.products.slice(0, 21);
+            var start = this.perPage * (this.page - 1);
+            this.activeProducts = this.products.slice(start, start + this.perPage);
         },
         getSrc: function getSrc(image) {
             return "/product_images/" + image;
+        },
+        setPage: function setPage(page) {
+            this.page = page;
+            this.setActiveProducts();
         }
     },
     created: function created() {
@@ -11982,6 +11992,12 @@ module.exports = function spread(callback) {
   };
 };
 
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

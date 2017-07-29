@@ -1,15 +1,18 @@
 import Vue from 'vue';
 import axios from 'axios';
 
-Vue.config.delimiters = ['<%', '%>'];
-
 new Vue({
     el: '#root',
     data: {
         products: [],
-        activeProducts: []
+        activeProducts: [],
+        perPage: 21,
+        page: 1
     },
     computed: {
+        pages() {
+            return parseInt(this.products.length / this.perPage) + 1;
+        }
     },
     methods: {
         getProducts() {
@@ -27,10 +30,15 @@ new Vue({
             return 'Schetnyj-krest';
         },
         setActiveProducts() {
-            this.activeProducts = this.products.slice(0, 21);
+            const start = this.perPage * (this.page - 1);
+            this.activeProducts = this.products.slice(start, start + this.perPage);
         },
         getSrc(image) {
             return "/product_images/" + image;
+        },
+        setPage(page) {
+            this.page = page;
+            this.setActiveProducts();
         }
     },
     created() {

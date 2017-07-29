@@ -1,5 +1,9 @@
 @extends('site.layout')
 
+@section('header')
+    <link rel="stylesheet" href="{{ asset('dist/app.css') }}">
+@stop
+
 @section('content')
     <div class="category-content" id="root">
         <div class="category-filter fl">
@@ -165,6 +169,15 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="pagination">
+                <ul>
+                    <li v-for="page in pages" @click="setPage(page)" v-text="page"></li>
+                    {{--<li>1</li>--}}
+                    {{--<li class="pagination-active">2</li>--}}
+                    {{--<li>3</li>--}}
+                </ul>
             </div>
         </div>
     </div>
