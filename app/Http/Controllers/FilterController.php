@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Product;
+use App\Repository\CategoryRepository;
 use App\Repository\ProductRepository;
 
 
@@ -18,15 +19,24 @@ class FilterController extends Controller
      * @param string $url
      * @return array
      */
-    public function getCategoryProducts(string $url)
+    public function getCategoryData(string $url)
     {
+        $productRepository = new ProductRepository();
+        $categoryRepository = new CategoryRepository();
+
         $category = Category::where('url', $url)->first();
         $products = Product::where('category_id', $category->id)->get();
 
-        $productRepository = new ProductRepository();
-        $data = $productRepository->productsToArray($products);
+        $subcategories = $categoryRepository->getSubcategoriesArr($category);
 
+        $products = $productRepository->productsToArray($products);
+        $attributes = [];
 
-        return $data;
+        return [
+            'name' => $category->name,
+            'products' => $products,
+            'attributes' => $attributes,
+            'subcategories' => $subcategories
+        ];
     }
 }

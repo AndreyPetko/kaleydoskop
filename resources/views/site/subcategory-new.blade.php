@@ -16,11 +16,11 @@
                 </div>
                 <div class="filter-price">
                     <div class="filter-from fl">
-                        <span class="filter-grey">От</span> <input id="startPrice" value="0"> <span
+                        <span class="filter-grey">От</span> <input  v-model="minPrice"> <span
                                 class="filter-currency">ГРН</span>
                     </div>
                     <div class="filter-to fr">
-                        <span class="filter-grey">До</span> <input id="stopPrice" value="1000"> <span
+                        <span class="filter-grey">До</span> <input v-model="maxPrice"> <span
                                 class="filter-currency">ГРН</span>
                     </div>
                 </div>
@@ -58,9 +58,7 @@
         </div>
 
         <div class="category-products-content fl">
-            <div class="category-title">
-                123
-            </div>
+            <div class="category-title" v-text="categoryName"></div>
             <div class="category-title-line">
             </div>
 
@@ -76,29 +74,25 @@
                         <div class="subcat-image-home fl">
                             <img src="{{ url('/site/images/imagesGG60IGZZ.png') }}" alt="">
                         </div>
-                        <div class="subcat-text fl">
-                            123
-                        </div>
+                        <div class="subcat-text fl" v-text="categoryName"></div>
                     </a>
                 </div>
 
-                <div class="subcat-item fl">
-                    <div class="subcat-image fl">
-                        <img src="{{ url('site/images/icon-catecory-list-active.png') }}" alt="">
-                    </div>
-                    <div class="subcat-text subcat-text-active fl">
-                        123
-                    </div>
-                </div>
+                {{--<div class="subcat-item fl">--}}
+                    {{--<div class="subcat-image fl">--}}
+                        {{--<img src="{{ url('site/images/icon-catecory-list-active.png') }}" alt="">--}}
+                    {{--</div>--}}
+                    {{--<div class="subcat-text subcat-text-active fl">--}}
+                        {{--123--}}
+                    {{--</div>--}}
+                {{--</div>--}}
 
-                <div class="subcat-item fl">
+                <div class="subcat-item fl" v-for="subcategory in subcategories">
                     <a href="/subcategory/123">
                         <div class="subcat-image fl">
                             <img src="{{ url('site/images/icon-catecory-list.png') }}" alt="">
                         </div>
-                        <div class="subcat-text fl">
-                            123
-                        </div>
+                        <div class="subcat-text fl" v-text="subcategory.name"></div>
                     </a>
                 </div>
 

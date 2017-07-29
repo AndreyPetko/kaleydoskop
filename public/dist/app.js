@@ -766,24 +766,44 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
     el: '#root',
     data: {
         products: [],
+        filteredProducts: [],
         activeProducts: [],
         perPage: 21,
-        page: 1
+        page: 1,
+        minPrice: 0,
+        maxPrice: 1000,
+        subcategories: [],
+        categoryName: ''
     },
     computed: {
         pages: function pages() {
-            return parseInt(this.products.length / this.perPage) + 1;
+            return parseInt(this.filteredProducts.length / this.perPage) + 1;
+        }
+    },
+    watch: {
+        minPrice: function minPrice(val, oldVal) {
+            this.filter();
+        },
+        maxPrice: function maxPrice(val, oldVal) {
+            this.filter();
         }
     },
     methods: {
         getProducts: function getProducts() {
             var categoryUrl = this.getCategoryUrl();
-            var url = '/filter/category-products/' + categoryUrl;
+            var url = '/filter/category-data/' + categoryUrl;
             var vm = this;
 
             __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get(url).then(function (result) {
-                vm.products = result.data;
+                var data = result.data;
+
+                vm.name = data.name;
+
+                vm.products = data.products;
+                vm.filteredProducts = data.products;
+                vm.subcategories = data.subcategories;
                 vm.setActiveProducts();
+                vm.filter();
             });
         },
         getCategoryUrl: function getCategoryUrl() {
@@ -791,7 +811,8 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
         },
         setActiveProducts: function setActiveProducts() {
             var start = this.perPage * (this.page - 1);
-            this.activeProducts = this.products.slice(start, start + this.perPage);
+            this.activeProducts = this.filteredProducts.slice(start, start + this.perPage);
+            document.getElementsByTagName('body')[0].scrollTop = 300;
         },
         getSrc: function getSrc(image) {
             return "/product_images/" + image;
@@ -799,10 +820,24 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
         setPage: function setPage(page) {
             this.page = page;
             this.setActiveProducts();
+        },
+        filter: function filter() {
+            var _this = this;
+
+            this.filteredProducts = [];
+
+            this.products.forEach(function (item, i, arr) {
+                if (item.price < parseInt(_this.minPrice) || item.price > parseInt(_this.maxPrice)) {
+                    return;
+                }
+
+                _this.filteredProducts.push(item);
+            });
+
+            this.setActiveProducts();
         }
     },
     created: function created() {
-        // this.getFilterData();
         this.getProducts();
     }
 });
