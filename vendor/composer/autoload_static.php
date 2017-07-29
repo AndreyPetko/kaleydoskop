@@ -314,6 +314,7 @@ class ComposerStaticInita4260dd6d7c25e631780a9a247704d6d
     public static $classMap = array (
         'AddCalledToFeedbacks' => __DIR__ . '/../..' . '/database/migrations/2016_04_04_060219_add_called_to_feedbacks.php',
         'AddCodeToProducts' => __DIR__ . '/../..' . '/database/migrations/2016_04_18_124505_add_code_to_products.php',
+        'AddFirstImageToProduct' => __DIR__ . '/../..' . '/database/migrations/2017_07_29_111822_add_first_image_to_product.php',
         'AddGroupToProducts' => __DIR__ . '/../..' . '/database/migrations/2016_04_18_125213_add_group_to_products.php',
         'AddReadedToCallback' => __DIR__ . '/../..' . '/database/migrations/2016_04_05_113057_add_readed_to_callback.php',
         'AddReadedToOrders' => __DIR__ . '/../..' . '/database/migrations/2016_04_05_121440_add_readed_to_orders.php',

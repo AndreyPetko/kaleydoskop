@@ -67,8 +67,8 @@ Route::group(['nocsrf' => true],function(){
 	Route::post('/file/upload', 'FileController@upload');
 });
 
-
 Route::controller('dashboard', 'DashboardController');
+Route::controller('/filter', 'FilterController');
 
 Route::controller('/', 'HomeController');
 

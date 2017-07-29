@@ -295,6 +295,22 @@ class HomeController extends Controller
 
 
     /**
+     * @param string $url
+     * @return \Illuminate\Contracts\View\Factory|View
+     */
+    public function getCategoryNew(string $url)
+    {
+//        $category = Category::where('url', $url)->first();
+//        $products = Product::where('category_id', $category->id)->get();
+
+
+
+        return view('site.subcategory-new', [
+
+        ]);
+    }
+
+    /**
      * @param $url
      * @param Product $product
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View

@@ -14,9 +14,19 @@ use Cache;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Product
+ * @package App
+ */
 class Product extends Model
 {
+    /**
+     *
+     */
     const CACHE_TIME = 1440;
+    /**
+     *
+     */
     const NEW_PER_PAGE = 4;
 
     protected $table = 'products';
@@ -34,13 +44,13 @@ class Product extends Model
 
     public static function getSubcategories($id)
     {
-        return DB::select("SELECT `s`.*  FROM `subcategories` as s LEFT JOIN `product_subcat` as ps ON s.id = ps.subcat_id
+        return DB::select("SELECT `s`.*  FROM `subcategories` AS s LEFT JOIN `product_subcat` AS ps ON s.id = ps.subcat_id
 			WHERE ps.product_id = :id", array('id' => $id));
     }
 
     public static function getSubcategoriesWithMark($id)
     { // Возвращает подкатегории товара с отмеченными выбраными категориями
-        $activeSubcategories = DB::select("SELECT `s`.*  FROM `subcategories` as s LEFT JOIN `product_subcat` as ps ON s.id = ps.subcat_id
+        $activeSubcategories = DB::select("SELECT `s`.*  FROM `subcategories` AS s LEFT JOIN `product_subcat` AS ps ON s.id = ps.subcat_id
 			WHERE ps.product_id = :id", array('id' => $id));
         $subcategories = DB::select('SELECT * FROM `subcategories` WHERE category_id  = (SELECT category_id FROM products WHERE id = :id) ORDER BY name', array($id));
 
@@ -91,7 +101,7 @@ class Product extends Model
 
     public static function getProductAttributes($id)
     {
-        return DB::select("SELECT `a`.*, `pav`.value FROM `attributes` as a LEFT JOIN `product_attrs_value` as pav ON a.id = pav.attribute_id
+        return DB::select("SELECT `a`.*, `pav`.value FROM `attributes` AS a LEFT JOIN `product_attrs_value` AS pav ON a.id = pav.attribute_id
 			WHERE pav.product_id = :id", array('id' => $id));
     }
 
@@ -253,22 +263,22 @@ class Product extends Model
     {
         if (self::isWholesaler()) {
             if ($limit2 != 0) {
-                $recProducts = DB::select('SELECT products.*, images.url as image FROM products LEFT JOIN images ON products.id =  images.product_id WHERE products.active_wholesale = 1 AND recommended = 1 GROUP BY (products.id) LIMIT :limit, :limit2', array($limit, $limit2));
+                $recProducts = DB::select('SELECT products.*, images.url AS image FROM products LEFT JOIN images ON products.id =  images.product_id WHERE products.active_wholesale = 1 AND recommended = 1 GROUP BY (products.id) LIMIT :limit, :limit2', array($limit, $limit2));
             } else {
                 if ($limit != 0) {
-                    $recProducts = DB::select('SELECT products.*, images.url as image FROM products LEFT JOIN images ON products.id =  images.product_id WHERE products.active_wholesale = 1 AND recommended = 1 GROUP BY (products.id) LIMIT :limit', array($limit));
+                    $recProducts = DB::select('SELECT products.*, images.url AS image FROM products LEFT JOIN images ON products.id =  images.product_id WHERE products.active_wholesale = 1 AND recommended = 1 GROUP BY (products.id) LIMIT :limit', array($limit));
                 } else {
-                    $recProducts = DB::select('SELECT products.*, images.url as image FROM products LEFT JOIN images ON products.id =  images.product_id WHERE products.active_wholesale = 1 AND recommended = 1 GROUP BY (products.id)');
+                    $recProducts = DB::select('SELECT products.*, images.url AS image FROM products LEFT JOIN images ON products.id =  images.product_id WHERE products.active_wholesale = 1 AND recommended = 1 GROUP BY (products.id)');
                 }
             }
         } else {
             if ($limit2 != 0) {
-                $recProducts = DB::select('SELECT products.*, images.url as image FROM products LEFT JOIN images ON products.id =  images.product_id WHERE products.active = 1 AND recommended = 1 GROUP BY (products.id) LIMIT :limit, :limit2', array($limit, $limit2));
+                $recProducts = DB::select('SELECT products.*, images.url AS image FROM products LEFT JOIN images ON products.id =  images.product_id WHERE products.active = 1 AND recommended = 1 GROUP BY (products.id) LIMIT :limit, :limit2', array($limit, $limit2));
             } else {
                 if ($limit != 0) {
-                    $recProducts = DB::select('SELECT products.*, images.url as image FROM products LEFT JOIN images ON products.id =  images.product_id WHERE products.active = 1 AND recommended = 1 GROUP BY (products.id) LIMIT :limit', array($limit));
+                    $recProducts = DB::select('SELECT products.*, images.url AS image FROM products LEFT JOIN images ON products.id =  images.product_id WHERE products.active = 1 AND recommended = 1 GROUP BY (products.id) LIMIT :limit', array($limit));
                 } else {
-                    $recProducts = DB::select('SELECT products.*, images.url as image FROM products LEFT JOIN images ON products.id =  images.product_id WHERE products.active = 1 AND recommended = 1 GROUP BY (products.id)');
+                    $recProducts = DB::select('SELECT products.*, images.url AS image FROM products LEFT JOIN images ON products.id =  images.product_id WHERE products.active = 1 AND recommended = 1 GROUP BY (products.id)');
                 }
             }
         }
@@ -314,7 +324,7 @@ class Product extends Model
 
     public static function getBySubcategoryId($subcategory_id)
     {
-        return DB::select("SELECT products.*,images.url as image FROM products LEFT JOIN product_subcat ON products.id = product_subcat.product_id LEFT JOIN images ON products.id = images.product_id
+        return DB::select("SELECT products.*,images.url AS image FROM products LEFT JOIN product_subcat ON products.id = product_subcat.product_id LEFT JOIN images ON products.id = images.product_id
 			WHERE subcat_id = :subcategory_id", array($subcategory_id));
     }
 
@@ -687,7 +697,7 @@ class Product extends Model
 
     public static function getByUrl($url)
     {
-        $product = DB::select("SELECT `products`.*,`brends`.name as brendName FROM products LEFT JOIN brends ON products.brend_id = brends.id WHERE `products`.url = :url", array($url));
+        $product = DB::select("SELECT `products`.*,`brends`.name AS brendName FROM products LEFT JOIN brends ON products.brend_id = brends.id WHERE `products`.url = :url", array($url));
 
         $product = self::getFinalActive($product[0]);
 
@@ -1082,5 +1092,14 @@ class Product extends Model
         return array_filter($products, [$this, 'filter']);
     }
 
+    public function getFirstImageUrl()
+    {
+        $image = Image::where('product_id', $this->id)->first();
 
+        if($image) {
+            $url = $image->url;
+        }
+
+        return $url ?? '';
+    }
 }
