@@ -15,9 +15,9 @@
         <div class="category-title-line">
         </div>
 
-        <div class="category-description">
+        <!-- <div class="category-description">
             {!! $category->description !!}
-        </div>
+        </div> -->
         <ul class="subcat-total-list">
             @foreach($subcategories as $subcategory)
                 <li><a href="/subcategory/{{$subcategory->url}}">{{ $subcategory->name }}</a></li>

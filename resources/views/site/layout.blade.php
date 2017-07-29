@@ -308,13 +308,13 @@
 
 			<div class="header-line-element line-ml-2">
 				<div class="header-line-element-text">
-					8 096 778 74 88
+					096 778 74 88
 				</div>
 			</div>
 			
 			<div class="header-line-element line-ml-3">
 				<div class="header-line-element-text">
-					8 044 332 88 82
+					044 332 88 82
 				</div>
 			</div>
 
@@ -335,8 +335,8 @@
 				</a>
 				<a href="http://www.kaleydoskop-vishivki.com.ua">
 					<div style="margin-top: 5px;" class="back-to-old">
-						<img style="float: left;" src="site/images/arrow-right-c.png">
-						На старый дизайн
+						<!-- <img style="float: left;" src="site/images/arrow-right-c.png"> -->
+						Вернуться на старый сайт
 
 					</div>
 				</a>
@@ -492,25 +492,6 @@
 		<div class="main-menu-dropdown">
 			<div class="main-dropdown-top-line"></div>
 			<div class="main-dropdown-list">
-				<!-- <a href="/new-products">
-					<div class="main-dropdown-item">
-						<div class="main-dropdown-content">
-							<div class="main-dropdown-item-image">
-								<img src="{{ url('site/images/icon12.png') }}" alt="">
-							</div>
-							<div class="main-dropdown-item-text">
-								<div>
-									Новинки
-								</div>
-							</div>
-							<div class="main-dropdown-side-border">
-								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
-							</div>
-						</div>
-						<div class="main-dropdown-bottom-border">
-						</div>
-					</div>
-				</a> -->
 				<a href="/category/schetnyj-krest">
 					<div class="main-dropdown-item">
 						<div class="main-dropdown-content">

@@ -111,10 +111,6 @@
         </div>
         <div class="category-title-line">
         </div>
-        
-        <div class="category-description">
-            {!!$brend->preview!!}
-        </div>
 
         <div class="clear"></div>
         
@@ -286,6 +282,11 @@
     <div id="pagination">
         <?php echo $products->render(); ?>
     </div>
+    <br>
+    <hr>
+    <div class="category-description">
+            {!!$brend->preview!!}
+        </div>
 </div>
 </div>
 @stop

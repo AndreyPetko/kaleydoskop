@@ -17,7 +17,8 @@ a{
 
 .back-to-old{
 background-color: #616161;
-width: 200px;
+width: 210px;
+padding-left: 10px;
 height: 40px;
 text-align: center;
 }
@@ -3112,7 +3113,7 @@ a .brend-href {
  border-bottom: 3px solid #e8e8e8;
  color: #616161;
  overflow: auto;
- padding: 1em 0;
+ padding: 5px 0;
 }
 
 .article-filter-title a {
@@ -4488,12 +4489,6 @@ input.error, textarea.error {
     
 }
 
-.cart-products {
-    max-width: 100%;
-    overflow-y: scroll;
-    
-}
-
 .cart-products-title span {
     color: #616161;
     font-family: franklingothic;
@@ -5290,7 +5285,7 @@ input.error, textarea.error {
 }
 .cell{
     display:table-cell;
-    padding: 5px 10px;
+    padding: 5px 30px;
 }
 .shop {
     color: #eb7f2b;
