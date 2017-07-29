@@ -32,7 +32,7 @@
 
     <input type="hidden" name="categoryUrl" id="catUrl" value="{{ $category->url }}">
     <input type="hidden" name="subcategoryUrl" id="subcatUrl" value="{{ $subcategoryUrl }}">
-    @include('elements.breadcrumbs')
+   <!--  @include('elements.breadcrumbs') -->
 
     <div class="clear"></div>
 

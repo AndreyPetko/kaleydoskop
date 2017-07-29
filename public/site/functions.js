@@ -185,8 +185,7 @@ function addCartItem(item) {
         '<a href="' + fullUrl + '/product/' + item.url + '" ><div>' + item.name + '</div></a> ' +
         '</div>' +
         '<div class="cart-list-item-count">' +
-        '<div>x</div>' +
-        '<div>' + item.count + '</div>' +
+        '<div>х' + item.count + '</div>' +
         '</div>' +
         '<div class="cart-list-item-lines">' +
         '<div class="cart-list-item-delete" data-productid="' + item.id + '" data-totalprice="' + parseInt(item.count) * parseInt(item.price) + '" ">' +

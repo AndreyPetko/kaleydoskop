@@ -6,7 +6,7 @@
 
 
 @section('content')
-@include('elements.breadcrumbs')
+<!-- @include('elements.breadcrumbs') -->
 <div class="clear"></div>
 
 <div id="subcategory-katalog">
