@@ -23,19 +23,19 @@
                 <p class="your-attachment">Ваши предложения, вопросы, пожелания:</p>
                 <p class="e-mail">{{$contacts['email']}}</p>
             </div>
-            <div class="info-text">Режим работы</div>
+            <div class="info-text">Время работы</div>
             <div class="info-text">
                 <div class="row shop">
                     <div class="cell real-shop">Магазин</div>
                     <div class="cell inet-shop">Интернет-магазин</div>
                 </div>
                 <div class="row friday">
-                    <div class="cell friday0">пн-пт - с 10:00 до 18:00</div>
-                    <div class="cell friday1">пн-пт - с 10:00 до 18:00</div>
+                    <div class="cell friday0">пн-пт: с 10 до 18</div>
+                    <div class="cell friday1">пн-пт: с 10 до 18</div>
                 </div>
                 <div class="row saturday">
-                    <div class="cell saturday0">сб-вс - с 10:00 до 18:00</div>
-                    <div class="cell saturday1">сб-вс - выходной</div>
+                    <div class="cell saturday0">сб-вс: с 10 до 18</div>
+                    <div class="cell saturday1">сб-вс: выходные</div>
                 </div>
             </div>
         </div>

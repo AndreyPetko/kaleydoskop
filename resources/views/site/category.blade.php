@@ -153,9 +153,7 @@
             <div class="category-title-line">
             </div>
 
-            <div class="category-description">
-                {!! $category->description !!}
-            </div>
+          
             @if($subcategories)
                 <div class="subcategories-title" id="categorySubCategoryButton">
                     Перейти в подкатегорию
@@ -491,6 +489,11 @@
         <div id="pagination">
             <?php echo $products->render(); ?>
         </div>
+        <br>
+        <hr>
+          <div class="category-description">
+                {!! $category->description !!}
+            </div>
     </div>
     </div>
 

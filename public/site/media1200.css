@@ -84,9 +84,9 @@
 .filter-checkbox {
     margin-left: 20px;
 }
-.subcat-item {
+/*.subcat-item {
     width: 33%;
-}
+}*/
 .line-button{
 	display: none;
 }
@@ -118,4 +118,8 @@ margin-left: 0;
 .product-thread-cont{
     margin-left:20px;
 }
-
+.cart-products {
+    max-width: 100%;
+    overflow-y: scroll;
+    
+}

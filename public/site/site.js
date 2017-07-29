@@ -595,7 +595,7 @@ window.addEventListener("load", function () {
     mobileMenuClick = 0;
     document.getElementsByClassName('mobile-menu-button')[0].addEventListener('click', function () {
         if (mobileMenuClick == 0) {
-            document.getElementsByClassName('mobile-menu-list')[0].style.height = '306px';
+            document.getElementsByClassName('mobile-menu-list')[0].style.height = '350px';
             mobileMenuClick = 1;
 
             var mobileWhiteMenu = 0;
