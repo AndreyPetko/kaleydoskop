@@ -333,12 +333,12 @@
 				<a href="/">
 					<img src="{{ url('site/images/main-logo.png') }}" alt="">
 				</a>
-					<a href="http://www.kaleydoskop-vishivki.com.ua">
-				<div style="margin-top: 5px;" class="back-to-old">
-				<img style="float: left;" src="site/images/arrow-right-c.png">
-					Вернуться на старый дизайн
-				
-				</div>
+				<a href="http://www.kaleydoskop-vishivki.com.ua">
+					<div style="margin-top: 5px;" class="back-to-old">
+						<img style="float: left;" src="site/images/arrow-right-c.png">
+						На старый дизайн
+
+					</div>
 				</a>
 
 			</div>
@@ -536,11 +536,6 @@
 									Другие техники
 								</div>
 							</div>
-							<div class="main-dropdown-side-border">
-								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
-							</div>
-						</div>
-						<div class="main-dropdown-bottom-border">
 						</div>
 					</div>
 				</a>
@@ -555,11 +550,6 @@
 									Вышивка бисером
 								</div>
 							</div>
-							<div class="main-dropdown-side-border">
-								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
-							</div>
-						</div>
-						<div class="main-dropdown-bottom-border">
 						</div>
 					</div>
 				</a>
@@ -574,11 +564,6 @@
 									Иконы
 								</div>
 							</div>
-							<div class="main-dropdown-side-border">
-								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
-							</div>
-						</div>
-						<div class="main-dropdown-bottom-border">
 						</div>
 					</div>
 				</a>
@@ -593,11 +578,6 @@
 									Наборы для рукоделия
 								</div>
 							</div>
-							<div class="main-dropdown-side-border">
-								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
-							</div>
-						</div>
-						<div class="main-dropdown-bottom-border">
 						</div>
 					</div>
 				</a>
@@ -612,11 +592,6 @@
 									Нитки
 								</div>
 							</div>
-							<div class="main-dropdown-side-border">
-								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
-							</div>
-						</div>
-						<div class="main-dropdown-bottom-border">
 						</div>
 					</div>
 				</a>
@@ -631,11 +606,6 @@
 									Бисер
 								</div>
 							</div>
-							<div class="main-dropdown-side-border">
-								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
-							</div>
-						</div>
-						<div class="main-dropdown-bottom-border">
 						</div>
 					</div>
 				</a>
@@ -650,11 +620,6 @@
 									Принадлежности
 								</div>
 							</div>
-							<div class="main-dropdown-side-border">
-								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
-							</div>
-						</div>
-						<div class="main-dropdown-bottom-border">
 						</div>
 					</div>
 				</a>
@@ -669,11 +634,6 @@
 									Наборы для творчества
 								</div>
 							</div>
-							<div class="main-dropdown-side-border">
-								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
-							</div>
-						</div>
-						<div class="main-dropdown-bottom-border">
 						</div>
 					</div>
 				</a>
@@ -688,11 +648,6 @@
 									Пяльцы и станки
 								</div>
 							</div>
-							<div class="main-dropdown-side-border">
-								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
-							</div>
-						</div>
-						<div class="main-dropdown-bottom-border">
 						</div>
 					</div>
 				</a>
@@ -707,11 +662,6 @@
 									Праздники и поздравления
 								</div>
 							</div>
-							<div class="main-dropdown-side-border">
-								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
-							</div>
-						</div>
-						<div class="main-dropdown-bottom-border">
 						</div>
 					</div>
 				</a>
@@ -719,12 +669,12 @@
 				
 				
 			</div>
-			<div class="main-dropdown-item button-to-all-categories">
+			<!-- <div class="main-dropdown-item button-to-all-categories">
 				<a href="/catalog">
 					<img src="{{ url('site/images/all-categories.png') }}">
 					Все категории
 				</a>
-			</div>
+			</div> -->
 			<div class="main-dopdown-bottom-line"></div>
 		</div>
 
@@ -739,11 +689,6 @@
 									DIMENSIONS
 								</div>
 							</div>
-							<div class="main-dropdown-side-border">
-								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
-							</div>
-						</div>
-						<div class="main-dropdown-bottom-border">
 						</div>
 					</div>
 				</a>
@@ -755,11 +700,6 @@
 									Золотое руно
 								</div>
 							</div>
-							<div class="main-dropdown-side-border">
-								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
-							</div>
-						</div>
-						<div class="main-dropdown-bottom-border">
 						</div>
 					</div>
 				</a>
@@ -782,11 +722,6 @@
 									Сделано с любовью
 								</div>
 							</div>
-							<div class="main-dropdown-side-border">
-								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
-							</div>
-						</div>
-						<div class="main-dropdown-bottom-border">
 						</div>
 					</div>
 				</a>
@@ -798,11 +733,6 @@
 									Краса і творчість
 								</div>
 							</div>
-							<div class="main-dropdown-side-border">
-								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
-							</div>
-						</div>
-						<div class="main-dropdown-bottom-border">
 						</div>
 					</div>
 				</a>
@@ -814,11 +744,6 @@
 									Русская искусница
 								</div>
 							</div>
-							<div class="main-dropdown-side-border">
-								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
-							</div>
-						</div>
-						<div class="main-dropdown-bottom-border">
 						</div>
 					</div>
 				</a>
@@ -830,11 +755,6 @@
 									PLAID
 								</div>
 							</div>
-							<div class="main-dropdown-side-border">
-								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
-							</div>
-						</div>
-						<div class="main-dropdown-bottom-border">
 						</div>
 					</div>
 				</a>
@@ -846,11 +766,6 @@
 									Anchor
 								</div>
 							</div>
-							<div class="main-dropdown-side-border">
-								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
-							</div>
-						</div>
-						<div class="main-dropdown-bottom-border">
 						</div>
 					</div>
 				</a>
@@ -862,11 +777,6 @@
 									Bestex
 								</div>
 							</div>
-							<div class="main-dropdown-side-border">
-								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
-							</div>
-						</div>
-						<div class="main-dropdown-bottom-border">
 						</div>
 					</div>
 				</a>
@@ -878,11 +788,6 @@
 									Чудесная игла
 								</div>
 							</div>
-							<div class="main-dropdown-side-border">
-								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
-							</div>
-						</div>
-						<div class="main-dropdown-bottom-border">
 						</div>
 					</div>
 				</a>
@@ -894,11 +799,6 @@
 									Русский фаворит
 								</div>
 							</div>
-							<div class="main-dropdown-side-border">
-								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
-							</div>
-						</div>
-						<div class="main-dropdown-bottom-border">
 						</div>
 					</div>
 				</a>
@@ -910,11 +810,6 @@
 									Кроше
 								</div>
 							</div>
-							<div class="main-dropdown-side-border">
-								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
-							</div>
-						</div>
-						<div class="main-dropdown-bottom-border">
 						</div>
 					</div>
 				</a>
@@ -926,11 +821,6 @@
 									Чарівна мить
 								</div>
 							</div>
-							<div class="main-dropdown-side-border">
-								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
-							</div>
-						</div>
-						<div class="main-dropdown-bottom-border">
 						</div>
 					</div>
 				</a>
@@ -942,22 +832,17 @@
 									Майстерна Вишиванка
 								</div>
 							</div>
-							<div class="main-dropdown-side-border">
-								<img src="{{ url('site/images/vertical-line.png') }}" alt="">
-							</div>
-						</div>
-						<div class="main-dropdown-bottom-border">
 						</div>
 					</div>
 				</a>
 
 			</div>
-			<div class="main-dropdown-item button-to-all-categories">
+			<!-- <div class="main-dropdown-item button-to-all-categories">
 				<a href="/brends">
 					<img src="{{ url('site/images/all-categories.png') }}">
 					Все бренды
 				</a>
-			</div>
+			</div> -->
 			<div class="main-dopdown-bottom-line"></div>
 		</div>
 		<div id="index-content">

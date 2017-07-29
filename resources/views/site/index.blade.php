@@ -55,6 +55,7 @@
         <!-- <div class="slider-block"> -->
         <div class="owl-carousel">
             @foreach($mainSlides as $slide)
+            {{dump($slide)}}
                 <div class="slider-image ">
                     <!--   slider-image -->
                     <a href="{{ $slide->slideUrl }}">

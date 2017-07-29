@@ -484,16 +484,18 @@ window.addEventListener("load", function () {
                 cartClick = 0;
             }
 
-        });
-
-
-        document.getElementById('cartClose').addEventListener('click', function () {
+            document.getElementById('cartClose').addEventListener('click', function () {
             cart.style.background = "white";
             cartImage = cart.getElementsByTagName('img')[0];
             cartImage.setAttribute('src', '/site/images/icon-cart2.png');
             cartBlock.style.display = 'none';
             cartClick = 0;
         });
+
+        });
+
+
+        
 
 
     }
