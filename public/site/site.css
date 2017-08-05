@@ -2098,6 +2098,7 @@ a .brend-href {
     margin-top: 20px;
     width: 297px;
     overflow: hidden;
+    height: 400px;
 }
 .category-item:hover .item-name {
     border-color: #d5d3d3;

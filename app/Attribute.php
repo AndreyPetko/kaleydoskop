@@ -6,9 +6,16 @@ use Auth;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Attribute
+ * @package App
+ */
 class Attribute extends Model
 {
-	protected $table = 'attributes';
+    /**
+     * @var string
+     */
+    protected $table = 'attributes';
 	protected $fillable = ['name'];
 
 
@@ -138,7 +145,6 @@ class Attribute extends Model
 
 		return $attributes;
 	}
-
 
 	public static function getByProductsIds($arrId) {
 		return DB::table('product_attrs_value')->leftjoin('attributes', 'attributes.id', '=', 'product_attrs_value.attribute_id')

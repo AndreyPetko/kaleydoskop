@@ -773,7 +773,11 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
         minPrice: 0,
         maxPrice: 1000,
         subcategories: [],
-        categoryName: ''
+        categoryName: '',
+        currentSubcategory: '',
+        attributes: [],
+        attributesList: [],
+        currentAttributes: []
     },
     computed: {
         pages: function pages() {
@@ -786,10 +790,13 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
         },
         maxPrice: function maxPrice(val, oldVal) {
             this.filter();
+        },
+        currentSubcategory: function currentSubcategory(val, oldVal) {
+            this.filter();
         }
     },
     methods: {
-        getProducts: function getProducts() {
+        getData: function getData() {
             var categoryUrl = this.getCategoryUrl();
             var url = '/filter/category-data/' + categoryUrl;
             var vm = this;
@@ -802,6 +809,9 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
                 vm.products = data.products;
                 vm.filteredProducts = data.products;
                 vm.subcategories = data.subcategories;
+                vm.attributes = data.attributes;
+                vm.attributesList = data.attributesList;
+
                 vm.setActiveProducts();
                 vm.filter();
             });
@@ -821,13 +831,24 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
             this.page = page;
             this.setActiveProducts();
         },
+        setSubcategory: function setSubcategory(id) {
+            this.currentSubcategory = id;
+        },
+        attribyteNameById: function attribyteNameById(id) {
+            return this.attributesList[id];
+        },
         filter: function filter() {
             var _this = this;
 
+            this.page = 1;
             this.filteredProducts = [];
 
             this.products.forEach(function (item, i, arr) {
                 if (item.price < parseInt(_this.minPrice) || item.price > parseInt(_this.maxPrice)) {
+                    return;
+                }
+
+                if (_this.currentSubcategory !== '' && item.subcats.indexOf(_this.currentSubcategory) === -1) {
                     return;
                 }
 
@@ -838,7 +859,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
         }
     },
     created: function created() {
-        this.getProducts();
+        this.getData();
     }
 });
 

@@ -720,9 +720,13 @@ window.addEventListener("load", function () {
 
 
     sortSelect = document.getElementById('sort-select');
+
     if (sortSelect != null) {
         url = location.href;
         // categoryUrl = url.split('/')[4];
+        if(document.getElementById('catUrl') === null) {
+            return;
+        }
         categoryUrl = document.getElementById('catUrl').value;
         subcategoryUrl = document.getElementById('subcatUrl').value;
 

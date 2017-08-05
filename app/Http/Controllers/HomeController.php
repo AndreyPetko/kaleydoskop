@@ -303,8 +303,6 @@ class HomeController extends Controller
 //        $category = Category::where('url', $url)->first();
 //        $products = Product::where('category_id', $category->id)->get();
 
-
-
         return view('site.subcategory-new', [
 
         ]);

@@ -2,7 +2,7 @@
 
 
 namespace App\Repository;
-use App\Image;
+use App\Category;
 use App\Product;
 
 
@@ -12,13 +12,17 @@ use App\Product;
 class ProductRepository
 {
 
+
     /**
      * @param $products
+     * @param Category $category
      * @return array
      */
-    public function productsToArray($products)
+    public function productsToArray($products, Category $category)
     {
         $data = [];
+
+        $list = $this->getProductSubcatListByCategory($category);
 
         /**
          * @var Product $product
@@ -30,11 +34,34 @@ class ProductRepository
             $item->price = $product->price;
             $item->url = $product->url;
             $item->image = $product->image;
+            $item->subcats = $list[$product->id] ?? [];
 
             $data[] = $item;
         }
 
         return $data;
+    }
+
+
+    /**
+     * @param Category $category
+     * @return mixed
+     */
+    public function getProductSubcatListByCategory(Category $category)
+    {
+        $list =  \DB::table('product_subcat')
+            ->select('product_subcat.product_id', 'product_subcat.subcat_id')
+            ->leftjoin('subcategories', 'subcategories.id', '=', 'product_subcat.subcat_id')
+            ->where('subcategories.category_id', $category->id)
+            ->get();
+
+        $result = [];
+
+        foreach ($list as $item) {
+            $result[$item->product_id][] = $item->subcat_id;
+        }
+
+        return $result;
     }
 
 }

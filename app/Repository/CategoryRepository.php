@@ -26,6 +26,7 @@ class CategoryRepository
         foreach ($subcategories as $subcategory) {
             $item = new \StdClass();
             $item->name = $subcategory->name;
+            $item->id = $subcategory->id;
 
             $result[] = $item;
         }

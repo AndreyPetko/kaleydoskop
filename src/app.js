@@ -12,7 +12,11 @@ new Vue({
         minPrice: 0,
         maxPrice: 1000,
         subcategories: [],
-        categoryName: ''
+        categoryName: '',
+        currentSubcategory: '',
+        attributes: [],
+        attributesList: [],
+        currentAttributes: []
     },
     computed: {
         pages() {
@@ -25,10 +29,13 @@ new Vue({
         },
         maxPrice(val, oldVal) {
             this.filter();
+        },
+        currentSubcategory(val, oldVal) {
+            this.filter();
         }
     },
     methods: {
-        getProducts() {
+        getData() {
             const categoryUrl = this.getCategoryUrl();
             const url = '/filter/category-data/' + categoryUrl;
             const vm = this;
@@ -42,6 +49,9 @@ new Vue({
                     vm.products = data.products;
                     vm.filteredProducts = data.products;
                     vm.subcategories = data.subcategories;
+                    vm.attributes = data.attributes;
+                    vm.attributesList = data.attributesList;
+
                     vm.setActiveProducts();
                     vm.filter();
                 });
@@ -61,21 +71,33 @@ new Vue({
             this.page = page;
             this.setActiveProducts();
         },
+        setSubcategory(id) {
+            this.currentSubcategory = id;
+        },
+        attribyteNameById(id) {
+            return this.attributesList[id];
+        },
         filter() {
+            this.page = 1;
             this.filteredProducts = [];
 
             this.products.forEach((item, i, arr) => {
-                if(item.price < parseInt(this.minPrice) || item.price > parseInt(this.maxPrice)) {
+                if (item.price < parseInt(this.minPrice) || item.price > parseInt(this.maxPrice)) {
+                    return;
+                }
+
+                if (this.currentSubcategory !== '' && item.subcats.indexOf(this.currentSubcategory) === -1) {
                     return;
                 }
 
                 this.filteredProducts.push(item);
             });
 
+
             this.setActiveProducts();
         }
     },
     created() {
-        this.getProducts();
+        this.getData();
     }
 });
