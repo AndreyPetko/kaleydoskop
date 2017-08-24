@@ -155,7 +155,7 @@
             <div class="category-list">
 
                 <div class="category-item fl" v-for="product in activeProducts">
-                    <div class="magnifier">
+                    <div class="magnifier" @click="showImage(product.image)">
                         <img src="{{ url('site/images/icon-loop.png') }}" alt="">
                     </div>
                     <a :href="getLink(product.url)">
@@ -168,14 +168,15 @@
                         <div class="item-price category">
                             <span v-text="product.price"></span> грн
                         </div>
-                        <div class="item-heart fl">
-                            <img src="{{ url('site/images/ixon-wishlist.png') }}" alt="">
+                        <div class="item-heart fl" @click="addToWishlist(product, product.id, product.wish)">
+                            <img v-if="!product.wish" src="{{ url('site/images/ixon-wishlist.png') }}" alt="">
+                            <img v-if="product.wish" src="{{ url('site/images/ixon-wishlist-active.png') }}" alt="">
                         </div>
                         <div class="item-buy">
                             <div class="item-buy-image">
                                 <img src="{{ url('site/images/icon-cart-main.png') }}" alt="">
                             </div>
-                            <div class="item-buy-text">
+                            <div class="item-buy-text" @click="addToCart(product.id)">
                                 В корзину
                             </div>
                             <div class="item-buy-shadow"></div>

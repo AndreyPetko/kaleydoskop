@@ -782,7 +782,8 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
         currentAttributes: [],
         brands: [],
         currentBrands: [],
-        sortBy: 'name'
+        sortBy: 'name',
+        showImageBlock: true
     },
     computed: {
         pages: function pages() {
@@ -836,6 +837,35 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 
                 vm.setActiveProducts();
                 vm.filter();
+            });
+        },
+        addToWishlist: function addToWishlist(product, id, wish) {
+            __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('/ajax/add-wish/?productid=' + id).then(function () {
+                product.wish = !wish;
+                // if(wish === false) {
+                //     swal('Товар успешно список желаний');
+                // } else {
+                //     swal('Товар успешно убран из списка желаний');
+                // }
+            });
+        },
+        showImage: function showImage(image) {
+            document.querySelector('.show-images').style.display = 'block';
+            document.querySelector('.show-images-content').style.display = 'block';
+
+            var imageItem = document.createElement('img');
+            imageItem.src = this.getSrc(image);
+
+            document.querySelector('.show-images-main').innerHTML = '';
+            document.querySelector('.show-images-main').appendChild(imageItem);
+
+            document.querySelector('.show-images-right').style.display = 'none';
+            document.querySelector('.show-images-left').style.display = 'none';
+            document.querySelector('.show-images-name-block').style.display = 'none';
+        },
+        addToCart: function addToCart(id) {
+            __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('/ajax/add-to-cart/?id=' + id).then(function () {
+                swal('Товар успешно добавлен в корзину');
             });
         },
         getLink: function getLink(url) {
@@ -982,7 +1012,6 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
                 field = _getSortFieldAndDesc2.field,
                 desc = _getSortFieldAndDesc2.desc;
 
-            console.log(field, desc);
             this.sortProducts(field, desc);
 
             this.setActiveProducts();

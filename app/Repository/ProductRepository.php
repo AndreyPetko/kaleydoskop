@@ -5,6 +5,7 @@ namespace App\Repository;
 
 use App\Category;
 use App\Product;
+use App\Wishlist;
 
 
 /**
@@ -25,12 +26,14 @@ class ProductRepository
         $list = $this->getProductSubcatListByCategory($category);
         $attributes = $this->getProductAttributesListByCategory($category);
 
+
         /**
          * @var Product $product
          */
         foreach ($products as $product) {
             $item = new \StdClass();
 
+            $item->id = $product->id;
             $item->name = $product->name;
             $item->price = $product->price;
             $item->url = $product->url;
@@ -38,9 +41,12 @@ class ProductRepository
             $item->brand = $product->brend_id;
             $item->subcats = $list[$product->id] ?? [];
             $item->attributes = $attributes[$product->id] ?? [];
+            $item->wish = false;
 
             $data[] = $item;
         }
+
+        $this->setWish($data);
 
         return $data;
     }
@@ -89,6 +95,28 @@ class ProductRepository
         }
 
         return $result;
+    }
+
+
+    /**
+     * @param $products
+     * @return mixed
+     */
+    private function setWish($products)
+    {
+        $wishlistObj = Wishlist::getInstance();
+        $wishlist = $wishlistObj->get();
+
+        $wishIds = [];
+        foreach ($wishlist as $wishItem) {
+            $wishIds[] = $wishItem->id;
+        }
+
+        foreach ($products as &$product) {
+            $product->wish = in_array($product->id, $wishIds);
+        }
+
+        return $products;
     }
 
 }

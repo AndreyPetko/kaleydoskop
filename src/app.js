@@ -20,7 +20,8 @@ new Vue({
         currentAttributes: [],
         brands: [],
         currentBrands: [],
-        sortBy: 'name'
+        sortBy: 'name',
+        showImageBlock: true
     },
     computed: {
         pages() {
@@ -47,7 +48,7 @@ new Vue({
             this.filter();
         },
         sortBy(val, oldVal) {
-            const { field, desc } = this.getSortFieldAndDesc(val);
+            const {field, desc} = this.getSortFieldAndDesc(val);
             this.sortProducts(field, desc);
         }
     },
@@ -72,6 +73,37 @@ new Vue({
 
                     vm.setActiveProducts();
                     vm.filter();
+                });
+        },
+        addToWishlist(product, id, wish) {
+            axios.get(`/ajax/add-wish/?productid=${id}`)
+                .then(() => {
+                    product.wish = !wish;
+                    // if(wish === false) {
+                    //     swal('Товар успешно список желаний');
+                    // } else {
+                    //     swal('Товар успешно убран из списка желаний');
+                    // }
+                });
+        },
+        showImage(image) {
+            document.querySelector('.show-images').style.display = 'block';
+            document.querySelector('.show-images-content').style.display = 'block';
+
+            let imageItem = document.createElement('img');
+            imageItem.src = this.getSrc(image);
+
+            document.querySelector('.show-images-main').innerHTML = '';
+            document.querySelector('.show-images-main').appendChild(imageItem);
+
+            document.querySelector('.show-images-right').style.display = 'none';
+            document.querySelector('.show-images-left').style.display = 'none';
+            document.querySelector('.show-images-name-block').style.display = 'none';
+        },
+        addToCart(id) {
+            axios.get(`/ajax/add-to-cart/?id=${id}`)
+                .then(() => {
+                    swal('Товар успешно добавлен в корзину');
                 });
         },
         getLink(url) {
@@ -99,7 +131,7 @@ new Vue({
             document.getElementsByTagName('body')[0].scrollTop = 300;
         },
         getSrc(image) {
-            if(image === null) {
+            if (image === null) {
                 return '/site/images/zaglushka.png';
             }
 
@@ -137,7 +169,7 @@ new Vue({
             }
         },
         getSortFieldAndDesc(val = null) {
-            if(val === null) {
+            if (val === null) {
                 val = this.sortBy;
             }
 
@@ -145,7 +177,7 @@ new Vue({
             let desc = descString === 'Desc';
             let field;
 
-            if(desc === false) {
+            if (desc === false) {
                 field = val;
             } else {
                 field = val.substring(0, val.length - 4);
@@ -208,8 +240,7 @@ new Vue({
 
             this.filteredProducts = filterProducts;
 
-            let { field, desc } = this.getSortFieldAndDesc();
-            console.log(field, desc);
+            let {field, desc} = this.getSortFieldAndDesc();
             this.sortProducts(field, desc);
 
             this.setActiveProducts();
@@ -217,12 +248,12 @@ new Vue({
         sortProducts(field, desc) {
             let products = this.filteredProducts;
 
-            if(desc === false) {
-                products.sort((a,b)  => {
+            if (desc === false) {
+                products.sort((a, b) => {
                     return (a[field] > b[field]) ? 1 : ((b[field] > a[field]) ? -1 : 0);
                 });
             } else {
-                products.sort((a,b) => {
+                products.sort((a, b) => {
                     return (a[field] < b[field]) ? 1 : ((b[field] < a[field]) ? -1 : 0);
                 });
             }

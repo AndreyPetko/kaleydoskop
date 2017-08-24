@@ -485,17 +485,14 @@ window.addEventListener("load", function () {
             }
 
             document.getElementById('cartClose').addEventListener('click', function () {
-            cart.style.background = "white";
-            cartImage = cart.getElementsByTagName('img')[0];
-            cartImage.setAttribute('src', '/site/images/icon-cart2.png');
-            cartBlock.style.display = 'none';
-            cartClick = 0;
-        });
+                cart.style.background = "white";
+                cartImage = cart.getElementsByTagName('img')[0];
+                cartImage.setAttribute('src', '/site/images/icon-cart2.png');
+                cartBlock.style.display = 'none';
+                cartClick = 0;
+            });
 
         });
-
-
-        
 
 
     }
@@ -724,7 +721,7 @@ window.addEventListener("load", function () {
     if (sortSelect != null) {
         url = location.href;
         // categoryUrl = url.split('/')[4];
-        if(document.getElementById('catUrl') === null) {
+        if (document.getElementById('catUrl') === null) {
             return;
         }
         categoryUrl = document.getElementById('catUrl').value;
@@ -1076,7 +1073,6 @@ window.addEventListener("load", function () {
                 showImages(this);
             });
         }
-        ;
 
 
         $(document).keydown(function (e) {
@@ -1086,23 +1082,11 @@ window.addEventListener("load", function () {
                 return false;
             }
         });
-        // function pressed(e) {
-        //   if(e.which == 27) {
-        //     document.getElementsByClassName('show-images')[0].style.display = 'none';
-        //     document.getElementsByClassName('show-images-content')[0].style.display = 'none';
-        //   }
-        // }
-
-        // window.captureEvents(Event.KEYPRESS);
-        // window.onkeypress = pressed;
-
 
         document.getElementsByClassName('show-images-close')[0].addEventListener('click', function () {
             document.getElementsByClassName('show-images')[0].style.display = 'none';
             document.getElementsByClassName('show-images-content')[0].style.display = 'none';
         });
-
-
     }
 
     countInputs = document.getElementsByClassName('count-inputs');

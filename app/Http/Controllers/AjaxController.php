@@ -14,6 +14,7 @@ use App\Wishlist;
 use Auth;
 use Cookie;
 use DB;
+use Mockery\Exception;
 use Session;
 
 
@@ -156,7 +157,7 @@ class AjaxController extends Controller {
 		if(isset($_GET['id'])) {
 			$id = (int)$_GET['id'];
 		} else {
-			return 0;
+			throw new Exception('Field id is required');
 		}
 
 
@@ -220,7 +221,8 @@ class AjaxController extends Controller {
 	public function getDeleteWish() {
 		$productid = (int)$_GET['productid'];
 		$wishlistObj = Wishlist::getInstance();
-		$result = $wishlistObj->delete($productid);
+
+		$wishlistObj->delete($productid);
 		return 1;
 	}
 
