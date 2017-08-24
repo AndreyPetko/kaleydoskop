@@ -760,6 +760,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__helper__ = __webpack_require__(31);
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
 
 
 
@@ -968,6 +970,17 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
             var addProduct = void 0;
             this.page = 1;
             var filterProducts = [];
+            var currentAttrs = {};
+
+            this.currentAttributes.forEach(function (item, i, list) {
+                if (typeof currentAttrs[item.id] === 'undefined') {
+                    currentAttrs[item.id] = [];
+                }
+
+                currentAttrs[item.id].push(item.value);
+            });
+
+            var attrCount = Object.keys(currentAttrs).length;
 
             this.products.forEach(function (item, i, arr) {
                 if (item.price < parseInt(_this2.minPrice) || item.price > parseInt(_this2.maxPrice)) {
@@ -980,15 +993,43 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 
                 if (needFilterByAttribute) {
                     addProduct = false;
+                    var approveAttrCount = 0;
 
-                    _this2.currentAttributes.forEach(function (attr, j, attrs) {
-                        Object.keys(item.attributes).forEach(function (attributeId, k, productsAttrs) {
-                            var value = item.attributes[attributeId];
-                            if (attr.id === attributeId && attr.value === value) {
-                                addProduct = true;
-                            }
+                    var _loop = function _loop(index) {
+                        var addAttr = false;
+
+                        if (!currentAttrs.hasOwnProperty(index)) {
+                            return {
+                                v: void 0
+                            };
+                        }
+
+                        var attr = currentAttrs[index];
+
+                        attr.forEach(function (attrValue, i, arr) {
+                            Object.keys(item.attributes).forEach(function (attributeId, k, productsAttrs) {
+                                var value = item.attributes[attributeId];
+
+                                if (index === attributeId && attrValue === value) {
+                                    addAttr = true;
+                                }
+                            });
                         });
-                    });
+
+                        if (addAttr === true) {
+                            approveAttrCount++;
+                        }
+                    };
+
+                    for (var index in currentAttrs) {
+                        var _ret = _loop(index);
+
+                        if ((typeof _ret === 'undefined' ? 'undefined' : _typeof(_ret)) === "object") return _ret.v;
+                    }
+
+                    if (approveAttrCount === attrCount) {
+                        addProduct = true;
+                    }
 
                     if (addProduct === false) {
                         return;

@@ -27,7 +27,7 @@ new Vue({
         pages() {
             let countPages = parseInt(this.filteredProducts.length / this.perPage);
 
-            if(this.filteredProducts.length % this.perPage !== 0) {
+            if (this.filteredProducts.length % this.perPage !== 0) {
                 countPages += 1;
             }
 
@@ -200,6 +200,17 @@ new Vue({
             let addProduct;
             this.page = 1;
             let filterProducts = [];
+            let currentAttrs = {};
+
+            this.currentAttributes.forEach((item, i, list) => {
+                if (typeof currentAttrs[item.id] === 'undefined') {
+                    currentAttrs[item.id] = [];
+                }
+
+                currentAttrs[item.id].push(item.value);
+            });
+
+            const attrCount = Object.keys(currentAttrs).length;
 
             this.products.forEach((item, i, arr) => {
                 if (item.price < parseInt(this.minPrice) || item.price > parseInt(this.maxPrice)) {
@@ -212,15 +223,36 @@ new Vue({
 
                 if (needFilterByAttribute) {
                     addProduct = false;
+                    let approveAttrCount = 0;
 
-                    this.currentAttributes.forEach((attr, j, attrs) => {
-                        Object.keys(item.attributes).forEach((attributeId, k, productsAttrs) => {
-                            const value = item.attributes[attributeId];
-                            if (attr.id === attributeId && attr.value === value) {
-                                addProduct = true;
-                            }
-                        })
-                    });
+
+                    for(let index in currentAttrs) {
+                        let addAttr = false;
+
+                        if (!currentAttrs.hasOwnProperty(index)) {
+                            return;
+                        }
+
+                        let attr = currentAttrs[index];
+
+                        attr.forEach((attrValue, i, arr) => {
+                            Object.keys(item.attributes).forEach((attributeId, k, productsAttrs) => {
+                                const value = item.attributes[attributeId];
+
+                                if (index === attributeId && attrValue === value) {
+                                    addAttr = true;
+                                }
+                            })
+                        });
+
+                        if(addAttr === true) {
+                            approveAttrCount++;
+                        }
+                    }
+
+                    if(approveAttrCount === attrCount) {
+                        addProduct = true;
+                    }
 
                     if (addProduct === false) {
                         return;
