@@ -759,6 +759,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__helper__ = __webpack_require__(36);
+
 
 
 
@@ -777,7 +779,9 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
         currentSubcategory: '',
         attributes: [],
         attributesList: [],
-        currentAttributes: []
+        currentAttributes: [],
+        brands: [],
+        currentBrands: []
     },
     computed: {
         pages: function pages() {
@@ -792,6 +796,12 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
             this.filter();
         },
         currentSubcategory: function currentSubcategory(val, oldVal) {
+            this.filter();
+        },
+        currentAttributes: function currentAttributes(val, oldVal) {
+            this.filter();
+        },
+        currentBrands: function currentBrands(val, oldVal) {
             this.filter();
         }
     },
@@ -811,13 +821,27 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
                 vm.subcategories = data.subcategories;
                 vm.attributes = data.attributes;
                 vm.attributesList = data.attributesList;
+                vm.brands = data.brands;
 
                 vm.setActiveProducts();
                 vm.filter();
             });
         },
+        resetFilter: function resetFilter() {
+            this.currentAttributes = [];
+            this.currentBrands = [];
+
+            var list = document.querySelectorAll('.filter-checkbox input');
+
+            [].forEach.call(list, function (item) {
+                item.checked = false;
+            });
+        },
         getCategoryUrl: function getCategoryUrl() {
-            return 'Schetnyj-krest';
+            var url = window.location.href;
+            var arr = url.split('/');
+
+            return arr[arr.length - 1];
         },
         setActiveProducts: function setActiveProducts() {
             var start = this.perPage * (this.page - 1);
@@ -825,7 +849,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
             document.getElementsByTagName('body')[0].scrollTop = 300;
         },
         getSrc: function getSrc(image) {
-            return "/product_images/" + image;
+            return '/product_images/' + image;
         },
         setPage: function setPage(page) {
             this.page = page;
@@ -837,22 +861,79 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
         attribyteNameById: function attribyteNameById(id) {
             return this.attributesList[id];
         },
-        filter: function filter() {
+        setCurrentAttribute: function setCurrentAttribute(attributeId, value) {
             var _this = this;
 
+            if (event.target.checked) {
+                this.currentAttributes.push({
+                    id: attributeId,
+                    value: value
+                });
+            } else {
+                this.currentAttributes.forEach(function (item, i, arr) {
+                    if (item.value === value && item.id === attributeId) {
+                        _this.currentAttributes.splice(i, 1);
+                    }
+                });
+            }
+        },
+        setCurrentBrand: function setCurrentBrand(brandId) {
+            if (event.target.checked) {
+                this.currentBrands.push(brandId);
+            } else {
+                this.currentBrands.remove(brandId);
+            }
+        },
+        filter: function filter() {
+            var _this2 = this;
+
+            var needFilterByAttribute = this.currentAttributes.length !== 0;
+            var needFilterByBrand = this.currentBrands.length !== 0;
+            var addProduct = void 0;
             this.page = 1;
             this.filteredProducts = [];
 
             this.products.forEach(function (item, i, arr) {
-                if (item.price < parseInt(_this.minPrice) || item.price > parseInt(_this.maxPrice)) {
+                if (item.price < parseInt(_this2.minPrice) || item.price > parseInt(_this2.maxPrice)) {
                     return;
                 }
 
-                if (_this.currentSubcategory !== '' && item.subcats.indexOf(_this.currentSubcategory) === -1) {
+                if (_this2.currentSubcategory !== '' && item.subcats.indexOf(_this2.currentSubcategory) === -1) {
                     return;
                 }
 
-                _this.filteredProducts.push(item);
+                if (needFilterByAttribute) {
+                    addProduct = false;
+
+                    _this2.currentAttributes.forEach(function (attr, j, attrs) {
+                        Object.keys(item.attributes).forEach(function (attributeId, k, productsAttrs) {
+                            var value = item.attributes[attributeId];
+                            if (attr.id === attributeId && attr.value === value) {
+                                addProduct = true;
+                            }
+                        });
+                    });
+
+                    if (addProduct === false) {
+                        return;
+                    }
+                }
+
+                if (needFilterByBrand) {
+                    addProduct = false;
+
+                    _this2.currentBrands.forEach(function (brand, k, brands) {
+                        if (brand === item.brand) {
+                            addProduct = true;
+                        }
+                    });
+
+                    if (addProduct === false) {
+                        return;
+                    }
+                }
+
+                _this2.filteredProducts.push(item);
             });
 
             this.setActiveProducts();
@@ -12054,6 +12135,22 @@ module.exports = function spread(callback) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 32 */,
+/* 33 */,
+/* 34 */,
+/* 35 */,
+/* 36 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+
+/* unused harmony default export */ var _unused_webpack_default_export = (Array.prototype.remove = function () {
+    var index = this.indexOf(arguments[0]);
+    this.splice(index, 1);
+});
 
 /***/ })
 /******/ ]);

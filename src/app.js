@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import axios from 'axios';
+import './helper';
 
 new Vue({
     el: '#root',
@@ -16,7 +17,9 @@ new Vue({
         currentSubcategory: '',
         attributes: [],
         attributesList: [],
-        currentAttributes: []
+        currentAttributes: [],
+        brands: [],
+        currentBrands: []
     },
     computed: {
         pages() {
@@ -31,6 +34,12 @@ new Vue({
             this.filter();
         },
         currentSubcategory(val, oldVal) {
+            this.filter();
+        },
+        currentAttributes(val, oldVal) {
+            this.filter();
+        },
+        currentBrands(val, oldVal) {
             this.filter();
         }
     },
@@ -51,13 +60,27 @@ new Vue({
                     vm.subcategories = data.subcategories;
                     vm.attributes = data.attributes;
                     vm.attributesList = data.attributesList;
+                    vm.brands = data.brands;
 
                     vm.setActiveProducts();
                     vm.filter();
                 });
         },
+        resetFilter() {
+            this.currentAttributes = [];
+            this.currentBrands = [];
+
+            let list = document.querySelectorAll('.filter-checkbox input');
+
+            [].forEach.call(list, function (item) {
+                item.checked = false;
+            });
+        },
         getCategoryUrl() {
-            return 'Schetnyj-krest';
+            let url = window.location.href;
+            let arr = url.split('/');
+
+            return arr[arr.length - 1];
         },
         setActiveProducts() {
             const start = this.perPage * (this.page - 1);
@@ -65,7 +88,7 @@ new Vue({
             document.getElementsByTagName('body')[0].scrollTop = 300;
         },
         getSrc(image) {
-            return "/product_images/" + image;
+            return `/product_images/${image}`;
         },
         setPage(page) {
             this.page = page;
@@ -77,9 +100,34 @@ new Vue({
         attribyteNameById(id) {
             return this.attributesList[id];
         },
+        setCurrentAttribute(attributeId, value) {
+            if (event.target.checked) {
+                this.currentAttributes.push({
+                    id: attributeId,
+                    value: value
+                });
+            } else {
+                this.currentAttributes.forEach((item, i, arr) => {
+                    if (item.value === value && item.id === attributeId) {
+                        this.currentAttributes.splice(i, 1);
+                    }
+                });
+            }
+        },
+        setCurrentBrand(brandId) {
+            if (event.target.checked) {
+                this.currentBrands.push(brandId);
+            } else {
+                this.currentBrands.remove(brandId);
+            }
+        },
         filter() {
+            const needFilterByAttribute = this.currentAttributes.length !== 0;
+            const needFilterByBrand = this.currentBrands.length !== 0;
+            let addProduct;
             this.page = 1;
             this.filteredProducts = [];
+
 
             this.products.forEach((item, i, arr) => {
                 if (item.price < parseInt(this.minPrice) || item.price > parseInt(this.maxPrice)) {
@@ -90,9 +138,41 @@ new Vue({
                     return;
                 }
 
+
+                if (needFilterByAttribute) {
+                    addProduct = false;
+
+                    this.currentAttributes.forEach((attr, j, attrs) => {
+                        Object.keys(item.attributes).forEach((attributeId, k, productsAttrs) => {
+                            const value = item.attributes[attributeId];
+                            if (attr.id === attributeId && attr.value === value) {
+                                addProduct = true;
+                            }
+                        })
+                    });
+
+                    if (addProduct === false) {
+                        return;
+                    }
+                }
+
+                if (needFilterByBrand) {
+                    addProduct = false;
+
+                    this.currentBrands.forEach((brand, k, brands) => {
+                        if(brand === item.brand) {
+                            addProduct = true;
+                        }
+                    });
+
+                    if (addProduct === false) {
+                        return;
+                    }
+                }
+
+
                 this.filteredProducts.push(item);
             });
-
 
             this.setActiveProducts();
         }

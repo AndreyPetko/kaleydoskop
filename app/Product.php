@@ -305,7 +305,6 @@ class Product extends Model
             $recProducts = self::where('active', 1)->skip($skip)->take($perPage)->get();
         }
 
-
         return $recProducts;
     }
 

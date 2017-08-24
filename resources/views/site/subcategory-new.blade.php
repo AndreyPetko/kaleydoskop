@@ -28,16 +28,28 @@
                     <img src="{{ url('site/images/filter-line.png') }}" alt="">
                 </div>
 
-                <div v-for="atrribute, key in attributes">
+                <div class="filter-title">Бренды</div>
+                <div class="filter-grey-line">
+                    <img src="{{ url('site/images/filter-line.png') }}" alt="">
+                </div>
+
+                <div class="filter-value" v-for="brand in brands">
+                    <div class="filter-checkbox fl">
+                        <input type="checkbox" @change="setCurrentBrand(brand.id)" class="attr-checkbox">
+                    </div>
+                    <div class="filter-value-text fl" v-text="brand.name"></div>
+                </div>
+
+
+                <div v-for="attribute, key in attributes">
                     <div class="filter-title" v-text="attribyteNameById(key)"></div>
                     <div class="filter-grey-line">
                         <img src="{{ url('site/images/filter-line.png') }}" alt="">
                     </div>
 
-
-                    <div class="filter-value" v-for="value in atrribute">
+                    <div class="filter-value" v-for="value in attribute">
                         <div class="filter-checkbox fl">
-                            <input type="checkbox" class="attr-checkbox">
+                            <input type="checkbox" @change="setCurrentAttribute(key, value)" class="attr-checkbox">
                         </div>
                         <div class="filter-value-text fl" v-text="value"></div>
                     </div>
@@ -48,7 +60,7 @@
                     <div class="reset-filter-img fl">
                         <img src="{{ url('site/images/refresh-icon-green.png') }}" alt="">
                     </div>
-                    <div class="reset-filter-text fl">
+                    <div class="reset-filter-text fl" @click="resetFilter">
                         СБРОСИТЬ ФИЛЬТР
                     </div>
                 </div>
@@ -88,15 +100,15 @@
                 <div class="subcat-item fl" v-for="subcategory in subcategories">
                     <a @click="setSubcategory(subcategory.id)">
                         <div class="subcat-image fl">
-                            <img src="{{ url('site/images/icon-catecory-list.png') }}" alt="">
+                            <img v-if="subcategory.id !== currentSubcategory"
+                                 src="{{ url('site/images/icon-catecory-list.png') }}" alt="">
+                            <img v-if="subcategory.id === currentSubcategory"
+                                 src="{{ url('site/images/icon-catecory-list-active.png') }}" alt="">
                         </div>
                         <div class="subcat-text fl" v-text="subcategory.name"></div>
                     </a>
                 </div>
-
-
             </div>
-
 
             <div class="clear"></div>
 
@@ -165,7 +177,8 @@
 
             <div class="pagination">
                 <ul>
-                    <li v-for="page in pages" @click="setPage(page)" v-text="page"></li>
+                    <li v-for="item in pages" :class="{active: page === item}" @click="setPage(item)"
+                        v-text="item"></li>
                     {{--<li>1</li>--}}
                     {{--<li class="pagination-active">2</li>--}}
                     {{--<li>3</li>--}}

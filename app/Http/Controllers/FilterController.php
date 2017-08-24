@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Attribute;
 use App\Category;
 use App\Product;
 use App\Repository\AttributeRepository;
+use App\Repository\BrandRepository;
 use App\Repository\CategoryRepository;
 use App\Repository\ProductRepository;
 
@@ -26,6 +26,7 @@ class FilterController extends Controller
         $productRepository = new ProductRepository();
         $categoryRepository = new CategoryRepository();
         $attributeRepository = new AttributeRepository();
+        $brandRepository = new BrandRepository();
 
         $category = Category::where('url', $url)->first();
         $products = Product::where('category_id', $category->id)->get();
@@ -35,6 +36,7 @@ class FilterController extends Controller
         $products = $productRepository->productsToArray($products, $category);
 
         $attributes = $attributeRepository->getCategoryInfo($category);
+        $brands = $brandRepository->getBrandsInfo($category);
 
         $attributesList = $attributeRepository->getIdNameArr();
 
@@ -43,7 +45,8 @@ class FilterController extends Controller
             'products' => $products,
             'attributes' => $attributes,
             'subcategories' => $subcategories,
-            'attributesList' => $attributesList
+            'attributesList' => $attributesList,
+            'brands' => $brands
         ];
     }
 }

@@ -46,7 +46,7 @@ class OrdersController extends Controller {
 			}
 		}
 
-		if($request['email']) {
+		if(isset($request['email'])) {
 			$email = $request['email'];
 			$order = Order::getLast();
 

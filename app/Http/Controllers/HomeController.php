@@ -96,7 +96,7 @@ class HomeController extends Controller
      */
     public function getNewProducts()
     {
-        $products = Product::getNew(52);
+        $products = Product::getNew(52, 52);
 
         foreach ($products as $product) {
             $product = Product::setWholesalePrice($product);
@@ -295,17 +295,11 @@ class HomeController extends Controller
 
 
     /**
-     * @param string $url
      * @return \Illuminate\Contracts\View\Factory|View
      */
-    public function getCategoryNew(string $url)
+    public function getCategoryNew()
     {
-//        $category = Category::where('url', $url)->first();
-//        $products = Product::where('category_id', $category->id)->get();
-
-        return view('site.subcategory-new', [
-
-        ]);
+        return view('site.subcategory-new');
     }
 
     /**
