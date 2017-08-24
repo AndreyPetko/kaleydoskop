@@ -25,7 +25,13 @@ new Vue({
     },
     computed: {
         pages() {
-            return parseInt(this.filteredProducts.length / this.perPage) + 1;
+            let countPages = parseInt(this.filteredProducts.length / this.perPage);
+
+            if(this.filteredProducts.length % this.perPage !== 0) {
+                countPages += 1;
+            }
+
+            return countPages;
         }
     },
     watch: {

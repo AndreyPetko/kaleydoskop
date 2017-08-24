@@ -787,7 +787,13 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
     },
     computed: {
         pages: function pages() {
-            return parseInt(this.filteredProducts.length / this.perPage) + 1;
+            var countPages = parseInt(this.filteredProducts.length / this.perPage);
+
+            if (this.filteredProducts.length % this.perPage !== 0) {
+                countPages += 1;
+            }
+
+            return countPages;
         }
     },
     watch: {
