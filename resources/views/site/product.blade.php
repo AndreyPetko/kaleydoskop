@@ -397,7 +397,7 @@
 
     </div>
 
-    <div class="products-sidebar-grey-line"></div>
+    <!-- <div class="products-sidebar-grey-line"></div>
     <div class="products-sidebar-pay">
         <div class="products-sidebar-pay-img fl">
             <img src="{{ url('site/images/icon-pay.png') }}" alt="">
@@ -434,7 +434,7 @@
         {!!$text->getItem('dostavka')!!}
         @endif
     </div>
-
+ -->
 </div>
 @endif
 </div>
