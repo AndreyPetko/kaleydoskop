@@ -128,7 +128,6 @@ new Vue({
         setActiveProducts() {
             const start = this.perPage * (this.page - 1);
             this.activeProducts = this.filteredProducts.slice(parseInt(start), parseInt(start) + parseInt(this.perPage));
-            document.getElementsByTagName('body')[0].scrollTop = 300;
         },
         getSrc(image) {
             if (image === null) {
@@ -140,6 +139,7 @@ new Vue({
         setPage(page) {
             this.page = page;
             this.setActiveProducts();
+            document.getElementsByTagName('body')[0].scrollTop = 300;
         },
         setSubcategory(id) {
             this.currentSubcategory = id;

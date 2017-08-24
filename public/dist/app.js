@@ -890,7 +890,6 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
         setActiveProducts: function setActiveProducts() {
             var start = this.perPage * (this.page - 1);
             this.activeProducts = this.filteredProducts.slice(parseInt(start), parseInt(start) + parseInt(this.perPage));
-            document.getElementsByTagName('body')[0].scrollTop = 300;
         },
         getSrc: function getSrc(image) {
             if (image === null) {
@@ -902,6 +901,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
         setPage: function setPage(page) {
             this.page = page;
             this.setActiveProducts();
+            document.getElementsByTagName('body')[0].scrollTop = 300;
         },
         setSubcategory: function setSubcategory(id) {
             this.currentSubcategory = id;
