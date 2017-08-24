@@ -113,20 +113,22 @@
             <div class="clear"></div>
 
             <div class="subcat-sort-line">
-                <div class="grid-button fl">
-                    <img src="{{ url('site/images/sort-tabl.png') }}" alt="">
-                </div>
-                <div class="line-button fl">
-                    <img src="{{ url('site/images/sort-spisok-active.png') }}" alt="">
-                </div>
+                {{--<div class="grid-button fl">--}}
+                    {{--<img src="{{ url('site/images/sort-tabl.png') }}" alt="">--}}
+                {{--</div>--}}
+                {{--<div class="line-button fl">--}}
+                    {{--<img src="{{ url('site/images/sort-spisok-active.png') }}" alt="">--}}
+                {{--</div>--}}
 
                 <div class="sort-by fl">
                     <div class="sort-by-text fl">
                         Сортировать по:
                         <!-- цене -->
-                        <select id="sort-select">
-                            <option value='price'>Цене</option>
+                        <select v-model="sortBy">
                             <option value='name'>Названию</option>
+                            <option value='nameDesc'>Названию по убиванию</option>
+                            <option value='price'>Цене</option>
+                            <option value='priceDesc'>Цене по убиванию</option>
                         </select>
                     </div>
                     <div class="sort-by-img fl">
@@ -136,10 +138,16 @@
 
                 <div class="show-by fl">
                     <div class="sort-by-text fl">
-                        Показывать по: 12
+                        Показывать по: 
                     </div>
                     <div class="sort-by-img fl">
-                        <img src="{{ url('site/images/chck-icon.png') }}" alt="">
+                        <select v-model="perPage">
+                            <option value="6">6</option>
+                            <option value="12">12</option>
+                            <option value="24">24</option>
+                            <option value="48">48</option>
+                            <option value="96">96</option>
+                        </select>
                     </div>
                 </div>
             </div>
@@ -150,11 +158,12 @@
                     <div class="magnifier">
                         <img src="{{ url('site/images/icon-loop.png') }}" alt="">
                     </div>
-                    <div class="item-image">
-                        <img :src="getSrc(product.image)" alt="">
-                    </div>
-                    <div class="item-name" v-text="product.name">
-                    </div>
+                    <a :href="getLink(product.url)">
+                        <div class="item-image">
+                            <img :src="getSrc(product.image)" alt="">
+                        </div>
+                        <div class="item-name" v-text="product.name"></div>
+                    </a>
                     <div class="item-bottom-line">
                         <div class="item-price category">
                             <span v-text="product.price"></span> грн

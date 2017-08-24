@@ -746,7 +746,7 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(8);
-module.exports = __webpack_require__(31);
+module.exports = __webpack_require__(32);
 
 
 /***/ }),
@@ -759,7 +759,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__helper__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__helper__ = __webpack_require__(31);
 
 
 
@@ -770,7 +770,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
         products: [],
         filteredProducts: [],
         activeProducts: [],
-        perPage: 21,
+        perPage: 24,
         page: 1,
         minPrice: 0,
         maxPrice: 1000,
@@ -781,7 +781,8 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
         attributesList: [],
         currentAttributes: [],
         brands: [],
-        currentBrands: []
+        currentBrands: [],
+        sortBy: 'name'
     },
     computed: {
         pages: function pages() {
@@ -803,6 +804,16 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
         },
         currentBrands: function currentBrands(val, oldVal) {
             this.filter();
+        },
+        perPage: function perPage(val, oldVal) {
+            this.filter();
+        },
+        sortBy: function sortBy(val, oldVal) {
+            var _getSortFieldAndDesc = this.getSortFieldAndDesc(val),
+                field = _getSortFieldAndDesc.field,
+                desc = _getSortFieldAndDesc.desc;
+
+            this.sortProducts(field, desc);
         }
     },
     methods: {
@@ -827,6 +838,9 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
                 vm.filter();
             });
         },
+        getLink: function getLink(url) {
+            return '/product/' + url;
+        },
         resetFilter: function resetFilter() {
             this.currentAttributes = [];
             this.currentBrands = [];
@@ -845,10 +859,14 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
         },
         setActiveProducts: function setActiveProducts() {
             var start = this.perPage * (this.page - 1);
-            this.activeProducts = this.filteredProducts.slice(start, start + this.perPage);
+            this.activeProducts = this.filteredProducts.slice(parseInt(start), parseInt(start) + parseInt(this.perPage));
             document.getElementsByTagName('body')[0].scrollTop = 300;
         },
         getSrc: function getSrc(image) {
+            if (image === null) {
+                return '/site/images/zaglushka.png';
+            }
+
             return '/product_images/' + image;
         },
         setPage: function setPage(page) {
@@ -884,6 +902,28 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
                 this.currentBrands.remove(brandId);
             }
         },
+        getSortFieldAndDesc: function getSortFieldAndDesc() {
+            var val = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+
+            if (val === null) {
+                val = this.sortBy;
+            }
+
+            var descString = val.slice(-4);
+            var desc = descString === 'Desc';
+            var field = void 0;
+
+            if (desc === false) {
+                field = val;
+            } else {
+                field = val.substring(0, val.length - 4);
+            }
+
+            return {
+                'field': field,
+                'desc': desc
+            };
+        },
         filter: function filter() {
             var _this2 = this;
 
@@ -891,7 +931,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
             var needFilterByBrand = this.currentBrands.length !== 0;
             var addProduct = void 0;
             this.page = 1;
-            this.filteredProducts = [];
+            var filterProducts = [];
 
             this.products.forEach(function (item, i, arr) {
                 if (item.price < parseInt(_this2.minPrice) || item.price > parseInt(_this2.maxPrice)) {
@@ -933,8 +973,34 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
                     }
                 }
 
-                _this2.filteredProducts.push(item);
+                filterProducts.push(item);
             });
+
+            this.filteredProducts = filterProducts;
+
+            var _getSortFieldAndDesc2 = this.getSortFieldAndDesc(),
+                field = _getSortFieldAndDesc2.field,
+                desc = _getSortFieldAndDesc2.desc;
+
+            console.log(field, desc);
+            this.sortProducts(field, desc);
+
+            this.setActiveProducts();
+        },
+        sortProducts: function sortProducts(field, desc) {
+            var products = this.filteredProducts;
+
+            if (desc === false) {
+                products.sort(function (a, b) {
+                    return a[field] > b[field] ? 1 : b[field] > a[field] ? -1 : 0;
+                });
+            } else {
+                products.sort(function (a, b) {
+                    return a[field] < b[field] ? 1 : b[field] < a[field] ? -1 : 0;
+                });
+            }
+
+            this.filteredProducts = products;
 
             this.setActiveProducts();
         }
@@ -12132,16 +12198,6 @@ module.exports = function spread(callback) {
 
 /***/ }),
 /* 31 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 32 */,
-/* 33 */,
-/* 34 */,
-/* 35 */,
-/* 36 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12151,6 +12207,12 @@ module.exports = function spread(callback) {
     var index = this.indexOf(arguments[0]);
     this.splice(index, 1);
 });
+
+/***/ }),
+/* 32 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

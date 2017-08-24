@@ -8,7 +8,7 @@ new Vue({
         products: [],
         filteredProducts: [],
         activeProducts: [],
-        perPage: 21,
+        perPage: 24,
         page: 1,
         minPrice: 0,
         maxPrice: 1000,
@@ -19,7 +19,8 @@ new Vue({
         attributesList: [],
         currentAttributes: [],
         brands: [],
-        currentBrands: []
+        currentBrands: [],
+        sortBy: 'name'
     },
     computed: {
         pages() {
@@ -41,6 +42,13 @@ new Vue({
         },
         currentBrands(val, oldVal) {
             this.filter();
+        },
+        perPage(val, oldVal) {
+            this.filter();
+        },
+        sortBy(val, oldVal) {
+            const { field, desc } = this.getSortFieldAndDesc(val);
+            this.sortProducts(field, desc);
         }
     },
     methods: {
@@ -66,6 +74,9 @@ new Vue({
                     vm.filter();
                 });
         },
+        getLink(url) {
+            return `/product/${url}`;
+        },
         resetFilter() {
             this.currentAttributes = [];
             this.currentBrands = [];
@@ -84,10 +95,14 @@ new Vue({
         },
         setActiveProducts() {
             const start = this.perPage * (this.page - 1);
-            this.activeProducts = this.filteredProducts.slice(start, start + this.perPage);
+            this.activeProducts = this.filteredProducts.slice(parseInt(start), parseInt(start) + parseInt(this.perPage));
             document.getElementsByTagName('body')[0].scrollTop = 300;
         },
         getSrc(image) {
+            if(image === null) {
+                return '/site/images/zaglushka.png';
+            }
+
             return `/product_images/${image}`;
         },
         setPage(page) {
@@ -121,13 +136,32 @@ new Vue({
                 this.currentBrands.remove(brandId);
             }
         },
+        getSortFieldAndDesc(val = null) {
+            if(val === null) {
+                val = this.sortBy;
+            }
+
+            let descString = val.slice(-4);
+            let desc = descString === 'Desc';
+            let field;
+
+            if(desc === false) {
+                field = val;
+            } else {
+                field = val.substring(0, val.length - 4);
+            }
+
+            return {
+                'field': field,
+                'desc': desc
+            };
+        },
         filter() {
             const needFilterByAttribute = this.currentAttributes.length !== 0;
             const needFilterByBrand = this.currentBrands.length !== 0;
             let addProduct;
             this.page = 1;
-            this.filteredProducts = [];
-
+            let filterProducts = [];
 
             this.products.forEach((item, i, arr) => {
                 if (item.price < parseInt(this.minPrice) || item.price > parseInt(this.maxPrice)) {
@@ -137,7 +171,6 @@ new Vue({
                 if (this.currentSubcategory !== '' && item.subcats.indexOf(this.currentSubcategory) === -1) {
                     return;
                 }
-
 
                 if (needFilterByAttribute) {
                     addProduct = false;
@@ -160,7 +193,7 @@ new Vue({
                     addProduct = false;
 
                     this.currentBrands.forEach((brand, k, brands) => {
-                        if(brand === item.brand) {
+                        if (brand === item.brand) {
                             addProduct = true;
                         }
                     });
@@ -170,9 +203,31 @@ new Vue({
                     }
                 }
 
-
-                this.filteredProducts.push(item);
+                filterProducts.push(item);
             });
+
+            this.filteredProducts = filterProducts;
+
+            let { field, desc } = this.getSortFieldAndDesc();
+            console.log(field, desc);
+            this.sortProducts(field, desc);
+
+            this.setActiveProducts();
+        },
+        sortProducts(field, desc) {
+            let products = this.filteredProducts;
+
+            if(desc === false) {
+                products.sort((a,b)  => {
+                    return (a[field] > b[field]) ? 1 : ((b[field] > a[field]) ? -1 : 0);
+                });
+            } else {
+                products.sort((a,b) => {
+                    return (a[field] < b[field]) ? 1 : ((b[field] < a[field]) ? -1 : 0);
+                });
+            }
+
+            this.filteredProducts = products;
 
             this.setActiveProducts();
         }

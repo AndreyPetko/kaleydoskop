@@ -29,7 +29,7 @@ class FilterController extends Controller
         $brandRepository = new BrandRepository();
 
         $category = Category::where('url', $url)->first();
-        $products = Product::where('category_id', $category->id)->get();
+        $products = Product::where('category_id', $category->id)->orderBy('name')->get();
 
         $subcategories = $categoryRepository->getSubcategoriesArr($category);
 
