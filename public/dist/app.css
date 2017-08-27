@@ -6,3 +6,20 @@
   cursor: pointer;
 }
 
+.no-products {
+  text-align: center;
+  margin-top: 10px;
+  color: grey;
+  font-size: 20px;
+}
+
+#block-tria.rotate-180 {
+  /* IE 9 */
+  -webkit-transform: rotate(180deg);
+  /* Chrome, Safari, Opera */
+  transform: rotate(180deg);
+  margin-top: 5px;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+

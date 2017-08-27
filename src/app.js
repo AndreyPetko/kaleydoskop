@@ -21,7 +21,8 @@ new Vue({
         brands: [],
         currentBrands: [],
         sortBy: 'name',
-        showImageBlock: true
+        showImageBlock: true,
+        showSubcategories: true
     },
     computed: {
         pages() {
@@ -32,6 +33,21 @@ new Vue({
             }
 
             return countPages;
+        },
+        showPages() {
+            let finishAdd = this.pages - this.page <= 10 ? 20 -  (this.pages - this.page) : 10;
+            let add = this.page <= 10 ? 20 - this.page : 10;
+
+            let start = this.page - finishAdd < 1 ? 1 : this.page - finishAdd;
+            let stop = this.page + add > this.pages ? this.pages : this.page + add;
+
+            let pages = [];
+
+            for(let i = start; i <= stop; i++) {
+                pages.push(i);
+            }
+
+            return pages;
         }
     },
     watch: {
@@ -146,6 +162,9 @@ new Vue({
             this.page = page;
             this.setActiveProducts();
             document.getElementsByTagName('body')[0].scrollTop = 300;
+        },
+        noProducts() {
+            return this.activeProducts.length === 0;
         },
         setSubcategory(id) {
             this.currentSubcategory = id;

@@ -785,7 +785,8 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
         brands: [],
         currentBrands: [],
         sortBy: 'name',
-        showImageBlock: true
+        showImageBlock: true,
+        showSubcategories: true
     },
     computed: {
         pages: function pages() {
@@ -796,6 +797,21 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
             }
 
             return countPages;
+        },
+        showPages: function showPages() {
+            var finishAdd = this.pages - this.page <= 10 ? 20 - (this.pages - this.page) : 10;
+            var add = this.page <= 10 ? 20 - this.page : 10;
+
+            var start = this.page - finishAdd < 1 ? 1 : this.page - finishAdd;
+            var stop = this.page + add > this.pages ? this.pages : this.page + add;
+
+            var pages = [];
+
+            for (var i = start; i <= stop; i++) {
+                pages.push(i);
+            }
+
+            return pages;
         }
     },
     watch: {
@@ -910,6 +926,9 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
             this.page = page;
             this.setActiveProducts();
             document.getElementsByTagName('body')[0].scrollTop = 300;
+        },
+        noProducts: function noProducts() {
+            return this.activeProducts.length === 0;
         },
         setSubcategory: function setSubcategory(id) {
             this.currentSubcategory = id;

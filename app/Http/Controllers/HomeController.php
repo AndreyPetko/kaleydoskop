@@ -277,27 +277,27 @@ class HomeController extends Controller
     // }
 
 
-    /**
-     * @param $url
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|View
-     */
-    public function getCategory($url)
-    {
-        try {
-            $category = Category::getByUrl($url);
-            $subcategories = Subcategory::getByCategoryId($category->id);
-        } catch (NotFoundException $e) {
-            return Redirect::to('404');
-        }
-
-        return view('site.subcategories', compact('subcategories', 'category'));
-    }
-
+//    /**
+//     * @param $url
+//     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|View
+//     */
+//    public function getCategory($url)
+//    {
+//        try {
+//            $category = Category::getByUrl($url);
+//            $subcategories = Subcategory::getByCategoryId($category->id);
+//        } catch (NotFoundException $e) {
+//            return Redirect::to('404');
+//        }
+//
+//        return view('site.subcategories', compact('subcategories', 'category'));
+//    }
+//
 
     /**
      * @return \Illuminate\Contracts\View\Factory|View
      */
-    public function getCategoryNew()
+    public function getCategory()
     {
         return view('site.subcategory-new');
     }

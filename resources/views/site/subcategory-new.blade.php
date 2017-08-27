@@ -55,7 +55,6 @@
                     </div>
                 </div>
 
-
                 <div class="reset-filter">
                     <div class="reset-filter-img fl">
                         <img src="{{ url('site/images/refresh-icon-green.png') }}" alt="">
@@ -72,12 +71,12 @@
             <div class="category-title-line">
             </div>
 
-            <div class="subcategories-title">
+            <div class="subcategories-title" @click="showSubcategories = !showSubcategories">
                 Перейти в подкатегорию:
+                <div id="block-tria" :class="{'rotate-180': showSubcategories === true}"></div>
             </div>
-            <div class="subcategories-line"></div>
-            <div class="subcategories-list">
-
+            <div class="subcategories-line" v-if="showSubcategories"></div>
+            <div class="subcategories-list" v-if="showSubcategories">
 
                 <div class="subcat-item fl">
                     <a @click="setSubcategory('')">
@@ -153,7 +152,9 @@
             </div>
 
             <div class="category-list">
-
+                <div v-if="noProducts()" class="no-products">
+                    По вашему запросу ничего не найдено
+                </div>
                 <div class="category-item fl" v-for="product in activeProducts">
                     <div class="magnifier" @click="showImage(product.image)">
                         <img src="{{ url('site/images/icon-loop.png') }}" alt="">
@@ -185,10 +186,12 @@
                 </div>
             </div>
 
-            <div class="pagination">
+            <div class="pagination" v-if="noProducts() === false">
                 <ul>
-                    <li v-for="item in pages" :class="{active: page === item}" @click="setPage(item)"
+                    <li @click="setPage(1)"><-</li>
+                    <li v-for="item in showPages" :class="{active: page === item}" @click="setPage(item)"
                         v-text="item"></li>
+                    <li @click="setPage(pages)">-></li>
                     {{--<li>1</li>--}}
                     {{--<li class="pagination-active">2</li>--}}
                     {{--<li>3</li>--}}
