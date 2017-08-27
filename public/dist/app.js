@@ -760,7 +760,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__helper__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_services_LocationParser__ = __webpack_require__(37);
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
 
 
 
@@ -775,7 +777,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
         perPage: 24,
         page: 1,
         minPrice: 0,
-        maxPrice: 1000,
+        maxPrice: 100000,
         subcategories: [],
         categoryName: '',
         currentSubcategory: '',
@@ -786,7 +788,8 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
         currentBrands: [],
         sortBy: 'name',
         showImageBlock: true,
-        showSubcategories: true
+        showSubcategories: true,
+        offset: 5
     },
     computed: {
         pages: function pages() {
@@ -799,8 +802,9 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
             return countPages;
         },
         showPages: function showPages() {
-            var finishAdd = this.pages - this.page <= 10 ? 20 - (this.pages - this.page) : 10;
-            var add = this.page <= 10 ? 20 - this.page : 10;
+
+            var finishAdd = this.pages - this.page <= this.offset ? this.offset * 2 - (this.pages - this.page) : this.offset;
+            var add = this.page <= this.offset ? this.offset * 2 - this.page : this.offset;
 
             var start = this.page - finishAdd < 1 ? 1 : this.page - finishAdd;
             var stop = this.page + add > this.pages ? this.pages : this.page + add;
@@ -847,7 +851,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
             var url = '/filter/category-data/' + categoryUrl;
             var vm = this;
 
-            __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get(url).then(function (result) {
+            return __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get(url).then(function (result) {
                 var data = result.data;
 
                 vm.name = data.name;
@@ -866,11 +870,6 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
         addToWishlist: function addToWishlist(product, id, wish) {
             __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('/ajax/add-wish/?productid=' + id).then(function () {
                 product.wish = !wish;
-                // if(wish === false) {
-                //     swal('Товар успешно список желаний');
-                // } else {
-                //     swal('Товар успешно убран из списка желаний');
-                // }
             });
         },
         showImage: function showImage(image) {
@@ -1101,7 +1100,17 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
         }
     },
     created: function created() {
-        this.getData();
+        var _this3 = this;
+
+        this.getData().then(function () {
+            var subcategory = __WEBPACK_IMPORTED_MODULE_3__src_services_LocationParser__["a" /* default */].get('subcategory');
+            if (subcategory === null) {
+                return;
+            }
+
+            _this3.currentSubcategory = parseInt(subcategory);
+            __WEBPACK_IMPORTED_MODULE_3__src_services_LocationParser__["a" /* default */].clearParams();
+        });
     }
 });
 
@@ -12308,6 +12317,44 @@ module.exports = function spread(callback) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 33 */,
+/* 34 */,
+/* 35 */,
+/* 36 */,
+/* 37 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var LocationParser = function () {
+    function LocationParser() {
+        _classCallCheck(this, LocationParser);
+
+        this.url = new URL(window.location.href);
+    }
+
+    _createClass(LocationParser, [{
+        key: 'get',
+        value: function get(parameter) {
+            return this.url.searchParams.get(parameter);
+        }
+    }, {
+        key: 'clearParams',
+        value: function clearParams() {
+            var baseUrl = window.location.href.split("?")[0];
+            window.history.pushState('name', '', baseUrl);
+        }
+    }]);
+
+    return LocationParser;
+}();
+
+/* harmony default export */ __webpack_exports__["a"] = (new LocationParser());
 
 /***/ })
 /******/ ]);

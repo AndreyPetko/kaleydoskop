@@ -5,6 +5,102 @@
 @stop
 
 @section('content')
+    <div class="mobile-menu show-mobile">
+        <div class="mobile-menu-list">
+            <div class="mobile-top-border"></div>
+            <a href="/"><div class="mobile-menu-list-item">Главная</div></a>
+            <a href="/catalog"><div class="mobile-menu-list-item">Каталог</div></a>
+            <a href="/brends"><div class="mobile-menu-list-item">Бренды</div></a>
+            <a href="/about"><div class="mobile-menu-list-item">О компании</div></a>
+            <a href="/wholesalers"><div class="mobile-menu-list-item">Оптовикам</div></a>
+            <a href="/oplata-dostavka"><div class="mobile-menu-list-item">Оплата и доставка</div></a>
+            <a href="/contacts"><div class="mobile-menu-list-item">Контакты</div></a>
+            <div class="mobile-menu-list-item" id="mobile-white-menu-button">Пользователю</div>
+        </div>
+        <div class="mobile-white-menu-list">
+            <div class="mobile-white-menu-item" id="send-mail-mobile">Подписаться на рассылку</div>
+            <div class="mobile-white-menu-item" id="feedback-mobile">Обратная связь</div>
+            <div class="mobile-white-menu-item" id="callback-mobile">Заказать обратный звонок</div>
+            <a href="/wishlist"><div class="mobile-white-menu-item">Желания</div></a>
+
+        </div>
+    </div>
+    <div class="mobile-header show-mobile">
+        <div class="mobile-menu-button">
+            <img src="{{ url('site/images/icon-menu.png') }}" alt="">
+        </div>
+        <div class="mobile-header-numbers">
+            8 096 778 74 88 <br>
+            8 044 332 88 82
+        </div>
+    </div>
+    <div class="mobile-logo show-mobile">
+        <a href="/"><img src="{{ url('site/images/logo.png') }}" alt=""></a>
+    </div>
+    <div class="mobile-search show-mobile">
+        <div class="mobile-search-input">
+            <input id="mobile-search-input">
+        </div>
+        <div class="mobile-search-icon" id="mobile-search">
+            <img src="{{ url('/site/images/icon-sarch.png') }}">
+        </div>
+    </div>
+    <div class="mobile-top-line show-mobile">
+        @if(!Auth::check())
+            <a href="/login">
+                <div class="mobile-top-element">
+                    <div class="mobile-top-image">
+                        <img src="{{ url('site/images/icon-login.png') }}" alt="">
+                    </div>
+                    <div class="mobile-top-text">
+                        Вход
+                    </div>
+                </div>
+            </a>
+            <a href="/auth/register">
+                <div class="mobile-top-element mobile-top-register">
+                    <div class="mobile-top-image">
+                        <img src="{{ url('site/images/icon-registr.png') }}" alt="">
+                    </div>
+                    <div class="mobile-top-text">
+                        Регистрация
+                    </div>
+                </div>
+            </a>
+        @else
+            <a href="/auth/logout">
+                <div class="mobile-top-element">
+                    <div class="mobile-top-image">
+                        <img src="{{ url('site/images/icon-login.png') }}" alt="">
+                    </div>
+                    <div class="mobile-top-text">
+                        Выход
+                    </div>
+                </div>
+            </a>
+            <a href="/dashboard">
+                <div class="mobile-top-element mobile-top-register">
+                    <div class="mobile-top-image">
+                        <img src="{{ url('site/images/icon-registr.png') }}" alt="">
+                    </div>
+                    <div class="mobile-top-text">
+                        Кабинет
+                    </div>
+                </div>
+            </a>
+        @endif
+        <a href="/cart">
+            <div class="mobile-top-element mobile-top-right">
+                <div class="mobile-top-image">
+                    <img src="{{ url('site/images/icon-cart.png') }}" alt="">
+                </div>
+                <div class="mobile-top-text">
+                    Корзина
+                </div>
+            </div>
+        </a>
+    </div>
+
     <div class="category-content" id="root">
         <div class="category-filter fl">
             <div class="filter-header">
@@ -200,5 +296,19 @@
         </div>
     </div>
 
+    <div class="mobile-footer show-mobile">
+
+        <div class="mobile-footer-item"><a href="/catalog">Каталог</a></div>
+        <div class="mobile-footer-item"><a href="/new-products">Новинки</a></div>
+        <div class="mobile-footer-item"><a href="/page/skidki">Скидки</a></div>
+        <div class="mobile-footer-item"><a href="/about">О компании</a></div>
+        <div class="mobile-footer-item"><a href="/articles">Статьи</a></div>
+        <div class="mobile-footer-item"><a href="/wholesalers">Оптовикам</a></div>
+        <div class="mobile-footer-item"><a href="/oplata-dostavka">Оплата и доставка</a></div>
+        <div class="mobile-footer-item"><a href="/contacts">Контакты</a></div>
+
+    </div>
+
     <script src="{{ asset('dist/app.js') }}"></script>
 @stop
+

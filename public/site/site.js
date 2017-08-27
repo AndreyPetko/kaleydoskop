@@ -182,22 +182,26 @@ window.addEventListener("load", function () {
 // });
 
     $('.category-button').click(function () {
-        $('.subcategories-list').html('');
-
-        $('.to-katalog-active').removeClass('to-katalog-active');
-        var topp = $(this).offset();
-        $('#subcategory-katalog').css("top", topp.top + 40);
-        console.log($('#subcategory-katalog').css("top"));
-        $('#subcategory-katalog').slideDown('slow');
-        $(this).addClass(' to-katalog-active');
-
-        var categoryId = $(this).data('categoryid');
+        var subcategoriesList = $('.subcategories-list');
+        var subcategoryCatalog = $('#subcategory-katalog');
+        var currentItem = $(this);
+        var top = currentItem.offset();
+        var categoryId = currentItem.data('categoryid');
         var categoryUrl = $('#category-' + categoryId).val();
+
+        subcategoriesList.html('');
+        $('.to-katalog-active').removeClass('to-katalog-active');
+
+        subcategoryCatalog.css("top", top.top + 40);
+        subcategoryCatalog.slideDown('slow');
+
+        currentItem.addClass(' to-katalog-active');
 
         ajax('/ajax/subcategories-by-category-id?id=' + categoryId, function (data) {
             var data = JSON.parse(data);
+
             for (var i = data.length - 1; i >= 0; i--) {
-                var link = '<a href="/subcategory/' + data[i].url + '"><div class="subcat-item subcat-hover fl">' +
+                var link = '<a href="/category/' + categoryUrl + '?subcategory=' + data[i].id + '"><div class="subcat-item subcat-hover fl">' +
                     '<div class="subcat-image fl">' +
                     '<img src="site/images/icon-catecory-list.png" alt="">' +
                     '</div>' +
@@ -206,13 +210,13 @@ window.addEventListener("load", function () {
                     '</div>' +
                     '</div></a>';
 
-                $('.subcategories-list').append(link);
+                subcategoriesList.append(link);
             }
         });
 
     });
 
-    $('#close-subcategory ').click(function () {
+    $('#close-subcategory').click(function () {
         $('.to-katalog-active').removeClass('to-katalog-active');
         $(this).parent().slideUp();
     });

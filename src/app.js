@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import axios from 'axios';
 import './helper';
+import LocationParser from '../src/services/LocationParser';
 
 new Vue({
     el: '#root',
@@ -11,7 +12,7 @@ new Vue({
         perPage: 24,
         page: 1,
         minPrice: 0,
-        maxPrice: 1000,
+        maxPrice: 100000,
         subcategories: [],
         categoryName: '',
         currentSubcategory: '',
@@ -22,7 +23,8 @@ new Vue({
         currentBrands: [],
         sortBy: 'name',
         showImageBlock: true,
-        showSubcategories: true
+        showSubcategories: true,
+        offset: 5
     },
     computed: {
         pages() {
@@ -35,15 +37,17 @@ new Vue({
             return countPages;
         },
         showPages() {
-            let finishAdd = this.pages - this.page <= 10 ? 20 -  (this.pages - this.page) : 10;
-            let add = this.page <= 10 ? 20 - this.page : 10;
+
+
+            let finishAdd = this.pages - this.page <= this.offset ? this.offset * 2 - (this.pages - this.page) : this.offset;
+            let add = this.page <= this.offset ? this.offset * 2 - this.page : this.offset;
 
             let start = this.page - finishAdd < 1 ? 1 : this.page - finishAdd;
             let stop = this.page + add > this.pages ? this.pages : this.page + add;
 
             let pages = [];
 
-            for(let i = start; i <= stop; i++) {
+            for (let i = start; i <= stop; i++) {
                 pages.push(i);
             }
 
@@ -80,7 +84,7 @@ new Vue({
             const url = '/filter/category-data/' + categoryUrl;
             const vm = this;
 
-            axios.get(url)
+            return axios.get(url)
                 .then(result => {
                     const data = result.data;
 
@@ -101,11 +105,6 @@ new Vue({
             axios.get(`/ajax/add-wish/?productid=${id}`)
                 .then(() => {
                     product.wish = !wish;
-                    // if(wish === false) {
-                    //     swal('Товар успешно список желаний');
-                    // } else {
-                    //     swal('Товар успешно убран из списка желаний');
-                    // }
                 });
         },
         showImage(image) {
@@ -245,7 +244,7 @@ new Vue({
                     let approveAttrCount = 0;
 
 
-                    for(let index in currentAttrs) {
+                    for (let index in currentAttrs) {
                         let addAttr = false;
 
                         if (!currentAttrs.hasOwnProperty(index)) {
@@ -264,12 +263,12 @@ new Vue({
                             })
                         });
 
-                        if(addAttr === true) {
+                        if (addAttr === true) {
                             approveAttrCount++;
                         }
                     }
 
-                    if(approveAttrCount === attrCount) {
+                    if (approveAttrCount === attrCount) {
                         addProduct = true;
                     }
 
@@ -321,6 +320,14 @@ new Vue({
         }
     },
     created() {
-        this.getData();
+        this.getData().then(() => {
+            const subcategory = LocationParser.get('subcategory');
+            if(subcategory === null) {
+                return;
+            }
+
+            this.currentSubcategory = parseInt(subcategory);
+            LocationParser.clearParams();
+        });
     }
 });

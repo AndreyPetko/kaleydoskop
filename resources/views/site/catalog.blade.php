@@ -12,9 +12,7 @@
 <div id="subcategory-katalog">
     <div class="clear"></div>
 
-    <div class="subcategories-list">
-
-    </div>
+    <div class="subcategories-list"></div>
     <div class="clear"></div>
     <div id="close-subcategory">Свернуть <img src="{{ url('site/images/icon-arrow.png') }}"></div>
 

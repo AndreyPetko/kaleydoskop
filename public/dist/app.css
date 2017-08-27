@@ -23,3 +23,48 @@
   transition: 1s;
 }
 
+.show-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 650px) {
+  .show-mobile {
+    display: block;
+  }
+
+  .mobile-wrapper {
+    display: none;
+  }
+
+  .wrapper {
+    display: block;
+  }
+
+  .category-products-content {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .category-item {
+    width: 100%;
+  }
+
+  div.sort-by,
+  .show-by {
+    width: auto;
+  }
+
+  .category-filter {
+    width: 100%;
+  }
+
+  .filter-grey-line img {
+    width: 100%;
+  }
+
+  .pagination {
+    padding-bottom: 50px;
+  }
+}
+
