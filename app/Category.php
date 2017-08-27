@@ -61,13 +61,14 @@ class Category extends Model
      * @return mixed
      */
     public static function getByUrl($url) {
-		$category =  DB::select("SELECT * FROM categories WHERE url = :url", array($url));
+//		$category =  DB::select("SELECT * FROM categories WHERE url = :url", array($url));
+        $category = self::where('url', $url)->first();
 
 		if(!$category) {
 		    throw new NotFoundException('Категория не найдена');
         }
 
-		return $category[0];
+		return $category;
 	}
 
 

@@ -295,11 +295,25 @@ class HomeController extends Controller
 //
 
     /**
-     * @return \Illuminate\Contracts\View\Factory|View
+     * @param $url
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|View
      */
-    public function getCategory()
+    public function getCategory($url)
     {
-        return view('site.subcategory-new');
+        try {
+            $category = Category::getByUrl($url);
+
+            if(!$category->isThread()) {
+                return view('site.subcategory-new');
+            }
+
+            $subcategories = Subcategory::getByCategoryId($category->id);
+            return view('site.subcategories', compact('subcategories', 'category'));
+
+        } catch (NotFoundException $e) {
+            return Redirect::to('404');
+        }
+
     }
 
     /**
@@ -673,7 +687,6 @@ class HomeController extends Controller
      */
     public function getThreads()
     {
-
         return view('site.threads');
     }
 
