@@ -27,11 +27,11 @@ class BrandRepository
         return DB::select("SELECT DISTINCT(brends.id), brends.name FROM products
                       LEFT JOIN brends ON products.brend_id = brends.id
                       WHERE category_id = $category->id
-                      AND brends.id IS NOT NULL");
+                      AND brends.id IS NOT NULL ORDER BY name");
     }
 
     public function getSubcategoriesRepository(Brend $brand)
     {
-        
+
     }
 }

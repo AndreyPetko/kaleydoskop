@@ -75,6 +75,10 @@ class AttributeRepository
             }
         }
 
+        foreach ($list as &$item) {
+            sort($item);
+        }
+
         return $list;
     }
 }

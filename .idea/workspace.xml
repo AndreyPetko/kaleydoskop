@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb268df6-5342-41b1-8d40-9c7fcbe3a716" name="Default" comment="Merge branch 'master' of https://github.com/AndreyPetko/kaleydoskop&#10;&#10;# Conflicts:&#10;#&#9;resources/views/site/index.blade.php">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repository/CategoryRepository.php" afterPath="$PROJECT_DIR$/app/Repository/CategoryRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repository/AttributeRepository.php" afterPath="$PROJECT_DIR$/app/Repository/AttributeRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repository/BrandRepository.php" afterPath="$PROJECT_DIR$/app/Repository/BrandRepository.php" />
     </list>
     <ignored path="kaleydoskop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,12 +24,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CategoryRepository.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Repository/CategoryRepository.php">
+      <file leaf-file-name="BrandRepository.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Repository/BrandRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="704">
-              <caret line="33" column="43" lean-forward="false" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
-              <folding />
+            <state relative-caret-position="638">
+              <caret line="29" column="61" lean-forward="false" selection-start-line="29" selection-start-column="61" selection-end-line="29" selection-end-column="61" />
+              <folding>
+                <element signature="e#34#48#0#PHP" expanded="true" />
+                <marker date="1504360065000" expanded="true" signature="553:782" ph="SELECT DISTI... products" />
+                <marker date="1504360065000" expanded="true" signature="553:791" ph="SELECT DISTI... products" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -127,16 +131,16 @@
         <option value="$PROJECT_DIR$/app/Filter/FilterChecker.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/FilterController.php" />
         <option value="$PROJECT_DIR$/app/Filter/CategoryFilterBuilder.php" />
-        <option value="$PROJECT_DIR$/app/Repository/BrandRepository.php" />
         <option value="$PROJECT_DIR$/app/Repository/ProductRepository.php" />
         <option value="$PROJECT_DIR$/app/Filter/BrendFilterBuilder.php" />
-        <option value="$PROJECT_DIR$/app/Repository/AttributeRepository.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/products/product-edit.blade.php" />
         <option value="$PROJECT_DIR$/public/site/site.css" />
         <option value="$PROJECT_DIR$/public/site/site.js" />
         <option value="$PROJECT_DIR$/resources/views/site/cart.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
         <option value="$PROJECT_DIR$/app/Repository/CategoryRepository.php" />
+        <option value="$PROJECT_DIR$/app/Repository/AttributeRepository.php" />
+        <option value="$PROJECT_DIR$/app/Repository/BrandRepository.php" />
       </list>
     </option>
   </component>
@@ -555,12 +559,12 @@
       <workItem from="1503903111006" duration="8000" />
       <workItem from="1503921875995" duration="592000" />
       <workItem from="1504165470624" duration="1000" />
-      <workItem from="1504342909425" duration="7353000" />
+      <workItem from="1504342909425" duration="7671000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98877000" />
+    <option name="totallyTimeSpent" value="99195000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="970" extended-state="0" />
@@ -1459,24 +1463,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repository/BrandRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="34" column="8" lean-forward="true" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
-          <folding>
-            <marker date="1504352142000" expanded="true" signature="38:74" ph="..." />
-            <marker date="1504352142000" expanded="true" signature="79:133" ph=" Class BrandRepository ..." />
-            <marker date="1504352142000" expanded="true" signature="157:876" ph="{...}" />
-            <marker date="1504352142000" expanded="true" signature="167:206" ph=" @param Category $category ..." />
-            <marker date="1504352142000" expanded="true" signature="262:791" ph="{...}" />
-            <marker date="1504352142000" expanded="true" signature="269:524" ph="//..." />
-            <marker date="1504352142000" expanded="true" signature="552:783" ph="..." />
-            <marker date="1504352142000" expanded="true" signature="553:782" ph="SELECT DISTI... products" />
-            <marker date="1504352142000" expanded="true" signature="853:874" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Repository/ProductRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="565">
@@ -1525,35 +1511,6 @@
             <marker date="1504352979000" expanded="true" signature="790:843" ph=" @param string $url ..." />
             <marker date="1504352979000" expanded="true" signature="893:1717" ph="{...}" />
             <marker date="1504352979000" expanded="true" signature="1458:1709" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repository/AttributeRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="63" column="57" lean-forward="false" selection-start-line="63" selection-start-column="57" selection-end-line="63" selection-end-column="57" />
-          <folding>
-            <marker date="1504352979000" expanded="false" signature="39:71" ph="..." />
-            <marker date="1504352979000" expanded="true" signature="76:134" ph=" Class AttributeRepository ..." />
-            <marker date="1504352979000" expanded="true" signature="162:1594" ph="{...}" />
-            <marker date="1504352979000" expanded="true" signature="173:219" ph=" AttributeRepository constructor. ..." />
-            <marker date="1504352979000" expanded="true" signature="248:304" ph="{...}" />
-            <marker date="1504352979000" expanded="true" signature="313:373" ph=" @param Category $category ..." />
-            <marker date="1504352979000" expanded="true" signature="431:797" ph="{...}" />
-            <marker date="1504352979000" expanded="true" signature="511:534" ph="..." />
-            <marker date="1504352979000" expanded="true" signature="559:623" ph="..." />
-            <marker date="1504352979000" expanded="true" signature="645:682" ph="..." />
-            <marker date="1504352979000" expanded="true" signature="704:721" ph="..." />
-            <marker date="1504352979000" expanded="true" signature="806:839" ph=" @param Brand $brand ..." />
-            <marker date="1504352979000" expanded="true" signature="888:901" ph="{...}" />
-            <marker date="1504352979000" expanded="true" signature="910:937" ph=" @return array ..." />
-            <marker date="1504352979000" expanded="true" signature="974:1166" ph="{...}" />
-            <marker date="1504352979000" expanded="true" signature="1079:1134" ph="..." />
-            <marker date="1504352979000" expanded="true" signature="1225:1592" ph="{...}" />
-            <marker date="1504352979000" expanded="true" signature="1289:1562" ph="..." />
-            <marker date="1504352979000" expanded="true" signature="1343:1405" ph="..." />
-            <marker date="1504352979000" expanded="true" signature="1478:1552" ph="..." />
           </folding>
         </state>
       </provider>
@@ -3838,10 +3795,57 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repository/CategoryRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="18" column="20" lean-forward="false" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+          <folding>
+            <marker date="1504359722000" expanded="false" signature="39:73" ph="..." />
+            <marker date="1504359722000" expanded="true" signature="78:135" ph=" Class CategoryRepository ..." />
+            <marker date="1504359722000" expanded="true" signature="162:758" ph="{...}" />
+            <marker date="1504359722000" expanded="true" signature="172:232" ph=" @param Category $category ..." />
+            <marker date="1504359722000" expanded="true" signature="294:756" ph="{...}" />
+            <marker date="1504359722000" expanded="true" signature="456:622" ph="..." />
+            <marker date="1504359722000" expanded="true" signature="640:723" ph="..." />
+            <marker date="1504359722000" expanded="true" signature="667:722" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repository/AttributeRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="838">
+          <caret line="79" column="9" lean-forward="false" selection-start-line="79" selection-start-column="9" selection-end-line="79" selection-end-column="9" />
+          <folding>
+            <marker date="1504360014000" expanded="false" signature="39:71" ph="..." />
+            <marker date="1504360014000" expanded="true" signature="76:134" ph=" Class AttributeRepository ..." />
+            <marker date="1504360014000" expanded="true" signature="162:1666" ph="{...}" />
+            <marker date="1504360014000" expanded="true" signature="173:219" ph=" AttributeRepository constructor. ..." />
+            <marker date="1504360014000" expanded="true" signature="248:304" ph="{...}" />
+            <marker date="1504360014000" expanded="true" signature="313:373" ph=" @param Category $category ..." />
+            <marker date="1504360014000" expanded="true" signature="431:797" ph="{...}" />
+            <marker date="1504360014000" expanded="true" signature="511:534" ph="..." />
+            <marker date="1504360014000" expanded="true" signature="559:623" ph="..." />
+            <marker date="1504360014000" expanded="true" signature="645:682" ph="..." />
+            <marker date="1504360014000" expanded="true" signature="704:721" ph="..." />
+            <marker date="1504360014000" expanded="true" signature="806:839" ph=" @param Brand $brand ..." />
+            <marker date="1504360014000" expanded="true" signature="888:901" ph="{...}" />
+            <marker date="1504360014000" expanded="true" signature="910:937" ph=" @return array ..." />
+            <marker date="1504360014000" expanded="true" signature="974:1166" ph="{...}" />
+            <marker date="1504360014000" expanded="true" signature="1079:1134" ph="..." />
+            <marker date="1504360014000" expanded="true" signature="1225:1664" ph="{...}" />
+            <marker date="1504360014000" expanded="true" signature="1289:1562" ph="..." />
+            <marker date="1504360014000" expanded="true" signature="1343:1405" ph="..." />
+            <marker date="1504360014000" expanded="true" signature="1478:1552" ph="..." />
+            <marker date="1504360014000" expanded="true" signature="1600:1634" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Filter/CategoryFilterBuilder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="57" column="57" lean-forward="true" selection-start-line="57" selection-start-column="57" selection-end-line="57" selection-end-column="57" />
+        <state relative-caret-position="530">
+          <caret line="61" column="52" lean-forward="true" selection-start-line="61" selection-start-column="52" selection-end-line="61" selection-end-column="52" />
           <folding>
             <marker date="1504343983000" expanded="true" signature="34:217" ph="..." />
             <marker date="1504343983000" expanded="true" signature="222:278" ph=" Class CategoryFilterBuilder ..." />
@@ -3859,11 +3863,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repository/CategoryRepository.php">
+    <entry file="file://$PROJECT_DIR$/app/Repository/BrandRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="704">
-          <caret line="33" column="43" lean-forward="false" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
-          <folding />
+        <state relative-caret-position="638">
+          <caret line="29" column="61" lean-forward="false" selection-start-line="29" selection-start-column="61" selection-end-line="29" selection-end-column="61" />
+          <folding>
+            <element signature="e#34#48#0#PHP" expanded="true" />
+            <marker date="1504360065000" expanded="true" signature="553:782" ph="SELECT DISTI... products" />
+            <marker date="1504360065000" expanded="true" signature="553:791" ph="SELECT DISTI... products" />
+          </folding>
         </state>
       </provider>
     </entry>
