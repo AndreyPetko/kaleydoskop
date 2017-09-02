@@ -1,8 +1,5 @@
 @extends('admin.layouts.admin')
 
-
-
-
 @section('content')
 
 <section class="content-header">
@@ -25,7 +22,7 @@
 				<!-- /.box-header -->
 				<div class="box-body">
 					<form method="POST" action="" enctype="multipart/form-data">
-						<input type="hidden" name="redirect_url" value="{{$url}}"></input>
+						<input type="hidden" name="redirect_url" value="{{$url}}" />
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 						<!-- text input -->
 						<div class="form-group">
@@ -107,12 +104,13 @@
 							<label>Описание товара</label>
 							<textarea class="form-control" rows="3" placeholder="Введите описание товара ..." name="description">
 								@if(empty($product->description))
-                                    <p><strong>Производитель:</strong> Coats (Венгрия)</p>
+									<p><strong>Производитель: </strong>BEST-TEX (Китай)</p>
 
-                                    <p><strong>Состав:</strong> 100% полиэстр</p>
+									<p><strong>Состав: </strong>100% длинноволокнистый хлопок</p>
 
-                                    <p>В катушке 100м.</p>
-                                @else
+									<p><strong>Длина мотка: </strong>8 метров</p>
+
+								@else
 								{{$product->description}}
 								@endif
 							</textarea>
