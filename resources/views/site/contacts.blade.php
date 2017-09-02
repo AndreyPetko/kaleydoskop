@@ -82,7 +82,8 @@
         <div class="map">
             <div class="map-title">Карта проезда</div>
             <div class="map-img" id="map_canvas">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2536.1733414050013!2d30.59642395085479!3d50.53094638934248!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4d114e70d7477%3A0xef18e34d0b317dc8!2z0LLRg9C70LjRhtGPINCg0LDQtNGD0L3RgdGM0LrQsCwgMTMsINCa0LjRl9CyLCDQo9C60YDQsNC40L3QsA!5e0!3m2!1sru!2sru!4v1501322150447" width="100%" height="100%" frameborder="0" crollwheel="false" style="border:0" allowfullscreen></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2536.833706724954!2d30.593588915293832!3d50.518660890329365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4d10ed7903877%3A0xddd3e1d9ecb5f042!2z0LLRg9C70LjRhtGPINCg0LDQtNGD0L3RgdGM0LrQsCwgMi8xOCwg0JrQuNGX0LI!5e0!3m2!1sru!2sua!4v1504343158285" width="100%" height="100%" frameborder="0" crollwheel="false" style="border:0" allowfullscreen></iframe>
+                
             </div>
         </div>
 
