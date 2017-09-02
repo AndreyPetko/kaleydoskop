@@ -17,3 +17,9 @@
 .subcat-total-list li{
 	width: 100%;
 }
+.delivery-text {
+        width: 90%;
+        float: none;
+        padding: 20px;
+        
+        }
