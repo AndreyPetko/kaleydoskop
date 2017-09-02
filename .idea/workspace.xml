@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fb268df6-5342-41b1-8d40-9c7fcbe3a716" name="Default" comment="Merge branch 'master' of https://github.com/AndreyPetko/kaleydoskop&#10;&#10;# Conflicts:&#10;#&#9;resources/views/site/index.blade.php">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repository/CategoryRepository.php" afterPath="$PROJECT_DIR$/app/Repository/CategoryRepository.php" />
     </list>
     <ignored path="kaleydoskop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="HomeController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
+      <file leaf-file-name="CategoryRepository.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Repository/CategoryRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="99" column="82" lean-forward="false" selection-start-line="99" selection-start-column="82" selection-end-line="99" selection-end-column="82" />
+            <state relative-caret-position="704">
+              <caret line="33" column="43" lean-forward="false" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -126,7 +127,6 @@
         <option value="$PROJECT_DIR$/app/Filter/FilterChecker.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/FilterController.php" />
         <option value="$PROJECT_DIR$/app/Filter/CategoryFilterBuilder.php" />
-        <option value="$PROJECT_DIR$/app/Repository/CategoryRepository.php" />
         <option value="$PROJECT_DIR$/app/Repository/BrandRepository.php" />
         <option value="$PROJECT_DIR$/app/Repository/ProductRepository.php" />
         <option value="$PROJECT_DIR$/app/Filter/BrendFilterBuilder.php" />
@@ -136,6 +136,7 @@
         <option value="$PROJECT_DIR$/public/site/site.js" />
         <option value="$PROJECT_DIR$/resources/views/site/cart.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
+        <option value="$PROJECT_DIR$/app/Repository/CategoryRepository.php" />
       </list>
     </option>
   </component>
@@ -415,7 +416,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="SearchEverywhereHistoryKey" value="HomeCo&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/HomeController.php&#10;site.js&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/public/site/site.js&#10;AdminCo&#9;null&#9;null&#10;BrandRep&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Repository/BrandRepository.php&#10;BrendFilterBuilder&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Filter/BrendFilterBuilder.php&#10;app&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/src/app.js&#10;FilCo&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/FilterController.php&#10;C&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Filter/CategoryFilterBuilder.php&#10;Bre&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Filter/BrendFilterBuilder.php&#10;Ca&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Filter/CategoryFilterBuilder.php&#10;FilteCo&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/FilterController.php&#10;HomeCO&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/HomeController.php&#10;Fil&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/FilterController.php&#10;cate-new&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/resources/views/site/subcategory-new.blade.php&#10;Filte&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/FilterController.php&#10;Category.php&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Category.php&#10;Home&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/HomeController.php&#10;site.css&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/public/site/site.css&#10;фзз&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/src/app.js&#10;category.bla&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/resources/views/site/category.blade.php&#10;sub&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/resources/views/site/subcategories.blade.php&#10;Wish&#9;null&#9;null&#10;AjaCo&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/AjaxController.php&#10;Fi&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/FilterController.php&#10;Aja&#9;null&#9;null&#10;site&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/public/site/site.css&#10;site.&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/public/site/site.css&#10;app.s&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/resources/assets/sass/app.scss&#10;main.cs&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/public/dist/css/main.css&#10;ap&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/src/app.js&#10;FilterCo&#9;null&#9;null&#10;sub-new&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/resources/views/site/subcategory-new.blade.php&#10;F&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/FilterController.php&#10;HomCo&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/HomeController.php&#10;OrdersCo&#9;null&#9;null&#10;Pro&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Product.php&#10;A&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Attribute.php&#10;Attrib&#9;null&#9;null&#10;site.cs&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/public/site/site.css&#10;Product.php&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Product.php&#10;subnew&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/resources/views/site/subcategory-new.blade.php&#10;appscs&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/src/app.scss&#10;web&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/webpack.mix.js&#10;Filter&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/FilterController.php&#10;add_first_image_to_product&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/database/migrations/2017_07_29_111822_add_first_image_to_product.php&#10;Produ&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Product.php&#10;Product&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Product.php&#10;Route&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/routes.php&#10;ca&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/resources/views/site/subcategory.blade.php&#10;cate&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/resources/views/site/subcategory-new.blade.php" />
+    <property name="SearchEverywhereHistoryKey" value="FilCo&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/FilterController.php&#10;HomeCo&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/HomeController.php&#10;site.js&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/public/site/site.js&#10;AdminCo&#9;null&#9;null&#10;BrandRep&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Repository/BrandRepository.php&#10;BrendFilterBuilder&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Filter/BrendFilterBuilder.php&#10;app&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/src/app.js&#10;C&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Filter/CategoryFilterBuilder.php&#10;Bre&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Filter/BrendFilterBuilder.php&#10;Ca&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Filter/CategoryFilterBuilder.php&#10;FilteCo&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/FilterController.php&#10;HomeCO&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/HomeController.php&#10;Fil&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/FilterController.php&#10;cate-new&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/resources/views/site/subcategory-new.blade.php&#10;Filte&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/FilterController.php&#10;Category.php&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Category.php&#10;Home&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/HomeController.php&#10;site.css&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/public/site/site.css&#10;фзз&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/src/app.js&#10;category.bla&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/resources/views/site/category.blade.php&#10;sub&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/resources/views/site/subcategories.blade.php&#10;Wish&#9;null&#9;null&#10;AjaCo&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/AjaxController.php&#10;Fi&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/FilterController.php&#10;Aja&#9;null&#9;null&#10;site&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/public/site/site.css&#10;site.&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/public/site/site.css&#10;app.s&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/resources/assets/sass/app.scss&#10;main.cs&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/public/dist/css/main.css&#10;ap&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/src/app.js&#10;FilterCo&#9;null&#9;null&#10;sub-new&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/resources/views/site/subcategory-new.blade.php&#10;F&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/FilterController.php&#10;HomCo&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/HomeController.php&#10;OrdersCo&#9;null&#9;null&#10;Pro&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Product.php&#10;A&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Attribute.php&#10;Attrib&#9;null&#9;null&#10;site.cs&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/public/site/site.css&#10;Product.php&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Product.php&#10;subnew&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/resources/views/site/subcategory-new.blade.php&#10;appscs&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/src/app.scss&#10;web&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/webpack.mix.js&#10;Filter&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/Controllers/FilterController.php&#10;add_first_image_to_product&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/database/migrations/2017_07_29_111822_add_first_image_to_product.php&#10;Produ&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Product.php&#10;Product&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Product.php&#10;Route&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/app/Http/routes.php&#10;ca&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/resources/views/site/subcategory.blade.php&#10;cate&#9;FILE&#9;file:///usr/local/var/www/htdocs/kaleydoskop/resources/views/site/subcategory-new.blade.php" />
     <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/public/site/url.js" />
     <property name="nodejs_interpreter_path" value="$PROJECT_DIR$/../../../../bin/node" />
@@ -554,12 +555,12 @@
       <workItem from="1503903111006" duration="8000" />
       <workItem from="1503921875995" duration="592000" />
       <workItem from="1504165470624" duration="1000" />
-      <workItem from="1504342909425" duration="6798000" />
+      <workItem from="1504342909425" duration="7353000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98322000" />
+    <option name="totallyTimeSpent" value="98877000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="970" extended-state="0" />
@@ -860,24 +861,6 @@
             <marker date="1503840606000" expanded="true" signature="10447:10750" ph="{...}" />
             <marker date="1503840606000" expanded="false" signature="10483:10742" ph="{...}" />
             <marker date="1503840606000" expanded="true" signature="10589:10628" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FilterController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="37" column="39" lean-forward="false" selection-start-line="37" selection-start-column="39" selection-end-line="37" selection-end-column="39" />
-          <folding>
-            <marker date="1504343893000" expanded="false" signature="44:330" ph="..." />
-            <marker date="1504343893000" expanded="true" signature="336:397" ph=" Class FilterController ..." />
-            <marker date="1504343893000" expanded="true" signature="441:2246" ph="{...}" />
-            <marker date="1504343893000" expanded="true" signature="453:533" ph=" @param string $url ..." />
-            <marker date="1504343893000" expanded="true" signature="598:2244" ph="{...}" />
-            <marker date="1504343893000" expanded="true" signature="605:830" ph="//..." />
-            <marker date="1504343893000" expanded="true" signature="1156:1576" ph="//..." />
-            <marker date="1504343893000" expanded="true" signature="1578:1948" ph="//..." />
-            <marker date="1504343893000" expanded="true" signature="1950:2238" ph="//..." />
           </folding>
         </state>
       </provider>
@@ -1472,42 +1455,6 @@
             <marker date="1493131786000" expanded="true" signature="93207:93251" ph="{...}" />
             <marker date="1493131786000" expanded="true" signature="93260:93368" ph=" When a model is being unserialized, check if it needs to be booted. ..." />
             <marker date="1493131786000" expanded="true" signature="93401:93447" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Filter/CategoryFilterBuilder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="618">
-          <caret line="65" column="8" lean-forward="true" selection-start-line="65" selection-start-column="8" selection-end-line="72" selection-end-column="10" />
-          <folding>
-            <marker date="1504343983000" expanded="true" signature="34:217" ph="..." />
-            <marker date="1504343983000" expanded="true" signature="222:278" ph=" Class CategoryFilterBuilder ..." />
-            <marker date="1504343983000" expanded="true" signature="342:1989" ph="{...}" />
-            <marker date="1504343983000" expanded="true" signature="383:419" ph=" @var ProductRepository ..." />
-            <marker date="1504343983000" expanded="true" signature="461:498" ph=" @var CategoryRepository ..." />
-            <marker date="1504343983000" expanded="true" signature="541:579" ph=" @var AttributeRepository ..." />
-            <marker date="1504343983000" expanded="true" signature="623:657" ph=" @var BrandRepository ..." />
-            <marker date="1504343983000" expanded="true" signature="698:746" ph=" CategoryFilterBuilder constructor. ..." />
-            <marker date="1504343983000" expanded="true" signature="775:1029" ph="{...}" />
-            <marker date="1504343983000" expanded="true" signature="1038:1091" ph=" @param string $url ..." />
-            <marker date="1504343983000" expanded="true" signature="1141:1987" ph="{...}" />
-            <marker date="1504343983000" expanded="true" signature="1725:1979" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repository/CategoryRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="18" column="20" lean-forward="false" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
-          <folding>
-            <marker date="1503840775000" expanded="false" signature="39:73" ph="..." />
-            <marker date="1503840775000" expanded="true" signature="78:135" ph=" Class CategoryRepository ..." />
-            <marker date="1503840775000" expanded="true" signature="162:656" ph="{...}" />
-            <marker date="1503840775000" expanded="true" signature="172:232" ph=" @param Category $category ..." />
-            <marker date="1503840775000" expanded="true" signature="294:654" ph="{...}" />
-            <marker date="1503840775000" expanded="true" signature="456:622" ph="..." />
           </folding>
         </state>
       </provider>
@@ -3428,6 +3375,138 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="554">
+          <caret line="106" column="12" lean-forward="false" selection-start-line="106" selection-start-column="12" selection-end-line="106" selection-end-column="12" />
+          <folding>
+            <marker date="1504359498000" expanded="false" signature="45:589" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="595:654" ph=" Class HomeController ..." />
+            <marker date="1504359498000" expanded="true" signature="696:21336" ph="{...}" />
+            <marker date="1504359498000" expanded="true" signature="708:749" ph=" HomeController constructor. ..." />
+            <marker date="1504359498000" expanded="true" signature="785:879" ph="{...}" />
+            <marker date="1504359498000" expanded="true" signature="889:950" ph=" @return \Illuminate\Contracts\View\Factory|View ..." />
+            <marker date="1504359498000" expanded="true" signature="983:1895" ph="{...}" />
+            <marker date="1504359498000" expanded="true" signature="1232:1442" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="1268:1432" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="1323:1418" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="1904:1992" ph=" Gets the new products. ..." />
+            <marker date="1504359498000" expanded="true" signature="2031:2561" ph="{...}" />
+            <marker date="1504359498000" expanded="true" signature="2219:2424" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="2331:2414" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="2571:2623" ph=" @param string $url ..." />
+            <marker date="1504359498000" expanded="true" signature="2666:2942" ph="{...}" />
+            <marker date="1504359498000" expanded="true" signature="2951:3025" ph=" Gets the about. ..." />
+            <marker date="1504359498000" expanded="true" signature="3058:3326" ph="{...}" />
+            <marker date="1504359498000" expanded="true" signature="3335:3421" ph=" Gets the wholesalers. ..." />
+            <marker date="1504359498000" expanded="true" signature="3460:3883" ph="{...}" />
+            <marker date="1504359498000" expanded="true" signature="3563:3628" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="3636:3702" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="3893:3997" ph=" @param string $url ..." />
+            <marker date="1504359498000" expanded="true" signature="4041:6083" ph="{...}" />
+            <marker date="1504359498000" expanded="true" signature="4073:4125" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="4289:4388" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="5659:5758" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="5792:5881" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="5948:6011" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="6019:6076" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="6134:6378" ph="//..." />
+            <marker date="1504359498000" expanded="true" signature="6540:6677" ph="//..." />
+            <marker date="1504359498000" expanded="true" signature="7403:7920" ph="//..." />
+            <marker date="1504359498000" expanded="true" signature="7929:8043" ph=" @param $url ..." />
+            <marker date="1504359498000" expanded="true" signature="8083:8521" ph="{...}" />
+            <marker date="1504359498000" expanded="true" signature="8103:8432" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="8195:8261" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="8464:8513" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="8530:8658" ph=" @param $url ..." />
+            <marker date="1504359498000" expanded="true" signature="8719:10458" ph="{...}" />
+            <marker date="1504359498000" expanded="true" signature="8777:8990" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="8993:9154" ph="//..." />
+            <marker date="1504359498000" expanded="true" signature="9489:9546" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="9554:9679" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="9610:9669" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="10272:10404" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="10468:10560" ph=" @param Product $productEntity ..." />
+            <marker date="1504359498000" expanded="true" signature="10627:10883" ph="{...}" />
+            <marker date="1504359498000" expanded="true" signature="10893:10948" ph=" @return \Illuminate\Http\RedirectResponse ..." />
+            <marker date="1504359498000" expanded="true" signature="10986:11253" ph="{...}" />
+            <marker date="1504359498000" expanded="true" signature="11041:11172" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="11108:11162" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="11263:11318" ph=" @param string $query ..." />
+            <marker date="1504359498000" expanded="true" signature="11363:11864" ph="{...}" />
+            <marker date="1504359498000" expanded="true" signature="11453:11511" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="11519:11610" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="11715:11736" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="11757:11772" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="11793:11820" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="11841:11856" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="11874:11929" ph=" @return \Illuminate\Http\RedirectResponse ..." />
+            <marker date="1504359498000" expanded="true" signature="11974:12060" ph="{...}" />
+            <marker date="1504359498000" expanded="true" signature="12070:12102" ph=" Gets the ftp file. ..." />
+            <marker date="1504359498000" expanded="true" signature="12137:12246" ph="{...}" />
+            <marker date="1504359498000" expanded="true" signature="12201:12239" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="12256:12334" ph=" @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View ..." />
+            <marker date="1504359498000" expanded="true" signature="12366:12804" ph="{...}" />
+            <marker date="1504359498000" expanded="true" signature="12814:12902" ph=" @param Feedback $feedback ..." />
+            <marker date="1504359498000" expanded="true" signature="12961:13319" ph="{...}" />
+            <marker date="1504359498000" expanded="true" signature="13034:13099" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="13107:13168" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="13329:13384" ph=" @return \Illuminate\Http\RedirectResponse ..." />
+            <marker date="1504359498000" expanded="true" signature="13424:13897" ph="{...}" />
+            <marker date="1504359498000" expanded="true" signature="13495:13714" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="13620:13713" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="13907:13962" ph=" @return \Illuminate\Http\RedirectResponse ..." />
+            <marker date="1504359498000" expanded="true" signature="14002:14251" ph="{...}" />
+            <marker date="1504359498000" expanded="true" signature="14037:14087" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="14095:14130" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="14261:14339" ph=" @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View ..." />
+            <marker date="1504359498000" expanded="true" signature="14375:14820" ph="{...}" />
+            <marker date="1504359498000" expanded="true" signature="14829:14907" ph=" @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View ..." />
+            <marker date="1504359498000" expanded="true" signature="14943:15350" ph="{...}" />
+            <marker date="1504359498000" expanded="true" signature="15104:15169" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="15177:15239" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="15359:15437" ph=" @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View ..." />
+            <marker date="1504359498000" expanded="true" signature="15471:15659" ph="{...}" />
+            <marker date="1504359498000" expanded="true" signature="15668:15765" ph=" @param $url ..." />
+            <marker date="1504359498000" expanded="true" signature="15802:16081" ph="{...}" />
+            <marker date="1504359498000" expanded="true" signature="16083:17475" ph="//..." />
+            <marker date="1504359498000" expanded="true" signature="17515:17566" ph="{...}" />
+            <marker date="1504359498000" expanded="true" signature="17576:17654" ph=" @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View ..." />
+            <marker date="1504359498000" expanded="true" signature="17692:18102" ph="{...}" />
+            <marker date="1504359498000" expanded="true" signature="18027:18052" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="18073:18094" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="18111:18191" ph=" @param $productId ..." />
+            <marker date="1504359498000" expanded="true" signature="18245:18385" ph="{...}" />
+            <marker date="1504359498000" expanded="true" signature="18394:18449" ph=" @return \Illuminate\Http\RedirectResponse ..." />
+            <marker date="1504359498000" expanded="true" signature="18492:18620" ph="{...}" />
+            <marker date="1504359498000" expanded="true" signature="18630:18708" ph=" @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View ..." />
+            <marker date="1504359498000" expanded="true" signature="18743:18974" ph="{...}" />
+            <marker date="1504359498000" expanded="true" signature="18899:18918" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="18939:18966" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="18984:19062" ph=" @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View ..." />
+            <marker date="1504359498000" expanded="true" signature="19097:19146" ph="{...}" />
+            <marker date="1504359498000" expanded="true" signature="19155:19233" ph=" @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View ..." />
+            <marker date="1504359498000" expanded="true" signature="19274:19324" ph="{...}" />
+            <marker date="1504359498000" expanded="true" signature="19333:19360" ph=" @return $this ..." />
+            <marker date="1504359498000" expanded="true" signature="19402:19864" ph="{...}" />
+            <marker date="1504359498000" expanded="true" signature="19475:19545" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="19553:19619" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="19873:19969" ph=" @param $id ..." />
+            <marker date="1504359498000" expanded="true" signature="20011:20108" ph="{...}" />
+            <marker date="1504359498000" expanded="true" signature="20117:20130" ph=" ..." />
+            <marker date="1504359498000" expanded="true" signature="20161:20833" ph="{...}" />
+            <marker date="1504359498000" expanded="true" signature="20250:20690" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="20283:20689" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="20771:20826" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="20843:20939" ph=" @param $fileId ..." />
+            <marker date="1504359498000" expanded="true" signature="20982:21247" ph="{...}" />
+            <marker date="1504359498000" expanded="true" signature="21111:21174" ph="..." />
+            <marker date="1504359498000" expanded="true" signature="21256:21269" ph=" ..." />
+            <marker date="1504359498000" expanded="true" signature="21301:21332" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Product.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="316">
@@ -3741,10 +3820,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FilterController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="99" column="82" lean-forward="false" selection-start-line="99" selection-start-column="82" selection-end-line="99" selection-end-column="82" />
+        <state relative-caret-position="277">
+          <caret line="37" column="39" lean-forward="false" selection-start-line="37" selection-start-column="39" selection-end-line="37" selection-end-column="39" />
+          <folding>
+            <marker date="1504343893000" expanded="false" signature="44:330" ph="..." />
+            <marker date="1504343893000" expanded="true" signature="336:397" ph=" Class FilterController ..." />
+            <marker date="1504343893000" expanded="true" signature="441:2246" ph="{...}" />
+            <marker date="1504343893000" expanded="true" signature="453:533" ph=" @param string $url ..." />
+            <marker date="1504343893000" expanded="true" signature="598:2244" ph="{...}" />
+            <marker date="1504343893000" expanded="true" signature="605:830" ph="//..." />
+            <marker date="1504343893000" expanded="true" signature="1156:1576" ph="//..." />
+            <marker date="1504343893000" expanded="true" signature="1578:1948" ph="//..." />
+            <marker date="1504343893000" expanded="true" signature="1950:2238" ph="//..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Filter/CategoryFilterBuilder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="57" column="57" lean-forward="true" selection-start-line="57" selection-start-column="57" selection-end-line="57" selection-end-column="57" />
+          <folding>
+            <marker date="1504343983000" expanded="true" signature="34:217" ph="..." />
+            <marker date="1504343983000" expanded="true" signature="222:278" ph=" Class CategoryFilterBuilder ..." />
+            <marker date="1504343983000" expanded="true" signature="342:1989" ph="{...}" />
+            <marker date="1504343983000" expanded="true" signature="383:419" ph=" @var ProductRepository ..." />
+            <marker date="1504343983000" expanded="true" signature="461:498" ph=" @var CategoryRepository ..." />
+            <marker date="1504343983000" expanded="true" signature="541:579" ph=" @var AttributeRepository ..." />
+            <marker date="1504343983000" expanded="true" signature="623:657" ph=" @var BrandRepository ..." />
+            <marker date="1504343983000" expanded="true" signature="698:746" ph=" CategoryFilterBuilder constructor. ..." />
+            <marker date="1504343983000" expanded="true" signature="775:1029" ph="{...}" />
+            <marker date="1504343983000" expanded="true" signature="1038:1091" ph=" @param string $url ..." />
+            <marker date="1504343983000" expanded="true" signature="1141:1987" ph="{...}" />
+            <marker date="1504343983000" expanded="true" signature="1725:1979" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repository/CategoryRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="704">
+          <caret line="33" column="43" lean-forward="false" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
           <folding />
         </state>
       </provider>

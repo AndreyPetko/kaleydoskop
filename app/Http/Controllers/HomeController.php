@@ -109,7 +109,6 @@ class HomeController extends Controller
 
         $breadcrumbs = ['/new-products' => 'Новинки'];
 
-
         return view('site.newList', compact('products', 'breadcrumbs'));
     }
 
