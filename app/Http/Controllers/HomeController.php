@@ -96,7 +96,8 @@ class HomeController extends Controller
      */
     public function getNewProducts()
     {
-        $products = Product::getNew(52, 52);
+//        $products = Product::getNew(52, 52);
+        $products = Product::where('active', true)->orderBy('id', 'desc')->take(52)->get();
 
         foreach ($products as $product) {
             $product = Product::setWholesalePrice($product);
