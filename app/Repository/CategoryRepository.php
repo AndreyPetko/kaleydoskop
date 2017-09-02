@@ -12,7 +12,6 @@ use App\Subcategory;
  */
 class CategoryRepository
 {
-
     /**
      * @param Category $category
      * @return array
@@ -21,7 +20,6 @@ class CategoryRepository
     {
         $result = [];
         $subcategories = Subcategory::where('category_id', $category->id)->get();
-
 
         foreach ($subcategories as $subcategory) {
             $item = new \StdClass();

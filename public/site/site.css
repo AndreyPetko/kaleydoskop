@@ -3899,7 +3899,10 @@ input.error, textarea.error {
 
 .register-button:hover {
     background-color: #db6911;
+}
 
+.delivery-text-item {
+    display: none;
 }
 
 .register-mail input {
@@ -4359,6 +4362,12 @@ input.error, textarea.error {
     margin: 20px 20px 0 0;
     color: white;
     cursor: pointer;
+}
+
+.delivery-text {
+    float: left;
+    width: 50%;
+    margin-left: 3%;
 }
 
 .register-button:hover {

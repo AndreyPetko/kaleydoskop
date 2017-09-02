@@ -802,7 +802,6 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
             return countPages;
         },
         showPages: function showPages() {
-
             var finishAdd = this.pages - this.page <= this.offset ? this.offset * 2 - (this.pages - this.page) : this.offset;
             var add = this.page <= this.offset ? this.offset * 2 - this.page : this.offset;
 
@@ -846,9 +845,20 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
         }
     },
     methods: {
+        getType: function getType() {
+            var url = window.location.href;
+            var arr = url.split('/');
+            if (arr[3] === 'brend-products') {
+                return 'brend';
+            }
+
+            return 'category';
+        },
         getData: function getData() {
             var categoryUrl = this.getCategoryUrl();
-            var url = '/filter/category-data/' + categoryUrl;
+
+            var type = this.getType();
+            var url = '/filter/category-data/' + categoryUrl + '/' + type;
             var vm = this;
 
             return __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get(url).then(function (result) {

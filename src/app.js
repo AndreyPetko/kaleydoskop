@@ -37,8 +37,6 @@ new Vue({
             return countPages;
         },
         showPages() {
-
-
             let finishAdd = this.pages - this.page <= this.offset ? this.offset * 2 - (this.pages - this.page) : this.offset;
             let add = this.page <= this.offset ? this.offset * 2 - this.page : this.offset;
 
@@ -79,9 +77,20 @@ new Vue({
         }
     },
     methods: {
+        getType() {
+            let url = window.location.href;
+            let arr = url.split('/');
+            if(arr[3] === 'brend-products') {
+                return 'brend';
+            }
+
+            return 'category';
+        },
         getData() {
             const categoryUrl = this.getCategoryUrl();
-            const url = '/filter/category-data/' + categoryUrl;
+
+            const type = this.getType();
+            const url = '/filter/category-data/' + categoryUrl + '/' + type;
             const vm = this;
 
             return axios.get(url)

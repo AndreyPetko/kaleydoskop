@@ -1,7 +1,18 @@
 <?php
+
+namespace App\Filter;
+
+
 /**
- * Created by PhpStorm.
- * User: andreypetko
- * Date: 8/27/17
- * Time: 16:40
+ * Interface FilterBuilderInterface
+ * @package App\Filter
  */
+interface FilterBuilderInterface
+{
+
+    /**
+     * @param string $url
+     * @return array
+     */
+    public function getData(string $url) : array;
+}

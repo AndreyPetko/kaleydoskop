@@ -588,42 +588,47 @@ class HomeController extends Controller
         return view('site.singleBrend')->with('brend', $brend)->with('brends', $brends)->with('breadcrumbs', $breadcrumbs);
     }
 
-    /**
-     * @param $url
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function getBrendProducts($url)
+//    /**
+//     * @param $url
+//     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+//     */
+//    public function getBrendProducts($url)
+//    {
+//        if ($url != Session::get('brendUrl')) {
+//            Session::forget('brendFilter');
+//            Session::forget('subcat');
+//            Session::forget('brendsShowCount');
+//            Session::forget('brendsShowType');
+//            Session::forget('brendMinPrice');
+//            Session::forget('brendMaxPrice');
+//        }
+//
+//        Session::put('brendUrl', $url);
+//
+//        $brend = Brend::getByUrl($url);
+//        $maxPrice = Product::getMaxBrendPrice($brend->id);
+//        $brendAttributes = Attribute::getValues('brend', $brend->id);
+//        $products = Product::getBySessionBrendFilter($url, 2);
+//
+//
+//        $subcategories = Subcategory::getBrendItems($brend->id);
+//
+//        $brends = Brend::getNotThreads();
+//
+//        $breadcrumbs = ['/brends' => 'Бренды', '/brend/' . $url => $brend->name, '/pr' => 'Товары'];
+//
+//        return view('site.brendFilter')->with('brend', $brend)
+//            ->with('maxPrice', $maxPrice)
+//            ->with('brendAttributes', $brendAttributes)
+//            ->with('products', $products)
+//            ->with('brends', $brends)
+//            ->with('breadcrumbs', $breadcrumbs)
+//            ->with('subcategories', $subcategories);
+//    }
+
+    public function getBrendProducts()
     {
-        if ($url != Session::get('brendUrl')) {
-            Session::forget('brendFilter');
-            Session::forget('subcat');
-            Session::forget('brendsShowCount');
-            Session::forget('brendsShowType');
-            Session::forget('brendMinPrice');
-            Session::forget('brendMaxPrice');
-        }
-
-        Session::put('brendUrl', $url);
-
-        $brend = Brend::getByUrl($url);
-        $maxPrice = Product::getMaxBrendPrice($brend->id);
-        $brendAttributes = Attribute::getValues('brend', $brend->id);
-        $products = Product::getBySessionBrendFilter($url, 2);
-
-
-        $subcategories = Subcategory::getBrendItems($brend->id);
-
-        $brends = Brend::getNotThreads();
-
-        $breadcrumbs = ['/brends' => 'Бренды', '/brend/' . $url => $brend->name, '/pr' => 'Товары'];
-
-        return view('site.brendFilter')->with('brend', $brend)
-            ->with('maxPrice', $maxPrice)
-            ->with('brendAttributes', $brendAttributes)
-            ->with('products', $products)
-            ->with('brends', $brends)
-            ->with('breadcrumbs', $breadcrumbs)
-            ->with('subcategories', $subcategories);
+        return view('site.brend-new');
     }
 
 

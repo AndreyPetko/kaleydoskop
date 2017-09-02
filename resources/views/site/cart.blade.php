@@ -223,6 +223,9 @@
                                     <input type="checkbox" name="delivery[]" value="autolux"><p>Автолюкс</p>
                                 @endif
 
+                                <input type="checkbox" name="delivery[]" value="world">
+                                <p>Международная доставка</p>
+
                             </div>
                         </div>
 
@@ -244,14 +247,52 @@
 
 
                 </div>
-                <input type="submit" value="Оформить заказ" class="register-button">
+                <div class="row">
+                    <div class="delivery-text">
+                        <div class="delivery-text-item sam">
+                            Заказ можно забрать в удобное для Вас время в нашем магазине по адресу ул. Радунская, 2/18
+                            (*сюда бы ссылку на карту или контакты*)
+                        </div>
+
+                        <div class="delivery-text-item kuryer">
+                            Стоимость доставки курьером заказов до 200 гривен — 30 гривен. Заказы от 200 гривен
+                            доставляются бесплатно.
+                            <br><br>
+                            Доставка осуществляется в оговоренное с клиентом время.
+                        </div>
+
+                        <div class="delivery-text-item nova-poshta">
+                            Стоимость доставки Новой Почтой:
+                            — по предоплате составляет от 30 гривен (в зависимости от массы и ценности посылки согласно
+                            тарифам Новой Почты). Заказы от 500 гривен отправляются бесплатно.
+                            — наложенным платежом составляет от 50 гривен согласно тарифам Новой Почты.
+                        </div>
+
+                        <div class="delivery-text-item ukr-poshta">
+                            Стоимость доставки почтой:
+                            — по предоплате составляет от 15 гривен (в зависимости от массы и ценности посылки согласно
+                            тарифам Укрпочты). Заказы от 500 гривен отправляются бесплатно.
+                            — наложенным платежом составляет от 30 гривен согласно тарифам Укрпочты
+                        </div>
+
+                        <div class="delivery-text-item world">
+                            Интернет-магазин «Калейдоскоп Вышивки» может предложить Вам доставку в любую точку планеты:
+                            средствами обычной почты либо при помощи существующих компаний экспресс-доставки (DHL, UPS,
+                            FedEX, TNT и другие). Такой способ доставки осуществляется по предоплате удобным для Вас
+                            способом. Для более детальной информации пишите нам на почту: info@kaleydoskop-vishivki
+                            .com.ua
+                        </div>
+
+                    </div>
+                    <input type="submit" value="Оформить заказ" class="register-button">
+                </div>
         </div>
         </form>
         <div class="clear"></div>
         @stop
 
         @section('mobile')
-            <input type="hidden" value="{{$deliveryPricesStr}}" id="delStr"></input>
+            <input type="hidden" value="{{$deliveryPricesStr}}" id="delStr"/>
             @include('elements.breadcrumbs')
 
             <div class="clear"></div>
@@ -461,6 +502,8 @@
                                                 <input type="checkbox" name="delivery[]" value="autolux"><p>Автолюкс</p>
                                             @endif
 
+                                            <input type="checkbox" name="delivery[]" value="sam">
+                                            <p>Самовывоз</p>
                                         </div>
                                     </div>
 

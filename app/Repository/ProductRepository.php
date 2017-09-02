@@ -3,6 +3,7 @@
 
 namespace App\Repository;
 
+use App\Brend;
 use App\Category;
 use App\Product;
 use App\Wishlist;
@@ -49,6 +50,16 @@ class ProductRepository
         $this->setWish($data);
 
         return $data;
+    }
+
+
+    /**
+     * @param $products
+     * @param Brend $brand
+     */
+    public function productsToArrayBrand($products, Brend $brand)
+    {
+
     }
 
 

@@ -1,15 +1,35 @@
 <?php
+
+namespace App\Filter;
+
+
 /**
- * Created by PhpStorm.
- * User: andreypetko
- * Date: 8/27/17
- * Time: 16:37
+ * Class FilterChecker
+ * @package App\Filter
  */
-
-namespace App;
-
-
-class FilterBuilder
+class FilterChecker
 {
+    /**
+     * @var
+     */
+    private $builders;
 
+
+    /**
+     * @param FilterBuilderInterface $builder
+     * @param string $type
+     */
+    public function addBuilder(FilterBuilderInterface $builder, string $type)
+    {
+        $this->builders[$type] = $builder;
+    }
+
+    /**
+     * @param string $type
+     * @return mixed
+     */
+    public function getBuilder(string $type)
+    {
+        return $this->builders[$type];
+    }
 }

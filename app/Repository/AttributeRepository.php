@@ -34,19 +34,16 @@ class AttributeRepository
             ->where('value', '!=', '')
             ->get();
 
-        $list = [];
 
-        foreach ($result as $item) {
-            if (!isset($list[$item->attribute_id])) {
-                $list[$item->attribute_id] = [];
-            }
+        return $this->prepareResult($result);
+    }
 
-            if (!in_array($item->value, $list[$item->attribute_id])) {
-                $list[$item->attribute_id][] = $item->value;
-            }
-        }
+    /**
+     * @param Brand $brand
+     */
+    public function getBrandInfo(Brand $brand)
+    {
 
-        return $list;
     }
 
     /**
@@ -62,5 +59,22 @@ class AttributeRepository
         }
 
         return $result;
+    }
+
+    private function prepareResult(array $result) : array
+    {
+        $list = [];
+
+        foreach ($result as $item) {
+            if (!isset($list[$item->attribute_id])) {
+                $list[$item->attribute_id] = [];
+            }
+
+            if (!in_array($item->value, $list[$item->attribute_id])) {
+                $list[$item->attribute_id][] = $item->value;
+            }
+        }
+
+        return $list;
     }
 }

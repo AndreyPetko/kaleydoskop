@@ -1185,24 +1185,29 @@ window.addEventListener("load", function () {
         });
     }
 
+    function showDeliveryText(value) {
+        value = value.replace(' ', '-');
 
-    deliveryCheckboxes = document.querySelectorAll("input[name='delivery[]']");
+        $('.delivery-text-item').hide();
+        $('.' + value).show();
+    }
+
+    var deliveryCheckboxes = document.querySelectorAll("input[name='delivery[]']");
 
     if (deliveryCheckboxes) {
         for (var i = deliveryCheckboxes.length - 1; i >= 0; i--) {
             deliveryCheckboxes[i].addEventListener('change', function () {
 
+                showDeliveryText(this.value);
                 changeAvailableChexboxes(this.value);
-
 
                 for (var i = deliveryCheckboxes.length - 1; i >= 0; i--) {
                     deliveryCheckboxes[i].checked = 0;
                 }
-                ;
+
                 this.checked = 1;
             });
         }
-        ;
     }
 
 
@@ -1574,4 +1579,6 @@ window.addEventListener("load", function () {
             quickThreadBlock.style.display = "none";
         });
     }
+
+
 });
