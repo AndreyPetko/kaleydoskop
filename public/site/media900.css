@@ -44,3 +44,9 @@
 .fast-order-text{
     padding: 20px;
 }
+.delivery-text {
+    width: 40%;
+}
+.cart-pay-del-cont input {
+    margin-left: 0px;
+}
