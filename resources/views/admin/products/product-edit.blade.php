@@ -104,12 +104,13 @@
 							<label>Описание товара</label>
 							<textarea class="form-control" rows="3" placeholder="Введите описание товара ..." name="description">
 								@if(empty($product->description))
-									<p><strong>Производитель: </strong>BEST-TEX (Китай)</p>
+									<p><strong>Производитель: </strong>RIOLIS (Италия)</p>
 
-									<p><strong>Состав: </strong>100% длинноволокнистый хлопок</p>
+									<p><strong>Состав: </strong>шерсть/акрил</p>
 
-									<p><strong>Длина мотка: </strong>8 метров</p>
+									<p><strong>Длина мотка: </strong>20 метров</p>
 
+									<p>В упаковке 10 мотков одного цвета.</p>
 								@else
 								{{$product->description}}
 								@endif
