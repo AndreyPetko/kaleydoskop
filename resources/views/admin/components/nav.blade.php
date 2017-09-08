@@ -50,5 +50,5 @@
     </li>
 
     <li @if(Request::url() == 'http://kaleydoskop.ap.org.ua/admin/default-description') class="active" @endif><a
-                href="/admin/default-description"><i class="fa fa-slack"></i> <span>Описания по умолчанию</span></a></li>
+                href="/admin/default-description"><i class="fa fa-slack"></i> <span>Описание по умолчанию</span></a></li>
 </ul>
