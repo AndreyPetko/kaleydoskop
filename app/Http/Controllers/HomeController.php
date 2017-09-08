@@ -785,5 +785,4 @@ class HomeController extends Controller
         phpinfo();
     }
 
-
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Keyval;
 use Request;
 use App\Product;
 use App\Menu;
@@ -101,6 +102,10 @@ class AdminController extends Controller {
 
 		$data['categories'] = Category::all();
 		$data['images'] = Product::getImagesById($id);
+
+		$defaultDescription = Keyval::findByKey('description');
+
+		$data['defaultDescription'] = $defaultDescription;
 
 		return view('admin.products.product-edit', $data);
 	}
@@ -656,5 +661,23 @@ class AdminController extends Controller {
 
 		echo "hello";
 	}
+
+
+    public function getDefaultDescription()
+    {
+        $description = Keyval::findByKey('description');
+        return view('admin.default-description', compact('description'));
+    }
+
+    public function postUpdateDescription(Request $request)
+    {
+        $description = $request::input('description');
+        $descriptionEntity = Keyval::where('key', 'description')->first();
+
+        $descriptionEntity->value = $description;
+        $descriptionEntity->save();
+
+        return Redirect::to('/admin');
+    }
 
 }

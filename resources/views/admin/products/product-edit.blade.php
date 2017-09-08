@@ -114,9 +114,7 @@
                                 <textarea class="form-control" rows="3" placeholder="Введите описание товара ..."
                                           name="description">
 								@if(empty($product->description))
-                                        <p><strong>Производитель:&nbsp;</strong>&laquo;Preciosa&raquo; (Чехия)<br/>
-                                            <strong>Размер:&nbsp;</strong>10/0&nbsp;</p>
-
+                                        {!! $defaultDescription !!}
                                     @else
                                         {{$product->description}}
                                     @endif
