@@ -470,7 +470,7 @@
                                         <div class="thread-item-txt-left fl">
                                             <p>{{$product->price}} грн</p>
                                             <p>Кол-во:</p>
-                                            <input type="number" name="products[{{$product->id}}]">
+                                            <input type="number" name="products[{{$product->id}}]" class="thread-input">
                                         </div>
 
 

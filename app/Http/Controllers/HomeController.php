@@ -333,13 +333,6 @@ class HomeController extends Controller
             Session::forget('stopPrice');
         }
 
-//
-//        if (Session::get('sortType')) {
-//            $sortType = Session::get('sortType');
-//        } else {
-//            $sortType = 'name';
-//        }
-
         $subcategory = Subcategory::where('url', $url)->first();
         $data['subcategory'] = $subcategory;
         $data['subcategoryUrl'] = $subcategory->url;
