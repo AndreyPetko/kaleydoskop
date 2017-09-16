@@ -8,7 +8,7 @@
 
 
 @section('content')
-<input type="hidden" value="{{ csrf_token() }}" id="token"></input>
+<input type="hidden" value="{{ csrf_token() }}" id="token" />
 <!-- Main content -->
 <section class="content-header">
   <h1>
@@ -139,7 +139,7 @@
               <td><a href="/admin/product-search/{{$product->id}}">Поиск</a></td>
               <td><a href="/admin/with-product/{{$product->id}}">Берут</a></td>
               <td>
-                <form action="/admin/product-delete" method="POST" onsubmit="return confirm('Вы точно хотите удалить товар: {{$product->name}} ?')">
+                <form action="/admin/product-delete" method="POST" class="delete-product-form" onsubmit="return confirm('Вы точно хотите удалить товар: {{$product->name}} ?')">
                   <input type="hidden" name="_token" value="{{ csrf_token() }}">
                   <input type="hidden" name="product_id" value="{{$product->id}}">
                   <button type="submit" class="btn btn-block btn-danger btn-flat">Удалить</button>

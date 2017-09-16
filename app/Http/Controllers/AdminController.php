@@ -55,11 +55,11 @@ class AdminController extends Controller {
 	public function getProducts(){
 		$filter = $_GET;
 
-		if(isset($_GET['search'])) {
-			$name = strip_tags($_GET['search']);
-			$brendId = strip_tags($_GET['brendId']);
-			$categoryId = strip_tags($_GET['categoryId']);
-			$group = strip_tags($_GET['group']);
+		if(isset($filter['search'])) {
+			$name = strip_tags($filter['search']);
+			$brendId = strip_tags($filter['brendId']);
+			$categoryId = strip_tags($filter['categoryId']);
+			$group = strip_tags($filter['group']);
 			$products = Product::searchAdmin($name, $brendId, $categoryId, $group);
 		} else {
 			$products = Product::orderBy('group')->paginate(20);
