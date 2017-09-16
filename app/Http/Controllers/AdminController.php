@@ -82,7 +82,7 @@ class AdminController extends Controller {
 		return view('admin.products.product-add')->with('categories', $categories)->with('brends', $brends);
 	}
 
-	public function postProductDelete() {
+	public function anyProductDelete() {
 		$id = Request::input('product_id');
 		Product::deleteById($id);
 		return Redirect::to('/admin/products');
