@@ -96,9 +96,16 @@
                             <div class="category-spisok-info fl">
                                 <div class="category-spisok-title"><a
                                             href="/product/{{$product->url}}">{{$product->name}}</a></div>
-                                <div class="availability-spisok"><img
-                                            src="{{ url('site/images/add-cart-success.png') }}" alt="">Есть в наличии
-                                </div>
+
+                                @if($product->quantity > 2)
+                                    <div class="availability-spisok"><img src="/site/images/add-cart-success.png" alt="">Есть в наличии</div>
+                                @else
+                                    @if($product->quantity == 0)
+                                        <div class="availability-spisok"><img src="/site/images/icon-disavailability.png" alt="">Нет в наличии</div>
+                                    @else
+                                        <div class="availability-spisok"><img src="/site/images/icon-availability-attantion.png" alt="">Заканчивается</div>
+                                    @endif
+                                @endif
                                 <div class="category-spisok-text">
                                     {!!$product->description!!}
                                 </div>
