@@ -42,7 +42,6 @@ $(document).ready(function () {
             method: 'POST',
             data: data,
             success: function() {
-                alert('Товар успешно удален');
                 currentItem.parent().parent().hide();
             }
         });
