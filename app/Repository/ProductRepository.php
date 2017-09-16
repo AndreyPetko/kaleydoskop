@@ -7,7 +7,7 @@ use App\Brend;
 use App\Category;
 use App\Product;
 use App\Wishlist;
-
+use DB;
 
 /**
  * Class ProductRepository
@@ -128,6 +128,62 @@ class ProductRepository
         }
 
         return $products;
+    }
+
+
+    public function insertProduct($product)
+    {
+        DB::table('products')->insert([
+            'article' => $product['article'],
+            'code' => $product['code'],
+            'name' => $product['name'],
+            'price' => $product['price'],
+            'no1c' => 1,
+            'quantity' => $product['count'],
+            'group' => $product['group'],
+            'wholesale_price' => $product['priceWholesale'],
+            'active' => 1,
+            'active_wholesale' => 1,
+            'url' => $product['url']
+        ]);
+    }
+
+    public function updateProduct($product, $item)
+    {
+        $data = [
+            'group' => $product['group'],
+            'article' => $product['article'],
+            'quantity' => $product['count'],
+            'wholesale_price' => $product['priceWholesale'],
+        ];
+
+        if($item->no1c === false) {
+            $data['name'] = $product['name'];
+            $data['url'] = $product['url'];
+        }
+
+        if($item->no_price_1c === false) {
+            $data['price'] = $product['price'];
+        }
+
+        DB::table('products')->where('code', $product['code'])->update($data);
+    }
+
+
+    public function updateByArray($products)
+    {
+        foreach ($products as $product) {
+            $item = DB::table('products')->where('code', $product['code'])->first();
+
+            if ($item) { // Если товар уже есть то обновляем его
+                $this->updateProduct($product, $item);
+
+            } else { // Если нету то создаем новый
+                $this->insertProduct($product);
+            }
+        }
+
+        return true;
     }
 
 }

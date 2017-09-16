@@ -151,7 +151,7 @@
                                     <div class="col-md-12">
                                         <label>Активность(Розница)</label>
                                         <input type="checkbox" @if($product->active) checked
-                                               @endif name="active"></input>
+                                               @endif name="active" />
                                     </div>
                                 </div>
                             </div>
@@ -161,7 +161,7 @@
                                     <div class="col-md-12">
                                         <label>Активность(Опт)</label>
                                         <input type="checkbox" @if($product->active_wholesale) checked
-                                               @endif name="active_wholesale"></input>
+                                               @endif name="active_wholesale" />
                                     </div>
                                 </div>
                             </div>
@@ -170,7 +170,16 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <label>Не обновлять имя товара из 1С</label>
-                                        <input type="checkbox" @if($product->no1c) checked @endif name="no1c"></input>
+                                        <input type="checkbox" @if($product->no1c) checked @endif name="no1c" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label>Не обновлять цену товара из 1С</label>
+                                        <input type="checkbox" @if($product->no_price_1c) checked @endif name="no_price_1c" />
                                     </div>
                                 </div>
                             </div>

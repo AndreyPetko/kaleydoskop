@@ -113,23 +113,11 @@ class AdminController extends Controller {
 	public function postProductUpdate($id) {
 		$url = $this->request['redirect_url'];
 		unset($this->request['redirect_url']);
-		if(isset($this->request['active'])) {
-			$this->request['active'] = 1;
-		} else {
-			$this->request['active'] = 0;
-		}
 
-		if(isset($this->request['active_wholesale'])) {
-			$this->request['active_wholesale'] = 1;
-		} else {
-			$this->request['active_wholesale'] = 0;
-		}
-
-		if(isset($this->request['no1c'])) {
-			$this->request['no1c'] = 1;
-		} else {
-			$this->request['no1c'] = 0;
-		}
+        $this->request['active'] = isset($this->request['active']) ? 1 : 0;
+        $this->request['active_wholesale'] = isset($this->request['active_wholesale']) ? 1 : 0;
+        $this->request['no1c'] = isset($this->request['no1c']) ? 1 : 0;
+        $this->request['no_price_1c'] = isset($this->request['no_price_1c']);
 
 		Product::updateItem($this->request, $id);
 		return Redirect::to($url);

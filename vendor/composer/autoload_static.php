@@ -862,6 +862,7 @@ class ComposerStaticInita4260dd6d7c25e631780a9a247704d6d
         'UpdateOrdersProductsTable' => __DIR__ . '/../..' . '/database/migrations/2016_01_14_142008_update_orders_products_table.php',
         'UpdateOrdersTable' => __DIR__ . '/../..' . '/database/migrations/2016_01_14_151704_update_orders_table.php',
         'UpdateOrdersTable2' => __DIR__ . '/../..' . '/database/migrations/2016_01_20_120445_update_orders_table_2.php',
+        'UpdateProductTable' => __DIR__ . '/../..' . '/database/migrations/2017_09_16_093108_update_product_table.php',
         'UpdateProductsTable' => __DIR__ . '/../..' . '/database/migrations/2016_03_11_090007_update_products_table.php',
         'UpdateProductsTable1' => __DIR__ . '/../..' . '/database/migrations/2015_11_17_124444_update_products_table_1.php',
         'UpdateProductsTable2' => __DIR__ . '/../..' . '/database/migrations/2015_12_18_115637_update_products_table_2.php',
@@ -873,6 +874,7 @@ class ComposerStaticInita4260dd6d7c25e631780a9a247704d6d
         'UpdateSubcategoriesTable' => __DIR__ . '/../..' . '/database/migrations/2015_12_24_103722_update_subcategories_table.php',
         'UpdateTextTable' => __DIR__ . '/../..' . '/database/migrations/2017_04_17_151305_update_text_table.php',
         'UpdateTextTable2' => __DIR__ . '/../..' . '/database/migrations/2017_04_17_152417_update_text_table_2.php',
+        'UpdateTextTable3' => __DIR__ . '/../..' . '/database/migrations/2017_05_28_140404_update_text_table.php',
         'UpdateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2016_01_18_161032_update_users_table.php',
     );
 

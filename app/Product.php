@@ -30,7 +30,7 @@ class Product extends Model
     const NEW_PER_PAGE = 4;
 
     protected $table = 'products';
-    protected $fillable = array('name', 'article', 'description', 'price', 'wholesale_price', 'url', 'category_id', 'brend_id', 'quantity', 'active', 'active_wholesale', 'search', 'code', 'group');
+    protected $fillable = array('name', 'article', 'description', 'price', 'wholesale_price', 'url', 'category_id', 'brend_id', 'quantity', 'active', 'active_wholesale', 'search', 'code', 'group', 'no1c', 'no_price_1c');
 
     public function images()
     {
@@ -183,6 +183,7 @@ class Product extends Model
         unset($update['categories']);
         unset($update['attributes']);
         unset($update['subcats']);
+
 
 
         self::where('id', $id)
@@ -978,57 +979,6 @@ class Product extends Model
 
         return $products;
     }
-
-
-    public static function updateByArray($products)
-    {
-
-        foreach ($products as $product) {
-            $item = DB::table('products')->where('code', $product['code'])->first();
-
-            if ($item) { // Если товар уже есть то обновляем его
-                if ($item->no1c) {
-                    DB::table('products')->where('code', $product['code'])->update([
-                        'price' => $product['price'],
-                        'group' => $product['group'],
-                        'article' => $product['article'],
-                        'quantity' => $product['count'],
-                        'wholesale_price' => $product['priceWholesale'],
-                        // 'url' => $product['url']
-                    ]);
-                } else {
-                    DB::table('products')->where('code', $product['code'])->update([
-                        'name' => $product['name'],
-                        'article' => $product['article'],
-                        'group' => $product['group'],
-                        'price' => $product['price'],
-                        'quantity' => $product['count'],
-                        'wholesale_price' => $product['priceWholesale'],
-                        'url' => $product['url']
-                    ]);
-                }
-
-            } else { // Если нету то создаем новый
-                DB::table('products')->insert([
-                    'article' => $product['article'],
-                    'code' => $product['code'],
-                    'name' => $product['name'],
-                    'price' => $product['price'],
-                    'no1c' => 1,
-                    'quantity' => $product['count'],
-                    'group' => $product['group'],
-                    'wholesale_price' => $product['priceWholesale'],
-                    'active' => 1,
-                    'active_wholesale' => 1,
-                    'url' => $product['url']
-                ]);
-            }
-        }
-
-
-        return 1;
-    }
-
 
     public static function setNewProducts()
     {

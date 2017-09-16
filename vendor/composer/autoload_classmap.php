@@ -556,6 +556,7 @@ return array(
     'UpdateOrdersProductsTable' => $baseDir . '/database/migrations/2016_01_14_142008_update_orders_products_table.php',
     'UpdateOrdersTable' => $baseDir . '/database/migrations/2016_01_14_151704_update_orders_table.php',
     'UpdateOrdersTable2' => $baseDir . '/database/migrations/2016_01_20_120445_update_orders_table_2.php',
+    'UpdateProductTable' => $baseDir . '/database/migrations/2017_09_16_093108_update_product_table.php',
     'UpdateProductsTable' => $baseDir . '/database/migrations/2016_03_11_090007_update_products_table.php',
     'UpdateProductsTable1' => $baseDir . '/database/migrations/2015_11_17_124444_update_products_table_1.php',
     'UpdateProductsTable2' => $baseDir . '/database/migrations/2015_12_18_115637_update_products_table_2.php',
@@ -567,5 +568,6 @@ return array(
     'UpdateSubcategoriesTable' => $baseDir . '/database/migrations/2015_12_24_103722_update_subcategories_table.php',
     'UpdateTextTable' => $baseDir . '/database/migrations/2017_04_17_151305_update_text_table.php',
     'UpdateTextTable2' => $baseDir . '/database/migrations/2017_04_17_152417_update_text_table_2.php',
+    'UpdateTextTable3' => $baseDir . '/database/migrations/2017_05_28_140404_update_text_table.php',
     'UpdateUsersTable' => $baseDir . '/database/migrations/2016_01_18_161032_update_users_table.php',
 );

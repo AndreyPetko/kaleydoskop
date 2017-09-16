@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Repository\ProductRepository;
 use Illuminate\View\View;
 use Intervention\Image\Exception\NotFoundException;
 use Mockery\Exception;
@@ -755,7 +756,8 @@ class HomeController extends Controller
         });
 
 
-        $result = Product::updateByArray($products);
+        $productRepository = new ProductRepository();
+        $result = $productRepository->updateByArray($products);
 
         if ($result) {
             echo 'Обновление прошло успешно';
