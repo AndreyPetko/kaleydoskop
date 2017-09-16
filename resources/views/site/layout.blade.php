@@ -576,7 +576,7 @@
 						</div>
 					</div>
 				</a>
-				<a href="/category/Biser">
+				<a href="/subcategory/Biser-Preciosa">
 					<div class="main-dropdown-item">
 						<div class="main-dropdown-content">
 							<div class="main-dropdown-item-image">
@@ -641,6 +641,20 @@
 							<div class="main-dropdown-item-text">
 								<div>
 									Праздники и поздравления
+								</div>
+							</div>
+						</div>
+					</div>
+				</a>
+					<a href="/category/Zagotovki-vyshivanok">
+					<div class="main-dropdown-item">
+						<div class="main-dropdown-content">
+							<div class="main-dropdown-item-image">
+								<img src="{{ url('site/images/icon20.png') }}" alt="">
+							</div>
+							<div class="main-dropdown-item-text">
+								<div>
+									Заготовки вишиванок
 								</div>
 							</div>
 						</div>

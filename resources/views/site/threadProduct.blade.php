@@ -1,10 +1,10 @@
 @extends('site.layout')
 
 @section('header')
-    <title>{{ $product->name }}</title>
-    @if($product->description)
-        <meta name="description" content="{{ strip_tags($product->description) }}">
-    @endif
+<title>{{ $product->name }}</title>
+@if($product->description)
+<meta name="description" content="{{ strip_tags($product->description) }}">
+@endif
 @stop
 
 @section('content')
@@ -239,7 +239,7 @@
  @endforeach
 </div>
 
-<div class="products-sidebar-grey-line"></div>
+<!-- <div class="products-sidebar-grey-line"></div>
 <div class="products-sidebar-pay">
  <div class="products-sidebar-pay-img fl">
   <img src="{{ url('site/images/icon-pay.png') }}" alt="">
@@ -248,13 +248,13 @@
   Оплата
 </div>
 </div>
-<div class="products-sidebar-grey-line"></div>
+<div class="products-sidebar-grey-line"></div> -->
 
-<div class="products-pay-text">
+<!-- <div class="products-pay-text">
  {!!$text->getItem('oplata')!!}
-</div>
+</div> -->
 
-<div class="products-sidebar-grey-line"></div>
+<!-- <div class="products-sidebar-grey-line"></div>
 <div class="products-sidebar-pay">
  <div class="products-sidebar-pay-img fl">
   <img src="{{ url('site/images/icon-dlivery.png') }}" alt="">
@@ -267,7 +267,7 @@
 
 <div class="products-pay-text">
  {!!$text->getItem('dostavka')!!}
-</div>
+</div> -->
 
 </div>
 
