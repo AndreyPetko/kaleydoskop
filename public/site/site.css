@@ -340,7 +340,7 @@ a .back-to-old {
 .header-item-text {
     width: 85px;
     margin-left: 20px;
-    float: left;
+    display: inline-block;
     color: #6b6b6b;
 }
 
@@ -350,7 +350,7 @@ a .back-to-old {
 }
 
 .header-item-img {
-    float: left;
+    display: inline-block;
     width: 25px;
     text-align: center;
 }
