@@ -36,8 +36,7 @@ $(document).ready(function () {
         $inputs.each(function () {
             data[this.name] = $(this).val();
         });
-
-
+        
         $.ajax({
             url: '/admin/product-delete/',
             method: 'POST',
