@@ -27,7 +27,6 @@ class ProductRepository
         $list = $this->getProductSubcatListByCategory($category);
         $attributes = $this->getProductAttributesListByCategory($category);
 
-
         /**
          * @var Product $product
          */
@@ -38,6 +37,7 @@ class ProductRepository
             $item->name = $product->name;
             $item->price = $product->price;
             $item->url = $product->url;
+            $item->quantity = $product->quantity;
             $item->image = $product->image;
             $item->brand = $product->brend_id;
             $item->subcats = $list[$product->id] ?? [];
@@ -52,7 +52,6 @@ class ProductRepository
         return $data;
     }
 
-
     /**
      * @param $products
      * @param Brend $brand
@@ -61,7 +60,6 @@ class ProductRepository
     {
 
     }
-
 
     /**
      * @param Category $category

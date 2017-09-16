@@ -8,20 +8,36 @@
     <div class="mobile-menu show-mobile">
         <div class="mobile-menu-list">
             <div class="mobile-top-border"></div>
-            <a href="/"><div class="mobile-menu-list-item">Главная</div></a>
-            <a href="/catalog"><div class="mobile-menu-list-item">Каталог</div></a>
-            <a href="/brends"><div class="mobile-menu-list-item">Бренды</div></a>
-            <a href="/about"><div class="mobile-menu-list-item">О компании</div></a>
-            <a href="/wholesalers"><div class="mobile-menu-list-item">Оптовикам</div></a>
-            <a href="/oplata-dostavka"><div class="mobile-menu-list-item">Оплата и доставка</div></a>
-            <a href="/contacts"><div class="mobile-menu-list-item">Контакты</div></a>
+            <a href="/">
+                <div class="mobile-menu-list-item">Главная</div>
+            </a>
+            <a href="/catalog">
+                <div class="mobile-menu-list-item">Каталог</div>
+            </a>
+            <a href="/brends">
+                <div class="mobile-menu-list-item">Бренды</div>
+            </a>
+            <a href="/about">
+                <div class="mobile-menu-list-item">О компании</div>
+            </a>
+            <a href="/wholesalers">
+                <div class="mobile-menu-list-item">Оптовикам</div>
+            </a>
+            <a href="/oplata-dostavka">
+                <div class="mobile-menu-list-item">Оплата и доставка</div>
+            </a>
+            <a href="/contacts">
+                <div class="mobile-menu-list-item">Контакты</div>
+            </a>
             <div class="mobile-menu-list-item" id="mobile-white-menu-button">Пользователю</div>
         </div>
         <div class="mobile-white-menu-list">
             <div class="mobile-white-menu-item" id="send-mail-mobile">Подписаться на рассылку</div>
             <div class="mobile-white-menu-item" id="feedback-mobile">Обратная связь</div>
             <div class="mobile-white-menu-item" id="callback-mobile">Заказать обратный звонок</div>
-            <a href="/wishlist"><div class="mobile-white-menu-item">Желания</div></a>
+            <a href="/wishlist">
+                <div class="mobile-white-menu-item">Желания</div>
+            </a>
 
         </div>
     </div>
@@ -183,14 +199,6 @@
                     </a>
                 </div>
 
-                {{--<div class="subcat-item fl">--}}
-                {{--<div class="subcat-image fl">--}}
-                {{--<img src="{{ url('site/images/icon-catecory-list-active.png') }}" alt="">--}}
-                {{--</div>--}}
-                {{--<div class="subcat-text subcat-text-active fl">--}}
-                {{--123--}}
-                {{--</div>--}}
-                {{--</div>--}}
 
                 <div class="subcat-item fl" v-for="subcategory in subcategories">
                     <a @click="setSubcategory(subcategory.id)">
@@ -209,10 +217,10 @@
 
             <div class="subcat-sort-line">
                 {{--<div class="grid-button fl">--}}
-                    {{--<img src="{{ url('site/images/sort-tabl.png') }}" alt="">--}}
+                {{--<img src="{{ url('site/images/sort-tabl.png') }}" alt="">--}}
                 {{--</div>--}}
                 {{--<div class="line-button fl">--}}
-                    {{--<img src="{{ url('site/images/sort-spisok-active.png') }}" alt="">--}}
+                {{--<img src="{{ url('site/images/sort-spisok-active.png') }}" alt="">--}}
                 {{--</div>--}}
 
                 <div class="sort-by fl">
@@ -233,7 +241,7 @@
 
                 <div class="show-by fl">
                     <div class="sort-by-text fl">
-                        Показывать по: 
+                        Показывать по:
                     </div>
                     <div class="sort-by-img fl">
                         <select v-model="perPage">
@@ -259,7 +267,23 @@
                         <div class="item-image">
                             <img :src="getSrc(product.image)" alt="">
                         </div>
-                        <div class="item-name" v-text="product.name"></div>
+                        <div class="item-name">
+                            <div class="availability" v-if="product.quantity >= 2">
+                                <img src="/site/images/add-cart-success.png" alt="">
+                                Есть в наличии
+                            </div>
+
+                            <div class="availability" v-if="product.quantity == 0">
+                                <img src="/site/images/icon-disavailability.png" alt="">
+                                Нет в наличии
+                            </div>
+
+                            <div class="availability" v-if="product.quantity == 1">
+                                <img src="/site/images/icon-availability-attantion.png" alt="">
+                                Заканчивается
+                            </div>
+                            <span v-text="product.name"></span>
+                        </div>
                     </a>
                     <div class="item-bottom-line">
                         <div class="item-price category">
