@@ -98,7 +98,6 @@ new Vue({
                     const data = result.data;
 
                     vm.name = data.name;
-
                     vm.products = data.products;
                     vm.filteredProducts = data.products;
                     vm.subcategories = data.subcategories;

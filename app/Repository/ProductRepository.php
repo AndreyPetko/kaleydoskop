@@ -38,7 +38,7 @@ class ProductRepository
             $item->price = $product->price;
             $item->url = $product->url;
             $item->quantity = $product->quantity;
-            $item->image = $product->image;
+            $item->image = $product->getImage();
             $item->brand = $product->brend_id;
             $item->subcats = $list[$product->id] ?? [];
             $item->attributes = $attributes[$product->id] ?? [];
@@ -46,6 +46,7 @@ class ProductRepository
 
             $data[] = $item;
         }
+
 
         $this->setWish($data);
 

@@ -163,6 +163,17 @@ class Product extends Model
         return DB::select("SELECT id,url FROM images WHERE product_id = :id", array($id));
     }
 
+    public function getImage()
+    {
+        $result = DB::select("SELECT url FROM images WHERE product_id = :id", array($this->id));
+
+        if(!$result) {
+            return null;
+        }
+
+        return $result[0]->url;
+    }
+
     public static function getNameById($id)
     {
         return DB::table("products")->where('id', $id)->value('name');

@@ -29,7 +29,6 @@ class CategoryRepository
             $result[] = $item;
         }
 
-
         usort($result, function($a, $b) {
            return strcmp($a->name, $b->name);
         });
