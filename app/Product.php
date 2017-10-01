@@ -301,9 +301,17 @@ class Product extends Model
     public static function getNew($skip = 0, $perPage = self::NEW_PER_PAGE)
     {
         if (self::isWholesaler()) {
-            $recProducts = self::where('active_wholesale', 1)->skip($skip)->take($perPage)->get();
+            $recProducts = self::where('active_wholesale', 1)
+                ->skip($skip)
+                ->take($perPage)
+                ->orderBy('id', 'desc')
+                ->get();
         } else {
-            $recProducts = self::where('active', 1)->skip($skip)->take($perPage)->get();
+            $recProducts = self::where('active', 1)
+                ->skip($skip)
+                ->take($perPage)
+                ->orderBy('id', 'desc')
+                ->get();
         }
 
         return $recProducts;
