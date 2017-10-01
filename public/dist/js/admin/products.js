@@ -38,7 +38,7 @@ $(document).ready(function () {
         });
 
         $.ajax({
-            url: '/admin/product-delete/',
+            url: '/admin/product-delete',
             method: 'POST',
             data: data,
             success: function() {
