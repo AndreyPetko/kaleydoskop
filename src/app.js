@@ -171,7 +171,10 @@ new Vue({
             document.getElementsByTagName('body')[0].scrollTop = 300;
         },
         noProducts() {
-            return this.activeProducts.length === 0;
+            return !this.notLoad() && this.activeProducts.length === 0;
+        },
+        notLoad() {
+            return this.products.length === 0;
         },
         setSubcategory(id) {
             this.currentSubcategory = id;

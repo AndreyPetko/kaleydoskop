@@ -936,7 +936,10 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
             document.getElementsByTagName('body')[0].scrollTop = 300;
         },
         noProducts: function noProducts() {
-            return this.activeProducts.length === 0;
+            return !this.notLoad() && this.activeProducts.length === 0;
+        },
+        notLoad: function notLoad() {
+            return this.products.length === 0;
         },
         setSubcategory: function setSubcategory(id) {
             this.currentSubcategory = id;
