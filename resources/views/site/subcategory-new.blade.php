@@ -257,7 +257,7 @@
 
             <div class="category-list">
                 <div v-if="notLoad()" class="no-products">
-                    Выполняется загрузка продуктов
+                    Выполняется загрузка продуктов...
                 </div>
                 <div v-if="noProducts()" class="no-products">
                     По вашему запросу ничего не найдено
@@ -309,7 +309,7 @@
                 </div>
             </div>
 
-            <div class="pagination" v-if="noProducts() === false">
+            <div class="pagination" v-if="notLoad() === false && noProducts() === false">
                 <ul>
                     <li @click="setPage(1)"><-</li>
                     <li v-for="item in showPages" :class="{active: page === item}" @click="setPage(item)"
