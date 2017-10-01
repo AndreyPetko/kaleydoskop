@@ -292,7 +292,6 @@
   @endif
   @endforeach
   <div class="products-attribute-item">
-    <strong>Описание:</strong>
     {!! $product->description !!}
   </div>
 </div>
