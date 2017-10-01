@@ -65,7 +65,7 @@ class HomeController extends Controller
         $data['mainSlides'] = Slide::getOrderMainSlides();
         $data['recProducts'] = Product::getRecommended(4);
         $data['newProducts'] = Product::getNew($skip = 0, $take = 8);
-        
+
         foreach ($data['newProducts'] as $product) {
             if ($product->images) {
                 foreach ($product->images as $image) {
@@ -96,7 +96,7 @@ class HomeController extends Controller
      */
     public function getNewProducts()
     {
-        $products = Product::getNew(52, 52);
+        $products = Product::getNew(0, 52);
 //        $products = Product::where('active', true)->orderBy('id', 'desc')->take(52)->get();
 
         foreach ($products as $product) {
