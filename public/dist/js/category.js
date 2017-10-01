@@ -16,11 +16,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 categorySubCategoryDiv.style.display = 'none';
                 blockTria.style.cssText = " border-top: 10px solid #616161; border-bottom:none; "
             }
-            ;
         })
 
     }
-
 
     var resetButton = document.getElementById('quick-reset');
 

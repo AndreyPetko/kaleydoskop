@@ -33,7 +33,7 @@ class Image extends Model
 	public static function addImages($images, $product_id, $product_url, $startIndex) {
 
 
-		// Переносим файлы картинок
+		// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 		if(isset($images)) {
 			foreach ($images as $key => $image) {
 				$key = $key + $startIndex;
@@ -55,7 +55,7 @@ class Image extends Model
 					if($x > 900) {
 						$newY = 900*$y/$x;
 						$img->resize(900, $newY);
-						//$img->insert('../public/watermark.png', 'bottom-right', 10, 10);
+						$img->insert('../public/watermark.png', 'bottom-right', 10, 10);
 					} else {
 						$file =  URL::to('/') . '/watermark.png';
 						$watermark = \Intervention\Image\Facades\Image::make($file);
@@ -72,7 +72,7 @@ class Image extends Model
 						}
 
 						$watermark->resize($waterX, $waterY);
-						//$img->insert($watermark, 'bottom-right', 10, 10);
+						$img->insert($watermark, 'bottom-right', 10, 10);
 					}
 
 					$img->save('./product_images/' . $name);
@@ -81,7 +81,7 @@ class Image extends Model
 			}
 		}
 
-		// Создаем запись в бд
+		// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅ
 		foreach ($images_names as $item) {
 			self::create(array(
 				'product_id' => $product_id,
