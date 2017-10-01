@@ -38,7 +38,13 @@ class ProductRepository
             $item->price = $product->price;
             $item->url = $product->url;
             $item->quantity = $product->quantity;
-            $item->image = $product->getImage();
+
+            if(!$product->image) {
+                $item->image = $product->getImage();
+            } else {
+                $item->image = $product->image;
+            }
+
             $item->brand = $product->brend_id;
             $item->subcats = $list[$product->id] ?? [];
             $item->attributes = $attributes[$product->id] ?? [];
