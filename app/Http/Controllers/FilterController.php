@@ -11,6 +11,7 @@ use App\Repository\AttributeRepository;
 use App\Repository\BrandRepository;
 use App\Repository\CategoryRepository;
 use App\Repository\ProductRepository;
+use Illuminate\Http\Response;
 
 
 /**
@@ -19,11 +20,10 @@ use App\Repository\ProductRepository;
  */
 class FilterController extends Controller
 {
-
     /**
      * @param string $url
      * @param string $type
-     * @return array
+     * @return string
      */
     public function getCategoryData(string $url, string $type)
     {
@@ -32,6 +32,11 @@ class FilterController extends Controller
         $filterChecker->addBuilder(new CategoryFilterBuilder(), CategoryFilterBuilder::SLUG);
 
         $builder = $filterChecker->getBuilder($type);
-        return $builder->getData($url);
+
+        try {
+            return $builder->getData($url);
+        } catch (\Exception $e) {
+            return Response::create($e->getMessage(), 500);
+        }
     }
 }

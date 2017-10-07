@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 
+use App\Brend;
 use App\Category;
 use App\Subcategory;
 
@@ -18,8 +19,32 @@ class CategoryRepository
      */
     public function getSubcategoriesArr(Category $category)
     {
-        $result = [];
         $subcategories = Subcategory::where('category_id', $category->id)->get();
+
+        return $this->subcategoriesListToArrayOfStd($subcategories);
+    }
+
+
+    public function getBrandSubcategories($list)
+    {
+        $subcategoryIds = [];
+
+        foreach ($list as $item) {
+            foreach ($item as $subcategoryId) {
+                if(!in_array($subcategoryId, $subcategoryIds)) {
+                    $subcategoryIds[] = $subcategoryId;
+                }
+            }
+        }
+
+        $subcategories = Subcategory::whereIn('id', $subcategoryIds)->get();
+
+        return $this->subcategoriesListToArrayOfStd($subcategories);
+    }
+
+    private function subcategoriesListToArrayOfStd($subcategories): array
+    {
+        $result = [];
 
         foreach ($subcategories as $subcategory) {
             $item = new \StdClass();
@@ -30,7 +55,7 @@ class CategoryRepository
         }
 
         usort($result, function($a, $b) {
-           return strcmp($a->name, $b->name);
+            return strcmp($a->name, $b->name);
         });
 
         return $result;

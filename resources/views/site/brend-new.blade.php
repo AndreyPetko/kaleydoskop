@@ -124,10 +124,10 @@
                     <img src="{{ url('site/images/filter-line.png') }}" alt="">
                 </div>
 
-                <div class="filter-title">Бренды</div>
-                <div class="filter-grey-line">
-                    <img src="{{ url('site/images/filter-line.png') }}" alt="">
-                </div>
+                {{--<div class="filter-title">Бренды</div>--}}
+                {{--<div class="filter-grey-line">--}}
+                    {{--<img src="{{ url('site/images/filter-line.png') }}" alt="">--}}
+                {{--</div>--}}
 
                 <div class="filter-value" v-for="brand in brands">
                     <div class="filter-checkbox fl">

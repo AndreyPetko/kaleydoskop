@@ -8,6 +8,7 @@ use App\Repository\AttributeRepository;
 use App\Repository\BrandRepository;
 use App\Repository\CategoryRepository;
 use App\Repository\ProductRepository;
+use Mockery\Exception;
 
 
 /**
@@ -16,13 +17,31 @@ use App\Repository\ProductRepository;
  */
 class BrendFilterBuilder implements FilterBuilderInterface
 {
+    /**
+     *
+     */
     const SLUG = 'brend';
 
+    /**
+     * @var CategoryRepository
+     */
     private $categoryRepository;
+    /**
+     * @var ProductRepository
+     */
     private $productRepository;
+    /**
+     * @var AttributeRepository
+     */
     private $attributeRepository;
+    /**
+     * @var BrandRepository
+     */
     private $brandRepository;
 
+    /**
+     * BrendFilterBuilder constructor.
+     */
     public function __construct()
     {
         $this->categoryRepository = new CategoryRepository();
@@ -38,13 +57,23 @@ class BrendFilterBuilder implements FilterBuilderInterface
     public function getData(string $url): array
     {
         $brand = Brend::where('url', $url)->first();
-        $products = Product::where('brend_id', $brend->id)->where('active', true)->orderBy('name')->get();
 
-        $subcategories = $this->categoryRepository->getSubcategoriesArr($brand);
-        $products = $this->productRepository->productsToArrayBrand($products, $brand);
+        if(!$brand) {
+            throw new Exception('Такого бренда не существует');
+        }
+
+        $products = Product::where('brend_id', $brand->id)->where('active', true)->orderBy('name')->get();
+
+        $list = $this->productRepository->getProductSubcatListByBrand($brand);
+
+        $subcategories = $this->categoryRepository->getBrandSubcategories($list);
+
+        $attributes = $this->productRepository->getProductAttributesListByBrand($brand);
+
+        $products = $this->productRepository->productsToArray($products, $list, $attributes);
 
         $attributes = $this->attributeRepository->getBrandInfo($brand);
-        $brands = $this->brandRepository->getBrandsInfo($category);
+        $brands = [];
 
         $attributesList = $this->attributeRepository->getIdNameArr();
 

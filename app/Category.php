@@ -144,8 +144,9 @@ class Category extends Model
      */
     public static function getCatalog() {
 		$categories = DB::select("SELECT `categories`.*,
-		(SELECT MAX(products.price) FROM products WHERE products.category_id = categories.id) as maxPrice,
-		(SELECT COUNT(products.id) FROM products WHERE products.category_id = categories.id) as countProducts
+		(SELECT MAX(products.price) FROM products WHERE products.category_id = categories.id AND products.active = true) as maxPrice,
+		(SELECT MIN(products.price) FROM products WHERE products.category_id = categories.id AND products.active = true) as minPrice,
+		(SELECT COUNT(products.id) FROM products WHERE products.category_id = categories.id AND products.active = true) as countProducts
 		FROM categories");
 
 		return $categories;

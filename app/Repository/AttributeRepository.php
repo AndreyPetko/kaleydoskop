@@ -4,6 +4,7 @@ namespace App\Repository;
 
 
 use App\Attribute;
+use App\Brend;
 use App\Category;
 
 /**
@@ -34,16 +35,24 @@ class AttributeRepository
             ->where('value', '!=', '')
             ->get();
 
-
         return $this->prepareResult($result);
     }
 
-    /**
-     * @param Brand $brand
-     */
-    public function getBrandInfo(Brand $brand)
-    {
 
+    /**
+     * @param Brend $brand
+     * @return array
+     */
+    public function getBrandInfo(Brend $brand)
+    {
+        $result = \DB::table('product_attrs_value')
+            ->select('attribute_id', 'value')
+            ->leftjoin('products', 'products.id', '=', 'product_attrs_value.product_id')
+            ->where('products.brend_id', $brand->id)
+            ->where('value', '!=', '')
+            ->get();
+
+        return $this->prepareResult($result);
     }
 
     /**
@@ -61,6 +70,10 @@ class AttributeRepository
         return $result;
     }
 
+    /**
+     * @param array $result
+     * @return array
+     */
     private function prepareResult(array $result) : array
     {
         $list = [];

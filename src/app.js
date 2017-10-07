@@ -97,7 +97,8 @@ new Vue({
                 .then(result => {
                     const data = result.data;
 
-                    vm.name = data.name;
+
+                    vm.categoryName = data.name;
                     vm.products = data.products;
                     vm.filteredProducts = data.products;
                     vm.subcategories = data.subcategories;
@@ -107,6 +108,9 @@ new Vue({
 
                     vm.setActiveProducts();
                     vm.filter();
+                })
+                .catch(result => {
+                   console.log(result);
                 });
         },
         addToWishlist(product, id, wish) {

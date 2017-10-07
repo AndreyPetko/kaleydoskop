@@ -17,15 +17,13 @@ class ProductRepository
 
     /**
      * @param $products
-     * @param Category $category
+     * @param $list
+     * @param $attributes
      * @return array
      */
-    public function productsToArray($products, Category $category)
+    public function productsToArray($products, $list, $attributes)
     {
         $data = [];
-
-        $list = $this->getProductSubcatListByCategory($category);
-        $attributes = $this->getProductAttributesListByCategory($category);
 
         /**
          * @var Product $product
@@ -53,20 +51,11 @@ class ProductRepository
             $data[] = $item;
         }
 
-
         $this->setWish($data);
 
         return $data;
     }
 
-    /**
-     * @param $products
-     * @param Brend $brand
-     */
-    public function productsToArrayBrand($products, Brend $brand)
-    {
-
-    }
 
     /**
      * @param Category $category
@@ -89,6 +78,25 @@ class ProductRepository
         return $result;
     }
 
+    public function getProductSubcatListByBrand(Brend $brand)
+    {
+        $list = \DB::table('product_subcat')
+            ->select('product_subcat.product_id', 'product_subcat.subcat_id')
+            ->leftjoin('products', 'products.id', '=', 'product_subcat.product_id')
+            ->where('products.brend_id', $brand->id)
+            ->where('products.active', true)
+            ->get();
+
+        $result = [];
+
+        foreach ($list as $item) {
+            $result[$item->product_id][] = $item->subcat_id;
+        }
+
+        return $result;
+    }
+
+
     /**
      * @param Category $category
      * @return array
@@ -101,8 +109,29 @@ class ProductRepository
             ->whereNotNull('products.id')
             ->where('product_attrs_value.value', '!=', '')
             ->where('products.category_id', $category->id)
+            ->where('products.active', true)
             ->get();
 
+
+        $result = [];
+
+        foreach ($list as $item) {
+            $result[$item->product_id][$item->attribute_id] = $item->value;
+        }
+
+        return $result;
+    }
+
+    public function getProductAttributesListByBrand(Brend $brand)
+    {
+        $list = \DB::table('product_attrs_value')
+            ->select('product_attrs_value.product_id', 'product_attrs_value.attribute_id', 'product_attrs_value.value')
+            ->leftjoin('products', 'products.id', '=', 'product_attrs_value.product_id')
+            ->whereNotNull('products.id')
+            ->where('product_attrs_value.value', '!=', '')
+            ->where('products.brend_id', $brand->id)
+            ->where('products.active', true)
+            ->get();
 
         $result = [];
 
@@ -135,7 +164,9 @@ class ProductRepository
         return $products;
     }
 
-
+    /**
+     * @param $product
+     */
     public function insertProduct($product)
     {
         DB::table('products')->insert([
@@ -153,6 +184,10 @@ class ProductRepository
         ]);
     }
 
+    /**
+     * @param $product
+     * @param $item
+     */
     public function updateProduct($product, $item)
     {
         $data = [
@@ -174,19 +209,37 @@ class ProductRepository
         DB::table('products')->where('code', $product['code'])->update($data);
     }
 
+    public function updateProducts($updateProducts)
+    {
+        dump();
+        die;
+    }
 
+
+    /**
+     * @param $products
+     * @return bool
+     */
     public function updateByArray($products)
     {
+
+        $updateProducts = [];
+        $insertProducts = [];
+
         foreach ($products as $product) {
             $item = DB::table('products')->where('code', $product['code'])->first();
 
             if ($item) { // Если товар уже есть то обновляем его
-                $this->updateProduct($product, $item);
-
-            } else { // Если нету то создаем новый
-                $this->insertProduct($product);
+                $updateProducts[] = $item;
+//                $this->updateProduct($product, $item);
+            } else { // Если нет то создаем новый
+//                $this->insertProduct($product);
+                $insertProducts[] = $item;
             }
         }
+
+
+        $this->updateProducts($updateProducts);
 
         return true;
     }

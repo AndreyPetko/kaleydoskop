@@ -56,7 +56,12 @@ class CategoryFilterBuilder implements FilterBuilderInterface
         $products = Product::where('category_id', $category->id)->where('active', true)->orderBy('name')->get();
 
         $subcategories = $this->categoryRepository->getSubcategoriesArr($category);
-        $products = $this->productRepository->productsToArray($products, $category);
+
+
+        $list = $this->productRepository->getProductSubcatListByCategory($category);
+        $attributes = $this->productRepository->getProductAttributesListByCategory($category);
+
+        $products = $this->productRepository->productsToArray($products, $list, $attributes);
 
         $attributes = $this->attributeRepository->getCategoryInfo($category);
         $brands = $this->brandRepository->getBrandsInfo($category);

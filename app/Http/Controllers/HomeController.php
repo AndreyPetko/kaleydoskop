@@ -765,9 +765,11 @@ class HomeController extends Controller
     {
         $item = File::find($fileId);
         $file = public_path() . "/download/" . $item->name;
+
         $headers = array(
             'Content-Type: application/octet-stream',
         );
+
         return Response::download($file, $item->name, $headers);
     }
 

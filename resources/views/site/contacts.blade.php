@@ -40,7 +40,7 @@
             </div>
         </div>
         <div class="feedback">
-           <form action="/send-feedback" method="POST">
+           <form action="/send-feedback" method="POST" id="feedback-form">
            <input type="hidden" value="{{csrf_token()}}" name="_token">
             <div class="row">
                 <div class="cellFeedB"></div>

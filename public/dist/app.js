@@ -864,7 +864,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
             return __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get(url).then(function (result) {
                 var data = result.data;
 
-                vm.name = data.name;
+                vm.categoryName = data.name;
                 vm.products = data.products;
                 vm.filteredProducts = data.products;
                 vm.subcategories = data.subcategories;
@@ -874,6 +874,8 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 
                 vm.setActiveProducts();
                 vm.filter();
+            }).catch(function (result) {
+                console.log(result);
             });
         },
         addToWishlist: function addToWishlist(product, id, wish) {
