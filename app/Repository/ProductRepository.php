@@ -209,11 +209,11 @@ class ProductRepository
         DB::table('products')->where('code', $product['code'])->update($data);
     }
 
-    public function updateProducts($updateProducts)
-    {
-        dump();
-        die;
-    }
+//    public function updateProducts($updateProducts)
+//    {
+//        dump();
+//        die;
+//    }
 
 
     /**
@@ -222,7 +222,6 @@ class ProductRepository
      */
     public function updateByArray($products)
     {
-
         $updateProducts = [];
         $insertProducts = [];
 
@@ -230,16 +229,16 @@ class ProductRepository
             $item = DB::table('products')->where('code', $product['code'])->first();
 
             if ($item) { // Если товар уже есть то обновляем его
-                $updateProducts[] = $item;
-//                $this->updateProduct($product, $item);
+//                $updateProducts[] = $item;
+                $this->updateProduct($product, $item);
             } else { // Если нет то создаем новый
-//                $this->insertProduct($product);
-                $insertProducts[] = $item;
+                $this->insertProduct($product);
+//                $insertProducts[] = $item;
             }
         }
 
 
-        $this->updateProducts($updateProducts);
+//        $this->updateProducts($updateProducts);
 
         return true;
     }
