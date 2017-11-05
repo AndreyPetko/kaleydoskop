@@ -1025,7 +1025,7 @@
 
             </script>
             <a href="http://www.online.ua/" target="_blank"> <img src="http://i.online.ua/catalog/logo/
-			32.png" alt="Украина онлайн" border="0" width="88" height="31"> </a> -->
+			32.png" alt="Украина онлайн" border="0" width="88" height="31"> </a>
 
         </div>
     </div>
