@@ -202,7 +202,7 @@ class ProductRepository
         foreach ($products as $product) {
             $data[] = [
                 'article' => $product['article'],
-                'code' => $product['code'],
+                'code' => $product['code'] ? $product['code'] : null,
                 'name' => $product['name'],
                 'price' => $product['price'],
                 'no1c' => 1,
