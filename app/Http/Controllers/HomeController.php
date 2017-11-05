@@ -47,16 +47,15 @@ use App\Keyval;
 class HomeController extends Controller
 {
 
-
     /**
      * HomeController constructor.
      */
     public function __construct()
     {
+        $this->middleware('redirects');
         $this->request = Request::all();
         unset($this->request['_token']);
     }
-
 
     /**
      * @return \Illuminate\Contracts\View\Factory|View
@@ -619,6 +618,9 @@ class HomeController extends Controller
 //            ->with('subcategories', $subcategories);
 //    }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|View
+     */
     public function getBrendProducts()
     {
         return view('site.brend-new');

@@ -16,6 +16,11 @@ use App\Image;
 
 class ArticlesController extends Controller {
 
+    public function __construct()
+    {
+        $this->middleware('redirects');
+    }
+
 	public function index() {
 		$articles = Article::getItems();
 		$breadcrumbs = ['/articles' => 'Статьи'];

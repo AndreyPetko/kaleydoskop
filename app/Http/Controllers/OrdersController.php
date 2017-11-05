@@ -17,6 +17,12 @@ use Auth;
  */
 class OrdersController extends Controller {
 
+
+    public function __construct()
+    {
+        $this->middleware('redirects');
+    }
+
     /**
      * @return \Illuminate\Http\RedirectResponse
      */

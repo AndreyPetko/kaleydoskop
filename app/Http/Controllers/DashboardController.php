@@ -17,6 +17,7 @@ use App\Sendmail;
 class DashboardController extends Controller {
 
 	public function __construct() {
+        $this->middleware('redirects');
 
 		View::composer('dashboard.dashboardLayout', function($view){
 			$userId = Auth::user()->id;
