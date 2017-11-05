@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Consts;
 use App\Order;
 use Request;
 use App\Product;
@@ -31,7 +32,7 @@ class OrdersController extends Controller {
 		}
 
 		if(!Auth::check() || Auth::user()->role == 'retail') {
-			$email = 'andreypetko3@gmail.com';
+            $email = Consts::EMAIL;
 
 			if($request['type']) { // быстрый
 				Mail::send('emails.orderFast', ['name' => $request['name'], 'phone' => $request['phone']], function($message) use ($email)

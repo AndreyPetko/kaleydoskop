@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Consts;
 use App\Repository\ProductRepository;
 use Illuminate\View\View;
 use Intervention\Image\Exception\NotFoundException;
@@ -495,8 +496,7 @@ class HomeController extends Controller
      */
     public function postAddCallback()
     {
-
-        $email = 'andreypetko3@gmail.com';
+        $email = Consts::EMAIL;
 
         Mail::send('emails.callback', ['name' => $this->request['name'], 'phone' => $this->request['phone']], function ($message) use ($email) {
             $message->to($email, 'Kaleydoskop')->subject('Новый обратный звонок!');
