@@ -730,6 +730,8 @@ class HomeController extends Controller
      */
     public function getXml()
     {
+        $start = microtime(true);
+
         $products = Ftp::generateArrayFromXml('Ostatki.xml');
 
         array_walk($products, function (&$product) {
@@ -744,15 +746,15 @@ class HomeController extends Controller
             $str = trim($str, "-");
 
             $product['url'] = $str;
-
         });
-
 
         $productRepository = new ProductRepository();
         $result = $productRepository->updateByArray($products);
 
         if ($result) {
-            echo 'Обновление прошло успешно';
+            // тело скрипта
+            echo 'Время выполнения скрипта: '.(microtime(true) - $start).' сек.';
+//            echo 'Обновление прошло успешно';
         }
     }
 

@@ -78,6 +78,10 @@ class ProductRepository
         return $result;
     }
 
+    /**
+     * @param Brend $brand
+     * @return array
+     */
     public function getProductSubcatListByBrand(Brend $brand)
     {
         $list = \DB::table('product_subcat')
@@ -122,6 +126,10 @@ class ProductRepository
         return $result;
     }
 
+    /**
+     * @param Brend $brand
+     * @return array
+     */
     public function getProductAttributesListByBrand(Brend $brand)
     {
         $list = \DB::table('product_attrs_value')
@@ -185,6 +193,32 @@ class ProductRepository
     }
 
     /**
+     * @param array $products
+     */
+    public function insertProducts(array $products)
+    {
+        $data = [];
+
+        foreach ($products as $product) {
+            $data[] = [
+                'article' => $product['article'],
+                'code' => $product['code'],
+                'name' => $product['name'],
+                'price' => $product['price'],
+                'no1c' => 1,
+                'quantity' => $product['count'],
+                'group' => $product['group'],
+                'wholesale_price' => $product['priceWholesale'],
+                'active' => 1,
+                'active_wholesale' => 1,
+                'url' => $product['url']
+            ];
+        }
+
+        DB::table('products')->insert($data);
+    }
+
+    /**
      * @param $product
      * @param $item
      */
@@ -209,11 +243,20 @@ class ProductRepository
         DB::table('products')->where('code', $product['code'])->update($data);
     }
 
-//    public function updateProducts($updateProducts)
-//    {
-//        dump();
+    /**
+     * @param $updateProducts
+     */
+    public function updateProducts($updateProducts)
+    {
+//        dump($updateProducts[0]);
 //        die;
-//    }
+//        $sql = "UPDATE a
+//                    SET fruit = (CASE id WHEN 1 THEN 'apple'
+//                                         WHEN 2 THEN 'orange'
+//                                         WHEN 3 THEN 'peach'
+//                                 END)
+//                    WHERE id IN(1,2 ,3)";
+    }
 
 
     /**
@@ -225,17 +268,48 @@ class ProductRepository
         $updateProducts = [];
         $insertProducts = [];
 
-        foreach ($products as $product) {
-            $item = DB::table('products')->where('code', $product['code'])->first();
+        $codes = [];
 
-            if ($item) { // Если товар уже есть то обновляем его
-//                $updateProducts[] = $item;
+        foreach ($products as $product) {
+            $codes[] = $product['code'];
+        }
+
+        $items = DB::table('products')->whereIn('code', $codes)->get();
+
+        $realCodes = [];
+
+        foreach ($items as $item) {
+            $realCodes[] = $item->code;
+        }
+
+        foreach ($products as $product) {
+            $key = array_search($product['code'], $realCodes);
+
+            if($key !== false) {
+                $item = $items[$key];
+//                $updateProducts[] = $product;
                 $this->updateProduct($product, $item);
-            } else { // Если нет то создаем новый
-                $this->insertProduct($product);
-//                $insertProducts[] = $item;
+            } else {
+                $insertProducts[] = $product;
+//                $insertProducts[] = $product;
             }
         }
+
+        $this->insertProducts($insertProducts);
+
+//        $this->updateProducts($updateProducts);
+
+//        foreach ($products as $product) {
+//            $item = DB::table('products')->where('code', $product['code'])->first();
+//
+//            if ($item) { // Если товар уже есть то обновляем его
+////                $updateProducts[] = $item;
+//                $this->updateProduct($product, $item);
+//            } else { // Если нет то создаем новый
+//                $this->insertProduct($product);
+////                $insertProducts[] = $item;
+//            }
+//        }
 
 
 //        $this->updateProducts($updateProducts);

@@ -43,8 +43,8 @@ class Ftp {
 
 		foreach ($xml as $product) {
 			$newProduct = [
+            'code' => strval($product->Code),
 			'group' => strval($product->Group),
-			'code' => strval($product->Code),
 			'name' => strval($product->Name),
 			'count' => strval($product->Count),
 			'price' => intval($product->PriceRozn),
