@@ -231,12 +231,12 @@ class ProductRepository
             'wholesale_price' => $product['priceWholesale'],
         ];
 
-        if($item->no1c === false) {
+        if($item->no1c == false) {
             $data['name'] = $product['name'];
             $data['url'] = $product['url'];
         }
-
-        if($item->no_price_1c === false) {
+        
+        if($item->no_price_1c == false) {
             $data['price'] = $product['price'];
         }
 
