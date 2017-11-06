@@ -7,7 +7,7 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
      *
      * @var string
      */
-    protected $baseUrl = 'http://kaleydoskop.ap.org.ua';
+    protected $baseUrl = 'http://www.kaleydoskop-vishivki.com.ua';
 
     /**
      * Creates the application.

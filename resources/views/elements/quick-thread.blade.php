@@ -16,13 +16,13 @@
     <div id="quick-thread-submit">
       <button type="reset" id="quick-reset">
         <div class="item-buy-image">
-          <img src="http://kaleydoskop.ap.org.ua/site/images/refresh-icon-green.png" alt="">
+          <img src="http://www.kaleydoskop-vishivki.com.ua/site/images/refresh-icon-green.png" alt="">
         </div>
          Очистить
       </button>
       <button type="submit">
        <div class="item-buy-image">
-        <img src="http://kaleydoskop.ap.org.ua/site/images/icon-cart-main.png" alt="">
+        <img src="http://www.kaleydoskop-vishivki.com.ua/site/images/icon-cart-main.png" alt="">
       </div>
       В корзину
     </button>

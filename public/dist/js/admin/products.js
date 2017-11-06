@@ -16,9 +16,9 @@ $(document).ready(function () {
         var page = temp[1];
 
         if ($_GET['brendId'] === undefined) {
-            newHref = "http://kaleydoskop.ap.org.ua/admin/products?page=" + page;
+            newHref = "http://www.kaleydoskop-vishivki.com.ua/admin/products?page=" + page;
         } else {
-            newHref = "http://kaleydoskop.ap.org.ua/admin/products?brendId=" + $_GET['brendId'] + "&categoryId=" + $_GET['categoryId']
+            newHref = "http://www.kaleydoskop-vishivki.com.ua/admin/products?brendId=" + $_GET['brendId'] + "&categoryId=" + $_GET['categoryId']
                 + "&group=" + $_GET['group'] + "&search=" + $_GET['search'] + "&page=" + page;
         }
 

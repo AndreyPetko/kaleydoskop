@@ -1,17 +1,17 @@
 <ul class="sidebar-menu">
     <li class="header">МЕНЮ</li>
     <!-- Optionally, you can add icons to the links -->
-    <li @if(Request::url() == 'http://kaleydoskop.ap.org.ua/admin') class="active" @endif><a href="/admin"><i
+    <li @if(Request::url() == 'http://www.kaleydoskop-vishivki.com.ua/admin') class="active" @endif><a href="/admin"><i
                     class="fa fa-dashboard"></i> <span>Главная</span></a></li>
-    <li @if(Request::url() == 'http://kaleydoskop.ap.org.ua/admin/products') class="active" @endif><a
+    <li @if(Request::url() == 'http://www.kaleydoskop-vishivki.com.ua/admin/products') class="active" @endif><a
                 href="/admin/products"><i class="fa fa-shopping-cart"></i> <span>Товары</span></a></li>
-    <li @if(Request::url() == 'http://kaleydoskop.ap.org.ua/admin/orders') class="active" @endif><a
+    <li @if(Request::url() == 'http://www.kaleydoskop-vishivki.com.ua/admin/orders') class="active" @endif><a
                 href="/admin/orders"><i class="fa  fa-gift"></i> <span>Заказы</span></a></li>
-    <li @if(Request::url() == 'http://kaleydoskop.ap.org.ua/admin/brends') class="active" @endif><a
+    <li @if(Request::url() == 'http://www.kaleydoskop-vishivki.com.ua/admin/brends') class="active" @endif><a
                 href="/admin/brends"><i class="fa fa-cc-jcb"></i> <span>Бренды</span></a></li>
-    <li @if(Request::url() == 'http://kaleydoskop.ap.org.ua/admin/feedback') class="active" @endif><a
+    <li @if(Request::url() == 'http://www.kaleydoskop-vishivki.com.ua/admin/feedback') class="active" @endif><a
                 href="/admin/feedback"><i class="fa fa-send"></i> <span>Обратная связь</span></a></li>
-    <li @if(Request::url() == 'http://kaleydoskop.ap.org.ua/admin/components') class="active" @endif><a
+    <li @if(Request::url() == 'http://www.kaleydoskop-vishivki.com.ua/admin/components') class="active" @endif><a
                 href="/admin/components"><i class="fa fa-slack"></i> <span>Компоненты</span></a></li>
 
     <li class="treeview">
@@ -26,16 +26,16 @@
         </ul>
     </li>
 
-    <li @if(Request::url() == 'http://kaleydoskop.ap.org.ua/admin/users') class="active" @endif><a
+    <li @if(Request::url() == 'http://www.kaleydoskop-vishivki.com.ua/admin/users') class="active" @endif><a
                 href="/admin/users"><i class="fa fa-child"></i> <span>Пользователи</span></a></li>
 
 
     @if(Auth::user()->role == 'ander')
-        <li @if(Request::url() == 'http://kaleydoskop.ap.org.ua/admin/users/wholesalers') class="active" @endif><a
+        <li @if(Request::url() == 'http://www.kaleydoskop-vishivki.com.ua/admin/users/wholesalers') class="active" @endif><a
                     href="/admin/users/wholesalers"><i class="fa  fa-balance-scale"></i> <span>Оптовики</span></a></li>
     @endif
 
-    <li @if(Request::url() == 'http://kaleydoskop.ap.org.ua/admin/articles') class="active" @endif><a
+    <li @if(Request::url() == 'http://www.kaleydoskop-vishivki.com.ua/admin/articles') class="active" @endif><a
                 href="/admin/articles"><i class="fa fa-commenting-o"></i> <span>Статьи</span></a></li>
 
     <li class="treeview">
@@ -49,6 +49,6 @@
         </ul>
     </li>
 
-    <li @if(Request::url() == 'http://kaleydoskop.ap.org.ua/admin/default-description') class="active" @endif><a
+    <li @if(Request::url() == 'http://www.kaleydoskop-vishivki.com.ua/admin/default-description') class="active" @endif><a
                 href="/admin/default-description"><i class="fa fa-slack"></i> <span>Описание по умолчанию</span></a></li>
 </ul>

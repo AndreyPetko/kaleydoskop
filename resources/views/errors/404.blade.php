@@ -9,11 +9,11 @@
 	<div class="breadcrumbs">
 		<a href="/">
 			<div class="home-image fl">
-				<img src="http://kaleydoskop.ap.org.ua/site/images/imagesGG60IGZZ.png" alt="">
+				<img src="http://www.kaleydoskop-vishivki.com.ua/site/images/imagesGG60IGZZ.png" alt="">
 			</div>
 		</a>
 		<div class="breadcrumbs-next fl">
-			<img src="http://kaleydoskop.ap.org.ua/site/images/bread-strelochka.png" alt="">
+			<img src="http://www.kaleydoskop-vishivki.com.ua/site/images/bread-strelochka.png" alt="">
 		</div>
 		<div class="breadcrumbs-text fl">
 			Ошибка 404

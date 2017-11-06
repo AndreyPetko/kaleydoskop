@@ -24,7 +24,7 @@
   Редактировать учетную запись
 </a>
 
-@if(Request::url() != 'http://kaleydoskop.ap.org.ua/dashboard')
+@if(Request::url() != 'http://www.kaleydoskop-vishivki.com.ua/dashboard')
 <a href='/dashboard' class="account-section">
   Личный кабинет
 </a>
