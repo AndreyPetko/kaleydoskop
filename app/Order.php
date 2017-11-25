@@ -52,6 +52,12 @@ class Order extends Model {
 
 		$orders = $query->paginate(20);
 
+        foreach ($orders as &$order) {
+            $order->totalprice = DB::table('orders_products')
+                ->select(DB::raw('SUM(product_price) as total'))
+                ->where('order_id', '=', $order->id)->first()->total;
+		}
+
 		foreach ($orders as $order) {
 			$order->delivery_dt = MyDate::historyPageDt($order->delivery_dt);
 		}
@@ -305,7 +311,7 @@ class Order extends Model {
 				[
 				'product_name' => $product->name, 'product_count' => $request['count'],
 				'order_id' => $request['order_id'],'product_price' => $product->price,
-				'product_id' => $request['product_id'] 
+				'product_id' => $request['product_id']
 				]
 				);
 		}
