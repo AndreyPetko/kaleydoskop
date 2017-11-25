@@ -493,7 +493,7 @@
                             <div class="main-menu">
                                 <a href="/catalog">
                                     <div class="main-menu-item @if($_SERVER['REQUEST_URI'] == '/catalog' || stripos($_SERVER['REQUEST_URI'], 'category')) main-menu-active @endif"
-                                    id="catalog">Каталогuu
+                                    id="catalog">Каталог
                                 </div>
                             </a>
                             <a href="/brends">
