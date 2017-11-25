@@ -251,6 +251,9 @@
             </div>
 
             <div class="category-list">
+             <div v-if="notLoad()" class="no-products">
+                    Выполняется загрузка продуктов...
+                </div>
                 <div v-if="noProducts()" class="no-products">
                     По вашему запросу ничего не найдено
                 </div>
