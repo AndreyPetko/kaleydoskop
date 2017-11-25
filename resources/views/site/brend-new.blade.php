@@ -2,6 +2,9 @@
 
 @section('header')
     <link rel="stylesheet" href="{{ asset('dist/app.css') }}">
+    <title>{{ $name }} купить в интернет-магазине Калейдоскоп Вышивки</title>
+    <meta description="купить {{ $name }} в интернет-магазине Калейдоскоп Вышивки c доставкой по Киеву и Украине. Низкие цены, большой ассортимент {{ $name }}." >
+    <script src="{{ url('site/brends.js') }}"></script>
 @stop
 
 @section('content')

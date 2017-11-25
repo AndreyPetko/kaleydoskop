@@ -2,6 +2,11 @@
 
 @section('header')
     <link rel="stylesheet" href="{{ asset('dist/app.css') }}">
+    <title>{{ $category->name }}  купить в интернет-магазине Калейдоскоп Вышивки
+    </title>
+    <meta name="description" content="купить {{ $category->name }}
+            в интернет-магазине Калейдоскоп Вышивки c доставкой по Киеву и Украине. Низкие цены, большой ассортимент.
+            Риолис, Золотое Руно, DIMENSIONS, Anchor, Русский Фаворит, Чудесная Игла.">
 @stop
 
 @section('content')

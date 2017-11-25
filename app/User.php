@@ -26,6 +26,7 @@ class User extends Model implements AuthenticatableContract,
      *
      */
     const ADMIN_ROLE_SLUG = 'admin';
+    const WHOLESALER_ROLE_SLUG = 'wholesaler';
 
     /**
      * The database table used by the model.

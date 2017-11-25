@@ -6,6 +6,7 @@ namespace App\Repository;
 use App\Brend;
 use App\Category;
 use App\Product;
+use App\User;
 use App\Wishlist;
 use DB;
 
@@ -33,7 +34,13 @@ class ProductRepository
 
             $item->id = $product->id;
             $item->name = $product->name;
-            $item->price = $product->price;
+
+            if(\Auth::user()->role === User::WHOLESALER_ROLE_SLUG) {
+                $item->price = $product->wholesale_price;
+            } else {
+                $item->price = $product->price;
+            }
+
             $item->url = $product->url;
             $item->quantity = $product->quantity;
 

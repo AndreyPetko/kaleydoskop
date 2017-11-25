@@ -334,7 +334,7 @@ window.addEventListener("load", function () {
             }
 
             ajax('/ajax/add-to-cart?id=' + id + '&count=' + count, function (data) {
-                name = JSON.parse(data);
+                var name = JSON.parse(data);
                 document.getElementById('order-text').innerHTML = "Товар " + name + " успешно добавлен в корзину";
                 document.getElementById('sucess-cart-form').style.display = 'block';
 
@@ -964,7 +964,7 @@ window.addEventListener("load", function () {
 
 
     document.getElementById('mobile-search').addEventListener('click', function () {
-        query = document.getElementById('mobile-search-input').value;
+        var query = document.getElementById('mobile-search-input').value;
         window.location.replace(fullUrl + "/search/" + query);
     });
 
@@ -972,7 +972,7 @@ window.addEventListener("load", function () {
     var search = document.getElementById('search-big-submit');
     if (search) {
         search.addEventListener('click', function () {
-            query = document.getElementById('searchInput1').value;
+            var query = document.getElementById('searchInput1').value;
 
             // if (query.length < 3) {
             //     return;

@@ -119,7 +119,13 @@
                                     @endif
 
                                 </div>
-                                <div class="category-spisok-price">{{$product->price}}грн</div>
+                                <div class="category-spisok-price">
+                                    @if(Auth::user()->role ===  'wholesaler')
+                                        {{$product->wholesale_price}}
+                                    @else
+                                        {{$product->price}}
+                                    @endif
+                                    грн</div>
                                 <div class="category-spisok-add-to-cart item-buy" data-productid="{{$product->id}}">
 
                                     <div class="item-buy-image">

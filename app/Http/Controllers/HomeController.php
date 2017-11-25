@@ -304,7 +304,7 @@ class HomeController extends Controller
             $category = Category::getByUrl($url);
 
             if(!$category->isThread()) {
-                return view('site.subcategory-new');
+                return view('site.subcategory-new', compact('category'));
             }
 
             $subcategories = Subcategory::getByCategoryId($category->id);
@@ -621,9 +621,9 @@ class HomeController extends Controller
     /**
      * @return \Illuminate\Contracts\View\Factory|View
      */
-    public function getBrendProducts()
+    public function getBrendProducts($url)
     {
-        return view('site.brend-new');
+        return view('site.brend-new', ['name' => $url]);
     }
 
 
