@@ -97,9 +97,12 @@ class AdminOrdersController extends Controller {
 
 	public function getPrint($id) {
 		$order = Order::find($id);
+
         $order->totalprice = \DB::table('orders_products')
             ->select(\DB::raw('SUM(product_price) as total'))
             ->where('order_id', '=', $order->id)->first()->total;
+
+        $order->totalprice = round($order->totalprice - $order->totalprice * $order->discount / 100);
 
 		$order = Order::changePaymentAndDelivery($order);
 		$products = Order::getItemProducts($id);
