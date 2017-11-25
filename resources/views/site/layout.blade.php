@@ -16,10 +16,8 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'UA-110159845-1');
   </script>
-
 </head>
 <body>
 
@@ -495,7 +493,7 @@
                             <div class="main-menu">
                                 <a href="/catalog">
                                     <div class="main-menu-item @if($_SERVER['REQUEST_URI'] == '/catalog' || stripos($_SERVER['REQUEST_URI'], 'category')) main-menu-active @endif"
-                                    id="catalog">Каталог
+                                    id="catalog">Каталогuu
                                 </div>
                             </a>
                             <a href="/brends">
