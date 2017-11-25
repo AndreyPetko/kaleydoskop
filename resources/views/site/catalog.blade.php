@@ -38,7 +38,8 @@
                 @endif
                 <a href="/category/{{$catalogItem->url}}"><div class="category-pre-title">{{$catalogItem->name}}</div></a>
                 <div class="category-pre-info">
-                    <p>Товаров:{{$catalogItem->countProducts}}<br> От @if($catalogItem->minPrice)
+                    <p>Товаров:{{$catalogItem->countProducts}}<br> 
+               <!--      От @if($catalogItem->minPrice)
                             {{$catalogItem->minPrice}}
                         @else
                             0
@@ -48,7 +49,7 @@
                         @else
                         0
                         @endif
-                        грн
+                        грн -->
                     </p>
                     <div class="category-button" data-categoryid="{{$catalogItem->id}}">
                         Подкатегории
@@ -97,13 +98,14 @@
         @endif
         <a href="/category/{{$catalogItem->url}}"><div class="category-pre-title-mobile">{{$catalogItem->name}}</div></a>
         <div class="category-pre-info">
-            <p>Товаров:{{$catalogItem->countProducts}}<br> От 0 до 
+            <p>Товаров:{{$catalogItem->countProducts}}<br>
+          <!--    От 0 до 
                 @if($catalogItem->maxPrice)
                 {{$catalogItem->maxPrice}}
                 @else
                 0
                 @endif
-                грн
+                грн -->
             </p>
             <div class="category-button-mobile" data-categoryid="{{$catalogItem->id}}">Подкатегории</div>
         </div>

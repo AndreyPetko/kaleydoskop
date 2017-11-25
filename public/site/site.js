@@ -673,13 +673,10 @@ window.addEventListener("load", function () {
 
             ajax('ajax/new?click=' + newClick, function (data) {
                 data = JSON.parse(data);
-
                 data.forEach(function (item, i, data) {
                     addItem(item, 1);
                 });
-
                 var heightAfter = document.getElementsByClassName('main-items-list')[1].clientHeight;
-
                 document.getElementsByClassName('show-less-text')[1].style.display = 'block';
                 scroll(heightAfter - heightBefore);
                 // newClick++;
@@ -703,16 +700,10 @@ window.addEventListener("load", function () {
 
             for (var i = listItems.length - 1; i >= 8; i--) {
                 remove(listItems[i]);
-            }
-            ;
-
+            };
             var heightAfter = document.getElementsByClassName('main-items-list')[1].clientHeight;
-
-
             scroll(heightAfter - heightBefore + 170 * (newClick + 1));
-
             newClick = 0;
-
             document.getElementsByClassName('show-less-text')[1].style.display = 'none';
             document.getElementsByClassName('show-more-text')[1].style.display = 'block';
         });

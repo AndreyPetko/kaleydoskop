@@ -56,7 +56,7 @@
 
 @yield('dashboardContent')
 
-
+<!-- 
 <div class="account-wishlist fl">
  <div class="account-right-title">
    Товары в списке желаний
@@ -110,7 +110,7 @@
 
 
 
-</div>
+</div> -->
 </div>
 <div class="clear"></div>
 

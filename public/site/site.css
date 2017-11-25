@@ -421,7 +421,7 @@ a .back-to-old {
 .main-menu-item {
     font-family: franklingothic;
     float: left;
-    padding: 0 30px;
+    padding: 0 22px;
     text-align: center;
     background-color: #c6d932;
     height: 49px;
@@ -3768,7 +3768,7 @@ input.error, textarea.error {
 
     .register-content {
         margin-left: 30px;
-        width: 560px;
+        width:70%;
     }
 
     .register-content-mobil {
@@ -3779,7 +3779,6 @@ input.error, textarea.error {
         font-family: franklingothic;
         font-size: 14px;
         color: #616161;
-        line-height: 50px;
         text-decoration: none;
     }
 
@@ -4760,7 +4759,7 @@ input.error, textarea.error {
     }
 
     .account-left {
-        width: 279px;
+        width: 25%;
         margin-top: 10px;
     }
 
