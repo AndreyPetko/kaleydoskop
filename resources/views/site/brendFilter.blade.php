@@ -285,8 +285,8 @@
     <br>
     <hr>
     <div class="category-description">
-            {!!$brend->preview!!}
-        </div>
+        {!!$brend->preview!!}
+    </div>
 </div>
 </div>
 @stop

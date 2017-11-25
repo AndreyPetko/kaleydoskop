@@ -102,7 +102,6 @@ $(document).ready(function(){
 	// });
 
 
-
 	$('#changeCategory').change(function(){
 		id = this.value;
 		$.get("/admin/category-subcats", { id: id}, function(data){
@@ -141,15 +140,11 @@ $(document).ready(function(){
 
 		});
 	}
-
 	setInterval(showInfoBlock, 60000);
-
-
 	$('.admin-product-images').mouseover(function(){
 		deleteButton = $(this).children('img').prev();
 		deleteButton.show();
 	});
-
 	$('.image-delete').click(function(){
 		id = $(this).parent().attr('id');
 		token = $("input[name='_token']" ).val();
@@ -162,12 +157,9 @@ $(document).ready(function(){
 			}
 		});
 	});
-
-
 	$('.admin-product-images').mouseout(function(){
 		$(this).children('img').prev().hide();
 	});
-
 	$('#add-product-form').validate({
 		rules: {
 			name: {
@@ -308,9 +300,6 @@ $(document).ready(function(){
 				}
 			}
 			)();
-
-
-			
 
 
 		});
