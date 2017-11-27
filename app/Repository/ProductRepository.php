@@ -34,8 +34,8 @@ class ProductRepository
 
             $item->id = $product->id;
             $item->name = $product->name;
-
-            if(\Auth::user()->role === User::WHOLESALER_ROLE_SLUG) {
+            
+            if(\Auth::user() && \Auth::user()->role === User::WHOLESALER_ROLE_SLUG) {
                 $item->price = $product->wholesale_price;
             } else {
                 $item->price = $product->price;
