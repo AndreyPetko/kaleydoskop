@@ -120,7 +120,7 @@
 
                                 </div>
                                 <div class="category-spisok-price">
-                                    @if(Auth::user()->role ===  'wholesaler')
+                                    @if(Auth::user() && Auth::user()->role ===  'wholesaler')
                                         {{$product->wholesale_price}}
                                     @else
                                         {{$product->price}}
