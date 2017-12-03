@@ -106,6 +106,7 @@ new Vue({
                     vm.attributesList = data.attributesList;
                     vm.brands = data.brands;
 
+                    vm.currentSubcategory = this.getSubcategoryId();
                     vm.setActiveProducts();
                     vm.filter();
                 })
@@ -155,8 +156,22 @@ new Vue({
         getCategoryUrl() {
             let url = window.location.href;
             let arr = url.split('/');
+            let categoryUrl = arr[arr.length - 1];
 
-            return arr[arr.length - 1];
+            return categoryUrl.split('?')[0];
+        },
+        getSubcategoryId() {
+            let tmp = [];
+            let result = '';
+            window.location.search
+                .substr(1)
+                .split("&")
+                .forEach(function (item) {
+                    tmp = item.split("=");
+                    if (tmp[0] === 'subcategory') result = decodeURIComponent(tmp[1]);
+                });
+
+            return parseInt(result);
         },
         setActiveProducts() {
             const start = this.perPage * (this.page - 1);

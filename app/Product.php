@@ -325,6 +325,13 @@ class Product extends Model
                 ->get();
         }
 
+        /**
+         * @var Product $recProduct
+         */
+        foreach ($recProducts as &$recProduct) {
+            $recProduct->image = $recProduct->getImage();
+        }
+
         return $recProducts;
     }
 

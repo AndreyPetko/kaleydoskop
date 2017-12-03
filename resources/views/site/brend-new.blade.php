@@ -265,7 +265,23 @@
                         <div class="item-image">
                             <img :src="getSrc(product.image)" alt="">
                         </div>
-                        <div class="item-name" v-text="product.name"></div>
+                        <div class="item-name">
+                            <div class="availability" v-if="product.quantity >= 2">
+                                <img src="/site/images/add-cart-success.png" alt="">
+                                Есть в наличии
+                            </div>
+
+                            <div class="availability" v-if="product.quantity == 0">
+                                <img src="/site/images/icon-disavailability.png" alt="">
+                                Нет в наличии
+                            </div>
+
+                            <div class="availability" v-if="product.quantity == 1">
+                                <img src="/site/images/icon-availability-attantion.png" alt="">
+                                Заканчивается
+                            </div>
+                            <span v-text="product.name"></span>
+                        </div>
                     </a>
                     <div class="item-bottom-line">
                         <div class="item-price category">

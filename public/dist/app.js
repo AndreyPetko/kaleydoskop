@@ -855,6 +855,8 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
             return 'category';
         },
         getData: function getData() {
+            var _this = this;
+
             var categoryUrl = this.getCategoryUrl();
 
             var type = this.getType();
@@ -872,6 +874,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
                 vm.attributesList = data.attributesList;
                 vm.brands = data.brands;
 
+                vm.currentSubcategory = _this.getSubcategoryId();
                 vm.setActiveProducts();
                 vm.filter();
             }).catch(function (result) {
@@ -918,8 +921,19 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
         getCategoryUrl: function getCategoryUrl() {
             var url = window.location.href;
             var arr = url.split('/');
+            var categoryUrl = arr[arr.length - 1];
 
-            return arr[arr.length - 1];
+            return categoryUrl.split('?')[0];
+        },
+        getSubcategoryId: function getSubcategoryId() {
+            var tmp = [];
+            var result = '';
+            window.location.search.substr(1).split("&").forEach(function (item) {
+                tmp = item.split("=");
+                if (tmp[0] === 'subcategory') result = decodeURIComponent(tmp[1]);
+            });
+
+            return parseInt(result);
         },
         setActiveProducts: function setActiveProducts() {
             var start = this.perPage * (this.page - 1);
@@ -950,7 +964,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
             return this.attributesList[id];
         },
         setCurrentAttribute: function setCurrentAttribute(attributeId, value) {
-            var _this = this;
+            var _this2 = this;
 
             if (event.target.checked) {
                 this.currentAttributes.push({
@@ -960,7 +974,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
             } else {
                 this.currentAttributes.forEach(function (item, i, arr) {
                     if (item.value === value && item.id === attributeId) {
-                        _this.currentAttributes.splice(i, 1);
+                        _this2.currentAttributes.splice(i, 1);
                     }
                 });
             }
@@ -995,7 +1009,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
             };
         },
         filter: function filter() {
-            var _this2 = this;
+            var _this3 = this;
 
             var needFilterByAttribute = this.currentAttributes.length !== 0;
             var needFilterByBrand = this.currentBrands.length !== 0;
@@ -1015,11 +1029,11 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
             var attrCount = Object.keys(currentAttrs).length;
 
             this.products.forEach(function (item, i, arr) {
-                if (item.price < parseInt(_this2.minPrice) || item.price > parseInt(_this2.maxPrice)) {
+                if (item.price < parseInt(_this3.minPrice) || item.price > parseInt(_this3.maxPrice)) {
                     return;
                 }
 
-                if (_this2.currentSubcategory !== '' && item.subcats.indexOf(_this2.currentSubcategory) === -1) {
+                if (_this3.currentSubcategory !== '' && item.subcats.indexOf(_this3.currentSubcategory) === -1) {
                     return;
                 }
 
@@ -1071,7 +1085,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
                 if (needFilterByBrand) {
                     addProduct = false;
 
-                    _this2.currentBrands.forEach(function (brand, k, brands) {
+                    _this3.currentBrands.forEach(function (brand, k, brands) {
                         if (brand === item.brand) {
                             addProduct = true;
                         }
@@ -1114,7 +1128,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
         }
     },
     created: function created() {
-        var _this3 = this;
+        var _this4 = this;
 
         this.getData().then(function () {
             var subcategory = __WEBPACK_IMPORTED_MODULE_3__src_services_LocationParser__["a" /* default */].get('subcategory');
@@ -1122,7 +1136,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
                 return;
             }
 
-            _this3.currentSubcategory = parseInt(subcategory);
+            _this4.currentSubcategory = parseInt(subcategory);
             __WEBPACK_IMPORTED_MODULE_3__src_services_LocationParser__["a" /* default */].clearParams();
         });
     }

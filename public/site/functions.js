@@ -664,7 +664,6 @@ function addItem(item, type) {
         newItem.innerHTML = '<div class="new-item"><img src="/site/images/new_item.png"></div>';
     }
 
-
     if (item.quantity > 2) {
         aval.innerHTML = '<img src="/site/images/add-cart-success.png" alt="">Есть в наличии';
     }

@@ -25,7 +25,6 @@ class AjaxController extends Controller {
 		$recProducts = Product::getRecommended(4 + 8*$click,8);
 		$recProducts = Product::setWholesalePrice($recProducts, 1);
 
-
 		return json_encode($recProducts);
 	}
 
@@ -35,7 +34,6 @@ class AjaxController extends Controller {
 		$skip = 8 + 4 * $click;
 		$newProducts = Product::getNew($skip);
 		$newProducts = Product::setWholesalePrice($newProducts, 1);
-
 
 		return json_encode($newProducts);
 	}
@@ -48,7 +46,6 @@ class AjaxController extends Controller {
 				Session::put($key, $value);
 			}
 		}
-
 
 		return Product::getBySessionBrendFilter($_GET['brendUrl']);
 	}

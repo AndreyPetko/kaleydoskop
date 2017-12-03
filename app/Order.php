@@ -192,26 +192,28 @@ class Order extends Model {
 
 	public static function userOrders($userId) {
 		$orders = DB::table('orders')->where('user_id', $userId)->orderBy('id', 'desc')->get();
+
 		foreach ($orders as $order) {
 			$order->delivery_dt = MyDate::historyPageDt($order->delivery_dt);
 			$order->products = self::getProducts($order->id);
 
-
 			if($order->declarationNumber) {
 				$order->delivery_link = self::setDeliveryLink($order->delivery_type, $order->declarationNumber);
 			}
-
-
-			$order = self::changePaymentAndDelivery($order);
-
 		}
 
 		return $orders;
 	}
 
 	public static function getProducts($order_id) {
-		return DB::table('orders_products')->select('orders_products.*', 'images.url as image', 'products.url')->leftjoin('images', 'images.product_id', '=', 'orders_products.product_id')->leftjoin('products', 'orders_products.product_id', '=', 'products.id')
-		->where('order_id', $order_id)->get();
+		$qb = DB::table('orders_products')
+            ->select('orders_products.*', 'images.url as image', 'products.url')
+            ->leftjoin('images', 'images.product_id', '=', 'orders_products.product_id')
+            ->leftjoin('products', 'orders_products.product_id', '=', 'products.id')
+    		 ->where('order_id', $order_id)
+            ->groupBy('orders_products.id');
+
+		return $qb->get();
 	}
 
 	public static function userTotalPrice($userId) {

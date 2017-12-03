@@ -669,27 +669,20 @@ window.addEventListener("load", function () {
         var newClick = 0;
 // Показать больше новых товаров 
         document.getElementsByClassName('show-more-text')[1].addEventListener('click', function () {
-            heightBefore = document.getElementsByClassName('main-items-list')[1].clientHeight;
+            var heightBefore = document.getElementsByClassName('main-items-list')[1].clientHeight;
 
             ajax('ajax/new?click=' + newClick, function (data) {
                 data = JSON.parse(data);
+
                 data.forEach(function (item, i, data) {
                     addItem(item, 1);
                 });
+
                 var heightAfter = document.getElementsByClassName('main-items-list')[1].clientHeight;
                 document.getElementsByClassName('show-less-text')[1].style.display = 'block';
                 scroll(heightAfter - heightBefore);
-                // newClick++;
+
                 document.getElementsByClassName('show-more-text')[1].style.display = 'none';
-                // if(data.length != 8) {
-                //   document.getElementsByClassName('show-more-text')[1].style.display = 'none';
-                // } else {
-                //   ajax('ajax/recommended?click=' + newClick,function(data){
-                //     if(data.length == 0) {
-                //       document.getElementByClassName('show-more-text')[1].style.display = 'none';
-                //     }
-                //   });
-                // }
             });
         });
 

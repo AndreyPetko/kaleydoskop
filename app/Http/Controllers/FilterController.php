@@ -2,15 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
 use App\Filter\BrendFilterBuilder;
 use App\Filter\CategoryFilterBuilder;
 use App\Filter\FilterChecker;
-use App\Product;
-use App\Repository\AttributeRepository;
-use App\Repository\BrandRepository;
-use App\Repository\CategoryRepository;
-use App\Repository\ProductRepository;
 use Illuminate\Http\Response;
 
 

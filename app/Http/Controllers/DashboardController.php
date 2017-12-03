@@ -21,7 +21,7 @@ class DashboardController extends Controller {
 
 		View::composer('dashboard.dashboardLayout', function($view){
 			$userId = Auth::user()->id;
-			$orders = Order::userOrders($userId);
+//			$orders = Order::userOrders($userId);
 			$userTotalPrice = Order::userTotalPrice($userId);
 			$view->with('userTotalPrice', $userTotalPrice);
 
