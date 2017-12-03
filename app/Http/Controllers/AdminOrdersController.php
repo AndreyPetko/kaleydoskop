@@ -31,7 +31,6 @@ class AdminOrdersController extends Controller {
 		$ordersObj = Order::getInstance(1);
 		$fastOrders = $ordersObj->get();
 
-
 		return view('admin.orders.fastList')->with('fastOrders', $fastOrders);
 	}
 
@@ -48,7 +47,11 @@ class AdminOrdersController extends Controller {
 		$totalprice = Order::getTotalPrice($id);
 		$allProducts = Product::all();
 
-		return view('admin.orders.single')->with('order', $order)->with('products', $products)->with('totalprice', $totalprice)->with('allProducts', $allProducts);
+		return view('admin.orders.single')
+            ->with('order', $order)
+            ->with('products', $products)
+            ->with('totalprice', $totalprice)
+            ->with('allProducts', $allProducts);
 	}
 
 	public function postChangeStatus() {

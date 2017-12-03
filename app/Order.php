@@ -234,7 +234,6 @@ class Order extends Model {
 	public static function getItemsWithPaymentStatus($userId) {
 		$orders = DB::table('orders')->where('user_id', $userId)->get();
 
-
 		foreach ($orders as $order) {
 			$order->delivery_dt = MyDate::historyPageDt($order->delivery_dt);
 			$order->payment_dt = MyDate::historyPageDt($order->payment_dt);

@@ -165,7 +165,7 @@
 							<option value="nal" @if($order->payment_type == 'nal') selected @endif>Наличными курьеру</option>
 							<option value="privat" @if($order->payment_type == 'privat') selected @endif >На карту Приват Банка</option>
 							<option value="visa" @if($order->payment_type == 'visa') selected @endif>Оплата Visa/Mastercart</option>
-							<option value="visa" @if($order->payment_type == 'nalog') selected @endif>Наложенный платеж</option>
+							<option value="nalog" @if($order->payment_type == 'nalog') selected @endif>Наложенный платеж</option>
 						</select>
 					</td>
 				</tr>
