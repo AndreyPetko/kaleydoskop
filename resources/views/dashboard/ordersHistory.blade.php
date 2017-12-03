@@ -15,8 +15,9 @@
    @foreach($orders as $order)
    <div class="account-order-item">
      <div class="account-oder-item-txt fl">№ заказа: {{$order->id}}</div>
-     <div class="account-oder-item-txt fl">Дата: {{$order->delivery_dt}}</div>
-     <div class="account-oder-item-txt fl">Статус: {{$order->status}}</div>
+     {{--<div class="account-oder-item-txt fl">Дата: {{$order->delivery_dt}}</div>--}}
+       <div class="account-oder-item-txt fl">Дата: {{$order->created_at}}</div>
+       <div class="account-oder-item-txt fl">Статус: {{$order->status}}</div>
  </div>
  <div class="account-order-item-contain">
 
