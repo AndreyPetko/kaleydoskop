@@ -875,6 +875,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
                 vm.brands = data.brands;
 
                 vm.currentSubcategory = _this.getSubcategoryId();
+                console.log(vm.currentSubcategory);
                 vm.setActiveProducts();
                 vm.filter();
             }).catch(function (result) {
@@ -933,7 +934,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
                 if (tmp[0] === 'subcategory') result = decodeURIComponent(tmp[1]);
             });
 
-            return parseInt(result);
+            return result === '' ? '' : parseInt(result);
         },
         setActiveProducts: function setActiveProducts() {
             var start = this.perPage * (this.page - 1);

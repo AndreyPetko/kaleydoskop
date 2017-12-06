@@ -107,6 +107,7 @@ new Vue({
                     vm.brands = data.brands;
 
                     vm.currentSubcategory = this.getSubcategoryId();
+                    console.log(vm.currentSubcategory);
                     vm.setActiveProducts();
                     vm.filter();
                 })
@@ -171,7 +172,7 @@ new Vue({
                     if (tmp[0] === 'subcategory') result = decodeURIComponent(tmp[1]);
                 });
 
-            return parseInt(result);
+            return result === '' ? '' : parseInt(result);
         },
         setActiveProducts() {
             const start = this.perPage * (this.page - 1);
