@@ -96,7 +96,7 @@ class HomeController extends Controller
      */
     public function getNewProducts()
     {
-        $products = Product::getNew(0, 52);
+        $products = Product::getNew(0, 100);
 //        $products = Product::where('active', true)->orderBy('id', 'desc')->take(52)->get();
 
         foreach ($products as $product) {
