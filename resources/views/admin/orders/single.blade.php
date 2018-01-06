@@ -123,7 +123,8 @@
                     <tr>
                         <td>Дата доставки</td>
                         <td>
-                            <input name="delivery_dt" type="date" value="{{$order->delivery_dt}}"> ({{$order->human_dt}})
+                            <input name="delivery_dt" type="date" value="{{$order->delivery_dt}}"> ({{$order->human_dt}}
+                            )
                         </td>
                     </tr>
 
@@ -229,7 +230,7 @@
         <section>
 
             <div class="order-comment">
-			<textarea name="comment" class="no-editor">{{$order->comment}}</textarea>
+                <textarea name="comment" class="no-editor">{{$order->comment}}</textarea>
             </div>
 
         </section>
@@ -254,17 +255,17 @@
 
                 <tr>
                     <td>Имя</td>
-                    <td><input value="{{$order->fio}}" class="form-control" name="fio"></input></td>
+                    <td><input value="{{$order->fio}}" class="form-control" name="fio"></td>
                 </tr>
 
                 <tr>
                     <td>Телефон</td>
-                    <td><input value="{{$order->phone}}" class="form-control" name="phone"></input></td>
+                    <td><input value="{{$order->phone}}" class="form-control" name="phone"></td>
                 </tr>
 
                 <tr>
                     <td>Email</td>
-                    <td><input value="{{$order->email}}" class="form-control" name="email"></input></td>
+                    <td><input value="{{$order->email}}" class="form-control" name="email"></td>
                 </tr>
 
                 </tbody>

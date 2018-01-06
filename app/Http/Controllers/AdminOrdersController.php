@@ -110,6 +110,7 @@ class AdminOrdersController extends Controller {
 		$products = Order::getItemProducts($id);
 		$namesCount  = Order::getNamesCount($id);
 
+		$order->delivery_dt = (new \DateTime($order->delivery_dt))->format('Y-m-d');
 		return view('print.order')->with('order', $order)->with('products', $products)->with('namesCount', $namesCount);
 	}
 

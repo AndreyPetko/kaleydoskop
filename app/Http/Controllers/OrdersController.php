@@ -65,6 +65,7 @@ class OrdersController extends Controller
             $products = Order::getItemProducts($order->id);
             $namesCount = Order::getNamesCount($order->id);
 
+
             Mail::send('print.order', ['order' => $order, 'products' => $products, 'namesCount' => $namesCount], function ($message) use ($email) {
                 $message->to($email, 'Калейдоскоп Вышивки')->subject('Ваш заказ на сайте Калейдоскоп Вышивки');
             });

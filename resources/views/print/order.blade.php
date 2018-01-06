@@ -52,9 +52,13 @@ div.Section1
 	{page:Section1;}
 
 .title-name {
-  font-size: 30px;
+  font-size: 24px;
   font-family: sans-serif;
  border-bottom:2px solid grey;
+}
+.title-name  span{
+ margin-left: 20px;
+ font-size: 16px;
 }
 -->
 </style>
@@ -87,7 +91,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
 lang=EN-US style='font-size:10.0pt;font-family:Arial;mso-ansi-language:EN-US'><o:p></o:p></span></b></p>
 
 <p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
-<p class="title-name">Интернет-магазин Калейдоскоп Вышивки</p>
+ <p class="title-name">Интернет-магазин Калейдоскоп Вышивки<span>096 778 74 88</span><span>044 332 88 82</span></p>
 <p class=MsoNormal style=text-align><b><span
 style=font-size:14.0pt;font-family:Arial>ЗАКАЗ № ИНТ-{{$order->id}} 	<SCRIPT type=text/javascript>
 	<!--   // Array ofmonth Names
@@ -104,6 +108,7 @@ style=font-size:14.0pt;font-family:Arial>ЗАКАЗ № ИНТ-{{$order->id}} 	<
 <br>
 <p class=MsoNormal>
 <span style=font-size:10.0pt;font-family:Arial><b>Доставлять:</b><span style=mso-spacerun: yes> {{$order->delivery_type}} </span><br><span style=font-size:10.0pt;font-family:Arial><b>Способ оплаты:</b><span style=mso-spacerun: yes> {{$order->payment_type}} </span><br>
+<span style=font-size:10.0pt;font-family:Arial><b>Время доставки:</b><span style=mso-spacerun: yes> {{$order->delivery_dt}} от {{$order->time_start}} до {{$order->time_end}}  </span><br>
 <span style=font-size:10.0pt;font-family:Arial><b>Комментарий:</b><span style=mso-spacerun: yes> {{$order->comment}}  </span><br>
 <br></span><span lang=EN-US style='font-size:10.0pt;font-family:Arial;mso-ansi-language:EN-US'><o:p></o:p></span></p>
 <p class=MsoNormal>
