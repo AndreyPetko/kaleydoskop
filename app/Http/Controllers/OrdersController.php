@@ -15,7 +15,8 @@ use Auth;
  * Class OrdersController
  * @package App\Http\Controllers
  */
-class OrdersController extends Controller {
+class OrdersController extends Controller
+{
 
 
     public function __construct()
@@ -26,50 +27,51 @@ class OrdersController extends Controller {
     /**
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function postAdd() {
-		$request = Request::all();
-		unset($request['_token']);
+    public function postAdd()
+    {
+        $request = Request::all();
+        unset($request['_token']);
 
-		$order = Order::getInstance($request['type']);
-		$result = $order->add($request);
+        $order = Order::getInstance($request['type']);
+        $result = $order->add($request);
 
-		if(!$result) {
-			return Redirect::back()->with('emptyCartError', 1);
-		}
+        if (!$result) {
+            return Redirect::back()->with('emptyCartError', 1);
+        }
 
-		if(!Auth::check() || Auth::user()->role == 'retail') {
-            $email = Consts::EMAIL;
+        if (!Auth::check() || Auth::user()->role == 'retail') {
+            $emails = Consts::EMAILS;
 
-			if($request['type']) { // быстрый
-				Mail::send('emails.orderFast', ['name' => $request['name'], 'phone' => $request['phone']], function($message) use ($email)
-				{
-					$message->to($email, 'Kaleydoskop')->subject('На сайте новый заказ');
-				});
-			} else {
-				Mail::send('emails.order', ['name' => $request['name'], 'phone' => $request['phone'], 'email' => $request['email'], 'dt' => $request['delivery_dt']], function($message) use ($email)
-				{
-					$message->to($email, 'Kaleydoskop')->subject('На сайте новый заказ');
-				});
-			}
-		}
+            if ($request['type']) { // быстрый
+                Mail::send('emails.orderFast', ['name' => $request['name'], 'phone' => $request['phone']], function ($message) use ($emails) {
+                    foreach ($emails as $email) {
+                        $message->to($email, 'Kaleydoskop')->subject('На сайте новый заказ');
+                    }
+                });
+            } else {
+                Mail::send('emails.order', ['name' => $request['name'], 'phone' => $request['phone'], 'email' => $request['email'], 'dt' => $request['delivery_dt']], function ($message) use ($emails) {
+                    foreach ($emails as $email) {
+                        $message->to($email, 'Kaleydoskop')->subject('На сайте новый заказ');
+                    }
+                });
+            }
+        }
 
-		if(isset($request['email'])) {
-			$email = $request['email'];
-			$order = Order::getLast();
+        if (isset($request['email'])) {
+            $email = $request['email'];
+            $order = Order::getLast();
 
-			$order = Order::changePaymentAndDelivery($order);
-			$products = Order::getItemProducts($order->id);
-			$namesCount  = Order::getNamesCount($order->id);
+            $order = Order::changePaymentAndDelivery($order);
+            $products = Order::getItemProducts($order->id);
+            $namesCount = Order::getNamesCount($order->id);
 
-			Mail::send('print.order', ['order' => $order,'products' =>  $products,'namesCount' => $namesCount], function($message) use ($email)
-			{
-				$message->to($email, 'Калейдоскоп Вышивки')->subject('Ваш заказ на сайте Калейдоскоп Вышивки');
-			});
-		}
-
+            Mail::send('print.order', ['order' => $order, 'products' => $products, 'namesCount' => $namesCount], function ($message) use ($email) {
+                $message->to($email, 'Калейдоскоп Вышивки')->subject('Ваш заказ на сайте Калейдоскоп Вышивки');
+            });
+        }
 
 
-		return Redirect::to('/')->with('orderSuccess', true);
-	}
+        return Redirect::to('/')->with('orderSuccess', true);
+    }
 
 }

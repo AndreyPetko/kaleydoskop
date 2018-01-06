@@ -83,7 +83,7 @@ lang=EN-US style='font-size:10.0pt;font-family:Arial;mso-ansi-language:EN-US'><o
 <p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
 
 <p class=MsoNormal style=text-align><b><span
-style=font-size:14.0pt;font-family:Arial>ЗАКАЗ № ИНТ-{{$order->id}} от	<SCRIPT type=text/javascript> 
+style=font-size:14.0pt;font-family:Arial>ЗАКАЗ № ИНТ-{{$order->id}} 	<SCRIPT type=text/javascript>
 	<!--   // Array ofmonth Names
 	var monthNames = new Array( "Января","Февраля","Марта","Апреля","Мая","Июня","Июля","Августа","Сентября","Октября","Ноября","Декабря");
 	var now = new Date();

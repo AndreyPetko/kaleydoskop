@@ -18,5 +18,5 @@ class Consts
     /**
      *
      */
-    const EMAIL = 'info@kaleydoskop-vishivki.com.ua';
+    const EMAILS = ['info@kaleydoskop-vishivki.com.ua', 'Knzv_i1van@gmail.com'];
 }
