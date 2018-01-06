@@ -54,7 +54,7 @@ class Order extends Model {
 
         foreach ($orders as &$order) {
             $order->totalprice = DB::table('orders_products')
-                ->select(DB::raw('SUM(product_price) as total'))
+                ->select(DB::raw('SUM(product_price * product_count) as total'))
                 ->where('order_id', '=', $order->id)->first()->total;
 		}
 

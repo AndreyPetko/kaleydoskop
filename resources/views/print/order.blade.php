@@ -50,6 +50,12 @@ h1
 	mso-paper-source:0;}
 div.Section1
 	{page:Section1;}
+
+.title-name {
+  font-size: 30px;
+  font-family: sans-serif;
+ border-bottom:2px solid grey;
+}
 -->
 </style>
 </head>
@@ -81,7 +87,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
 lang=EN-US style='font-size:10.0pt;font-family:Arial;mso-ansi-language:EN-US'><o:p></o:p></span></b></p>
 
 <p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
-
+<p class="title-name">Интернет-магазин Калейдоскоп Вышивки</p>
 <p class=MsoNormal style=text-align><b><span
 style=font-size:14.0pt;font-family:Arial>ЗАКАЗ № ИНТ-{{$order->id}} 	<SCRIPT type=text/javascript>
 	<!--   // Array ofmonth Names
@@ -106,7 +112,6 @@ style=font-size:14.0pt;font-family:Arial>ЗАКАЗ № ИНТ-{{$order->id}} 	<
 <span style=font-size:10.0pt;font-family:Arial><b>Адрес:</b><span style=mso-spacerun: yes> {{$order->address}} </span><br>
 <!-- <span style=font-size:10.0pt;font-family:Arial><b>Ближайшее метро:</b><span style=mso-spacerun: yes>  </span><br> -->
 <span style=font-size:10.0pt;font-family:Arial><b>Email:</b><span style=mso-spacerun: yes> {{$order->email}}  </span><br>
-<span style=font-size:10.0pt;font-family:Arial><b>Примечание:</b><span style=mso-spacerun: yes>  </span><br>
 <br></span><span lang=EN-US style='font-size:10.0pt;font-family:Arial;mso-ansi-language:EN-US'><o:p></o:p></span></p><table border=1 cellspacing=0 cellpadding=2 width=645 >
 
  <tr style='height:51.0pt'>

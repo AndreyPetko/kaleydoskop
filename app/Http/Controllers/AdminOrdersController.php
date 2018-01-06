@@ -18,7 +18,6 @@ class AdminOrdersController extends Controller {
 		unset($this->request['_token']);
 	}
 
-
 	public function getIndex() {
 		$type = Auth::getRole();
 		Order::setReaded($type);
@@ -102,7 +101,7 @@ class AdminOrdersController extends Controller {
 		$order = Order::find($id);
 
         $order->totalprice = \DB::table('orders_products')
-            ->select(\DB::raw('SUM(product_price) as total'))
+            ->select(\DB::raw('SUM(product_price * product_count) as total'))
             ->where('order_id', '=', $order->id)->first()->total;
 
         $order->totalprice = round($order->totalprice - $order->totalprice * $order->discount / 100);

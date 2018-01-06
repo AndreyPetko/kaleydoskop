@@ -405,7 +405,7 @@
 
 <script src="{{ url('ckeditor/ckeditor.js') }}"></script>
 <script type="text/javascript">
-  $("textarea").each(function(){
+  $("textarea").not('.no-editor').each(function(){
     CKEDITOR.replace( this, {
       filebrowserUploadUrl : '/file/upload'
     } );
