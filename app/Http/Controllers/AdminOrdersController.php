@@ -133,8 +133,6 @@ class AdminOrdersController extends Controller {
 	public function postNewOrder() {
 		$request = Request::all();
 
-
-
 		if($request['user_id'] != 0) {
 			$user = User::find($request['user_id']);
 
@@ -155,11 +153,6 @@ class AdminOrdersController extends Controller {
 			}
 		}
 
-
-
-
-
-
 		for ($i=0; $i < count($request['products_ids']); $i++) {
 
 			if($request['count'][$i] != 0) {
@@ -171,8 +164,6 @@ class AdminOrdersController extends Controller {
 		unset($request['count']);
 		unset($request['products_ids']);
 		unset($request['_token']);
-
-
 
 		$order = Order::getInstance(0);
 		$result = $order->add($request);

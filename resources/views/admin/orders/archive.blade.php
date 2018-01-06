@@ -61,6 +61,7 @@
 				</div>
 				<!-- /.box-body -->
 			</div>
+        <?php echo $orders->render(); ?>
 			<!-- /.box -->
 		</div>
 	</div>

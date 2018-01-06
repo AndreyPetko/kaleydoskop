@@ -47,7 +47,7 @@ class Order extends Model {
 			$query->where('users.role', '=', 'wholesaler');
 			$query->orWhere('users.role', '=', 'ander');
 		} else {
-			$query->whereRaw("users.role != 'wholesaler' && users.role != 'ander' OR orders.user_id = 0");
+			$query->whereRaw("(users.role != 'wholesaler' && users.role != 'ander' OR orders.user_id = 0)");
 		}
 
 		$orders = $query->paginate(20);
@@ -135,7 +135,7 @@ class Order extends Model {
 	}
 
 	public static function getArchive() {
-		$query = DB::table('orders')->select('orders.*')->where('status', 'Выполнен');
+		$query = DB::table('orders')->select('orders.*')->orderBy('orders.id', 'desc')->where('status', 'Выполнен');
 
 		$query->leftjoin('users', 'users.id', '=', 'orders.user_id');
 
