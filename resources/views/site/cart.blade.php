@@ -179,7 +179,7 @@
                             @endif
                         </div>
                         <div class="big-cart-total">
-                            <p> Сумма: <span style="color:#eb7f2b" id="total">@if($total){{$total}} @else 0 @endif
+                            <p> Сумма: <span style="color:#eb7f2b" class="total">@if($total){{$total}} @else 0 @endif
                                     грн</span></p>
                             @if(Auth::check())
                                 <p>Скидка: <span style="color:#eb7f2b" id="discount">{{Auth::user()->discount}}%</span>
@@ -188,7 +188,7 @@
                                 <p>Скидка: <span style="color:#eb7f2b" id="discount">0%</span></p>
                             @endif
                             <p>Доставка: <span style="color:#eb7f2b" id="delivery">0грн</span></p>
-                            <p> Итого: <span style="color:#eb7f2b" id="discount-total">
+                            <p> Итого: <span style="color:#eb7f2b" class="discount-total">
            @if($total)
                                         @if(Auth::check())
                                             {{ $total - Auth::user()->discount * $total/100 }}
@@ -369,7 +369,7 @@
                                         @endif
                                     </div>
                                     <div class="big-cart-total">
-                                        <p> Сумма: <span style="color:#eb7f2b" id="total">@if($total){{$total}} @else
+                                        <p> Сумма: <span style="color:#eb7f2b" class="total">@if($total){{$total}} @else
                                                     0 @endif грн</span></p>
                                         @if(Auth::check())
                                             <p>Скидка: <span style="color:#eb7f2b" id="discount">{{Auth::user()->discount}}
@@ -378,7 +378,7 @@
                                             <p>Скидка: <span style="color:#eb7f2b" id="discount">0%</span></p>
                                         @endif
                                         <p>Доставка: <span style="color:#eb7f2b" id="delivery">0грн</span></p>
-                                        <p> Итого: <span style="color:#eb7f2b" id="discount-total">
+                                        <p> Итого: <span style="color:#eb7f2b" class="discount-total">
            @if($total)
                                                     @if(Auth::check())
                                                         {{ $total - Auth::user()->discount * $total/100 }}

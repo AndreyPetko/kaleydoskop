@@ -1077,34 +1077,65 @@ window.addEventListener("load", function () {
         });
     }
 
-    countInputs = document.getElementsByClassName('count-inputs');
+    var countInputs = document.querySelectorAll('.wrapper .count-inputs');
 
     if (countInputs) {
         for (var i = countInputs.length - 1; i >= 0; i--) {
             countInputs[i].addEventListener('change', function () {
-                price = this.dataset.price;
-                productid = this.dataset.productid;
+                var price = this.dataset.price;
+                var productid = this.dataset.productid;
 
-                count = this.value;
-                total = price * count;
-                totalBlock = this.nextSibling.nextSibling;
+                var count = this.value;
+                var total = price * count;
+                var totalBlock = this.nextSibling.nextSibling;
                 totalBlock.innerHTML = total + ' грн';
-                globalTotal = 0;
-                for (var i = countInputs.length - 1; i >= 0; i--) {
-                    globalTotal += countInputs[i].value * countInputs[i].dataset.price;
-                }
-                ;
-                ajax('/ajax/change-count?productid=' + productid + '&count=' + count, function (data) {
-                });
+                var globalTotal = 0;
 
-                document.getElementById('total').innerHTML = globalTotal + ' грн';
-                discount = document.getElementById('discount').innerHTML;
+                for (var j = countInputs.length - 1; j >= 0; j--) {
+                    globalTotal += countInputs[j].value * countInputs[j].dataset.price;
+                }
+
+                ajax('/ajax/change-count?productid=' + productid + '&count=' + count, function (data) {});
+
+                document.getElementsByClassName('total')[0].innerHTML = globalTotal + ' грн';
+                var discount = document.getElementById('discount').innerHTML;
                 discount = parseInt(discount.substring(0, discount.length - 1));
 
-                document.getElementById('discount-total').innerHTML = globalTotal - discount * globalTotal / 100 + ' грн';
+                document.getElementsByClassName('discount-total')[0].innerHTML = globalTotal - discount * globalTotal / 100 + ' грн';
+                console.log(document.getElementsByClassName('discount-total')[0]);
+                // document.getElementById('discount-total').innerHTML = globalTotal - discount * globalTotal / 100 + ' грн';
             });
         }
-        ;
+    }
+
+    var mobileCountInputs = document.querySelectorAll('.mobile-wrapper .count-inputs');
+
+    if (mobileCountInputs) {
+        for (var i = mobileCountInputs.length - 1; i >= 0; i--) {
+            mobileCountInputs[i].addEventListener('change', function () {
+                var price = this.dataset.price;
+                var productid = this.dataset.productid;
+
+                var count = this.value;
+                var total = price * count;
+                var totalBlock = this.nextSibling.nextSibling;
+                totalBlock.innerHTML = total + ' грн';
+                var globalTotal = 0;
+
+                for (var j = mobileCountInputs.length - 1; j >= 0; j--) {
+                    globalTotal += mobileCountInputs[j].value * mobileCountInputs[j].dataset.price;
+                }
+
+                ajax('/ajax/change-count?productid=' + productid + '&count=' + count, function (data) {});
+
+                document.getElementsByClassName('total')[1].innerHTML = globalTotal + ' грн';
+                var discount = document.getElementById('discount').innerHTML;
+                discount = parseInt(discount.substring(0, discount.length - 1));
+
+                // document.getElementById('discount-total').innerHTML = globalTotal - discount * globalTotal / 100 + ' грн';
+                document.getElementsByClassName('discount-total')[1].innerHTML = globalTotal - discount * globalTotal / 100 + ' грн';
+            });
+        }
     }
 
 
