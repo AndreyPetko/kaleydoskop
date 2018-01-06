@@ -184,7 +184,7 @@
                 Вы можете связаться с нами, заполнив поля ниже:
             </div>
 
-            <form method="POST" action="/send-feedback">
+            <form method="POST" action="/send-feedback" id="feedback-form">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="fast-order-form-row">
                     <div class="fast-order-label fl">Имя:</div>

@@ -7,7 +7,7 @@
         $(document).ready(function () {
             var today = new Date();
             $.datetimepicker.setLocale('ru');
-            $('#datetimepicker').datetimepicker({
+            $('.datetimepicker').datetimepicker({
                 timepicker: false,
                 format: 'Y/m/d',
                 startDate: new Date(today.getFullYear(), today.getMonth(), today.getDate()),
@@ -78,7 +78,7 @@
                     </div>
                     <div class="cart-info-input">
                         <p>Дата доставки</p>
-                        <input type="text" id="datetimepicker" name="delivery_dt">
+                        <input type="text" class="datetimepicker" name="delivery_dt">
                     </div>
                     <div class="cart-info-input">
                         <p>Время от</p>
@@ -284,8 +284,8 @@
                         </div>
 
                     </div>
-                    
-      
+
+
         </div>
         </form>
         <div class="clear"></div>
@@ -297,7 +297,7 @@
 
             <div class="clear"></div>
 
-            <form action="/orders/add" method="POST" id="order-form">
+            <form action="/orders/add" method="POST" id="order-form-mobile">
 
                 <input type="hidden" value="{{csrf_token()}}" name="_token">
                 <input type="hidden" name="user_id" @if(Auth::check()) value="{{Auth::user()->id}}"
@@ -441,7 +441,7 @@
                                             </div>
                                             <div class="cart-info-input">
                                                 <p>Дата доставки</p>
-                                                <input type="date" id="datetimepicker" name="delivery_dt">
+                                                <input type="date" class="datetimepicker" name="delivery_dt">
                                             </div>
                                             <div class="cart-info-input">
                                                 <p>Время от</p>
