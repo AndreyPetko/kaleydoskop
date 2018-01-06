@@ -239,8 +239,8 @@
                                 <input type="checkbox" name="payment[]" disabled value="privat">
                                 <p>На карту Приват Банка</p>
                                 <input type="checkbox" name="payment[]" disabled value="visa">
-                                <p>Оплата Visa/Mastercart</p>
-                                <input type="checkbox" name="payment[]" disabled value="nalog">
+                                {{--<p>Оплата Visa/Mastercart</p>--}}
+                                {{--<input type="checkbox" name="payment[]" disabled value="nalog">--}}
                                 <p>Наложенный платеж</p>
                             </div>
                         </div>
