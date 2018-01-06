@@ -301,7 +301,7 @@
                             <img v-if="!product.wish" src="{{ url('site/images/ixon-wishlist.png') }}" alt="">
                             <img v-if="product.wish" src="{{ url('site/images/ixon-wishlist-active.png') }}" alt="">
                         </div>
-                        <div class="item-buy">
+                        <div class="item-buy" v-if="product.quantity !== 0">
                             <div class="item-buy-image">
                                 <img src="{{ url('site/images/icon-cart-main.png') }}" alt="">
                             </div>
