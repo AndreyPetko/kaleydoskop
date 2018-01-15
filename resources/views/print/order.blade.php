@@ -56,9 +56,10 @@ div.Section1
   font-family: sans-serif;
  border-bottom:2px solid grey;
 }
+
 .title-name  span{
  margin-left: 20px;
- font-size: 16px;
+ font-size: 14px;
 }
 -->
 </style>
@@ -108,7 +109,11 @@ style=font-size:14.0pt;font-family:Arial>ЗАКАЗ № ИНТ-{{$order->id}} 	<
 <br>
 <p class=MsoNormal>
 <span style=font-size:10.0pt;font-family:Arial><b>Доставлять:</b><span style=mso-spacerun: yes> {{$order->delivery_type}} </span><br><span style=font-size:10.0pt;font-family:Arial><b>Способ оплаты:</b><span style=mso-spacerun: yes> {{$order->payment_type}} </span><br>
+ @if($showDeliveryDt)
 <span style=font-size:10.0pt;font-family:Arial><b>Время доставки:</b><span style=mso-spacerun: yes> {{$order->delivery_dt}} от {{$order->time_start}} до {{$order->time_end}}  </span><br>
+ @else
+  <span style=font-size:10.0pt;font-family:Arial><b>Время доставки:</b><span style=mso-spacerun: yes> Не указано</span><br>
+ @endif
 <span style=font-size:10.0pt;font-family:Arial><b>Комментарий:</b><span style=mso-spacerun: yes> {{$order->comment}}  </span><br>
 <br></span><span lang=EN-US style='font-size:10.0pt;font-family:Arial;mso-ansi-language:EN-US'><o:p></o:p></span></p>
 <p class=MsoNormal>

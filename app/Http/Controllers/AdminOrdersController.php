@@ -110,8 +110,15 @@ class AdminOrdersController extends Controller {
 		$products = Order::getItemProducts($id);
 		$namesCount  = Order::getNamesCount($id);
 
+
+		$showDeliveryDt = $order->delivery_dt != '0000-00-00 00:00:00';
+
 		$order->delivery_dt = (new \DateTime($order->delivery_dt))->format('Y-m-d');
-		return view('print.order')->with('order', $order)->with('products', $products)->with('namesCount', $namesCount);
+		return view('print.order')
+            ->with('order', $order)
+            ->with('products', $products)
+            ->with('namesCount', $namesCount)
+            ->with('showDeliveryDt', $showDeliveryDt);
 	}
 
 	public function postAddProductToOrder() {
