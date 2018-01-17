@@ -66,7 +66,9 @@ class OrdersController extends Controller
             $namesCount = Order::getNamesCount($order->id);
 
 
-            Mail::send('print.order', ['order' => $order, 'products' => $products, 'namesCount' => $namesCount], function ($message) use ($email) {
+            $showDeliveryDt = $order->delivery_dt != '0000-00-00 00:00:00';
+
+            Mail::send('print.order', ['order' => $order, 'products' => $products, 'namesCount' => $namesCount, 'showDeliveryDt' => $showDeliveryDt], function ($message) use ($email) {
                 $message->to($email, 'Калейдоскоп Вышивки')->subject('Ваш заказ на сайте Калейдоскоп Вышивки');
             });
         }
